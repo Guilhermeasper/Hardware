@@ -48,7 +48,7 @@ AEZ:
 	slt $t5, $t1, $t2
 	#Se sim, IF é satisfeito
 	beq $t5, $s0, IF
-	#Se não, vai pra OK
+	#Se não, volta para o OK pois não existe outra opção
 	j OK
 IF:
 	sw $s0, X
