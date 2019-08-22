@@ -1,7 +1,7 @@
 .data
 
-A: .word 2
-B: .word 1
+A: .word -2
+B: .word -1
 X: .word 0
 #if{(a >= 0 && a < b) -> x = 1}
 #else if{(a < 0 && a > b) -> x = 2}
@@ -20,7 +20,6 @@ addi $s2, $s1, 1
 
 #se A = 0 é um caso especial
 beq $t1, $zero, AEZ
-
 
 #valor de A > 0 é salvo em t4
 slt $t4, $zero, $t1
@@ -41,15 +40,16 @@ and $t6, $t4, $t5
 beq $t6, $s0, ELSEIF
 #Caso nenhuma das duas proposições sejam verade,
 #3 é gravado em X
+OK:
+	sw $s2, X
+	j Endif
 AEZ: 
 	#salvo em t5 se B > A
 	slt $t5, $t1, $t2
 	#Se sim, IF é satisfeito
 	beq $t5, $s0, IF
+	#Se não, vai pra OK
 	j OK
-OK:
-	sw $s2, X
-	j Endif
 IF:
 	sw $s0, X
 	j Endif
