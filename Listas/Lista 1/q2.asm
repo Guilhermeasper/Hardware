@@ -41,15 +41,15 @@ and $t6, $t4, $t5
 beq $t6, $s0, ELSEIF
 #Caso nenhuma das duas proposições sejam verade,
 #3 é gravado em X
-OK:
-	sw $s2, X
-	j Endif
 AEZ: 
 	#salvo em t5 se B > A
 	slt $t5, $t1, $t2
 	#Se sim, IF é satisfeito
 	beq $t5, $s0, IF
 	j OK
+OK:
+	sw $s2, X
+	j Endif
 IF:
 	sw $s0, X
 	j Endif
