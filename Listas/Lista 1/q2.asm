@@ -36,7 +36,7 @@ slt $t4, $t1, $zero
 slt $t5, $t2, $t1
 #valor de (A < 0 & A > B) é salvo em t6
 and $t6, $t4, $t5
-#Se a proposição da linha 44 for verdade, entra-se no ELSEIF
+#Se a proposição da linha 38 for verdade, entra-se no ELSEIF
 beq $t6, $s0, ELSEIF
 #Caso nenhuma das duas proposições sejam verade,
 #3 é gravado em X
