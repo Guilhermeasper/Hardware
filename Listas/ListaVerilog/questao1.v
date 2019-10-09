@@ -106,7 +106,7 @@ module sinal(clock, botao, verde, amarelo, vermelho);
 			
 			// Estado vermelho
 			VM:  begin
-			    // Setando o verde pra 0, pois ele sempre chega no vermelho pelo verde...
+			    // Setando o verde pra 0, pois ele sempre chega no vermelho pelo verde...???
 				verde = 1'b0;
 				// E o vermelho pra 1
 				vermelho = 1'b1;
