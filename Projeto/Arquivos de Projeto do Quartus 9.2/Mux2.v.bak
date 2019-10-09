@@ -16,7 +16,12 @@ module mux2(clock, entrada0, entrada1, entrada2, entrada3, controle, saida);
 	
 	//Setando estado inicial para todos os fios.
 	initial begin
+		controle <= 2'b00;
 		saida <= 16'b0000000000000000;
+		entrada0 = 16'b0000000000000000;
+		entrada1 = 16'b0000000000000000;
+		entrada2 = 16'b0000000000000000;
+		entrada3 = 16'b0000000000000000;
 	end
 
 	always@(*) begin
