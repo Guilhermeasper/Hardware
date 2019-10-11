@@ -33,9 +33,9 @@ module uc(
     output reg[2:0] ALUControl,
     output reg ALUOut,
     output reg epc,
-    output reg[1:0]mux_to_pc,
-    output reg[1:0] a,
-    output reg[1:0] b
+    output reg[2:0]mux_to_pc,
+    output reg a,
+    output reg b
 ); 
 integer contador;
 reg[7:0] estado;
@@ -72,7 +72,7 @@ always@(posedge clock)begin
         ALUControl=3'b0;
         ALUOut=1'b0;
         epc=1'b0;
-        mux_to_pc=2'b0;
+        mux_to_pc=3'b0;
         a=2'b0;
         b=2'b0;
     end
@@ -102,7 +102,7 @@ always@(posedge clock)begin
                 ALUControl=3'b10;//faz PC-4
                 ALUOut=1'b0;
                 epc=1'b1;//salva PC-4 em epc
-                mux_to_pc=2'b0;
+                mux_to_pc=3'b0;
                 a=2'b0;
                 b=2'b0;  
                 estadoOverflow= 2'b1;
@@ -131,7 +131,7 @@ always@(posedge clock)begin
                 ALUControl=3'b0;//da hold em mdr extendido
                 ALUOut=1'b0;
                 epc=1'b0;
-                mux_to_pc=2'b0;//escolhe mdr extendido
+                mux_to_pc=3'b0;//escolhe mdr extendido
                 a=2'b0;
                 b=2'b0;  
                 estadoOverflow= 2'b10;
@@ -160,7 +160,7 @@ always@(posedge clock)begin
                 ALUControl=3'b0;
                 ALUOut=1'b0;
                 epc=1'b0;
-                mux_to_pc=2'b0;
+                mux_to_pc=3'b0;
                 a=2'b0;
                 b=2'b0;  
                 estadoOverflow= 2'b11;
@@ -189,7 +189,7 @@ always@(posedge clock)begin
                 ALUControl=3'b0;
                 ALUOut=1'b0;
                 epc=1'b0;
-                mux_to_pc=2'b0;
+                mux_to_pc=3'b0;
                 a=2'b0;
                 b=2'b0;  
                 estadoOverflow= 2'b0;
@@ -222,7 +222,7 @@ always@(posedge clock)begin
                 ALUControl=3'b1;//faz PC+4
                 ALUOut=1'b0;
                 epc=1'b0;
-                mux_to_pc=2'b0;//escolhe PC+4
+                mux_to_pc=3'b0;//escolhe PC+4
                 a=2'b0;
                 b=2'b0;  
                 estado= 8'b1;
@@ -251,7 +251,7 @@ always@(posedge clock)begin
                 ALUControl=3'b1;//faz PC+o escrito acima
                 ALUOut=1'b1;//salva a soma em aluout
                 epc=1'b0;
-                mux_to_pc=2'b0;//escolhe PC+4
+                mux_to_pc=3'b0;//escolhe PC+4
                 a=2'b1;//load rs em a
                 b=2'b1;//load rt em b  
                 estado=8'b10;
@@ -260,7 +260,7 @@ always@(posedge clock)begin
                 case(opcode)
                     6'b0: begin // caso formato r
                         case(funct)
-                            6'b0: begin//instrucao ADD!!!!
+                            6'b100000: begin//instrucao ADD!!!!
                                     pc_write=1'b0;
                                     mux_mem=2'b0;
                                     mux_to_mux_mem=2'b0;
@@ -284,14 +284,73 @@ always@(posedge clock)begin
                                     ALUControl=3'b1;//faz A+B
                                     ALUOut=1'b1;//salva a soma em aluout
                                     epc=1'b0;
-                                    mux_to_pc=2'b0;
+                                    mux_to_pc=3'b0;
                                     a=2'b0;
                                     b=2'b0;
+                                    estado = 8'b11;
                                 end
                         endcase
                     end
                 endcase
             end
+            8'b11: begin //add pt 2
+				pc_write=1'b0;
+                mux_mem=2'b0;
+                mux_to_mux_mem=2'b0;
+                mem_write=1'b0;
+                ss_control=1'b0;
+                mult_div=2'b0;
+                hilo=1'b0;
+                ir_write=1'b0;
+                mdr_write=1'b0;
+                ls_control=1'b0;
+                shamt=1'b0;
+                shift_source=1'b0;
+                shift_control=1'b0;
+                mux_to_mem_to_reg=1'b0;
+                mem_to_reg=4'b0;//escolhe o aluout
+                regDST=3'b10;//escolhe o rd
+                reg_write=1'b1;//escreve no banco de regs
+                xch=1'b0;
+                ALUSourceA=2'b0;
+                ALUSourceB=3'b0;
+                ALUControl=3'b0;
+                ALUOut=1'b0;
+                epc=1'b0;
+                mux_to_pc=3'b0;
+                a=2'b0;
+                b=2'b0;
+                estado = 8'b11111111;
+			end
+			8'b11111111: begin //fecha tudo
+				pc_write=1'b0;
+                mux_mem=2'b0;
+                mux_to_mux_mem=2'b0;
+                mem_write=1'b0;
+                ss_control=1'b0;
+                mult_div=2'b0;
+                hilo=1'b0;
+                ir_write=1'b0;
+                mdr_write=1'b0;
+                ls_control=1'b0;
+                shamt=1'b0;
+                shift_source=1'b0;
+                shift_control=1'b0;
+                mux_to_mem_to_reg=1'b0;
+                mem_to_reg=4'b0;
+                regDST=3'b0;
+                reg_write=1'b0;
+                xch=1'b0;
+                ALUSourceA=2'b0;
+                ALUSourceB=3'b0;
+                ALUControl=3'b0;
+                ALUOut=1'b0;
+                epc=1'b0;
+                mux_to_pc=3'b0;
+                a=2'b0;
+                b=2'b0;
+                estado = 8'b0;
+			end
         endcase
     end
   end

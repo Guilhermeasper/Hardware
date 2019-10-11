@@ -2,19 +2,19 @@
 	
 	//Iniciando os fio tudo.
 	input wire clock;
-	input wire [15:0]entrada0;
-	input wire [15:0]entrada1;
-	input wire [15:0]entrada2;
-	input wire [15:0]entrada3;
-	input wire [15:0]entrada4;
-	input wire [15:0]entrada5;
-	input wire [15:0]entrada6;
-	input wire [15:0]entrada7;
-	input wire [15:0]entrada8;
-	input wire [15:0]entrada9;
-	input wire [15:0]entrada10;
+	input wire [31:0]entrada0;
+	input wire [31:0]entrada1;
+	input wire [31:0]entrada2;
+	input wire [31:0]entrada3;
+	input wire [31:0]entrada4;
+	input wire [31:0]entrada5;
+	input wire [31:0]entrada6;
+	input wire [31:0]entrada7;
+	input wire [31:0]entrada8;
+	input wire [31:0]entrada9;
+	input wire [31:0]entrada10;
 	input wire [3:0]controle;
-	output reg [15:0]saida;
+	output reg [31:0]saida;
 
 	parameter selectEntrada0=4'b0000;
 	parameter selectEntrada1=4'b0001;
@@ -30,7 +30,7 @@
 	
 	//Setando estado inicial para todos os fios.
 	initial begin
-		saida <= 16'b0000000000000000;
+		saida <= 31'b0000000000000000;
 	end
 
 	always@(*) begin

@@ -1,11 +1,13 @@
 
-State Machine - |uc|estado
-Name estado.00000000 estado.00000010 estado.00000001 
-estado.00000000 0 0 0 
-estado.00000001 1 0 1 
-estado.00000010 1 1 0 
+State Machine - |Processador|uc:inst1|estado
+Name estado.00000011 estado.00000010 estado.00000001 estado.00000000 estado.11111111 
+estado.00000000 0 0 0 0 0 
+estado.00000001 0 0 1 1 0 
+estado.00000010 0 1 0 1 0 
+estado.00000011 1 0 0 1 0 
+estado.11111111 0 0 0 1 1 
 
-State Machine - |uc|estadoOverflow
+State Machine - |Processador|uc:inst1|estadoOverflow
 Name estadoOverflow.11 estadoOverflow.10 estadoOverflow.01 estadoOverflow.00 
 estadoOverflow.00 0 0 0 0 
 estadoOverflow.01 0 0 1 1 

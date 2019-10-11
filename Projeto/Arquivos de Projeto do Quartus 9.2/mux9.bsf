@@ -20,80 +20,92 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 64 64 248 304)
+	(rect 16 16 200 176)
 	(text "mux9" (rect 5 0 32 12)(font "Arial" ))
-	(text "inst" (rect 8 192 25 204)(font "Arial" ))
+	(text "inst" (rect 8 144 25 156)(font "Arial" ))
 	(port
-		(pt 96 240)
+		(pt 0 32)
 		(input)
 		(text "clock" (rect 0 0 25 12)(font "Arial" ))
-		(text "clock" (rect 88 191 100 216)(font "Arial" )(vertical))
-		(line (pt 96 224)(pt 96 240)(line_width 1))
+		(text "clock" (rect 21 27 46 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
 	)
 	(port
-		(pt 0 88)
+		(pt 0 48)
 		(input)
-		(text "entrada0[15..0]" (rect 0 0 74 12)(font "Arial" ))
-		(text "entrada0[15..0]" (rect 21 83 95 95)(font "Arial" ))
-		(line (pt 0 88)(pt 16 88)(line_width 3))
+		(text "entrada0[31..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "entrada0[31..0]" (rect 21 43 95 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
 	)
 	(port
-		(pt 0 104)
+		(pt 0 64)
 		(input)
-		(text "entrada1[15..0]" (rect 0 0 74 12)(font "Arial" ))
-		(text "entrada1[15..0]" (rect 21 99 95 111)(font "Arial" ))
-		(line (pt 0 104)(pt 16 104)(line_width 3))
+		(text "entrada1[31..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "entrada1[31..0]" (rect 21 59 95 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
 	)
 	(port
-		(pt 0 120)
+		(pt 0 80)
 		(input)
-		(text "entrada2[15..0]" (rect 0 0 74 12)(font "Arial" ))
-		(text "entrada2[15..0]" (rect 21 115 95 127)(font "Arial" ))
-		(line (pt 0 120)(pt 16 120)(line_width 3))
+		(text "entrada2[31..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "entrada2[31..0]" (rect 21 75 95 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port
-		(pt 0 136)
+		(pt 0 96)
 		(input)
-		(text "entrada3[15..0]" (rect 0 0 74 12)(font "Arial" ))
-		(text "entrada3[15..0]" (rect 21 131 95 143)(font "Arial" ))
-		(line (pt 0 136)(pt 16 136)(line_width 3))
+		(text "entrada3[31..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "entrada3[31..0]" (rect 21 91 95 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
 	)
 	(port
-		(pt 96 0)
+		(pt 0 112)
 		(input)
-		(text "controle[1..0]" (rect 0 80 64 92)(font "Arial" ))
-		(text "controle[1..0]" (rect 88 24 100 88)(font "Arial" )(vertical))
-		(line (pt 96 16)(pt 96 0)(line_width 3))
+		(text "entrada4[31..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "entrada4[31..0]" (rect 21 107 95 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "controle[2..0]" (rect 0 0 64 12)(font "Arial" ))
+		(text "controle[2..0]" (rect 21 123 85 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 3))
 	)
 	(port
 		(pt 184 32)
 		(output)
-		(text "saida[15..0]" (rect 0 0 57 12)(font "Arial" ))
-		(text "saida[15..0]" (rect 106 27 163 39)(font "Arial" ))
+		(text "saida[31..0]" (rect 0 0 57 12)(font "Arial" ))
+		(text "saida[31..0]" (rect 106 27 163 39)(font "Arial" ))
 		(line (pt 184 32)(pt 168 32)(line_width 3))
 	)
 	(parameter
 		"selectEntrada0"
-		"00"
+		"000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"selectEntrada1"
-		"01"
+		"001"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"selectEntrada2"
-		"10"
+		"010"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"selectEntrada3"
-		"11"
+		"011"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"selectEntrada4"
+		"100"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(drawing
-		(rectangle (rect 16 16 168 224)(line_width 1))
+		(rectangle (rect 16 16 168 144)(line_width 1))
 	)
-	(annotation_block (parameter)(rect 248 -8 440 64))
+	(annotation_block (parameter)(rect 200 -64 300 16))
 )

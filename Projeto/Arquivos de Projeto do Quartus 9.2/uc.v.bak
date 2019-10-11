@@ -1,5 +1,4 @@
 //tive q comecar do zero pq o pc travou na linha 77 sem eu ter salvo ;))))))))
-//CUCUCUCU
 module uc(
     input clock,
     input igual,
@@ -34,9 +33,9 @@ module uc(
     output reg[2:0] ALUControl,
     output reg ALUOut,
     output reg epc,
-    output reg[1:0]mux_to_pc,
-    output reg[1:0] a,
-    output reg[1:0] b
+    output reg[2:0]mux_to_pc,
+    output reg a,
+    output reg b
 ); 
 integer contador;
 reg[7:0] estado;
@@ -73,7 +72,7 @@ always@(posedge clock)begin
         ALUControl=3'b0;
         ALUOut=1'b0;
         epc=1'b0;
-        mux_to_pc=2'b0;
+        mux_to_pc=3'b0;
         a=2'b0;
         b=2'b0;
     end
@@ -103,7 +102,7 @@ always@(posedge clock)begin
                 ALUControl=3'b10;//faz PC-4
                 ALUOut=1'b0;
                 epc=1'b1;//salva PC-4 em epc
-                mux_to_pc=2'b0;
+                mux_to_pc=3'b0;
                 a=2'b0;
                 b=2'b0;  
                 estadoOverflow= 2'b1;
@@ -132,7 +131,7 @@ always@(posedge clock)begin
                 ALUControl=3'b0;//da hold em mdr extendido
                 ALUOut=1'b0;
                 epc=1'b0;
-                mux_to_pc=2'b0;//escolhe mdr extendido
+                mux_to_pc=3'b0;//escolhe mdr extendido
                 a=2'b0;
                 b=2'b0;  
                 estadoOverflow= 2'b10;
@@ -161,7 +160,7 @@ always@(posedge clock)begin
                 ALUControl=3'b0;
                 ALUOut=1'b0;
                 epc=1'b0;
-                mux_to_pc=2'b0;
+                mux_to_pc=3'b0;
                 a=2'b0;
                 b=2'b0;  
                 estadoOverflow= 2'b11;
@@ -190,7 +189,7 @@ always@(posedge clock)begin
                 ALUControl=3'b0;
                 ALUOut=1'b0;
                 epc=1'b0;
-                mux_to_pc=2'b0;
+                mux_to_pc=3'b0;
                 a=2'b0;
                 b=2'b0;  
                 estadoOverflow= 2'b0;
@@ -223,7 +222,7 @@ always@(posedge clock)begin
                 ALUControl=3'b1;//faz PC+4
                 ALUOut=1'b0;
                 epc=1'b0;
-                mux_to_pc=2'b0;//escolhe PC+4
+                mux_to_pc=3'b0;//escolhe PC+4
                 a=2'b0;
                 b=2'b0;  
                 estado= 8'b1;
@@ -252,7 +251,7 @@ always@(posedge clock)begin
                 ALUControl=3'b1;//faz PC+o escrito acima
                 ALUOut=1'b1;//salva a soma em aluout
                 epc=1'b0;
-                mux_to_pc=2'b0;//escolhe PC+4
+                mux_to_pc=3'b0;//escolhe PC+4
                 a=2'b1;//load rs em a
                 b=2'b1;//load rt em b  
                 estado=8'b10;
@@ -285,7 +284,7 @@ always@(posedge clock)begin
                                     ALUControl=3'b1;//faz A+B
                                     ALUOut=1'b1;//salva a soma em aluout
                                     epc=1'b0;
-                                    mux_to_pc=2'b0;
+                                    mux_to_pc=3'b0;
                                     a=2'b0;
                                     b=2'b0;
                                 end

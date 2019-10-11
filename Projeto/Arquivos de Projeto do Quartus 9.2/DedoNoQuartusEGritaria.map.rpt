@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DedoNoQuartusEGritaria
-Thu Oct 10 20:44:34 2019
+Fri Oct 11 08:17:24 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -13,12 +13,27 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |uc|estado
-  9. State Machine - |uc|estadoOverflow
+  8. State Machine - |Processador|uc:inst1|estado
+  9. State Machine - |Processador|uc:inst1|estadoOverflow
  10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Analysis & Synthesis Messages
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for Memoria:inst11|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 15. Source assignments for Memoria:inst11|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 16. Source assignments for Memoria:inst11|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 17. Source assignments for Memoria:inst11|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 18. Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM
+ 19. Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM_plus_One
+ 20. Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM_plus_Two
+ 21. Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM_plus_Three
+ 22. Parameter Settings for User Entity Instance: mux2:inst
+ 23. Parameter Settings for User Entity Instance: mux10:inst18
+ 24. Parameter Settings for User Entity Instance: mux8:inst28
+ 25. Parameter Settings for User Entity Instance: mux9:inst27
+ 26. Parameter Settings for User Entity Instance: mux7:inst19
+ 27. Parameter Settings for User Entity Instance: mux6:inst16
+ 28. Analysis & Synthesis Messages
 
 
 
@@ -44,16 +59,16 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Thu Oct 10 20:44:33 2019        ;
+; Analysis & Synthesis Status   ; Successful - Fri Oct 11 08:17:24 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; DedoNoQuartusEGritaria                       ;
-; Top-level Entity Name         ; uc                                           ;
+; Top-level Entity Name         ; Processador                                  ;
 ; Family                        ; Stratix II                                   ;
 ; Logic utilization             ; N/A                                          ;
-;     Combinational ALUTs       ; 21                                           ;
-;     Dedicated logic registers ; 17                                           ;
-; Total registers               ; 17                                           ;
-; Total pins                    ; 62                                           ;
+;     Combinational ALUTs       ; 0                                            ;
+;     Dedicated logic registers ; 0                                            ;
+; Total registers               ; 0                                            ;
+; Total pins                    ; 2                                            ;
 ; Total virtual pins            ; 0                                            ;
 ; Total block memory bits       ; 0                                            ;
 ; DSP block 9-bit elements      ; 0                                            ;
@@ -67,7 +82,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+------------------------+
 ; Option                                                                     ; Setting            ; Default Value          ;
 +----------------------------------------------------------------------------+--------------------+------------------------+
-; Top-level entity name                                                      ; uc                 ; DedoNoQuartusEGritaria ;
+; Top-level entity name                                                      ; Processador        ; DedoNoQuartusEGritaria ;
 ; Family name                                                                ; Stratix II         ; Stratix II             ;
 ; Use Generated Physical Constraints File                                    ; Off                ;                        ;
 ; Use smart compilation                                                      ; Off                ; Off                    ;
@@ -153,53 +168,65 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                 ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                             ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------+
-; uc.v                             ; yes             ; User Verilog HDL File  ; D:/Users/erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/uc.v ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                   ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                               ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------------------------------+
+; mux10.v                          ; yes             ; User Verilog HDL File                  ; D:/Users/erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/mux10.v                ;
+; Banco_reg.vhd                    ; yes             ; User VHDL File                         ; D:/Users/erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/Banco_reg.vhd          ;
+; Instr_Reg.vhd                    ; yes             ; User VHDL File                         ; D:/Users/erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/Instr_Reg.vhd          ;
+; Memoria.vhd                      ; yes             ; User VHDL File                         ; D:/Users/erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/Memoria.vhd            ;
+; Registrador.vhd                  ; yes             ; User VHDL File                         ; D:/Users/erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/Registrador.vhd        ;
+; uc.v                             ; yes             ; User Verilog HDL File                  ; D:/Users/erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/uc.v                   ;
+; ula32.vhd                        ; yes             ; User VHDL File                         ; D:/Users/erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/ula32.vhd              ;
+; Mux8.v                           ; yes             ; User Verilog HDL File                  ; D:/Users/erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/Mux8.v                 ;
+; Mux9.v                           ; yes             ; User Verilog HDL File                  ; D:/Users/erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/Mux9.v                 ;
+; Mux2.v                           ; yes             ; User Verilog HDL File                  ; D:/Users/erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/Mux2.v                 ;
+; Mux6.v                           ; yes             ; User Verilog HDL File                  ; D:/Users/erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/Mux6.v                 ;
+; Mux7.v                           ; yes             ; User Verilog HDL File                  ; D:/Users/erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/Mux7.v                 ;
+; Processador.bdf                  ; yes             ; User Block Diagram/Schematic File      ; D:/Users/erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/Processador.bdf        ;
+; lpm_ram_dq.tdf                   ; yes             ; Megafunction                           ; e:/portableware/quartus/quartus/libraries/megafunctions/lpm_ram_dq.tdf                                     ;
+; altram.tdf                       ; yes             ; Megafunction                           ; e:/portableware/quartus/quartus/libraries/megafunctions/altram.tdf                                         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; e:/portableware/quartus/quartus/libraries/megafunctions/altsyncram.tdf                                     ;
+; db/altsyncram_g2a1.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/Users/erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/db/altsyncram_g2a1.tdf ;
+; instrucoes.mif                   ; yes             ; Auto-Found Memory Initialization File  ; D:/Users/erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/instrucoes.mif         ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary           ;
-+-----------------------------------------------+-------+
-; Resource                                      ; Usage ;
-+-----------------------------------------------+-------+
-; Estimated ALUTs Used                          ; 21    ;
-; Dedicated logic registers                     ; 17    ;
-;                                               ;       ;
-; Estimated ALUTs Unavailable                   ; 5     ;
-;                                               ;       ;
-; Total combinational functions                 ; 21    ;
-; Combinational ALUT usage by number of inputs  ;       ;
-;     -- 7 input functions                      ; 0     ;
-;     -- 6 input functions                      ; 6     ;
-;     -- 5 input functions                      ; 4     ;
-;     -- 4 input functions                      ; 2     ;
-;     -- <=3 input functions                    ; 9     ;
-;                                               ;       ;
-; Combinational ALUTs by mode                   ;       ;
-;     -- normal mode                            ; 21    ;
-;     -- extended LUT mode                      ; 0     ;
-;     -- arithmetic mode                        ; 0     ;
-;     -- shared arithmetic mode                 ; 0     ;
-;                                               ;       ;
-; Estimated ALUT/register pairs used            ; 28    ;
-;                                               ;       ;
-; Total registers                               ; 17    ;
-;     -- Dedicated logic registers              ; 17    ;
-;     -- I/O registers                          ; 0     ;
-;                                               ;       ;
-; Estimated ALMs:  partially or completely used ; 14    ;
-;                                               ;       ;
-; I/O pins                                      ; 62    ;
-; Maximum fan-out node                          ; clock ;
-; Maximum fan-out                               ; 17    ;
-; Total fan-out                                 ; 146   ;
-; Average fan-out                               ; 1.46  ;
-+-----------------------------------------------+-------+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++----------------------------------------------+-------+
+; Resource                                     ; Usage ;
++----------------------------------------------+-------+
+; Estimated ALUTs Used                         ; 0     ;
+; Dedicated logic registers                    ; 0     ;
+;                                              ;       ;
+; Estimated ALUTs Unavailable                  ; 0     ;
+;                                              ;       ;
+; Total combinational functions                ; 0     ;
+; Combinational ALUT usage by number of inputs ;       ;
+;     -- 7 input functions                     ; 0     ;
+;     -- 6 input functions                     ; 0     ;
+;     -- 5 input functions                     ; 0     ;
+;     -- 4 input functions                     ; 0     ;
+;     -- <=3 input functions                   ; 0     ;
+;                                              ;       ;
+; Combinational ALUTs by mode                  ;       ;
+;     -- normal mode                           ; 0     ;
+;     -- extended LUT mode                     ; 0     ;
+;     -- arithmetic mode                       ; 0     ;
+;     -- shared arithmetic mode                ; 0     ;
+;                                              ;       ;
+; Estimated ALUT/register pairs used           ; 0     ;
+;                                              ;       ;
+; Total registers                              ; 0     ;
+;     -- Dedicated logic registers             ; 0     ;
+;     -- I/O registers                         ; 0     ;
+;                                              ;       ;
+;                                              ;       ;
+; I/O pins                                     ; 2     ;
++----------------------------------------------+-------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -207,26 +234,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
-; |uc                        ; 21 (21)           ; 17 (17)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 62   ; 0            ; |uc                 ; work         ;
+; |Processador               ; 0 (0)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 2    ; 0            ; |Processador        ; work         ;
 +----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+-----------------------------------------------------------------------+
-; State Machine - |uc|estado                                            ;
-+-----------------+-----------------+-----------------+-----------------+
-; Name            ; estado.00000000 ; estado.00000010 ; estado.00000001 ;
-+-----------------+-----------------+-----------------+-----------------+
-; estado.00000000 ; 0               ; 0               ; 0               ;
-; estado.00000001 ; 1               ; 0               ; 1               ;
-; estado.00000010 ; 1               ; 1               ; 0               ;
-+-----------------+-----------------+-----------------+-----------------+
++-----------------------------------------------------------------------------------------------------------+
+; State Machine - |Processador|uc:inst1|estado                                                              ;
++-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
+; Name            ; estado.00000011 ; estado.00000010 ; estado.00000001 ; estado.00000000 ; estado.11111111 ;
++-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
+; estado.00000000 ; 0               ; 0               ; 0               ; 0               ; 0               ;
+; estado.00000001 ; 0               ; 0               ; 1               ; 1               ; 0               ;
+; estado.00000010 ; 0               ; 1               ; 0               ; 1               ; 0               ;
+; estado.00000011 ; 1               ; 0               ; 0               ; 1               ; 0               ;
+; estado.11111111 ; 0               ; 0               ; 0               ; 1               ; 1               ;
++-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
 
 
 Encoding Type:  One-Hot
 +---------------------------------------------------------------------------------------------------+
-; State Machine - |uc|estadoOverflow                                                                ;
+; State Machine - |Processador|uc:inst1|estadoOverflow                                              ;
 +-------------------+-------------------+-------------------+-------------------+-------------------+
 ; Name              ; estadoOverflow.11 ; estadoOverflow.10 ; estadoOverflow.01 ; estadoOverflow.00 ;
 +-------------------+-------------------+-------------------+-------------------+-------------------+
@@ -237,53 +266,368 @@ Encoding Type:  One-Hot
 +-------------------+-------------------+-------------------+-------------------+-------------------+
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; shift_control~reg0                     ; Merged with b[1]~reg0                  ;
-; mem_to_reg[3]~reg0                     ; Merged with b[1]~reg0                  ;
-; shamt~reg0                             ; Merged with b[1]~reg0                  ;
-; xch~reg0                               ; Merged with b[1]~reg0                  ;
-; mux_to_mux_mem[1]~reg0                 ; Merged with b[1]~reg0                  ;
-; mult_div[0]~reg0                       ; Merged with b[1]~reg0                  ;
-; mux_to_pc[1]~reg0                      ; Merged with b[1]~reg0                  ;
-; ALUSourceB[1]~reg0                     ; Merged with b[1]~reg0                  ;
-; mux_to_mem_to_reg~reg0                 ; Merged with b[1]~reg0                  ;
-; a[1]~reg0                              ; Merged with b[1]~reg0                  ;
-; shift_source~reg0                      ; Merged with b[1]~reg0                  ;
-; ls_control~reg0                        ; Merged with b[1]~reg0                  ;
-; hilo~reg0                              ; Merged with b[1]~reg0                  ;
-; mux_to_mux_mem[0]~reg0                 ; Merged with b[1]~reg0                  ;
-; mult_div[1]~reg0                       ; Merged with b[1]~reg0                  ;
-; regDST[1]~reg0                         ; Merged with b[1]~reg0                  ;
-; mux_mem[0]~reg0                        ; Merged with b[1]~reg0                  ;
-; ALUControl[2]~reg0                     ; Merged with b[1]~reg0                  ;
-; mux_to_pc[0]~reg0                      ; Merged with b[1]~reg0                  ;
-; regDST[0]~reg0                         ; Merged with b[1]~reg0                  ;
-; ss_control~reg0                        ; Merged with b[1]~reg0                  ;
-; mux_mem[1]~reg0                        ; Merged with epc~reg0                   ;
-; ALUControl[1]~reg0                     ; Merged with epc~reg0                   ;
-; mdr_write~reg0                         ; Merged with ALUSourceA[0]~reg0         ;
-; mem_to_reg[1]~reg0                     ; Merged with reg_write~reg0             ;
-; regDST[2]~reg0                         ; Merged with reg_write~reg0             ;
-; mem_to_reg[0]~reg0                     ; Merged with reg_write~reg0             ;
-; mem_to_reg[2]~reg0                     ; Merged with reg_write~reg0             ;
-; b[1]~reg0                              ; Stuck at GND due to stuck port data_in ;
-; b[0]~reg0                              ; Merged with a[0]~reg0                  ;
-; mem_write~reg0                         ; Merged with a[0]~reg0                  ;
-; ALUSourceB[2]~reg0                     ; Merged with a[0]~reg0                  ;
-; estado~4                               ; Lost fanout                            ;
-; estado~5                               ; Lost fanout                            ;
-; estado~6                               ; Lost fanout                            ;
-; estado~7                               ; Lost fanout                            ;
-; estado~8                               ; Lost fanout                            ;
-; estado~9                               ; Lost fanout                            ;
-; estadoOverflow~6                       ; Lost fanout                            ;
-; estadoOverflow~7                       ; Lost fanout                            ;
-; Total Number of Removed Registers = 40 ;                                        ;
-+----------------------------------------+----------------------------------------+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; uc:inst1|regDST[0]                      ; Merged with uc:inst1|mux_to_pc[0]      ;
+; uc:inst1|mem_to_reg[0]                  ; Merged with uc:inst1|mux_to_pc[0]      ;
+; uc:inst1|ALUControl[2]                  ; Merged with uc:inst1|mux_to_pc[0]      ;
+; uc:inst1|mux_mem[1]                     ; Merged with uc:inst1|mux_to_pc[0]      ;
+; uc:inst1|mem_to_reg[2]                  ; Merged with uc:inst1|mux_to_pc[0]      ;
+; uc:inst1|ALUControl[1]                  ; Merged with uc:inst1|mux_to_pc[0]      ;
+; uc:inst1|regDST[2]                      ; Merged with uc:inst1|mux_to_pc[0]      ;
+; uc:inst1|mux_to_pc[1]                   ; Merged with uc:inst1|mux_to_pc[0]      ;
+; uc:inst1|mem_to_reg[1]                  ; Merged with uc:inst1|mux_to_pc[0]      ;
+; uc:inst1|ALUSourceB[1]                  ; Merged with uc:inst1|mux_to_pc[0]      ;
+; uc:inst1|mem_to_reg[3]                  ; Merged with uc:inst1|mux_to_pc[0]      ;
+; uc:inst1|mux_to_pc[2]                   ; Merged with uc:inst1|mux_to_pc[0]      ;
+; uc:inst1|ALUSourceA[0]                  ; Merged with uc:inst1|mux_to_pc[0]      ;
+; uc:inst1|mux_mem[0]                     ; Merged with uc:inst1|mux_to_pc[0]      ;
+; uc:inst1|mux_to_pc[0]                   ; Stuck at GND due to stuck port data_in ;
+; uc:inst1|a                              ; Merged with uc:inst1|b                 ;
+; uc:inst1|ALUSourceB[2]                  ; Merged with uc:inst1|b                 ;
+; uc:inst1|mem_write                      ; Merged with uc:inst1|b                 ;
+; uc:inst1|pc_write                       ; Merged with uc:inst1|b                 ;
+; uc:inst1|regDST[1]                      ; Merged with uc:inst1|reg_write         ;
+; uc:inst1|estado~7                       ; Lost fanout                            ;
+; uc:inst1|estado~8                       ; Lost fanout                            ;
+; uc:inst1|estado~10                      ; Lost fanout                            ;
+; uc:inst1|estado~11                      ; Lost fanout                            ;
+; uc:inst1|estado~12                      ; Lost fanout                            ;
+; uc:inst1|estado~13                      ; Lost fanout                            ;
+; uc:inst1|estado~14                      ; Lost fanout                            ;
+; uc:inst1|estadoOverflow~6               ; Lost fanout                            ;
+; uc:inst1|estadoOverflow~7               ; Lost fanout                            ;
+; Instr_Reg:inst12|Instr15_0[0..5]        ; Lost fanout                            ;
+; Instr_Reg:inst12|Instr31_26[0..5]       ; Lost fanout                            ;
+; uc:inst1|ir_write                       ; Lost fanout                            ;
+; uc:inst1|b                              ; Lost fanout                            ;
+; Registrador:inst10|Saida[0..7]          ; Lost fanout                            ;
+; Registrador:A|Saida[0]                  ; Lost fanout                            ;
+; uc:inst1|ALUSourceA[1]                  ; Lost fanout                            ;
+; uc:inst1|ALUControl[0]                  ; Lost fanout                            ;
+; Registrador:A|Saida[1..7]               ; Lost fanout                            ;
+; Instr_Reg:inst12|Instr25_21[0..4]       ; Lost fanout                            ;
+; Banco_reg:inst14|Reg0[0]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg16[0]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg8[0]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg24[0]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg6[0]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg22[0]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg14[0]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg30[0]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg4[0]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg20[0]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg12[0]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg28[0]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg1[0]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg17[0]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg9[0]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg25[0]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg5[0]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg21[0]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg13[0]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg29[0]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg3[0]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg19[0]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg11[0]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg27[0]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg7[0]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg23[0]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg15[0]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg31[0]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg2[0]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg18[0]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg10[0]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg26[0]               ; Lost fanout                            ;
+; Registrador:B|Saida[0]                  ; Lost fanout                            ;
+; uc:inst1|ALUSourceB[0]                  ; Lost fanout                            ;
+; Banco_reg:inst14|Reg0[1]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg16[1]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg8[1]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg24[1]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg6[1]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg22[1]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg14[1]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg30[1]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg4[1]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg20[1]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg12[1]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg28[1]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg1[1]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg17[1]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg9[1]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg25[1]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg5[1]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg21[1]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg13[1]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg29[1]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg3[1]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg19[1]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg11[1]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg27[1]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg7[1]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg23[1]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg15[1]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg31[1]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg2[1]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg18[1]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg10[1]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg26[1]               ; Lost fanout                            ;
+; Registrador:B|Saida[1]                  ; Lost fanout                            ;
+; Banco_reg:inst14|Reg0[2]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg16[2]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg8[2]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg24[2]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg6[2]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg22[2]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg14[2]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg30[2]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg4[2]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg20[2]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg12[2]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg28[2]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg1[2]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg17[2]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg9[2]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg25[2]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg5[2]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg21[2]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg13[2]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg29[2]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg3[2]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg19[2]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg11[2]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg27[2]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg7[2]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg23[2]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg15[2]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg31[2]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg2[2]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg18[2]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg10[2]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg26[2]               ; Lost fanout                            ;
+; Registrador:B|Saida[2]                  ; Lost fanout                            ;
+; Banco_reg:inst14|Reg0[3]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg16[3]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg8[3]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg24[3]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg6[3]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg22[3]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg14[3]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg30[3]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg4[3]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg20[3]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg12[3]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg28[3]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg1[3]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg17[3]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg9[3]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg25[3]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg5[3]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg21[3]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg13[3]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg29[3]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg3[3]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg19[3]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg11[3]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg27[3]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg7[3]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg23[3]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg15[3]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg31[3]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg2[3]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg18[3]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg10[3]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg26[3]               ; Lost fanout                            ;
+; Registrador:B|Saida[3]                  ; Lost fanout                            ;
+; Banco_reg:inst14|Reg0[4]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg16[4]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg8[4]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg24[4]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg6[4]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg22[4]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg14[4]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg30[4]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg4[4]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg20[4]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg12[4]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg28[4]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg1[4]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg17[4]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg9[4]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg25[4]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg5[4]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg21[4]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg13[4]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg29[4]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg3[4]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg19[4]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg11[4]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg27[4]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg7[4]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg23[4]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg15[4]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg31[4]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg2[4]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg18[4]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg10[4]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg26[4]               ; Lost fanout                            ;
+; Registrador:B|Saida[4]                  ; Lost fanout                            ;
+; Banco_reg:inst14|Reg0[5]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg16[5]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg8[5]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg24[5]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg6[5]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg22[5]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg14[5]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg30[5]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg4[5]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg20[5]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg12[5]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg28[5]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg1[5]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg17[5]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg9[5]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg25[5]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg5[5]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg21[5]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg13[5]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg29[5]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg3[5]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg19[5]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg11[5]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg27[5]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg7[5]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg23[5]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg15[5]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg31[5]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg2[5]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg18[5]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg10[5]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg26[5]               ; Lost fanout                            ;
+; Registrador:B|Saida[5]                  ; Lost fanout                            ;
+; Banco_reg:inst14|Reg0[6]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg16[6]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg8[6]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg24[6]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg6[6]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg22[6]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg14[6]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg30[6]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg4[6]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg20[6]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg12[6]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg28[6]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg1[6]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg17[6]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg9[6]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg25[6]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg5[6]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg21[6]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg13[6]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg29[6]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg3[6]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg19[6]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg11[6]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg27[6]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg7[6]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg23[6]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg15[6]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg31[6]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg2[6]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg18[6]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg10[6]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg26[6]               ; Lost fanout                            ;
+; Registrador:B|Saida[6..7]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg0[7]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg16[7]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg8[7]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg24[7]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg6[7]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg22[7]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg14[7]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg30[7]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg4[7]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg20[7]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg12[7]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg28[7]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg1[7]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg17[7]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg9[7]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg25[7]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg5[7]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg21[7]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg13[7]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg29[7]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg3[7]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg19[7]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg11[7]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg27[7]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg7[7]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg23[7]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg15[7]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg31[7]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg2[7]                ; Lost fanout                            ;
+; Banco_reg:inst14|Reg18[7]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg10[7]               ; Lost fanout                            ;
+; Banco_reg:inst14|Reg26[7]               ; Lost fanout                            ;
+; Registrador:inst24|Saida[0]             ; Lost fanout                            ;
+; Instr_Reg:inst12|Instr20_16[4]          ; Lost fanout                            ;
+; Instr_Reg:inst12|Instr15_0[15]          ; Lost fanout                            ;
+; uc:inst1|reg_write                      ; Lost fanout                            ;
+; Instr_Reg:inst12|Instr20_16[3]          ; Lost fanout                            ;
+; Instr_Reg:inst12|Instr15_0[14]          ; Lost fanout                            ;
+; Instr_Reg:inst12|Instr20_16[2]          ; Lost fanout                            ;
+; Instr_Reg:inst12|Instr15_0[13]          ; Lost fanout                            ;
+; Instr_Reg:inst12|Instr20_16[0]          ; Lost fanout                            ;
+; Instr_Reg:inst12|Instr15_0[11]          ; Lost fanout                            ;
+; Instr_Reg:inst12|Instr20_16[1]          ; Lost fanout                            ;
+; Instr_Reg:inst12|Instr15_0[12]          ; Lost fanout                            ;
+; Registrador:inst24|Saida[1..7]          ; Lost fanout                            ;
+; uc:inst1|ALUOut                         ; Lost fanout                            ;
+; uc:inst1|estado.11111111                ; Lost fanout                            ;
+; uc:inst1|estado.00000000                ; Lost fanout                            ;
+; uc:inst1|estado.00000001                ; Lost fanout                            ;
+; uc:inst1|estado.00000010                ; Lost fanout                            ;
+; uc:inst1|estado.00000011                ; Lost fanout                            ;
+; uc:inst1|estadoOverflow.00              ; Lost fanout                            ;
+; uc:inst1|estadoOverflow.01              ; Lost fanout                            ;
+; uc:inst1|estadoOverflow.10              ; Lost fanout                            ;
+; uc:inst1|estadoOverflow.11              ; Lost fanout                            ;
+; Total Number of Removed Registers = 360 ;                                        ;
++-----------------------------------------+----------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                      ;
++-------------------------------+---------------------------+--------------------------------------------------------------------------------------+
+; Register name                 ; Reason for Removal        ; Registers Removed due to This Register                                               ;
++-------------------------------+---------------------------+--------------------------------------------------------------------------------------+
+; uc:inst1|mux_to_pc[0]         ; Stuck at GND              ; uc:inst1|ALUSourceA[1], Instr_Reg:inst12|Instr25_21[0], Registrador:B|Saida[1],      ;
+;                               ; due to stuck port data_in ; Registrador:B|Saida[2], Registrador:B|Saida[4], Registrador:B|Saida[5],              ;
+;                               ;                           ; Registrador:B|Saida[7], Registrador:inst24|Saida[0], Instr_Reg:inst12|Instr20_16[0], ;
+;                               ;                           ; Instr_Reg:inst12|Instr15_0[11], Registrador:inst24|Saida[1],                         ;
+;                               ;                           ; Registrador:inst24|Saida[2], Registrador:inst24|Saida[3],                            ;
+;                               ;                           ; Registrador:inst24|Saida[4], Registrador:inst24|Saida[5],                            ;
+;                               ;                           ; Registrador:inst24|Saida[6], Registrador:inst24|Saida[7], uc:inst1|ALUOut            ;
+; Instr_Reg:inst12|Instr15_0[5] ; Lost Fanouts              ; uc:inst1|ir_write, uc:inst1|b, Registrador:inst10|Saida[0],                          ;
+;                               ;                           ; Registrador:inst10|Saida[1], Registrador:inst10|Saida[2],                            ;
+;                               ;                           ; Registrador:inst10|Saida[3], Registrador:inst10|Saida[4], Registrador:A|Saida[0],    ;
+;                               ;                           ; uc:inst1|ALUControl[0], Registrador:A|Saida[1], Registrador:A|Saida[2],              ;
+;                               ;                           ; Registrador:A|Saida[3], Registrador:A|Saida[4], Instr_Reg:inst12|Instr25_21[2],      ;
+;                               ;                           ; Instr_Reg:inst12|Instr25_21[1], Registrador:B|Saida[0], uc:inst1|ALUSourceB[0],      ;
+;                               ;                           ; Registrador:B|Saida[3]                                                               ;
+; Banco_reg:inst14|Reg0[0]      ; Lost Fanouts              ; Instr_Reg:inst12|Instr20_16[4], Instr_Reg:inst12|Instr15_0[15], uc:inst1|reg_write,  ;
+;                               ;                           ; Instr_Reg:inst12|Instr20_16[3], Instr_Reg:inst12|Instr15_0[14],                      ;
+;                               ;                           ; Instr_Reg:inst12|Instr20_16[2], Instr_Reg:inst12|Instr15_0[13],                      ;
+;                               ;                           ; Instr_Reg:inst12|Instr20_16[1], Instr_Reg:inst12|Instr15_0[12]                       ;
+; Registrador:inst10|Saida[6]   ; Lost Fanouts              ; Registrador:A|Saida[6], Registrador:B|Saida[6]                                       ;
+; Registrador:inst10|Saida[5]   ; Lost Fanouts              ; Registrador:A|Saida[5]                                                               ;
+; Registrador:inst10|Saida[7]   ; Lost Fanouts              ; Registrador:A|Saida[7]                                                               ;
++-------------------------------+---------------------------+--------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -291,27 +635,241 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 17    ;
+; Total registers                              ; 0     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 9     ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 3 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; Yes        ; |uc|a[0]~reg0              ;
-; 6:1                ; 2 bits    ; 8 ALUTs       ; 4 ALUTs              ; 4 ALUTs                ; Yes        ; |uc|ALUSourceA[1]~reg0     ;
-; 6:1                ; 3 bits    ; 12 ALUTs      ; 6 ALUTs              ; 6 ALUTs                ; Yes        ; |uc|epc~reg0               ;
-; 3:1                ; 4 bits    ; 8 ALUTs       ; 4 ALUTs              ; 4 ALUTs                ; No         ; |uc|estadoOverflow         ;
-; 3:1                ; 4 bits    ; 8 ALUTs       ; 4 ALUTs              ; 4 ALUTs                ; No         ; |uc|pc_write               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; 32:1               ; 8 bits    ; 168 ALUTs     ; 168 ALUTs            ; 0 ALUTs                ; Yes        ; |Processador|Registrador:A|Saida[3] ;
+; 32:1               ; 8 bits    ; 168 ALUTs     ; 168 ALUTs            ; 0 ALUTs                ; Yes        ; |Processador|Registrador:B|Saida[7] ;
+; 3:1                ; 10 bits   ; 20 ALUTs      ; 10 ALUTs             ; 10 ALUTs               ; No         ; |Processador|uc:inst1|ALUControl    ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 16 ALUTs             ; 0 ALUTs                ; No         ; |Processador|mux9:inst27|Mux0       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memoria:inst11|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                     ;
++---------------------------------+--------------------+------+--------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                      ;
++---------------------------------+--------------------+------+--------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memoria:inst11|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                              ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                               ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memoria:inst11|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                              ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                               ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memoria:inst11|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                 ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM ;
++------------------------+----------------+----------------------------------+
+; Parameter Name         ; Value          ; Type                             ;
++------------------------+----------------+----------------------------------+
+; LPM_WIDTH              ; 8              ; Signed Integer                   ;
+; LPM_WIDTHAD            ; 8              ; Signed Integer                   ;
+; LPM_NUMWORDS           ; 0              ; Signed Integer                   ;
+; LPM_INDATA             ; REGISTERED     ; Untyped                          ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                          ;
+; LPM_OUTDATA            ; REGISTERED     ; Untyped                          ;
+; LPM_FILE               ; instrucoes.mif ; Untyped                          ;
+; USE_EAB                ; ON             ; Untyped                          ;
+; DEVICE_FAMILY          ; Stratix II     ; Untyped                          ;
+; CBXI_PARAMETER         ; NOTHING        ; Untyped                          ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                     ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                   ;
++------------------------+----------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM_plus_One ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTH              ; 8              ; Signed Integer                            ;
+; LPM_WIDTHAD            ; 8              ; Signed Integer                            ;
+; LPM_NUMWORDS           ; 0              ; Signed Integer                            ;
+; LPM_INDATA             ; REGISTERED     ; Untyped                                   ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                   ;
+; LPM_OUTDATA            ; REGISTERED     ; Untyped                                   ;
+; LPM_FILE               ; instrucoes.mif ; Untyped                                   ;
+; USE_EAB                ; ON             ; Untyped                                   ;
+; DEVICE_FAMILY          ; Stratix II     ; Untyped                                   ;
+; CBXI_PARAMETER         ; NOTHING        ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM_plus_Two ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTH              ; 8              ; Signed Integer                            ;
+; LPM_WIDTHAD            ; 8              ; Signed Integer                            ;
+; LPM_NUMWORDS           ; 0              ; Signed Integer                            ;
+; LPM_INDATA             ; REGISTERED     ; Untyped                                   ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                   ;
+; LPM_OUTDATA            ; REGISTERED     ; Untyped                                   ;
+; LPM_FILE               ; instrucoes.mif ; Untyped                                   ;
+; USE_EAB                ; ON             ; Untyped                                   ;
+; DEVICE_FAMILY          ; Stratix II     ; Untyped                                   ;
+; CBXI_PARAMETER         ; NOTHING        ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM_plus_Three ;
++------------------------+----------------+---------------------------------------------+
+; Parameter Name         ; Value          ; Type                                        ;
++------------------------+----------------+---------------------------------------------+
+; LPM_WIDTH              ; 8              ; Signed Integer                              ;
+; LPM_WIDTHAD            ; 8              ; Signed Integer                              ;
+; LPM_NUMWORDS           ; 0              ; Signed Integer                              ;
+; LPM_INDATA             ; REGISTERED     ; Untyped                                     ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                     ;
+; LPM_OUTDATA            ; REGISTERED     ; Untyped                                     ;
+; LPM_FILE               ; instrucoes.mif ; Untyped                                     ;
+; USE_EAB                ; ON             ; Untyped                                     ;
+; DEVICE_FAMILY          ; Stratix II     ; Untyped                                     ;
+; CBXI_PARAMETER         ; NOTHING        ; Untyped                                     ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                              ;
++------------------------+----------------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux2:inst ;
++----------------+-------+-------------------------------+
+; Parameter Name ; Value ; Type                          ;
++----------------+-------+-------------------------------+
+; selectEntrada0 ; 00    ; Unsigned Binary               ;
+; selectEntrada1 ; 01    ; Unsigned Binary               ;
+; selectEntrada2 ; 10    ; Unsigned Binary               ;
+; selectEntrada3 ; 11    ; Unsigned Binary               ;
++----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux10:inst18 ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; selectEntrada0 ; 000   ; Unsigned Binary                  ;
+; selectEntrada1 ; 001   ; Unsigned Binary                  ;
+; selectEntrada2 ; 010   ; Unsigned Binary                  ;
+; selectEntrada3 ; 011   ; Unsigned Binary                  ;
+; selectEntrada4 ; 100   ; Unsigned Binary                  ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux8:inst28 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; selectEntrada0 ; 00    ; Unsigned Binary                 ;
+; selectEntrada1 ; 01    ; Unsigned Binary                 ;
+; selectEntrada2 ; 10    ; Unsigned Binary                 ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux9:inst27 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; selectEntrada0 ; 00    ; Unsigned Binary                 ;
+; selectEntrada1 ; 01    ; Unsigned Binary                 ;
+; selectEntrada2 ; 10    ; Unsigned Binary                 ;
+; selectEntrada3 ; 11    ; Unsigned Binary                 ;
+; selectEntrada4 ; 100   ; Unsigned Binary                 ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux7:inst19 ;
++-----------------+-------+--------------------------------+
+; Parameter Name  ; Value ; Type                           ;
++-----------------+-------+--------------------------------+
+; selectEntrada0  ; 0000  ; Unsigned Binary                ;
+; selectEntrada1  ; 0001  ; Unsigned Binary                ;
+; selectEntrada2  ; 0010  ; Unsigned Binary                ;
+; selectEntrada3  ; 0011  ; Unsigned Binary                ;
+; selectEntrada4  ; 0100  ; Unsigned Binary                ;
+; selectEntrada5  ; 0101  ; Unsigned Binary                ;
+; selectEntrada6  ; 0110  ; Unsigned Binary                ;
+; selectEntrada7  ; 0111  ; Unsigned Binary                ;
+; selectEntrada8  ; 1000  ; Unsigned Binary                ;
+; selectEntrada9  ; 1001  ; Unsigned Binary                ;
+; selectEntrada10 ; 1010  ; Unsigned Binary                ;
++-----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux6:inst16 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; selectEntrada0 ; 000   ; Unsigned Binary                 ;
+; selectEntrada1 ; 001   ; Unsigned Binary                 ;
+; selectEntrada2 ; 010   ; Unsigned Binary                 ;
+; selectEntrada3 ; 011   ; Unsigned Binary                 ;
+; selectEntrada4 ; 100   ; Unsigned Binary                 ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------+
@@ -320,8 +878,10 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu Oct 10 20:44:31 2019
+    Info: Processing started: Fri Oct 11 08:17:22 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DedoNoQuartusEGritaria -c DedoNoQuartusEGritaria
+Info: Found 1 design units, including 1 entities, in source file mux10.v
+    Info: Found entity 1: mux10
 Info: Found 2 design units, including 1 entities, in source file banco_reg.vhd
     Info: Found design unit 1: Banco_reg-behavioral_arch
     Info: Found entity 1: Banco_reg
@@ -355,54 +915,650 @@ Info: Found 1 design units, including 1 entities, in source file mux7.v
     Info: Found entity 1: mux7
 Info: Found 1 design units, including 1 entities, in source file processador.bdf
     Info: Found entity 1: Processador
-Info: Elaborating entity "uc" for the top level hierarchy
+Info: Elaborating entity "Processador" for the top level hierarchy
+Info: Elaborating entity "Registrador" for hierarchy "Registrador:A"
+Info: Elaborating entity "uc" for hierarchy "uc:inst1"
 Warning (10036): Verilog HDL or VHDL warning at uc.v(40): object "contador" assigned a value but never read
-Warning: Output pins are stuck at VCC or GND
-    Warning (13410): Pin "mux_mem[0]" is stuck at GND
-    Warning (13410): Pin "mux_to_mux_mem[0]" is stuck at GND
-    Warning (13410): Pin "mux_to_mux_mem[1]" is stuck at GND
-    Warning (13410): Pin "ss_control" is stuck at GND
-    Warning (13410): Pin "mult_div[0]" is stuck at GND
-    Warning (13410): Pin "mult_div[1]" is stuck at GND
-    Warning (13410): Pin "hilo" is stuck at GND
-    Warning (13410): Pin "ls_control" is stuck at GND
-    Warning (13410): Pin "shamt" is stuck at GND
-    Warning (13410): Pin "shift_source" is stuck at GND
-    Warning (13410): Pin "shift_control" is stuck at GND
-    Warning (13410): Pin "mux_to_mem_to_reg" is stuck at GND
-    Warning (13410): Pin "mem_to_reg[3]" is stuck at GND
-    Warning (13410): Pin "regDST[0]" is stuck at GND
-    Warning (13410): Pin "regDST[1]" is stuck at GND
-    Warning (13410): Pin "xch" is stuck at GND
-    Warning (13410): Pin "ALUSourceB[1]" is stuck at GND
-    Warning (13410): Pin "ALUControl[2]" is stuck at GND
-    Warning (13410): Pin "mux_to_pc[0]" is stuck at GND
-    Warning (13410): Pin "mux_to_pc[1]" is stuck at GND
-    Warning (13410): Pin "a[1]" is stuck at GND
-    Warning (13410): Pin "b[1]" is stuck at GND
-Info: 8 registers lost all their fanouts during netlist optimizations. The first 8 are displayed below.
-    Info: Register "estado~4" lost all its fanouts during netlist optimizations.
-    Info: Register "estado~5" lost all its fanouts during netlist optimizations.
-    Info: Register "estado~6" lost all its fanouts during netlist optimizations.
-    Info: Register "estado~7" lost all its fanouts during netlist optimizations.
-    Info: Register "estado~8" lost all its fanouts during netlist optimizations.
-    Info: Register "estado~9" lost all its fanouts during netlist optimizations.
-    Info: Register "estadoOverflow~6" lost all its fanouts during netlist optimizations.
-    Info: Register "estadoOverflow~7" lost all its fanouts during netlist optimizations.
-Warning: Design contains 5 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "igual"
-    Warning (15610): No output dependent on input pin "menor"
-    Warning (15610): No output dependent on input pin "maior"
-    Warning (15610): No output dependent on input pin "div0"
-    Warning (15610): No output dependent on input pin "negativo"
-Info: Implemented 86 device resources after synthesis - the final resource count might be different
-    Info: Implemented 20 input pins
-    Info: Implemented 42 output pins
-    Info: Implemented 24 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 30 warnings
-    Info: Peak virtual memory: 249 megabytes
-    Info: Processing ended: Thu Oct 10 20:44:34 2019
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+Warning (10230): Verilog HDL assignment warning at uc.v(76): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at uc.v(77): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at uc.v(106): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at uc.v(107): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at uc.v(135): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at uc.v(136): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at uc.v(164): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at uc.v(165): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at uc.v(193): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at uc.v(194): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at uc.v(226): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at uc.v(227): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at uc.v(255): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at uc.v(256): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at uc.v(288): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at uc.v(289): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at uc.v(321): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at uc.v(322): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at uc.v(350): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at uc.v(351): truncated value with size 2 to match size of target (1)
+Info: Elaborating entity "Instr_Reg" for hierarchy "Instr_Reg:inst12"
+Info: Elaborating entity "Memoria" for hierarchy "Memoria:inst11"
+Info: Elaborating entity "LPM_RAM_DQ" for hierarchy "Memoria:inst11|LPM_RAM_DQ:MEM"
+Info: Elaborated megafunction instantiation "Memoria:inst11|LPM_RAM_DQ:MEM"
+Info: Instantiated megafunction "Memoria:inst11|LPM_RAM_DQ:MEM" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "8"
+    Info: Parameter "LPM_WIDTHAD" = "8"
+    Info: Parameter "LPM_NUMWORDS" = "0"
+    Info: Parameter "LPM_INDATA" = "REGISTERED"
+    Info: Parameter "LPM_ADDRESS_CONTROL" = "REGISTERED"
+    Info: Parameter "LPM_OUTDATA" = "REGISTERED"
+    Info: Parameter "LPM_FILE" = "instrucoes.mif"
+    Info: Parameter "LPM_TYPE" = "LPM_RAM_DQ"
+    Info: Parameter "USE_EAB" = "ON"
+    Info: Parameter "INTENDED_DEVICE_FAMILY" = "UNUSED"
+    Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Elaborating entity "altram" for hierarchy "Memoria:inst11|LPM_RAM_DQ:MEM|altram:sram"
+Warning: Assertion warning: altram does not support Stratix II device family -- attempting best-case memory conversions, but power-up states and read during write behavior will be different for Stratix II devices
+Info: Elaborated megafunction instantiation "Memoria:inst11|LPM_RAM_DQ:MEM|altram:sram", which is child of megafunction instantiation "Memoria:inst11|LPM_RAM_DQ:MEM"
+Info: Elaborating entity "altsyncram" for hierarchy "Memoria:inst11|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block"
+Info: Elaborated megafunction instantiation "Memoria:inst11|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block", which is child of megafunction instantiation "Memoria:inst11|LPM_RAM_DQ:MEM"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_g2a1.tdf
+    Info: Found entity 1: altsyncram_g2a1
+Info: Elaborating entity "altsyncram_g2a1" for hierarchy "Memoria:inst11|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated"
+Info: Elaborating entity "mux2" for hierarchy "mux2:inst"
+Info: Elaborating entity "mux10" for hierarchy "mux10:inst18"
+Warning (10270): Verilog HDL Case Statement warning at mux10.v(25): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at mux10.v(25): inferring latch(es) for variable "saida", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "saida[0]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[1]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[2]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[3]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[4]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[5]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[6]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[7]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[8]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[9]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[10]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[11]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[12]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[13]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[14]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[15]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[16]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[17]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[18]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[19]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[20]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[21]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[22]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[23]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[24]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[25]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[26]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[27]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[28]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[29]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[30]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[31]" at mux10.v(25)
+Info: Elaborating entity "Ula32" for hierarchy "Ula32:inst26"
+Info: Elaborating entity "mux8" for hierarchy "mux8:inst28"
+Warning (10270): Verilog HDL Case Statement warning at Mux8.v(21): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at Mux8.v(21): inferring latch(es) for variable "saida", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "saida[0]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[1]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[2]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[3]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[4]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[5]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[6]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[7]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[8]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[9]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[10]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[11]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[12]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[13]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[14]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[15]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[16]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[17]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[18]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[19]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[20]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[21]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[22]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[23]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[24]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[25]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[26]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[27]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[28]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[29]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[30]" at Mux8.v(21)
+Info (10041): Inferred latch for "saida[31]" at Mux8.v(21)
+Info: Elaborating entity "mux9" for hierarchy "mux9:inst27"
+Warning (10270): Verilog HDL Case Statement warning at Mux9.v(25): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at Mux9.v(25): inferring latch(es) for variable "saida", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "saida[0]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[1]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[2]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[3]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[4]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[5]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[6]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[7]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[8]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[9]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[10]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[11]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[12]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[13]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[14]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[15]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[16]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[17]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[18]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[19]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[20]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[21]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[22]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[23]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[24]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[25]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[26]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[27]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[28]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[29]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[30]" at Mux9.v(25)
+Info (10041): Inferred latch for "saida[31]" at Mux9.v(25)
+Info: Elaborating entity "Banco_reg" for hierarchy "Banco_reg:inst14"
+Info: Elaborating entity "mux7" for hierarchy "mux7:inst19"
+Warning (10270): Verilog HDL Case Statement warning at Mux7.v(37): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at Mux7.v(37): inferring latch(es) for variable "saida", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "saida[0]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[1]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[2]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[3]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[4]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[5]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[6]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[7]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[8]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[9]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[10]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[11]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[12]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[13]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[14]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[15]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[16]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[17]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[18]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[19]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[20]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[21]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[22]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[23]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[24]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[25]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[26]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[27]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[28]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[29]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[30]" at Mux7.v(37)
+Info (10041): Inferred latch for "saida[31]" at Mux7.v(37)
+Info: Elaborating entity "mux6" for hierarchy "mux6:inst16"
+Warning (10270): Verilog HDL Case Statement warning at Mux6.v(25): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at Mux6.v(25): inferring latch(es) for variable "saida", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "saida[0]" at Mux6.v(25)
+Info (10041): Inferred latch for "saida[1]" at Mux6.v(25)
+Info (10041): Inferred latch for "saida[2]" at Mux6.v(25)
+Info (10041): Inferred latch for "saida[3]" at Mux6.v(25)
+Info (10041): Inferred latch for "saida[4]" at Mux6.v(25)
+Warning: Synthesized away the following node(s):
+    Warning: Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[0]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[1]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[2]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[6]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[7]"
+Warning: LATCH primitive "mux7:inst19|saida[0]" is permanently enabled
+Warning: LATCH primitive "mux7:inst19|saida[1]" is permanently enabled
+Warning: LATCH primitive "mux7:inst19|saida[2]" is permanently enabled
+Warning: LATCH primitive "mux7:inst19|saida[3]" is permanently enabled
+Warning: LATCH primitive "mux7:inst19|saida[4]" is permanently enabled
+Warning: LATCH primitive "mux7:inst19|saida[5]" is permanently enabled
+Warning: LATCH primitive "mux7:inst19|saida[6]" is permanently enabled
+Warning: LATCH primitive "mux7:inst19|saida[7]" is permanently enabled
+Warning: LATCH primitive "mux10:inst18|saida[0]" is permanently enabled
+Warning: LATCH primitive "mux10:inst18|saida[1]" is permanently enabled
+Warning: LATCH primitive "mux10:inst18|saida[2]" is permanently enabled
+Warning: LATCH primitive "mux10:inst18|saida[3]" is permanently enabled
+Warning: LATCH primitive "mux10:inst18|saida[4]" is permanently enabled
+Warning: LATCH primitive "mux10:inst18|saida[5]" is permanently enabled
+Warning: LATCH primitive "mux10:inst18|saida[6]" is permanently enabled
+Warning: LATCH primitive "mux10:inst18|saida[7]" is permanently enabled
+Warning: LATCH primitive "mux6:inst16|saida[0]" is permanently enabled
+Warning: LATCH primitive "mux6:inst16|saida[1]" is permanently enabled
+Warning: LATCH primitive "mux6:inst16|saida[2]" is permanently enabled
+Warning: LATCH primitive "mux6:inst16|saida[3]" is permanently enabled
+Warning: LATCH primitive "mux6:inst16|saida[4]" is permanently enabled
+Warning: LATCH primitive "mux8:inst28|saida[0]" is permanently enabled
+Warning: LATCH primitive "mux8:inst28|saida[1]" is permanently enabled
+Warning: LATCH primitive "mux8:inst28|saida[2]" is permanently enabled
+Warning: LATCH primitive "mux8:inst28|saida[3]" is permanently enabled
+Warning: LATCH primitive "mux8:inst28|saida[4]" is permanently enabled
+Warning: LATCH primitive "mux8:inst28|saida[5]" is permanently enabled
+Warning: LATCH primitive "mux8:inst28|saida[6]" is permanently enabled
+Warning: LATCH primitive "mux8:inst28|saida[7]" is permanently enabled
+Warning: LATCH primitive "mux7:inst19|saida[0]" is permanently enabled
+Warning: LATCH primitive "mux7:inst19|saida[1]" is permanently enabled
+Warning: LATCH primitive "mux7:inst19|saida[2]" is permanently enabled
+Warning: LATCH primitive "mux7:inst19|saida[3]" is permanently enabled
+Warning: LATCH primitive "mux7:inst19|saida[4]" is permanently enabled
+Warning: LATCH primitive "mux7:inst19|saida[5]" is permanently enabled
+Warning: LATCH primitive "mux7:inst19|saida[6]" is permanently enabled
+Warning: LATCH primitive "mux7:inst19|saida[7]" is permanently enabled
+Warning: LATCH primitive "mux10:inst18|saida[0]" is permanently enabled
+Warning: LATCH primitive "mux10:inst18|saida[1]" is permanently enabled
+Warning: LATCH primitive "mux10:inst18|saida[2]" is permanently enabled
+Warning: LATCH primitive "mux10:inst18|saida[3]" is permanently enabled
+Warning: LATCH primitive "mux10:inst18|saida[4]" is permanently enabled
+Warning: LATCH primitive "mux10:inst18|saida[5]" is permanently enabled
+Warning: LATCH primitive "mux10:inst18|saida[6]" is permanently enabled
+Warning: LATCH primitive "mux10:inst18|saida[7]" is permanently enabled
+Warning: LATCH primitive "mux6:inst16|saida[0]" is permanently enabled
+Warning: LATCH primitive "mux6:inst16|saida[1]" is permanently enabled
+Warning: LATCH primitive "mux6:inst16|saida[2]" is permanently enabled
+Warning: LATCH primitive "mux6:inst16|saida[3]" is permanently enabled
+Warning: LATCH primitive "mux6:inst16|saida[4]" is permanently enabled
+Warning: LATCH primitive "mux8:inst28|saida[0]" is permanently enabled
+Warning: LATCH primitive "mux8:inst28|saida[1]" is permanently enabled
+Warning: LATCH primitive "mux8:inst28|saida[2]" is permanently enabled
+Warning: LATCH primitive "mux8:inst28|saida[3]" is permanently enabled
+Warning: LATCH primitive "mux8:inst28|saida[4]" is permanently enabled
+Warning: LATCH primitive "mux8:inst28|saida[5]" is permanently enabled
+Warning: LATCH primitive "mux8:inst28|saida[6]" is permanently enabled
+Warning: LATCH primitive "mux8:inst28|saida[7]" is permanently enabled
+Warning: Synthesized away the following node(s):
+    Warning: Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[5]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[4]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[3]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[2]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[1]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[0]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[7]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[6]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[5]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[4]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[3]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[2]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[5]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[7]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[6]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[1]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[0]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[4]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[7]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[3]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[6]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[2]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[5]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[0]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[3]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[1]"
+        Warning (14320): Synthesized away node "Memoria:inst11|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[4]"
+Info: 340 registers lost all their fanouts during netlist optimizations. The first 340 are displayed below.
+    Info: Register "uc:inst1|estado~7" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|estado~8" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|estado~10" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|estado~11" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|estado~12" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|estado~13" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|estado~14" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|estadoOverflow~6" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|estadoOverflow~7" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr15_0[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr15_0[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr15_0[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr15_0[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr15_0[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr15_0[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr31_26[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr31_26[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr31_26[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr31_26[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr31_26[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr31_26[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|ir_write" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|b" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:inst10|Saida[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:inst10|Saida[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:inst10|Saida[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:inst10|Saida[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:inst10|Saida[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:inst10|Saida[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:inst10|Saida[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:inst10|Saida[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|ALUSourceA[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|ALUControl[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:A|Saida[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr25_21[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr25_21[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr25_21[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr25_21[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr25_21[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg0[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg16[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg8[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg24[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg6[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg22[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg14[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg30[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg4[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg20[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg12[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg28[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg1[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg17[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg9[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg25[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg5[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg21[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg13[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg29[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg3[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg19[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg11[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg27[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg7[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg23[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg15[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg31[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg2[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg18[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg10[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg26[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:B|Saida[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|ALUSourceB[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg0[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg16[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg8[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg24[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg6[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg22[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg14[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg30[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg4[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg20[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg12[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg28[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg1[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg17[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg9[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg25[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg5[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg21[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg13[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg29[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg3[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg19[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg11[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg27[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg7[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg23[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg15[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg31[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg2[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg18[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg10[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg26[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:B|Saida[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg0[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg16[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg8[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg24[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg6[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg22[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg14[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg30[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg4[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg20[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg12[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg28[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg1[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg17[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg9[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg25[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg5[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg21[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg13[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg29[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg3[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg19[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg11[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg27[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg7[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg23[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg15[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg31[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg2[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg18[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg10[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg26[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:B|Saida[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg0[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg16[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg8[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg24[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg6[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg22[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg14[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg30[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg4[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg20[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg12[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg28[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg1[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg17[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg9[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg25[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg5[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg21[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg13[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg29[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg3[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg19[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg11[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg27[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg7[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg23[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg15[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg31[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg2[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg18[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg10[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg26[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:B|Saida[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg0[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg16[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg8[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg24[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg6[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg22[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg14[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg30[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg4[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg20[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg12[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg28[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg1[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg17[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg9[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg25[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg5[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg21[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg13[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg29[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg3[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg19[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg11[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg27[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg7[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg23[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg15[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg31[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg2[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg18[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg10[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg26[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:B|Saida[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg0[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg16[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg8[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg24[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg6[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg22[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg14[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg30[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg4[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg20[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg12[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg28[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg1[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg17[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg9[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg25[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg5[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg21[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg13[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg29[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg3[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg19[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg11[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg27[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg7[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg23[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg15[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg31[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg2[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg18[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg10[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg26[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:B|Saida[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg0[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg16[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg8[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg24[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg6[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg22[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg14[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg30[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg4[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg20[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg12[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg28[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg1[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg17[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg9[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg25[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg5[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg21[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg13[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg29[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg3[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg19[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg11[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg27[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg7[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg23[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg15[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg31[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg2[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg18[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg10[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg26[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:B|Saida[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:B|Saida[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg0[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg16[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg8[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg24[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg6[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg22[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg14[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg30[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg4[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg20[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg12[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg28[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg1[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg17[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg9[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg25[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg5[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg21[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg13[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg29[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg3[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg19[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg11[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg27[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg7[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg23[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg15[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg31[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg2[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg18[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg10[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Banco_reg:inst14|Reg26[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:inst24|Saida[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr20_16[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr15_0[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|reg_write" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr20_16[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr15_0[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr20_16[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr15_0[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr20_16[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr15_0[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr20_16[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Instr_Reg:inst12|Instr15_0[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:inst24|Saida[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:inst24|Saida[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:inst24|Saida[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:inst24|Saida[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:inst24|Saida[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:inst24|Saida[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Registrador:inst24|Saida[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|ALUOut" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|estado.11111111" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|estado.00000000" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|estado.00000001" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|estado.00000010" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|estado.00000011" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|estadoOverflow.00" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|estadoOverflow.01" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|estadoOverflow.10" lost all its fanouts during netlist optimizations.
+    Info: Register "uc:inst1|estadoOverflow.11" lost all its fanouts during netlist optimizations.
+Warning: Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clock"
+    Warning (15610): No output dependent on input pin "reset"
+Info: Implemented 2 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 0 output pins
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 129 warnings
+    Info: Peak virtual memory: 264 megabytes
+    Info: Processing ended: Fri Oct 11 08:17:24 2019
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

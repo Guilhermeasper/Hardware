@@ -2,13 +2,13 @@ module mux9(clock, entrada0, entrada1, entrada2, entrada3, entrada4, controle, s
 	
 	//Iniciando os fio tudo.
 	input wire clock;
-	input wire [15:0]entrada0;
-	input wire [15:0]entrada1;
-	input wire [15:0]entrada2;
-	input wire [15:0]entrada3;
-	input wire [15:0]entrada4;
+	input wire [31:0]entrada0;
+	input wire [31:0]entrada1;
+	input wire [31:0]entrada2;
+	input wire [31:0]entrada3;
+	input wire [31:0]entrada4;
 	input wire [2:0]controle;
-	output reg [15:0]saida;
+	output reg [31:0]saida;
 
 	parameter selectEntrada0=3'b000;
 	parameter selectEntrada1=3'b001;
@@ -18,7 +18,7 @@ module mux9(clock, entrada0, entrada1, entrada2, entrada3, entrada4, controle, s
 	
 	//Setando estado inicial para todos os fios.
 	initial begin
-		saida <= 16'b0000000000000000;
+		saida <= 32'b0000000000000000;
 	end
 
 	always@(*) begin
@@ -28,7 +28,7 @@ module mux9(clock, entrada0, entrada1, entrada2, entrada3, entrada4, controle, s
 			end
 
 			selectEntrada1: begin
-				saida <= entrada1;
+				saida <= 32'b100;
 			end
 
 			selectEntrada2: begin
