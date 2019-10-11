@@ -1,0 +1,13 @@
+
+State Machine - |uc|estado
+Name estado.00000000 estado.00000010 estado.00000001 
+estado.00000000 0 0 0 
+estado.00000001 1 0 1 
+estado.00000010 1 1 0 
+
+State Machine - |uc|estadoOverflow
+Name estadoOverflow.11 estadoOverflow.10 estadoOverflow.01 estadoOverflow.00 
+estadoOverflow.00 0 0 0 0 
+estadoOverflow.01 0 0 1 1 
+estadoOverflow.10 0 1 0 1 
+estadoOverflow.11 1 0 0 1 

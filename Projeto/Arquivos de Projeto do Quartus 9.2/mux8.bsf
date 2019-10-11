@@ -24,11 +24,11 @@ applicable agreement for further details.
 	(text "mux8" (rect 5 0 32 12)(font "Arial" ))
 	(text "inst" (rect 8 112 25 124)(font "Arial" ))
 	(port
-		(pt 96 0)
+		(pt 96 192)
 		(input)
 		(text "clock" (rect 0 0 25 12)(font "Arial" ))
-		(text "clock" (rect 88 24 100 49)(font "Arial" )(vertical))
-		(line (pt 96 0)(pt 96 16)(line_width 1))
+		(text "clock" (rect 88 143 100 168)(font "Arial" )(vertical))
+		(line (pt 96 176)(pt 96 192)(line_width 1))
 	)
 	(port
 		(pt 0 64)
@@ -52,11 +52,11 @@ applicable agreement for further details.
 		(line (pt 0 96)(pt 16 96)(line_width 3))
 	)
 	(port
-		(pt 96 192)
+		(pt 96 0)
 		(input)
 		(text "controle[1..0]" (rect 0 64 64 76)(font "Arial" ))
-		(text "controle[1..0]" (rect 88 104 100 168)(font "Arial" )(vertical))
-		(line (pt 96 192)(pt 96 176)(line_width 3))
+		(text "controle[1..0]" (rect 88 24 100 88)(font "Arial" )(vertical))
+		(line (pt 96 16)(pt 96 0)(line_width 3))
 	)
 	(port
 		(pt 184 32)
@@ -83,5 +83,5 @@ applicable agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 168 176)(line_width 1))
 	)
-	(annotation_block (parameter)(rect 200 -40 392 16))
+	(annotation_block (parameter)(rect 248 8 440 64))
 )

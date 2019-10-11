@@ -1,0 +1,663 @@
+Classic Timing Analyzer report for DedoNoQuartusEGritaria
+Thu Oct 10 20:44:44 2019
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clock'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                             ;
++------------------------------+-------+---------------+------------------------------------------------+-----------------+--------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                                    ; From            ; To                 ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+------------------------------------------------+-----------------+--------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 4.870 ns                                       ; funct[0]        ; ALUControl[0]~reg0 ; --         ; clock    ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 6.941 ns                                       ; reg_write~reg0  ; regDST[2]          ; clock      ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -2.357 ns                                      ; reset           ; ALUControl[0]~reg0 ; --         ; clock    ; 0            ;
+; Clock Setup: 'clock'         ; N/A   ; None          ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estado.00000010 ; ALUControl[0]~reg0 ; clock      ; clock    ; 0            ;
+; Total number of failed paths ;       ;               ;                                                ;                 ;                    ;            ;          ; 0            ;
++------------------------------+-------+---------------+------------------------------------------------+-----------------+--------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2S15F484C3       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; Off                ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clock           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 6      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clock'                                                                                                                                                                                        ;
++-------+------------------------------------------------+-------------------+--------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From              ; To                 ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+-------------------+--------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estado.00000010   ; epc~reg0           ; clock      ; clock    ; None                        ; None                      ; 1.256 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estado.00000010   ; ALUSourceA[0]~reg0 ; clock      ; clock    ; None                        ; None                      ; 1.256 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estado.00000010   ; ALUSourceA[1]~reg0 ; clock      ; clock    ; None                        ; None                      ; 1.256 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estado.00000010   ; ALUSourceB[0]~reg0 ; clock      ; clock    ; None                        ; None                      ; 1.256 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estado.00000010   ; ALUControl[0]~reg0 ; clock      ; clock    ; None                        ; None                      ; 1.256 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estadoOverflow.01 ; ALUSourceA[0]~reg0 ; clock      ; clock    ; None                        ; None                      ; 1.011 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estado.00000001   ; pc_write~reg0      ; clock      ; clock    ; None                        ; None                      ; 0.884 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estado.00000001   ; a[0]~reg0          ; clock      ; clock    ; None                        ; None                      ; 0.875 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estado.00000010   ; ALUOut~reg0        ; clock      ; clock    ; None                        ; None                      ; 0.838 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estadoOverflow.10 ; pc_write~reg0      ; clock      ; clock    ; None                        ; None                      ; 0.805 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estado.00000001   ; ALUOut~reg0        ; clock      ; clock    ; None                        ; None                      ; 0.789 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estadoOverflow.01 ; estadoOverflow.10  ; clock      ; clock    ; None                        ; None                      ; 0.781 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estadoOverflow.00 ; estadoOverflow.01  ; clock      ; clock    ; None                        ; None                      ; 0.758 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estado.00000010   ; pc_write~reg0      ; clock      ; clock    ; None                        ; None                      ; 0.754 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estado.00000010   ; a[0]~reg0          ; clock      ; clock    ; None                        ; None                      ; 0.753 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estado.00000010   ; ir_write~reg0      ; clock      ; clock    ; None                        ; None                      ; 0.747 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estado.00000010   ; reg_write~reg0     ; clock      ; clock    ; None                        ; None                      ; 0.747 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estado.00000000   ; ir_write~reg0      ; clock      ; clock    ; None                        ; None                      ; 0.737 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estadoOverflow.00 ; ALUSourceB[0]~reg0 ; clock      ; clock    ; None                        ; None                      ; 0.734 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estadoOverflow.00 ; epc~reg0           ; clock      ; clock    ; None                        ; None                      ; 0.706 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estado.00000000   ; estado.00000001    ; clock      ; clock    ; None                        ; None                      ; 0.635 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estadoOverflow.10 ; estadoOverflow.11  ; clock      ; clock    ; None                        ; None                      ; 0.534 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estado.00000001   ; estado.00000010    ; clock      ; clock    ; None                        ; None                      ; 0.527 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estadoOverflow.11 ; estadoOverflow.00  ; clock      ; clock    ; None                        ; None                      ; 0.498 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estado.00000001   ; estado.00000001    ; clock      ; clock    ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estado.00000010   ; estado.00000010    ; clock      ; clock    ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; a[0]~reg0         ; a[0]~reg0          ; clock      ; clock    ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; ir_write~reg0     ; ir_write~reg0      ; clock      ; clock    ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; reg_write~reg0    ; reg_write~reg0     ; clock      ; clock    ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; pc_write~reg0     ; pc_write~reg0      ; clock      ; clock    ; None                        ; None                      ; 0.396 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; estado.00000000   ; estado.00000000    ; clock      ; clock    ; None                        ; None                      ; 0.396 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; ALUOut~reg0       ; ALUOut~reg0        ; clock      ; clock    ; None                        ; None                      ; 0.396 ns                ;
++-------+------------------------------------------------+-------------------+--------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------+
+; tsu                                                                           ;
++-------+--------------+------------+-----------+--------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From      ; To                 ; To Clock ;
++-------+--------------+------------+-----------+--------------------+----------+
+; N/A   ; None         ; 4.870 ns   ; funct[0]  ; epc~reg0           ; clock    ;
+; N/A   ; None         ; 4.870 ns   ; funct[0]  ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.870 ns   ; funct[0]  ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A   ; None         ; 4.870 ns   ; funct[0]  ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.870 ns   ; funct[0]  ; ALUControl[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.495 ns   ; funct[3]  ; epc~reg0           ; clock    ;
+; N/A   ; None         ; 4.495 ns   ; funct[3]  ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.495 ns   ; funct[3]  ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A   ; None         ; 4.495 ns   ; funct[3]  ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.495 ns   ; funct[3]  ; ALUControl[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.450 ns   ; opcode[4] ; estadoOverflow.10  ; clock    ;
+; N/A   ; None         ; 4.450 ns   ; opcode[4] ; estadoOverflow.11  ; clock    ;
+; N/A   ; None         ; 4.448 ns   ; opcode[5] ; estadoOverflow.10  ; clock    ;
+; N/A   ; None         ; 4.448 ns   ; opcode[5] ; estadoOverflow.11  ; clock    ;
+; N/A   ; None         ; 4.416 ns   ; opcode[1] ; estadoOverflow.10  ; clock    ;
+; N/A   ; None         ; 4.416 ns   ; opcode[1] ; estadoOverflow.11  ; clock    ;
+; N/A   ; None         ; 4.404 ns   ; opcode[3] ; estadoOverflow.10  ; clock    ;
+; N/A   ; None         ; 4.404 ns   ; opcode[3] ; estadoOverflow.11  ; clock    ;
+; N/A   ; None         ; 4.402 ns   ; opcode[3] ; epc~reg0           ; clock    ;
+; N/A   ; None         ; 4.402 ns   ; opcode[3] ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.402 ns   ; opcode[3] ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A   ; None         ; 4.402 ns   ; opcode[3] ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.402 ns   ; opcode[3] ; ALUControl[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.386 ns   ; funct[2]  ; epc~reg0           ; clock    ;
+; N/A   ; None         ; 4.386 ns   ; funct[2]  ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.386 ns   ; funct[2]  ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A   ; None         ; 4.386 ns   ; funct[2]  ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.386 ns   ; funct[2]  ; ALUControl[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.341 ns   ; opcode[4] ; pc_write~reg0      ; clock    ;
+; N/A   ; None         ; 4.339 ns   ; opcode[5] ; pc_write~reg0      ; clock    ;
+; N/A   ; None         ; 4.332 ns   ; opcode[4] ; estadoOverflow.01  ; clock    ;
+; N/A   ; None         ; 4.332 ns   ; opcode[4] ; estadoOverflow.00  ; clock    ;
+; N/A   ; None         ; 4.330 ns   ; opcode[5] ; estadoOverflow.01  ; clock    ;
+; N/A   ; None         ; 4.330 ns   ; opcode[5] ; estadoOverflow.00  ; clock    ;
+; N/A   ; None         ; 4.315 ns   ; opcode[0] ; epc~reg0           ; clock    ;
+; N/A   ; None         ; 4.315 ns   ; opcode[0] ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.315 ns   ; opcode[0] ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A   ; None         ; 4.315 ns   ; opcode[0] ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.315 ns   ; opcode[0] ; ALUControl[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.307 ns   ; opcode[1] ; pc_write~reg0      ; clock    ;
+; N/A   ; None         ; 4.301 ns   ; opcode[2] ; estadoOverflow.10  ; clock    ;
+; N/A   ; None         ; 4.301 ns   ; opcode[2] ; estadoOverflow.11  ; clock    ;
+; N/A   ; None         ; 4.298 ns   ; opcode[1] ; estadoOverflow.01  ; clock    ;
+; N/A   ; None         ; 4.298 ns   ; opcode[1] ; estadoOverflow.00  ; clock    ;
+; N/A   ; None         ; 4.296 ns   ; funct[5]  ; epc~reg0           ; clock    ;
+; N/A   ; None         ; 4.296 ns   ; funct[5]  ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.296 ns   ; funct[5]  ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A   ; None         ; 4.296 ns   ; funct[5]  ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.296 ns   ; funct[5]  ; ALUControl[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.295 ns   ; opcode[3] ; pc_write~reg0      ; clock    ;
+; N/A   ; None         ; 4.286 ns   ; opcode[3] ; estadoOverflow.01  ; clock    ;
+; N/A   ; None         ; 4.286 ns   ; opcode[3] ; estadoOverflow.00  ; clock    ;
+; N/A   ; None         ; 4.272 ns   ; opcode[4] ; epc~reg0           ; clock    ;
+; N/A   ; None         ; 4.270 ns   ; opcode[5] ; epc~reg0           ; clock    ;
+; N/A   ; None         ; 4.238 ns   ; opcode[1] ; epc~reg0           ; clock    ;
+; N/A   ; None         ; 4.233 ns   ; funct[0]  ; pc_write~reg0      ; clock    ;
+; N/A   ; None         ; 4.232 ns   ; funct[0]  ; a[0]~reg0          ; clock    ;
+; N/A   ; None         ; 4.227 ns   ; opcode[0] ; estadoOverflow.10  ; clock    ;
+; N/A   ; None         ; 4.227 ns   ; opcode[0] ; estadoOverflow.11  ; clock    ;
+; N/A   ; None         ; 4.226 ns   ; funct[0]  ; ir_write~reg0      ; clock    ;
+; N/A   ; None         ; 4.226 ns   ; funct[0]  ; reg_write~reg0     ; clock    ;
+; N/A   ; None         ; 4.198 ns   ; opcode[4] ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.198 ns   ; opcode[4] ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A   ; None         ; 4.198 ns   ; opcode[4] ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.198 ns   ; opcode[4] ; ALUControl[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.192 ns   ; opcode[2] ; pc_write~reg0      ; clock    ;
+; N/A   ; None         ; 4.183 ns   ; opcode[2] ; estadoOverflow.01  ; clock    ;
+; N/A   ; None         ; 4.183 ns   ; opcode[2] ; estadoOverflow.00  ; clock    ;
+; N/A   ; None         ; 4.182 ns   ; opcode[2] ; epc~reg0           ; clock    ;
+; N/A   ; None         ; 4.182 ns   ; opcode[2] ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.182 ns   ; opcode[2] ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A   ; None         ; 4.182 ns   ; opcode[2] ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.182 ns   ; opcode[2] ; ALUControl[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.171 ns   ; opcode[4] ; ir_write~reg0      ; clock    ;
+; N/A   ; None         ; 4.169 ns   ; opcode[5] ; ir_write~reg0      ; clock    ;
+; N/A   ; None         ; 4.165 ns   ; opcode[1] ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.165 ns   ; opcode[1] ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A   ; None         ; 4.165 ns   ; opcode[1] ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.165 ns   ; opcode[1] ; ALUControl[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.137 ns   ; opcode[1] ; ir_write~reg0      ; clock    ;
+; N/A   ; None         ; 4.125 ns   ; opcode[3] ; ir_write~reg0      ; clock    ;
+; N/A   ; None         ; 4.118 ns   ; opcode[0] ; pc_write~reg0      ; clock    ;
+; N/A   ; None         ; 4.109 ns   ; opcode[0] ; estadoOverflow.01  ; clock    ;
+; N/A   ; None         ; 4.109 ns   ; opcode[0] ; estadoOverflow.00  ; clock    ;
+; N/A   ; None         ; 4.083 ns   ; funct[1]  ; epc~reg0           ; clock    ;
+; N/A   ; None         ; 4.083 ns   ; funct[1]  ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.083 ns   ; funct[1]  ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A   ; None         ; 4.083 ns   ; funct[1]  ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.083 ns   ; funct[1]  ; ALUControl[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.066 ns   ; funct[0]  ; ALUOut~reg0        ; clock    ;
+; N/A   ; None         ; 4.059 ns   ; opcode[5] ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.059 ns   ; opcode[5] ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A   ; None         ; 4.059 ns   ; opcode[5] ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.059 ns   ; opcode[5] ; ALUControl[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.022 ns   ; opcode[2] ; ir_write~reg0      ; clock    ;
+; N/A   ; None         ; 4.020 ns   ; opcode[4] ; a[0]~reg0          ; clock    ;
+; N/A   ; None         ; 4.018 ns   ; opcode[5] ; a[0]~reg0          ; clock    ;
+; N/A   ; None         ; 4.011 ns   ; funct[4]  ; epc~reg0           ; clock    ;
+; N/A   ; None         ; 4.011 ns   ; funct[4]  ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.011 ns   ; funct[4]  ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A   ; None         ; 4.011 ns   ; funct[4]  ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A   ; None         ; 4.011 ns   ; funct[4]  ; ALUControl[0]~reg0 ; clock    ;
+; N/A   ; None         ; 3.986 ns   ; opcode[1] ; a[0]~reg0          ; clock    ;
+; N/A   ; None         ; 3.974 ns   ; opcode[3] ; a[0]~reg0          ; clock    ;
+; N/A   ; None         ; 3.954 ns   ; overflow  ; estadoOverflow.10  ; clock    ;
+; N/A   ; None         ; 3.954 ns   ; overflow  ; estadoOverflow.11  ; clock    ;
+; N/A   ; None         ; 3.948 ns   ; opcode[0] ; ir_write~reg0      ; clock    ;
+; N/A   ; None         ; 3.912 ns   ; funct[5]  ; pc_write~reg0      ; clock    ;
+; N/A   ; None         ; 3.911 ns   ; funct[5]  ; a[0]~reg0          ; clock    ;
+; N/A   ; None         ; 3.905 ns   ; funct[5]  ; ir_write~reg0      ; clock    ;
+; N/A   ; None         ; 3.905 ns   ; funct[5]  ; reg_write~reg0     ; clock    ;
+; N/A   ; None         ; 3.871 ns   ; opcode[2] ; a[0]~reg0          ; clock    ;
+; N/A   ; None         ; 3.867 ns   ; overflow  ; epc~reg0           ; clock    ;
+; N/A   ; None         ; 3.867 ns   ; overflow  ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A   ; None         ; 3.867 ns   ; overflow  ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A   ; None         ; 3.867 ns   ; overflow  ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A   ; None         ; 3.867 ns   ; overflow  ; ALUControl[0]~reg0 ; clock    ;
+; N/A   ; None         ; 3.858 ns   ; funct[3]  ; pc_write~reg0      ; clock    ;
+; N/A   ; None         ; 3.857 ns   ; funct[3]  ; a[0]~reg0          ; clock    ;
+; N/A   ; None         ; 3.855 ns   ; opcode[4] ; estado.00000000    ; clock    ;
+; N/A   ; None         ; 3.853 ns   ; opcode[5] ; estado.00000000    ; clock    ;
+; N/A   ; None         ; 3.851 ns   ; funct[3]  ; ir_write~reg0      ; clock    ;
+; N/A   ; None         ; 3.851 ns   ; funct[3]  ; reg_write~reg0     ; clock    ;
+; N/A   ; None         ; 3.845 ns   ; overflow  ; pc_write~reg0      ; clock    ;
+; N/A   ; None         ; 3.836 ns   ; overflow  ; estadoOverflow.01  ; clock    ;
+; N/A   ; None         ; 3.836 ns   ; overflow  ; estadoOverflow.00  ; clock    ;
+; N/A   ; None         ; 3.821 ns   ; opcode[1] ; estado.00000000    ; clock    ;
+; N/A   ; None         ; 3.809 ns   ; opcode[3] ; estado.00000000    ; clock    ;
+; N/A   ; None         ; 3.808 ns   ; opcode[4] ; ALUOut~reg0        ; clock    ;
+; N/A   ; None         ; 3.807 ns   ; opcode[4] ; reg_write~reg0     ; clock    ;
+; N/A   ; None         ; 3.806 ns   ; opcode[5] ; ALUOut~reg0        ; clock    ;
+; N/A   ; None         ; 3.797 ns   ; opcode[0] ; a[0]~reg0          ; clock    ;
+; N/A   ; None         ; 3.791 ns   ; opcode[2] ; reg_write~reg0     ; clock    ;
+; N/A   ; None         ; 3.774 ns   ; opcode[1] ; reg_write~reg0     ; clock    ;
+; N/A   ; None         ; 3.774 ns   ; opcode[1] ; ALUOut~reg0        ; clock    ;
+; N/A   ; None         ; 3.762 ns   ; opcode[3] ; ALUOut~reg0        ; clock    ;
+; N/A   ; None         ; 3.758 ns   ; opcode[3] ; reg_write~reg0     ; clock    ;
+; N/A   ; None         ; 3.749 ns   ; funct[2]  ; pc_write~reg0      ; clock    ;
+; N/A   ; None         ; 3.748 ns   ; funct[2]  ; a[0]~reg0          ; clock    ;
+; N/A   ; None         ; 3.742 ns   ; funct[2]  ; ir_write~reg0      ; clock    ;
+; N/A   ; None         ; 3.742 ns   ; funct[2]  ; reg_write~reg0     ; clock    ;
+; N/A   ; None         ; 3.714 ns   ; reset     ; estadoOverflow.10  ; clock    ;
+; N/A   ; None         ; 3.714 ns   ; reset     ; estadoOverflow.11  ; clock    ;
+; N/A   ; None         ; 3.706 ns   ; opcode[2] ; estado.00000000    ; clock    ;
+; N/A   ; None         ; 3.691 ns   ; funct[3]  ; ALUOut~reg0        ; clock    ;
+; N/A   ; None         ; 3.671 ns   ; opcode[0] ; reg_write~reg0     ; clock    ;
+; N/A   ; None         ; 3.659 ns   ; opcode[2] ; ALUOut~reg0        ; clock    ;
+; N/A   ; None         ; 3.653 ns   ; reset     ; epc~reg0           ; clock    ;
+; N/A   ; None         ; 3.653 ns   ; reset     ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A   ; None         ; 3.653 ns   ; reset     ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A   ; None         ; 3.653 ns   ; reset     ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A   ; None         ; 3.653 ns   ; reset     ; ALUControl[0]~reg0 ; clock    ;
+; N/A   ; None         ; 3.632 ns   ; opcode[0] ; estado.00000000    ; clock    ;
+; N/A   ; None         ; 3.627 ns   ; funct[4]  ; pc_write~reg0      ; clock    ;
+; N/A   ; None         ; 3.626 ns   ; funct[4]  ; a[0]~reg0          ; clock    ;
+; N/A   ; None         ; 3.620 ns   ; funct[4]  ; ir_write~reg0      ; clock    ;
+; N/A   ; None         ; 3.620 ns   ; funct[4]  ; reg_write~reg0     ; clock    ;
+; N/A   ; None         ; 3.605 ns   ; reset     ; pc_write~reg0      ; clock    ;
+; N/A   ; None         ; 3.596 ns   ; reset     ; estadoOverflow.01  ; clock    ;
+; N/A   ; None         ; 3.596 ns   ; reset     ; estadoOverflow.00  ; clock    ;
+; N/A   ; None         ; 3.585 ns   ; opcode[0] ; ALUOut~reg0        ; clock    ;
+; N/A   ; None         ; 3.582 ns   ; funct[2]  ; ALUOut~reg0        ; clock    ;
+; N/A   ; None         ; 3.572 ns   ; overflow  ; ir_write~reg0      ; clock    ;
+; N/A   ; None         ; 3.525 ns   ; opcode[5] ; reg_write~reg0     ; clock    ;
+; N/A   ; None         ; 3.509 ns   ; opcode[4] ; estado.00000001    ; clock    ;
+; N/A   ; None         ; 3.507 ns   ; opcode[5] ; estado.00000001    ; clock    ;
+; N/A   ; None         ; 3.495 ns   ; funct[5]  ; ALUOut~reg0        ; clock    ;
+; N/A   ; None         ; 3.491 ns   ; opcode[4] ; estado.00000010    ; clock    ;
+; N/A   ; None         ; 3.489 ns   ; opcode[5] ; estado.00000010    ; clock    ;
+; N/A   ; None         ; 3.475 ns   ; opcode[1] ; estado.00000001    ; clock    ;
+; N/A   ; None         ; 3.463 ns   ; opcode[3] ; estado.00000001    ; clock    ;
+; N/A   ; None         ; 3.457 ns   ; opcode[1] ; estado.00000010    ; clock    ;
+; N/A   ; None         ; 3.446 ns   ; funct[1]  ; pc_write~reg0      ; clock    ;
+; N/A   ; None         ; 3.445 ns   ; funct[1]  ; a[0]~reg0          ; clock    ;
+; N/A   ; None         ; 3.445 ns   ; opcode[3] ; estado.00000010    ; clock    ;
+; N/A   ; None         ; 3.439 ns   ; funct[1]  ; ir_write~reg0      ; clock    ;
+; N/A   ; None         ; 3.439 ns   ; funct[1]  ; reg_write~reg0     ; clock    ;
+; N/A   ; None         ; 3.421 ns   ; overflow  ; a[0]~reg0          ; clock    ;
+; N/A   ; None         ; 3.360 ns   ; opcode[2] ; estado.00000001    ; clock    ;
+; N/A   ; None         ; 3.342 ns   ; opcode[2] ; estado.00000010    ; clock    ;
+; N/A   ; None         ; 3.286 ns   ; opcode[0] ; estado.00000001    ; clock    ;
+; N/A   ; None         ; 3.279 ns   ; funct[1]  ; ALUOut~reg0        ; clock    ;
+; N/A   ; None         ; 3.276 ns   ; reset     ; ir_write~reg0      ; clock    ;
+; N/A   ; None         ; 3.268 ns   ; opcode[0] ; estado.00000010    ; clock    ;
+; N/A   ; None         ; 3.256 ns   ; overflow  ; estado.00000000    ; clock    ;
+; N/A   ; None         ; 3.210 ns   ; funct[4]  ; ALUOut~reg0        ; clock    ;
+; N/A   ; None         ; 3.209 ns   ; overflow  ; ALUOut~reg0        ; clock    ;
+; N/A   ; None         ; 3.125 ns   ; reset     ; a[0]~reg0          ; clock    ;
+; N/A   ; None         ; 3.013 ns   ; overflow  ; estado.00000001    ; clock    ;
+; N/A   ; None         ; 2.960 ns   ; reset     ; estado.00000000    ; clock    ;
+; N/A   ; None         ; 2.949 ns   ; reset     ; estado.00000010    ; clock    ;
+; N/A   ; None         ; 2.949 ns   ; reset     ; reg_write~reg0     ; clock    ;
+; N/A   ; None         ; 2.913 ns   ; reset     ; ALUOut~reg0        ; clock    ;
+; N/A   ; None         ; 2.898 ns   ; overflow  ; estado.00000010    ; clock    ;
+; N/A   ; None         ; 2.894 ns   ; overflow  ; reg_write~reg0     ; clock    ;
+; N/A   ; None         ; 2.774 ns   ; reset     ; estado.00000001    ; clock    ;
++-------+--------------+------------+-----------+--------------------+----------+
+
+
++-------------------------------------------------------------------------------------+
+; tco                                                                                 ;
++-------+--------------+------------+--------------------+---------------+------------+
+; Slack ; Required tco ; Actual tco ; From               ; To            ; From Clock ;
++-------+--------------+------------+--------------------+---------------+------------+
+; N/A   ; None         ; 6.941 ns   ; reg_write~reg0     ; regDST[2]     ; clock      ;
+; N/A   ; None         ; 6.921 ns   ; reg_write~reg0     ; reg_write     ; clock      ;
+; N/A   ; None         ; 6.888 ns   ; reg_write~reg0     ; mem_to_reg[1] ; clock      ;
+; N/A   ; None         ; 6.796 ns   ; reg_write~reg0     ; mem_to_reg[0] ; clock      ;
+; N/A   ; None         ; 6.657 ns   ; ALUControl[0]~reg0 ; ALUControl[0] ; clock      ;
+; N/A   ; None         ; 6.644 ns   ; ir_write~reg0      ; ir_write      ; clock      ;
+; N/A   ; None         ; 6.641 ns   ; ALUOut~reg0        ; ALUOut        ; clock      ;
+; N/A   ; None         ; 6.638 ns   ; a[0]~reg0          ; ALUSourceB[2] ; clock      ;
+; N/A   ; None         ; 6.497 ns   ; a[0]~reg0          ; b[0]          ; clock      ;
+; N/A   ; None         ; 6.492 ns   ; reg_write~reg0     ; mem_to_reg[2] ; clock      ;
+; N/A   ; None         ; 6.354 ns   ; epc~reg0           ; ALUControl[1] ; clock      ;
+; N/A   ; None         ; 6.354 ns   ; epc~reg0           ; mux_mem[1]    ; clock      ;
+; N/A   ; None         ; 6.194 ns   ; ALUSourceA[1]~reg0 ; ALUSourceA[1] ; clock      ;
+; N/A   ; None         ; 6.088 ns   ; a[0]~reg0          ; a[0]          ; clock      ;
+; N/A   ; None         ; 6.088 ns   ; a[0]~reg0          ; mem_write     ; clock      ;
+; N/A   ; None         ; 5.914 ns   ; epc~reg0           ; epc           ; clock      ;
+; N/A   ; None         ; 5.773 ns   ; ALUSourceB[0]~reg0 ; ALUSourceB[0] ; clock      ;
+; N/A   ; None         ; 5.415 ns   ; ALUSourceA[0]~reg0 ; mdr_write     ; clock      ;
+; N/A   ; None         ; 5.397 ns   ; pc_write~reg0      ; pc_write      ; clock      ;
+; N/A   ; None         ; 5.176 ns   ; ALUSourceA[0]~reg0 ; ALUSourceA[0] ; clock      ;
++-------+--------------+------------+--------------------+---------------+------------+
+
+
++-------------------------------------------------------------------------------------+
+; th                                                                                  ;
++---------------+-------------+-----------+-----------+--------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From      ; To                 ; To Clock ;
++---------------+-------------+-----------+-----------+--------------------+----------+
+; N/A           ; None        ; -2.357 ns ; reset     ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A           ; None        ; -2.357 ns ; reset     ; ALUControl[0]~reg0 ; clock    ;
+; N/A           ; None        ; -2.535 ns ; reset     ; estado.00000001    ; clock    ;
+; N/A           ; None        ; -2.653 ns ; overflow  ; ALUControl[0]~reg0 ; clock    ;
+; N/A           ; None        ; -2.655 ns ; overflow  ; reg_write~reg0     ; clock    ;
+; N/A           ; None        ; -2.659 ns ; overflow  ; estado.00000010    ; clock    ;
+; N/A           ; None        ; -2.665 ns ; reset     ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A           ; None        ; -2.674 ns ; reset     ; ALUOut~reg0        ; clock    ;
+; N/A           ; None        ; -2.710 ns ; reset     ; estado.00000010    ; clock    ;
+; N/A           ; None        ; -2.710 ns ; reset     ; reg_write~reg0     ; clock    ;
+; N/A           ; None        ; -2.721 ns ; reset     ; estado.00000000    ; clock    ;
+; N/A           ; None        ; -2.774 ns ; overflow  ; estado.00000001    ; clock    ;
+; N/A           ; None        ; -2.786 ns ; overflow  ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A           ; None        ; -2.861 ns ; opcode[0] ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A           ; None        ; -2.876 ns ; opcode[5] ; ALUOut~reg0        ; clock    ;
+; N/A           ; None        ; -2.886 ns ; reset     ; a[0]~reg0          ; clock    ;
+; N/A           ; None        ; -2.916 ns ; reset     ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A           ; None        ; -2.931 ns ; reset     ; pc_write~reg0      ; clock    ;
+; N/A           ; None        ; -2.935 ns ; opcode[2] ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A           ; None        ; -2.961 ns ; overflow  ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A           ; None        ; -2.970 ns ; overflow  ; ALUOut~reg0        ; clock    ;
+; N/A           ; None        ; -2.971 ns ; funct[4]  ; ALUOut~reg0        ; clock    ;
+; N/A           ; None        ; -3.017 ns ; overflow  ; estado.00000000    ; clock    ;
+; N/A           ; None        ; -3.029 ns ; opcode[0] ; estado.00000010    ; clock    ;
+; N/A           ; None        ; -3.029 ns ; opcode[0] ; reg_write~reg0     ; clock    ;
+; N/A           ; None        ; -3.029 ns ; opcode[0] ; ALUControl[0]~reg0 ; clock    ;
+; N/A           ; None        ; -3.037 ns ; reset     ; ir_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.038 ns ; opcode[3] ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A           ; None        ; -3.040 ns ; funct[1]  ; ALUOut~reg0        ; clock    ;
+; N/A           ; None        ; -3.047 ns ; opcode[0] ; estado.00000001    ; clock    ;
+; N/A           ; None        ; -3.050 ns ; opcode[1] ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A           ; None        ; -3.082 ns ; opcode[5] ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A           ; None        ; -3.084 ns ; opcode[4] ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A           ; None        ; -3.103 ns ; opcode[2] ; estado.00000010    ; clock    ;
+; N/A           ; None        ; -3.103 ns ; opcode[2] ; reg_write~reg0     ; clock    ;
+; N/A           ; None        ; -3.103 ns ; opcode[2] ; ALUControl[0]~reg0 ; clock    ;
+; N/A           ; None        ; -3.121 ns ; opcode[2] ; estado.00000001    ; clock    ;
+; N/A           ; None        ; -3.125 ns ; opcode[1] ; ALUOut~reg0        ; clock    ;
+; N/A           ; None        ; -3.142 ns ; opcode[2] ; ALUOut~reg0        ; clock    ;
+; N/A           ; None        ; -3.156 ns ; overflow  ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A           ; None        ; -3.158 ns ; opcode[4] ; ALUOut~reg0        ; clock    ;
+; N/A           ; None        ; -3.182 ns ; overflow  ; a[0]~reg0          ; clock    ;
+; N/A           ; None        ; -3.200 ns ; funct[1]  ; ir_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.200 ns ; funct[1]  ; reg_write~reg0     ; clock    ;
+; N/A           ; None        ; -3.206 ns ; funct[1]  ; a[0]~reg0          ; clock    ;
+; N/A           ; None        ; -3.206 ns ; opcode[3] ; estado.00000010    ; clock    ;
+; N/A           ; None        ; -3.206 ns ; opcode[3] ; reg_write~reg0     ; clock    ;
+; N/A           ; None        ; -3.206 ns ; opcode[3] ; ALUControl[0]~reg0 ; clock    ;
+; N/A           ; None        ; -3.207 ns ; funct[1]  ; pc_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.218 ns ; opcode[1] ; estado.00000010    ; clock    ;
+; N/A           ; None        ; -3.218 ns ; opcode[1] ; reg_write~reg0     ; clock    ;
+; N/A           ; None        ; -3.218 ns ; opcode[1] ; ALUControl[0]~reg0 ; clock    ;
+; N/A           ; None        ; -3.224 ns ; opcode[3] ; estado.00000001    ; clock    ;
+; N/A           ; None        ; -3.227 ns ; overflow  ; pc_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.236 ns ; opcode[1] ; estado.00000001    ; clock    ;
+; N/A           ; None        ; -3.250 ns ; opcode[5] ; estado.00000010    ; clock    ;
+; N/A           ; None        ; -3.250 ns ; opcode[5] ; reg_write~reg0     ; clock    ;
+; N/A           ; None        ; -3.250 ns ; opcode[5] ; ALUControl[0]~reg0 ; clock    ;
+; N/A           ; None        ; -3.252 ns ; opcode[4] ; estado.00000010    ; clock    ;
+; N/A           ; None        ; -3.252 ns ; opcode[4] ; reg_write~reg0     ; clock    ;
+; N/A           ; None        ; -3.252 ns ; opcode[4] ; ALUControl[0]~reg0 ; clock    ;
+; N/A           ; None        ; -3.256 ns ; funct[5]  ; ALUOut~reg0        ; clock    ;
+; N/A           ; None        ; -3.268 ns ; opcode[5] ; estado.00000001    ; clock    ;
+; N/A           ; None        ; -3.270 ns ; opcode[4] ; estado.00000001    ; clock    ;
+; N/A           ; None        ; -3.272 ns ; opcode[0] ; ALUOut~reg0        ; clock    ;
+; N/A           ; None        ; -3.286 ns ; opcode[5] ; ir_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.292 ns ; opcode[5] ; a[0]~reg0          ; clock    ;
+; N/A           ; None        ; -3.293 ns ; opcode[5] ; pc_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.297 ns ; reset     ; epc~reg0           ; clock    ;
+; N/A           ; None        ; -3.333 ns ; overflow  ; ir_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.337 ns ; opcode[0] ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A           ; None        ; -3.343 ns ; funct[2]  ; ALUOut~reg0        ; clock    ;
+; N/A           ; None        ; -3.357 ns ; reset     ; estadoOverflow.01  ; clock    ;
+; N/A           ; None        ; -3.357 ns ; reset     ; estadoOverflow.00  ; clock    ;
+; N/A           ; None        ; -3.359 ns ; opcode[3] ; ALUOut~reg0        ; clock    ;
+; N/A           ; None        ; -3.381 ns ; funct[4]  ; ir_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.381 ns ; funct[4]  ; reg_write~reg0     ; clock    ;
+; N/A           ; None        ; -3.387 ns ; funct[4]  ; a[0]~reg0          ; clock    ;
+; N/A           ; None        ; -3.388 ns ; funct[4]  ; pc_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.393 ns ; opcode[0] ; estado.00000000    ; clock    ;
+; N/A           ; None        ; -3.411 ns ; opcode[2] ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A           ; None        ; -3.429 ns ; opcode[0] ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A           ; None        ; -3.432 ns ; opcode[0] ; ir_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.438 ns ; opcode[0] ; a[0]~reg0          ; clock    ;
+; N/A           ; None        ; -3.439 ns ; opcode[0] ; pc_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.452 ns ; funct[3]  ; ALUOut~reg0        ; clock    ;
+; N/A           ; None        ; -3.467 ns ; opcode[2] ; estado.00000000    ; clock    ;
+; N/A           ; None        ; -3.475 ns ; reset     ; estadoOverflow.10  ; clock    ;
+; N/A           ; None        ; -3.475 ns ; reset     ; estadoOverflow.11  ; clock    ;
+; N/A           ; None        ; -3.503 ns ; funct[2]  ; ir_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.503 ns ; funct[2]  ; reg_write~reg0     ; clock    ;
+; N/A           ; None        ; -3.503 ns ; opcode[2] ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A           ; None        ; -3.509 ns ; funct[2]  ; a[0]~reg0          ; clock    ;
+; N/A           ; None        ; -3.510 ns ; funct[2]  ; pc_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.514 ns ; opcode[3] ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A           ; None        ; -3.519 ns ; opcode[3] ; ir_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.525 ns ; opcode[3] ; a[0]~reg0          ; clock    ;
+; N/A           ; None        ; -3.526 ns ; opcode[3] ; pc_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.526 ns ; opcode[1] ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A           ; None        ; -3.535 ns ; opcode[1] ; ir_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.537 ns ; overflow  ; epc~reg0           ; clock    ;
+; N/A           ; None        ; -3.541 ns ; opcode[1] ; a[0]~reg0          ; clock    ;
+; N/A           ; None        ; -3.542 ns ; opcode[1] ; pc_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.552 ns ; opcode[2] ; ir_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.558 ns ; opcode[2] ; a[0]~reg0          ; clock    ;
+; N/A           ; None        ; -3.558 ns ; opcode[5] ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A           ; None        ; -3.559 ns ; opcode[2] ; pc_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.560 ns ; opcode[4] ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A           ; None        ; -3.568 ns ; opcode[4] ; ir_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.570 ns ; opcode[3] ; estado.00000000    ; clock    ;
+; N/A           ; None        ; -3.574 ns ; opcode[4] ; a[0]~reg0          ; clock    ;
+; N/A           ; None        ; -3.575 ns ; opcode[4] ; pc_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.582 ns ; opcode[1] ; estado.00000000    ; clock    ;
+; N/A           ; None        ; -3.597 ns ; overflow  ; estadoOverflow.01  ; clock    ;
+; N/A           ; None        ; -3.597 ns ; overflow  ; estadoOverflow.00  ; clock    ;
+; N/A           ; None        ; -3.599 ns ; opcode[0] ; epc~reg0           ; clock    ;
+; N/A           ; None        ; -3.606 ns ; opcode[3] ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A           ; None        ; -3.612 ns ; funct[3]  ; ir_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.612 ns ; funct[3]  ; reg_write~reg0     ; clock    ;
+; N/A           ; None        ; -3.614 ns ; opcode[5] ; estado.00000000    ; clock    ;
+; N/A           ; None        ; -3.616 ns ; opcode[4] ; estado.00000000    ; clock    ;
+; N/A           ; None        ; -3.618 ns ; funct[3]  ; a[0]~reg0          ; clock    ;
+; N/A           ; None        ; -3.618 ns ; opcode[1] ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A           ; None        ; -3.619 ns ; funct[3]  ; pc_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.650 ns ; opcode[5] ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A           ; None        ; -3.652 ns ; opcode[4] ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A           ; None        ; -3.666 ns ; funct[5]  ; ir_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.666 ns ; funct[5]  ; reg_write~reg0     ; clock    ;
+; N/A           ; None        ; -3.672 ns ; funct[5]  ; a[0]~reg0          ; clock    ;
+; N/A           ; None        ; -3.673 ns ; funct[5]  ; pc_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.673 ns ; opcode[2] ; epc~reg0           ; clock    ;
+; N/A           ; None        ; -3.677 ns ; opcode[5] ; epc~reg0           ; clock    ;
+; N/A           ; None        ; -3.715 ns ; overflow  ; estadoOverflow.10  ; clock    ;
+; N/A           ; None        ; -3.715 ns ; overflow  ; estadoOverflow.11  ; clock    ;
+; N/A           ; None        ; -3.772 ns ; funct[4]  ; epc~reg0           ; clock    ;
+; N/A           ; None        ; -3.772 ns ; funct[4]  ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A           ; None        ; -3.772 ns ; funct[4]  ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A           ; None        ; -3.772 ns ; funct[4]  ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A           ; None        ; -3.772 ns ; funct[4]  ; ALUControl[0]~reg0 ; clock    ;
+; N/A           ; None        ; -3.776 ns ; opcode[3] ; epc~reg0           ; clock    ;
+; N/A           ; None        ; -3.788 ns ; opcode[1] ; epc~reg0           ; clock    ;
+; N/A           ; None        ; -3.822 ns ; opcode[4] ; epc~reg0           ; clock    ;
+; N/A           ; None        ; -3.827 ns ; funct[0]  ; ALUOut~reg0        ; clock    ;
+; N/A           ; None        ; -3.844 ns ; funct[1]  ; epc~reg0           ; clock    ;
+; N/A           ; None        ; -3.844 ns ; funct[1]  ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A           ; None        ; -3.844 ns ; funct[1]  ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A           ; None        ; -3.844 ns ; funct[1]  ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A           ; None        ; -3.844 ns ; funct[1]  ; ALUControl[0]~reg0 ; clock    ;
+; N/A           ; None        ; -3.870 ns ; opcode[0] ; estadoOverflow.01  ; clock    ;
+; N/A           ; None        ; -3.870 ns ; opcode[0] ; estadoOverflow.00  ; clock    ;
+; N/A           ; None        ; -3.944 ns ; opcode[2] ; estadoOverflow.01  ; clock    ;
+; N/A           ; None        ; -3.944 ns ; opcode[2] ; estadoOverflow.00  ; clock    ;
+; N/A           ; None        ; -3.987 ns ; funct[0]  ; ir_write~reg0      ; clock    ;
+; N/A           ; None        ; -3.987 ns ; funct[0]  ; reg_write~reg0     ; clock    ;
+; N/A           ; None        ; -3.988 ns ; opcode[0] ; estadoOverflow.10  ; clock    ;
+; N/A           ; None        ; -3.988 ns ; opcode[0] ; estadoOverflow.11  ; clock    ;
+; N/A           ; None        ; -3.993 ns ; funct[0]  ; a[0]~reg0          ; clock    ;
+; N/A           ; None        ; -3.994 ns ; funct[0]  ; pc_write~reg0      ; clock    ;
+; N/A           ; None        ; -4.047 ns ; opcode[3] ; estadoOverflow.01  ; clock    ;
+; N/A           ; None        ; -4.047 ns ; opcode[3] ; estadoOverflow.00  ; clock    ;
+; N/A           ; None        ; -4.057 ns ; funct[5]  ; epc~reg0           ; clock    ;
+; N/A           ; None        ; -4.057 ns ; funct[5]  ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A           ; None        ; -4.057 ns ; funct[5]  ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A           ; None        ; -4.057 ns ; funct[5]  ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A           ; None        ; -4.057 ns ; funct[5]  ; ALUControl[0]~reg0 ; clock    ;
+; N/A           ; None        ; -4.059 ns ; opcode[1] ; estadoOverflow.01  ; clock    ;
+; N/A           ; None        ; -4.059 ns ; opcode[1] ; estadoOverflow.00  ; clock    ;
+; N/A           ; None        ; -4.062 ns ; opcode[2] ; estadoOverflow.10  ; clock    ;
+; N/A           ; None        ; -4.062 ns ; opcode[2] ; estadoOverflow.11  ; clock    ;
+; N/A           ; None        ; -4.091 ns ; opcode[5] ; estadoOverflow.01  ; clock    ;
+; N/A           ; None        ; -4.091 ns ; opcode[5] ; estadoOverflow.00  ; clock    ;
+; N/A           ; None        ; -4.093 ns ; opcode[4] ; estadoOverflow.01  ; clock    ;
+; N/A           ; None        ; -4.093 ns ; opcode[4] ; estadoOverflow.00  ; clock    ;
+; N/A           ; None        ; -4.147 ns ; funct[2]  ; epc~reg0           ; clock    ;
+; N/A           ; None        ; -4.147 ns ; funct[2]  ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A           ; None        ; -4.147 ns ; funct[2]  ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A           ; None        ; -4.147 ns ; funct[2]  ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A           ; None        ; -4.147 ns ; funct[2]  ; ALUControl[0]~reg0 ; clock    ;
+; N/A           ; None        ; -4.165 ns ; opcode[3] ; estadoOverflow.10  ; clock    ;
+; N/A           ; None        ; -4.165 ns ; opcode[3] ; estadoOverflow.11  ; clock    ;
+; N/A           ; None        ; -4.177 ns ; opcode[1] ; estadoOverflow.10  ; clock    ;
+; N/A           ; None        ; -4.177 ns ; opcode[1] ; estadoOverflow.11  ; clock    ;
+; N/A           ; None        ; -4.209 ns ; opcode[5] ; estadoOverflow.10  ; clock    ;
+; N/A           ; None        ; -4.209 ns ; opcode[5] ; estadoOverflow.11  ; clock    ;
+; N/A           ; None        ; -4.211 ns ; opcode[4] ; estadoOverflow.10  ; clock    ;
+; N/A           ; None        ; -4.211 ns ; opcode[4] ; estadoOverflow.11  ; clock    ;
+; N/A           ; None        ; -4.256 ns ; funct[3]  ; epc~reg0           ; clock    ;
+; N/A           ; None        ; -4.256 ns ; funct[3]  ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A           ; None        ; -4.256 ns ; funct[3]  ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A           ; None        ; -4.256 ns ; funct[3]  ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A           ; None        ; -4.256 ns ; funct[3]  ; ALUControl[0]~reg0 ; clock    ;
+; N/A           ; None        ; -4.631 ns ; funct[0]  ; epc~reg0           ; clock    ;
+; N/A           ; None        ; -4.631 ns ; funct[0]  ; ALUSourceA[0]~reg0 ; clock    ;
+; N/A           ; None        ; -4.631 ns ; funct[0]  ; ALUSourceA[1]~reg0 ; clock    ;
+; N/A           ; None        ; -4.631 ns ; funct[0]  ; ALUSourceB[0]~reg0 ; clock    ;
+; N/A           ; None        ; -4.631 ns ; funct[0]  ; ALUControl[0]~reg0 ; clock    ;
++---------------+-------------+-----------+-----------+--------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Thu Oct 10 20:44:44 2019
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off DedoNoQuartusEGritaria -c DedoNoQuartusEGritaria --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clock" is an undefined clock
+Info: Clock "clock" Internal fmax is restricted to 500.0 MHz between source register "estado.00000010" and destination register "epc~reg0"
+    Info: fmax restricted to clock pin edge rate 2.0 ns. Expand message to see actual delay path.
+        Info: + Longest register to register delay is 1.256 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X22_Y4_N17; Fanout = 6; REG Node = 'estado.00000010'
+            Info: 2: + IC(0.246 ns) + CELL(0.053 ns) = 0.299 ns; Loc. = LCCOMB_X22_Y4_N14; Fanout = 5; COMB Node = 'pc_write~5'
+            Info: 3: + IC(0.211 ns) + CELL(0.746 ns) = 1.256 ns; Loc. = LCFF_X22_Y4_N7; Fanout = 3; REG Node = 'epc~reg0'
+            Info: Total cell delay = 0.799 ns ( 63.61 % )
+            Info: Total interconnect delay = 0.457 ns ( 36.39 % )
+        Info: - Smallest clock skew is 0.000 ns
+            Info: + Shortest clock path from clock "clock" to destination register is 2.482 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'clock'
+                Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 17; COMB Node = 'clock~clkctrl'
+                Info: 3: + IC(0.667 ns) + CELL(0.618 ns) = 2.482 ns; Loc. = LCFF_X22_Y4_N7; Fanout = 3; REG Node = 'epc~reg0'
+                Info: Total cell delay = 1.472 ns ( 59.31 % )
+                Info: Total interconnect delay = 1.010 ns ( 40.69 % )
+            Info: - Longest clock path from clock "clock" to source register is 2.482 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'clock'
+                Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 17; COMB Node = 'clock~clkctrl'
+                Info: 3: + IC(0.667 ns) + CELL(0.618 ns) = 2.482 ns; Loc. = LCFF_X22_Y4_N17; Fanout = 6; REG Node = 'estado.00000010'
+                Info: Total cell delay = 1.472 ns ( 59.31 % )
+                Info: Total interconnect delay = 1.010 ns ( 40.69 % )
+        Info: + Micro clock to output delay of source is 0.094 ns
+        Info: + Micro setup delay of destination is 0.090 ns
+Info: tsu for register "epc~reg0" (data pin = "funct[0]", clock pin = "clock") is 4.870 ns
+    Info: + Longest pin to register delay is 7.262 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.809 ns) = 0.809 ns; Loc. = PIN_B11; Fanout = 1; PIN Node = 'funct[0]'
+        Info: 2: + IC(4.634 ns) + CELL(0.154 ns) = 5.597 ns; Loc. = LCCOMB_X21_Y4_N0; Fanout = 3; COMB Node = 'pc_write~0'
+        Info: 3: + IC(0.351 ns) + CELL(0.357 ns) = 6.305 ns; Loc. = LCCOMB_X22_Y4_N14; Fanout = 5; COMB Node = 'pc_write~5'
+        Info: 4: + IC(0.211 ns) + CELL(0.746 ns) = 7.262 ns; Loc. = LCFF_X22_Y4_N7; Fanout = 3; REG Node = 'epc~reg0'
+        Info: Total cell delay = 2.066 ns ( 28.45 % )
+        Info: Total interconnect delay = 5.196 ns ( 71.55 % )
+    Info: + Micro setup delay of destination is 0.090 ns
+    Info: - Shortest clock path from clock "clock" to destination register is 2.482 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'clock'
+        Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 17; COMB Node = 'clock~clkctrl'
+        Info: 3: + IC(0.667 ns) + CELL(0.618 ns) = 2.482 ns; Loc. = LCFF_X22_Y4_N7; Fanout = 3; REG Node = 'epc~reg0'
+        Info: Total cell delay = 1.472 ns ( 59.31 % )
+        Info: Total interconnect delay = 1.010 ns ( 40.69 % )
+Info: tco from clock "clock" to destination pin "regDST[2]" through register "reg_write~reg0" is 6.941 ns
+    Info: + Longest clock path from clock "clock" to source register is 2.482 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'clock'
+        Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 17; COMB Node = 'clock~clkctrl'
+        Info: 3: + IC(0.667 ns) + CELL(0.618 ns) = 2.482 ns; Loc. = LCFF_X22_Y4_N19; Fanout = 6; REG Node = 'reg_write~reg0'
+        Info: Total cell delay = 1.472 ns ( 59.31 % )
+        Info: Total interconnect delay = 1.010 ns ( 40.69 % )
+    Info: + Micro clock to output delay of source is 0.094 ns
+    Info: + Longest register to pin delay is 4.365 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X22_Y4_N19; Fanout = 6; REG Node = 'reg_write~reg0'
+        Info: 2: + IC(2.211 ns) + CELL(2.154 ns) = 4.365 ns; Loc. = PIN_R22; Fanout = 0; PIN Node = 'regDST[2]'
+        Info: Total cell delay = 2.154 ns ( 49.35 % )
+        Info: Total interconnect delay = 2.211 ns ( 50.65 % )
+Info: th for register "ALUSourceB[0]~reg0" (data pin = "reset", clock pin = "clock") is -2.357 ns
+    Info: + Longest clock path from clock "clock" to destination register is 2.482 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'clock'
+        Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 17; COMB Node = 'clock~clkctrl'
+        Info: 3: + IC(0.667 ns) + CELL(0.618 ns) = 2.482 ns; Loc. = LCFF_X22_Y4_N21; Fanout = 1; REG Node = 'ALUSourceB[0]~reg0'
+        Info: Total cell delay = 1.472 ns ( 59.31 % )
+        Info: Total interconnect delay = 1.010 ns ( 40.69 % )
+    Info: + Micro hold delay of destination is 0.149 ns
+    Info: - Shortest pin to register delay is 4.988 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.799 ns) = 0.799 ns; Loc. = PIN_W9; Fanout = 7; PIN Node = 'reset'
+        Info: 2: + IC(3.981 ns) + CELL(0.053 ns) = 4.833 ns; Loc. = LCCOMB_X22_Y4_N20; Fanout = 1; COMB Node = 'ALUSourceB~0'
+        Info: 3: + IC(0.000 ns) + CELL(0.155 ns) = 4.988 ns; Loc. = LCFF_X22_Y4_N21; Fanout = 1; REG Node = 'ALUSourceB[0]~reg0'
+        Info: Total cell delay = 1.007 ns ( 20.19 % )
+        Info: Total interconnect delay = 3.981 ns ( 79.81 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 181 megabytes
+    Info: Processing ended: Thu Oct 10 20:44:44 2019
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

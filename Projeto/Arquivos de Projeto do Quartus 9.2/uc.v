@@ -1,5 +1,5 @@
 //tive q comecar do zero pq o pc travou na linha 77 sem eu ter salvo ;))))))))
-module controle(
+module uc(
     input clock,
     input igual,
     input menor,
@@ -21,7 +21,7 @@ module controle(
     output reg mdr_write,
     output reg ls_control,
     output reg shamt,
-    output reg shift_sorce,
+    output reg shift_source,
     output reg shift_control,
     output reg mux_to_mem_to_reg,
     output reg[3:0]mem_to_reg,
@@ -47,9 +47,9 @@ initial begin
     contador = 0;
 end
 
-always(@posedge clock)begin
+always@(posedge clock)begin
     if(reset)begin
-        pc_write=1b'0;
+        pc_write=1'b0;
         mux_mem=2'b0;
         mux_to_mux_mem=2'b0;
         mem_write=1'b0;
@@ -60,7 +60,7 @@ always(@posedge clock)begin
         mdr_write=1'b0;
         ls_control=1'b0;
         shamt=1'b0;
-        shift_sorce=1'b0;
+        shift_source=1'b0;
         shift_control=1'b0;
         mux_to_mem_to_reg=1'b0;
         mem_to_reg=4'b111;//escolhe o 227
@@ -79,7 +79,7 @@ always(@posedge clock)begin
     else if(overflow && opcode!=6'b001001)begin
         case(estadoOverflow)
             2'b0: begin//overflow 1
-                pc_write=1b'0;
+                pc_write=1'b0;
                 mux_mem=2'b10;//escolhe o mux_to_mux_mem
                 mux_to_mux_mem=2'b0;//escolhe o 253
                 mem_write=1'b0;
@@ -90,7 +90,7 @@ always(@posedge clock)begin
                 mdr_write=1'b0;
                 ls_control=1'b0;
                 shamt=1'b0;
-                shift_sorce=1'b0;
+                shift_source=1'b0;
                 shift_control=1'b0;
                 mux_to_mem_to_reg=1'b0;
                 mem_to_reg=4'b0;
@@ -108,7 +108,7 @@ always(@posedge clock)begin
                 estadoOverflow= 2'b1;
             end
             2'b1: begin//overflow 2
-                pc_write=1b'0;
+                pc_write=1'b0;
                 mux_mem=2'b0;
                 mux_to_mux_mem=2'b0;
                 mem_write=1'b0;
@@ -119,7 +119,7 @@ always(@posedge clock)begin
                 mdr_write=1'b1;//escreve oq ta em 253 em mdr e extende o sinal
                 ls_control=1'b0;
                 shamt=1'b0;
-                shift_sorce=1'b0;
+                shift_source=1'b0;
                 shift_control=1'b0;
                 mux_to_mem_to_reg=1'b0;
                 mem_to_reg=4'b0;
@@ -137,7 +137,7 @@ always(@posedge clock)begin
                 estadoOverflow= 2'b10;
             end
             2'b10: begin//overflow 3
-                pc_write=1b'1;//escreve mdr extendido em pc
+                pc_write=1'b1;//escreve mdr extendido em pc
                 mux_mem=2'b0;
                 mux_to_mux_mem=2'b0;
                 mem_write=1'b0;
@@ -148,7 +148,7 @@ always(@posedge clock)begin
                 mdr_write=1'b0;
                 ls_control=1'b0;
                 shamt=1'b0;
-                shift_sorce=1'b0;
+                shift_source=1'b0;
                 shift_control=1'b0;
                 mux_to_mem_to_reg=1'b0;
                 mem_to_reg=4'b0;
@@ -166,7 +166,7 @@ always(@posedge clock)begin
                 estadoOverflow= 2'b11;
             end
             2'b11: begin//overflow 4
-                pc_write=1b'0;//esse estado so serve pra fechar o pc_write
+                pc_write=1'b0;//esse estado so serve pra fechar o pc_write
                 mux_mem=2'b0;
                 mux_to_mux_mem=2'b0;
                 mem_write=1'b0;
@@ -177,7 +177,7 @@ always(@posedge clock)begin
                 mdr_write=1'b0;
                 ls_control=1'b0;
                 shamt=1'b0;
-                shift_sorce=1'b0;
+                shift_source=1'b0;
                 shift_control=1'b0;
                 mux_to_mem_to_reg=1'b0;
                 mem_to_reg=4'b0;
@@ -197,9 +197,9 @@ always(@posedge clock)begin
         endcase
     end
     else begin
-        case(estado) begin
+        case(estado)
             8'b0: begin//fetch 1
-                pc_write=1b'0;
+                pc_write=1'b0;
                 mux_mem=2'b0;//escolhe o PC
                 mux_to_mux_mem=2'b0;
                 mem_write=1'b0;
@@ -210,7 +210,7 @@ always(@posedge clock)begin
                 mdr_write=1'b0;
                 ls_control=1'b0;
                 shamt=1'b0;
-                shift_sorce=1'b0;
+                shift_source=1'b0;
                 shift_control=1'b0;
                 mux_to_mem_to_reg=1'b0;
                 mem_to_reg=4'b0;
@@ -228,7 +228,7 @@ always(@posedge clock)begin
                 estado= 8'b1;
             end
             8'b1: begin//fetch 2
-                pc_write=1b'1;//PC agora e PC+4
+                pc_write=1'b1;//PC agora e PC+4
                 mux_mem=2'b0;
                 mux_to_mux_mem=2'b0;
                 mem_write=1'b1;//coloca rs e rt no banco de registradores
@@ -239,7 +239,7 @@ always(@posedge clock)begin
                 mdr_write=1'b0;
                 ls_control=1'b0;
                 shamt=1'b0;
-                shift_sorce=1'b0;
+                shift_source=1'b0;
                 shift_control=1'b0;
                 mux_to_mem_to_reg=1'b0;
                 mem_to_reg=4'b0;
@@ -254,14 +254,14 @@ always(@posedge clock)begin
                 mux_to_pc=2'b0;//escolhe PC+4
                 a=2'b1;//load rs em a
                 b=2'b1;//load rt em b  
-                estado= 8'b10;
-            end;
+                estado=8'b10;
+            end
             8'b10: begin//aqui começam as instruções de fato
-                case(opcode)begin
+                case(opcode)
                     6'b0: begin // caso formato r
                         case(funct)
                             6'b0: begin//instrucao ADD!!!!
-                                    pc_write=1b'0;
+                                    pc_write=1'b0;
                                     mux_mem=2'b0;
                                     mux_to_mux_mem=2'b0;
                                     mem_write=1'b0;
@@ -272,7 +272,7 @@ always(@posedge clock)begin
                                     mdr_write=1'b0;
                                     ls_control=1'b0;
                                     shamt=1'b0;
-                                    shift_sorce=1'b0;
+                                    shift_source=1'b0;
                                     shift_control=1'b0;
                                     mux_to_mem_to_reg=1'b0;
                                     mem_to_reg=4'b0;
@@ -288,20 +288,11 @@ always(@posedge clock)begin
                                     a=2'b0;
                                     b=2'b0;
                                 end
-                        endcase  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        endcase
+                    end
+                endcase
+            end
+        endcase
+    end
+  end
+endmodule

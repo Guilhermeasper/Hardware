@@ -1,0 +1,111 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 64 0 240 256)
+	(text "mux10" (rect 5 64 38 76)(font "Arial" ))
+	(text "inst" (rect 8 208 25 220)(font "Arial" ))
+	(port
+		(pt 96 256)
+		(input)
+		(text "clock" (rect 0 96 25 108)(font "Arial" ))
+		(text "clock" (rect 88 207 100 232)(font "Arial" )(vertical))
+		(line (pt 96 256)(pt 96 240)(line_width 1))
+	)
+	(port
+		(pt 0 104)
+		(input)
+		(text "entrada0[15..0]" (rect 0 64 74 76)(font "Arial" ))
+		(text "entrada0[15..0]" (rect 21 99 95 111)(font "Arial" ))
+		(line (pt 0 104)(pt 16 104)(line_width 3))
+	)
+	(port
+		(pt 0 120)
+		(input)
+		(text "entrada1[15..0]" (rect 0 64 74 76)(font "Arial" ))
+		(text "entrada1[15..0]" (rect 21 115 95 127)(font "Arial" ))
+		(line (pt 0 120)(pt 16 120)(line_width 3))
+	)
+	(port
+		(pt 0 136)
+		(input)
+		(text "entrada2[15..0]" (rect 0 64 74 76)(font "Arial" ))
+		(text "entrada2[15..0]" (rect 21 131 95 143)(font "Arial" ))
+		(line (pt 0 136)(pt 16 136)(line_width 3))
+	)
+	(port
+		(pt 0 152)
+		(input)
+		(text "entrada3[15..0]" (rect 0 64 74 76)(font "Arial" ))
+		(text "entrada3[15..0]" (rect 21 147 95 159)(font "Arial" ))
+		(line (pt 0 152)(pt 16 152)(line_width 3))
+	)
+	(port
+		(pt 0 168)
+		(input)
+		(text "entrada4[15..0]" (rect 0 64 74 76)(font "Arial" ))
+		(text "entrada4[15..0]" (rect 21 163 95 175)(font "Arial" ))
+		(line (pt 0 168)(pt 16 168)(line_width 3))
+	)
+	(port
+		(pt 96 0)
+		(input)
+		(text "controle[2..0]" (rect 0 0 64 12)(font "Arial" ))
+		(text "controle[2..0]" (rect 88 24 100 88)(font "Arial" )(vertical))
+		(line (pt 96 0)(pt 96 16)(line_width 3))
+	)
+	(port
+		(pt 176 128)
+		(output)
+		(text "saida[15..0]" (rect -8 64 49 76)(font "Arial" ))
+		(text "saida[15..0]" (rect 98 123 155 135)(font "Arial" ))
+		(line (pt 176 128)(pt 160 128)(line_width 3))
+	)
+	(parameter
+		"selectEntrada0"
+		"000"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"selectEntrada1"
+		"001"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"selectEntrada2"
+		"010"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"selectEntrada3"
+		"011"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"selectEntrada4"
+		"100"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(drawing
+		(rectangle (rect 16 16 160 240)(line_width 1))
+	)
+	(annotation_block (parameter)(rect 200 -40 392 48))
+)
