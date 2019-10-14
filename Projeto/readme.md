@@ -8,7 +8,7 @@
 ### [Unidade de Controle](https://github.com/MarconiGRF/Hardware/blob/master/Projeto/Arquivos%20de%20Projeto%20do%20Quartus%209.2/uc.v)
 
 ## O que funciona até agora?
--[x] PC + 4
+- [x] PC + 4
 
 ## O que não funciona até agora?
 - Todo o resto :)
