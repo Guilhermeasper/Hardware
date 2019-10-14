@@ -11,16 +11,16 @@ module Control_Unit(
 	input reset;
 	input negative;
 	output reg pc_write;
-	output reg [1:0] mux_1;//mux_to_mux_mem
-	output reg [1:0] mux_2;//mux_mem
-	output reg mux_3;//shift_source
-	output reg mux_4;//shamt
-	output reg [2:0] mux_6;//regDST
-	output reg [3:0] mux_7;//mem_to_reg
-	output reg [1:0] mux_8;//ALUSourceA
-	output reg [2:0] mux_9;//ALUSourceB
-	output reg [2:0] mux_10;//mux_to_pc
-	output reg [1:0] mux_11;//mux_to_mem_to_reg
+	output reg [1:0] mux_1;       //mux_to_mux_mem
+	output reg [1:0] mux_2;       //mux_mem
+	output reg mux_3;             //shift_source
+	output reg mux_4;             //shamt
+	output reg [2:0] mux_6;       //regDST
+	output reg [3:0] mux_7;       //mem_to_reg
+	output reg [1:0] mux_8;       //ALUSourceA
+	output reg [2:0] mux_9;       //ALUSourceB
+	output reg [2:0] mux_10;      //mux_to_pc
+	output reg [1:0] mux_11;      //mux_to_mem_to_reg
 	output reg shift_control;
 	output reg ss_control;
 	output reg mem_write;
