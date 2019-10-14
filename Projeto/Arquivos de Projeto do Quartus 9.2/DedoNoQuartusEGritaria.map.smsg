@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at Control_Unit.v(11): object "reset" differs only in case from object "RESET" in the same scope
+Info (10281): Verilog HDL Declaration information at Control_Unit.v(10): object "overflow" differs only in case from object "OVERFLOW" in the same scope

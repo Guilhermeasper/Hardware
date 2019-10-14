@@ -1,55 +1,60 @@
 
 module Control_Unit(
-	input clock;
-	input equal;
-	input less;
-	input greater;
-	input opcode[5:0];
-	input funct[5:0];
-	input div0;
-	input overflow;
-	input reset;
-	input negative;
-	output reg pc_write;
-	output reg [1:0] mux_1;       //mux_to_mux_mem
-	output reg [1:0] mux_2;       //mux_mem
-	output reg mux_3;             //shift_source
-	output reg mux_4;             //shamt
-	output reg [2:0] mux_6;       //regDST
-	output reg [3:0] mux_7;       //mem_to_reg
-	output reg [1:0] mux_8;       //ALUSourceA
-	output reg [2:0] mux_9;       //ALUSourceB
-	output reg [2:0] mux_10;      //mux_to_pc
-	output reg [1:0] mux_11;      //mux_to_mem_to_reg
-	output reg shift_control;
-	output reg ss_control;
-	output reg mem_write;
-	output reg [1:0] mult_div;
-	output reg ir_write;
-	output reg hi_lo;
-	output reg EPC_CONTROL;
-	output reg MDR_CONTROL;
-	output reg LOAD_SIZE;
-	output reg ALU_CONTROL;
-	output reg ALU_OUT;
-	output reg REG_A;
-	output reg REG_B;
-	output reg REG_WRITE;
-	output reg XCH_CONTROL;
+	input clock,
+	input equal,
+	input less,
+	input greater,
+	input[5:0] opcode,
+	input[5:0] funct,
+	input div0,
+	input overflow,
+	input reset,
+	input negative,
+	output reg pc_write,
+	output reg[1:0] mux_1,       //mux_to_mux_mem
+	output reg[1:0] mux_2,       //mux_mem
+	output reg mux_3,             //shift_source
+	output reg mux_4,             //shamt
+	output reg[2:0] mux_6,       //regDST
+	output reg[3:0] mux_7,       //mem_to_reg
+	output reg[1:0] mux_8,       //ALUSourceA
+	output reg[2:0] mux_9,       //ALUSourceB
+	output reg[2:0] mux_10,      //mux_to_pc
+	output reg[1:0] mux_11,      //mux_to_mem_to_reg
+	output reg shift_control,
+	output reg ss_control,
+	output reg mem_write,
+	output reg [1:0] mult_div,
+	output reg ir_write,
+	output reg hi_lo,
+	output reg EPC_CONTROL,
+	output reg MDR_CONTROL,
+	output reg LOAD_SIZE,
+	output reg ALU_CONTROL,
+	output reg ALU_OUT,
+	output reg REG_A,
+	output reg REG_B,
+	output reg REG_WRITE,
+	output reg XCH_CONTROL
 );
+
 integer counter;
-reg [7:0] state;
-reg [1:0] stateOverflow;
+reg[7:0] state;
+reg [5:0]next_state;
+reg[1:0] stateOverflow;
 
 initial begin
     state = 8'b0;
     stateOverflow = 2'b0;
     counter = 0;
+    next_state = 8'b0;
 end
 
 parameter RESET = 6'd0;
 parameter FETCH = 6'd1;
-parameter WAIT = 6'd2;
+parameter FETCH_2 = 6'd2;
+parameter WAIT = 6'd3;
+//INCONSISTENCIA
 parameter DECODE = 6'd3;
 parameter ADD = 6'd4;
 parameter AND = 6'd5;
@@ -85,7 +90,6 @@ parameter INC_OP = 6'd34;
 parameter INCDEC_ST = 6'd35;
 parameter ADDIU = 6'd36;
 parameter ADDI = 6'd37;
-parameter REG_WRITE = 6'd38;
 parameter BEQ = 6'd39;
 parameter BNE = 6'd40;
 parameter BLE = 6'd41;
@@ -111,16 +115,14 @@ parameter INCDEC_WAIT_2 = 6'd60;
 parameter LS_WAIT_2 = 6'd61;
 parameter EXP_WAIT_2 = 6'd62;
 
-reg [5:0]nextState;
-
 always@(posedge clock or posedge reset) begin
 	if (reset)
 		state = RESET;
 	else
-		state = nextState;
+		state = next_state;
 end 
 
-always@(posedge clock)begin
+always@(posedge clock) begin
 	case(state)
 		RESET: begin
 			pc_write = 1'b0;
@@ -150,7 +152,7 @@ always@(posedge clock)begin
 			REG_WRITE = 1'b1;
 			XCH_CONTROL = 1'b0;
 			
-			state = FETCH;
+			next_state = FETCH;
 		end
 		FETCH: begin
 			pc_write = 1'b0;
@@ -180,7 +182,7 @@ always@(posedge clock)begin
             REG_WRITE = 1'b0;
             XCH_CONTROL = 1'b0;
             
-            state = FETCH_2;
+            next_state = FETCH_2;
 		end
 		FETCH_2: begin
 			pc_write = 1'b1;
@@ -210,7 +212,7 @@ always@(posedge clock)begin
             REG_WRITE = 1'b0;
             XCH_CONTROL = 1'b0;
 
-			state = WAIT;
+			next_state = WAIT;
 		end
 		WAIT: begin
 			pc_write=1'b0;
@@ -240,7 +242,7 @@ always@(posedge clock)begin
 			REG_WRITE=1'b0;
 			XCH_CONTROL = 1'b0;
 
-			state = WAIT;
+			next_state = WAIT;
 		end
     endcase
 	

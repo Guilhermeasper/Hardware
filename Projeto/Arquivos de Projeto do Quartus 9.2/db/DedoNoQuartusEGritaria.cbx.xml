@@ -1,9 +1,5 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="DedoNoQuartusEGritaria">
-		<CBX_INST_ENTRY INSTANCE_NAME="|Processador|Memoria:inst11|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block" CBX_FILE_NAME="altsyncram_g2a1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|Processador|Memoria:inst11|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block" CBX_FILE_NAME="altsyncram_g2a1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|Processador|Memoria:inst11|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block" CBX_FILE_NAME="altsyncram_g2a1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|Processador|Memoria:inst11|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block" CBX_FILE_NAME="altsyncram_g2a1.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

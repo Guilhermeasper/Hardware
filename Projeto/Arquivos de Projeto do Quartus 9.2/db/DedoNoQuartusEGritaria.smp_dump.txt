@@ -1,15 +1,14 @@
 
-State Machine - |Processador|uc:inst1|estado
-Name estado.00000011 estado.00000010 estado.00000001 estado.00000000 estado.11111111 
-estado.00000000 0 0 0 0 0 
-estado.00000001 0 0 1 1 0 
-estado.00000010 0 1 0 1 0 
-estado.00000011 1 0 0 1 0 
-estado.11111111 0 0 0 1 1 
+State Machine - |Control_Unit|next_state
+Name next_state.WAIT next_state.FETCH_2 next_state.FETCH next_state.000000 
+next_state.000000 0 0 0 0 
+next_state.FETCH 0 0 1 1 
+next_state.FETCH_2 0 1 0 1 
+next_state.WAIT 1 0 0 1 
 
-State Machine - |Processador|uc:inst1|estadoOverflow
-Name estadoOverflow.11 estadoOverflow.10 estadoOverflow.01 estadoOverflow.00 
-estadoOverflow.00 0 0 0 0 
-estadoOverflow.01 0 0 1 1 
-estadoOverflow.10 0 1 0 1 
-estadoOverflow.11 1 0 0 1 
+State Machine - |Control_Unit|state
+Name state.WAIT state.FETCH_2 state.FETCH state.00000000 
+state.00000000 0 0 0 0 
+state.FETCH 0 0 1 1 
+state.FETCH_2 0 1 0 1 
+state.WAIT 1 0 0 1 
