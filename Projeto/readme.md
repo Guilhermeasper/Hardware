@@ -2,10 +2,16 @@
 ### [Google Drawings](https://docs.google.com/drawings/d/1XSWlKrBfmlfo0G1LxOmPeD0C6lB5j4LFmhihFaAG934/edit)
 
 ## Projeto Quartus
-### Nada aqui ainda
+### [Arquivo Principal do Projeto](https://github.com/MarconiGRF/Hardware/blob/master/Projeto/Arquivos%20de%20Projeto%20do%20Quartus%209.2/DedoNoQuartusEGritaria.qpf)
 
 ## Projeto Verilog
-### Nada aqui ainda
+### [Unidade de Controle](https://github.com/MarconiGRF/Hardware/blob/master/Projeto/Arquivos%20de%20Projeto%20do%20Quartus%209.2/uc.v)
+
+## O que funciona até agora?
+-[x] PC + 4
+
+## O que não funciona até agora?
+- Todo o resto :)
 
 ## Relatório
 
