@@ -1,3 +1,4 @@
+
 module Control_Unit(
 	input clock;
 	input equal;
@@ -127,7 +128,7 @@ always@(posedge clock)begin
 			mux_2 = 2'b0;
 			mux_3 = 1'b0;
 			mux_4 = 1'b0;
-			mux_6 = 3'b100;;
+			mux_6 = 3'b100;
 			mux_7 = 4'b111;
 			mux_8 = 2'b0;
 			mux_9 = 3'b0;
@@ -153,91 +154,91 @@ always@(posedge clock)begin
 		end
 		FETCH: begin
 			pc_write = 1'b0;
-            mux_2 = 2'b0;//escolhe o PC
             mux_1 = 2'b0;
-            mem_write = 1'b0;
+            mux_2 = 2'b0;         //escolhe o PC
+            mux_3 = 1'b0;
+            mux_4 = 1'b0;
+            mux_6 = 3'b0;
+            mux_7 = 4'b0;
+            mux_8 = 2'b0;         //escolhe PC
+            mux_9 = 3'b1;         //escolhe 4
+            mux_10=3'b0;          //escolhe PC+4
+            mux_11 = 1'b0;
+            shift_control = 1'b0;
             ss_control = 1'b0;
+            mem_write = 1'b0;
             mult_div = 2'b0;
+            ir_write = 1'b1;      //escreve a instrucao em ir_write
             hi_lo = 1'b0;
-            ir_write = 1'b1;//escreve a instrucao em ir_write
+            EPC_CONTROL=1'b0;
             MDR_CONTROL = 1'b0;
             LOAD_SIZE = 1'b0;
-            mux_4 = 1'b0;
-            mux_3 = 1'b0;
-            shift_control = 1'b0;
-            mux_11 = 1'b0;
-            mux_7 = 4'b0;
-            mux_6 = 3'b0;
-            REG_WRITE = 1'b0;
-            REG_B = 1'b0;
-            mux_8 = 2'b0;//escolhe PC
-            mux_9 = 3'b1;//escolhe 4
-            ALU_CONTROL=3'b1;//faz PC+4
+            ALU_CONTROL=3'b1;     //faz PC+4
             ALU_OUT=1'b0;
-            EPC_CONTROL=1'b0;
-            mux_10=3'b0;//escolhe PC+4
             REG_A=2'b0;
             REG_B=2'b0;
+            REG_WRITE = 1'b0;
+            XCH_CONTROL = 1'b0;
             
             state = FETCH_2;
 		end
 		FETCH_2: begin
-			pc_write=1'b1;//PC agora e PC+4
-			mux_2=2'b0;
-			mux_1=2'b0;
-			mem_write=1'b1;//coloca rs e rt no banco de registradores
-			ss_control=1'b0;
-			mult_div=2'b0;
-			hi_lo=1'b0;
-			ir_write=1'b0;
-			MDR_CONTROL=1'b0;
-			LOAD_SIZE=1'b0;
-			mux_4=1'b0;
-			mux_3=1'b0;
-			shift_control=1'b0;
-			mux_11=1'b0;
-			mux_7=4'b0;
-			mux_6=3'b0;
-			REG_WRITE=1'b0;
-			REG_B=1'b0;
-			mux_8=2'b0;//escolhe PC
-			mux_9=3'b101;//escolhe sinal extendido e shiftado de 15-0
-			ALU_CONTROL=3'b1;//faz PC+o escrito acima
-			ALU_OUT=1'b1;//salva a soma em ALU_OUT
-			EPC_CONTROL=1'b0;
-			mux_10=3'b0;//escolhe PC+4
-			REG_A=2'b1;//load rs em a
-			REG_B=2'b1;//load rt em b  
+			pc_write = 1'b1;
+            mux_1 = 2'b0;
+            mux_2 = 2'b0;         
+            mux_3 = 1'b0;
+            mux_4 = 1'b0;
+            mux_6 = 3'b0;
+            mux_7 = 4'b0;
+            mux_8 = 2'b0;         
+            mux_9 = 3'b0;         
+            mux_10= 3'b0;          
+            mux_11 = 1'b0;
+            shift_control = 1'b0;
+            ss_control = 1'b0;
+            mem_write = 1'b0;
+            mult_div = 2'b0;
+            ir_write = 1'b0;
+            hi_lo = 1'b0;
+            EPC_CONTROL=1'b0;
+            MDR_CONTROL = 1'b0;
+            LOAD_SIZE = 1'b0;
+            ALU_CONTROL=3'b0;
+            ALU_OUT=1'b0;
+            REG_A=2'b0;
+            REG_B=2'b0;
+            REG_WRITE = 1'b0;
+            XCH_CONTROL = 1'b0;
 
 			state = WAIT;
 		end
 		WAIT: begin
-			pc_write=1'b0;//PC agora e PC+4
-			mux_2=2'b0;
+			pc_write=1'b0;
 			mux_1=2'b0;
-			mem_write=1'b0;//coloca rs e rt no banco de registradores
+			mux_2=2'b0;
+			mux_3=1'b0;
+			mux_4=1'b0;
+			mux_6=3'b0;
+			mux_7=4'b0;
+			mux_8=2'b0;
+			mux_9=3'b0;
+			mux_10=3'b0;
+			mux_11=1'b0;
+			shift_control=1'b0;
 			ss_control=1'b0;
+			mem_write=1'b0;
 			mult_div=2'b0;
+			ir_write=1'b1;
 			hi_lo=1'b0;
-			ir_write=1'b0;
+			EPC_CONTROL=1'b0;
 			MDR_CONTROL=1'b0;
 			LOAD_SIZE=1'b0;
-			mux_4=1'b0;
-			mux_3=1'b0;
-			shift_control=1'b0;
-			mux_11=1'b0;
-			mux_7=4'b0;
-			mux_6=3'b0;
-			REG_WRITE=1'b0;
+			ALU_CONTROL=3'b0;
+			ALU_OUT=1'b0;
+			REG_A=2'b0;
 			REG_B=1'b0;
-			mux_8=2'b0;//escolhe PC
-			mux_9=3'b0;//escolhe sinal extendido e shiftado de 15-0
-			ALU_CONTROL=3'b0;//faz PC+o escrito acima
-			ALU_OUT=1'b0;//salva a soma em ALU_OUT
-			EPC_CONTROL=1'b0;
-			mux_10=3'b0;//escolhe PC+4
-			REG_A=2'b0;//load rs em a
-			REG_B=2'b0;//load rt em b  
+			REG_WRITE=1'b0;
+			XCH_CONTROL = 1'b0;
 
 			state = WAIT;
 		end
