@@ -244,6 +244,78 @@ always@(posedge clock) begin
 
 			next_state = WAIT;
 		end
+		DECODE: begin
+			pc_write=1'b0;//PC agora e PC+4
+			mux_2=2'b0;
+			mux_1=2'b0;
+			mem_write=1'b0;//coloca rs e rt no banco de registradores
+			ss_control=1'b0;
+			mult_div=2'b0;
+			hi_lo=1'b0;
+			ir_write=1'b0;
+			MDR_CONTROL=1'b0;
+			LOAD_SIZE=1'b0;
+			mux_4=1'b0;
+			mux_3=1'b0;
+			shift_control=1'b0;
+			mux_11=1'b0;
+			mux_7=4'b0;
+			mux_6=3'b0;
+			REG_WRITE=1'b0;
+			REG_B=1'b0;
+			mux_8=2'b0;//escolhe PC
+			mux_9=3'b0;//escolhe sinal extendido e shiftado de 15-0
+			ALU_CONTROL=3'b0;//faz PC+o escrito acima
+			ALU_OUT=1'b1;//salva a soma em ALU_OUT
+			EPC_CONTROL=1'b0;
+			mux_10=3'b0;//escolhe PC+4
+			REG_A=2'b0;//load rs em a
+			REG_B=2'b0;//load rt em b
+			
+			case(opcode)
+				6'b0: begin // caso formato r
+					case(funct)
+						6'h20: next_state = ADD;
+                        6'h24: next_state = AND;
+                        6'h22: next_state = SUB;
+                        6'h0: next_state = SHIFT_SHAMT;
+                        6'h2: next_state = SHIFT_SHAMT;
+                        6'h3: next_state = SHIFT_SHAMT;
+                        6'h4: next_state = SHIFT_REG;
+                        6'h7: next_state = SHIFT_REG;
+                        6'h10: next_state = MFHI;
+                        6'h12: next_state = MFLO;
+                        6'h2a: next_state = SLT;
+                        6'h8: next_state = JR;
+                        6'h13: next_state = RTE;
+                        6'hd: next_state = BREAK;
+                        6'h18: next_state = MULT_LOAD;
+                        6'h1a: next_state = DIV_LOAD;
+                    endcase
+                end
+
+                6'h3: next_state = JAL;
+                6'h2: next_state = J;
+                6'h10: next_state = INCDEC;
+                6'h11: next_state = INCDEC;
+                6'h8: next_state = ADDI;
+                6'h9: next_state = ADDIU;
+                6'h4: next_state = BEQ;
+                6'h5: next_state = BNE;
+                6'h6: next_state = BLE;
+                6'h7: next_state = BGT;
+                6'hf: next_state = LUI;
+                6'ha: next_state = SLTI;
+                6'h28: next_state = LS_CALC;
+                6'h29: next_state = LS_CALC;
+                6'h2b: next_state = LS_CALC;
+                6'h20: next_state = LS_CALC;
+                6'h21: next_state = LS_CALC;
+                6'h23: next_state = LS_CALC;
+                default: next_state = NOPCODE;
+            endcase
+		end
+		
     endcase
 	
 end

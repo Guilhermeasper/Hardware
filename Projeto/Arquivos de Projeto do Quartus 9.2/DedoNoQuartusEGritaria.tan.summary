@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 6.686 ns
-From           : mux_7[2]~reg0
-To             : mux_7[2]
+Actual Time    : 7.408 ns
+From           : REG_WRITE~reg0
+To             : mux_7[0]
 From Clock     : clock
 To Clock       : --
 Failed Paths   : 0
@@ -17,7 +17,7 @@ Slack          : N/A
 Required Time  : None
 Actual Time    : Restricted to 500.00 MHz ( period = 2.000 ns )
 From           : state.FETCH_2
-To             : pc_write~reg0
+To             : ALU_CONTROL~reg0
 From Clock     : clock
 To Clock       : clock
 Failed Paths   : 0
