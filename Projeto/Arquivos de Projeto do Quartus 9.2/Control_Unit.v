@@ -53,12 +53,12 @@ end
 parameter RESET = 6'd0;
 parameter FETCH = 6'd1;
 parameter FETCH_2 = 6'd2;
-parameter WAIT = 6'd3;
+parameter WAIT = 6'd4;
+parameter DECODE = 6'd5;
+parameter ADD = 6'd6;
+parameter AND = 6'd7;
+parameter SUB = 6'd8;
 //INCONSISTENCIA
-parameter DECODE = 6'd3;
-parameter ADD = 6'd4;
-parameter AND = 6'd5;
-parameter SUB = 6'd6;
 parameter WRITERD_ARIT = 6'd7;
 parameter SHIFT_SHAMT = 6'd8;
 parameter SLL = 6'd9;
@@ -130,7 +130,7 @@ always@(posedge clock) begin
 			mux_2 = 2'b0;
 			mux_3 = 1'b0;
 			mux_4 = 1'b0;
-			mux_6 = 3'b100;
+			mux_6 = 3'b100; //ERRADO, é pra ser 11, q é igual a 29
 			mux_7 = 4'b111;
 			mux_8 = 2'b0;
 			mux_9 = 3'b0;
@@ -200,8 +200,8 @@ always@(posedge clock) begin
             ss_control = 1'b0;
             mem_write = 1'b0;
             mult_div = 2'b0;
-            ir_write = 1'b0;
-            hi_lo = 1'b0;
+            ir_write = 1'b1; // de 1'b0 para 1'b1 
+            hi_lo = 
             EPC_CONTROL=1'b0;
             MDR_CONTROL = 1'b0;
             LOAD_SIZE = 1'b0;
@@ -230,8 +230,8 @@ always@(posedge clock) begin
 			ss_control=1'b0;
 			mem_write=1'b0;
 			mult_div=2'b0;
-			ir_write=1'b1;
-			hi_lo=1'b0;
+			ir_write=1'b0;
+ 			hi_lo=1'b0;
 			EPC_CONTROL=1'b0;
 			MDR_CONTROL=1'b0;
 			LOAD_SIZE=1'b0;
@@ -242,13 +242,13 @@ always@(posedge clock) begin
 			REG_WRITE=1'b0;
 			XCH_CONTROL = 1'b0;
 
-			next_state = WAIT;
+			next_state = DECODE; //ERRADO, gera loop infinito -> CONSERTADO: de WAIT para DECODE.
 		end
 		DECODE: begin
-			pc_write=1'b0;//PC agora e PC+4
+			pc_write=1'b0; //PC agora e PC+4
 			mux_2=2'b0;
 			mux_1=2'b0;
-			mem_write=1'b0;//coloca rs e rt no banco de registradores
+			mem_write=1'b1;      // --> ERRADO <-- coloca rs e rt no banco de registradores
 			ss_control=1'b0;
 			mult_div=2'b0;
 			hi_lo=1'b0;
@@ -262,17 +262,17 @@ always@(posedge clock) begin
 			mux_7=4'b0;
 			mux_6=3'b0;
 			REG_WRITE=1'b0;
-			REG_B=1'b0;
-			mux_8=2'b0;//escolhe PC
-			mux_9=3'b0;//escolhe sinal extendido e shiftado de 15-0
-			ALU_CONTROL=3'b0;//faz PC+o escrito acima
-			ALU_OUT=1'b1;//salva a soma em ALU_OUT
+			mux_8=2'b0;                     //escolhe PC
+			mux_9=3'b0;                     //->ERRADO, acho q deveria ser b1000 <-escolhe sinal extendido e shiftado de 15-0
+			ALU_CONTROL=3'b0;               //ERRADO, soma é b1 <- faz PC+o escrito acima
+			ALU_OUT=1'b1;                   //salva a soma em ALU_OUT
 			EPC_CONTROL=1'b0;
-			mux_10=3'b0;//escolhe PC+4
-			REG_A=2'b0;//load rs em a
-			REG_B=2'b0;//load rt em b
+			mux_10=3'b0;
+			REG_A=2'b0;//load rs em a // ERRADO, é pra ser b1 pra dar write;
+
+			REG_B=2'b0;//load rt em b // ERRADO, é pra ser b1 pra dar write;
 			
-			case(opcode)
+			case(opcode) // essa linha tem que estar dentro de um estado tbm
 				6'b0: begin // caso formato r
 					case(funct)
 						6'h20: next_state = ADD;
@@ -293,7 +293,7 @@ always@(posedge clock) begin
                         6'h1a: next_state = DIV_LOAD;
                     endcase
                 end
-
+ 
                 6'h3: next_state = JAL;
                 6'h2: next_state = J;
                 6'h10: next_state = INCDEC;
@@ -315,7 +315,93 @@ always@(posedge clock) begin
                 default: next_state = NOPCODE;
             endcase
 		end
-		
+		ADD: begin
+			pc_write=1'b0;
+			mux_1=2'b0;
+			mux_2=2'b0;
+			mux_3=1'b0;
+			mux_4=1'b0;
+			mux_6=3'b0;
+			mux_7=4'b0;
+			mux_8=2'b10;//escolhe A
+			mux_9=3'b0;//escolhe B
+			mux_10=3'b0;
+			mux_11=1'b0;
+			shift_control=1'b0;
+			ss_control=1'b0;
+			mem_write=1'b0;
+			mult_div=2'b0;
+			ir_write=1'b0;    
+			hi_lo=1'b0;
+			EPC_CONTROL=1'b0;
+			MDR_CONTROL=1'b0;
+			LOAD_SIZE=1'b0;
+			ALU_CONTROL=3'b1;//soma A + B
+			ALU_OUT=1'b1;//salva A+B em ALU_OUT
+			REG_A=2'b0;
+			REG_B=1'b0;
+			REG_WRITE=1'b0;
+			XCH_CONTROL = 1'b0;
+			next_state = ADD/AND/SUB_2;
+		end;
+		ADD/AND/SUB_2: begin //tem q criar esse parametro
+			pc_write=1'b0;
+			mux_1=2'b0;
+			mux_2=2'b0;
+			mux_3=1'b0;
+			mux_4=1'b0;
+			mux_6=3'b10;//escolhe rd
+			mux_7=4'b0;// escolhe o que está em ALU_OUT
+			mux_8=2'b0;
+			mux_9=3'b0;
+			mux_10=3'b0;
+			mux_11=1'b0;
+			shift_control=1'b0;
+			ss_control=1'b0;
+			mem_write=1'b0;
+			mult_div=2'b0;
+			ir_write=1'b0;    
+			hi_lo=1'b0;
+			EPC_CONTROL=1'b0;
+			MDR_CONTROL=1'b0;
+			LOAD_SIZE=1'b0;
+			ALU_CONTROL=3'b0;
+			ALU_OUT=1'b0;
+			REG_A=2'b0;
+			REG_B=1'b0;
+			REG_WRITE=1'b1;//permite escrever no banco de regs
+			XCH_CONTROL = 1'b0;
+			next_state = FINAL;
+		end;
+		FINAL: begin // tem q criar esse parametro
+			pc_write=1'b0;
+			mux_1=2'b0;
+			mux_2=2'b0;
+			mux_3=1'b0;
+			mux_4=1'b0;
+			mux_6=3'b0;
+			mux_7=4'b0;
+			mux_8=2'b0;
+			mux_9=3'b0;
+			mux_10=3'b0;
+			mux_11=1'b0;
+			shift_control=1'b0;
+			ss_control=1'b0;
+			mem_write=1'b0;
+			mult_div=2'b0;
+			ir_write=1'b0;    
+			hi_lo=1'b0;
+			EPC_CONTROL=1'b0;
+			MDR_CONTROL=1'b0;
+			LOAD_SIZE=1'b0;
+			ALU_CONTROL=3'b0;
+			ALU_OUT=1'b0;
+			REG_A=2'b0;
+			REG_B=1'b0;
+			REG_WRITE=1'b0;
+			XCH_CONTROL = 1'b0;
+			next_state = FETCH;
+		end;
     endcase
 	
 end
