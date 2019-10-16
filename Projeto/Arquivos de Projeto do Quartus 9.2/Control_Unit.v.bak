@@ -53,13 +53,13 @@ end
 parameter RESET = 6'd0;
 parameter FETCH = 6'd1;
 parameter FETCH_2 = 6'd2;
-parameter WAIT = 6'd3;
+parameter WAIT = 6'd4;
+parameter DECODE = 6'd5;
+parameter ADD = 6'd6;
+parameter AND = 6'd7;
+parameter SUB = 6'd8;
 //INCONSISTENCIA
-parameter DECODE = 6'd3;
-parameter ADD = 6'd4;
-parameter AND = 6'd5;
-parameter SUB = 6'd6;
-parameter WRITERD_ARIT = 6'd7;
+parameter WRITE_ARIT = 6'd7;
 parameter SHIFT_SHAMT = 6'd8;
 parameter SLL = 6'd9;
 parameter SRA = 6'd10;
@@ -115,6 +115,8 @@ parameter INCDEC_WAIT_2 = 6'd60;
 parameter LS_WAIT_2 = 6'd61;
 parameter EXP_WAIT_2 = 6'd62;
 
+parameter FINAL = 6'd255;
+
 always@(posedge clock or posedge reset) begin
 	if (reset)
 		state = RESET;
@@ -130,7 +132,7 @@ always@(posedge clock) begin
 			mux_2 = 2'b0;
 			mux_3 = 1'b0;
 			mux_4 = 1'b0;
-			mux_6 = 3'b100;
+			mux_6 = 3'b100; //ERRADO, é pra ser 11, q é igual a 29
 			mux_7 = 4'b111;
 			mux_8 = 2'b0;
 			mux_9 = 3'b0;
@@ -200,7 +202,7 @@ always@(posedge clock) begin
             ss_control = 1'b0;
             mem_write = 1'b0;
             mult_div = 2'b0;
-            ir_write = 1'b0;
+            ir_write = 1'b1; // de 1'b0 para 1'b1 
             hi_lo = 1'b0;
             EPC_CONTROL=1'b0;
             MDR_CONTROL = 1'b0;
@@ -230,8 +232,8 @@ always@(posedge clock) begin
 			ss_control=1'b0;
 			mem_write=1'b0;
 			mult_div=2'b0;
-			ir_write=1'b1;
-			hi_lo=1'b0;
+			ir_write=1'b0;
+ 			hi_lo=1'b0;
 			EPC_CONTROL=1'b0;
 			MDR_CONTROL=1'b0;
 			LOAD_SIZE=1'b0;
@@ -242,13 +244,13 @@ always@(posedge clock) begin
 			REG_WRITE=1'b0;
 			XCH_CONTROL = 1'b0;
 
-			next_state = WAIT;
+			next_state = DECODE; //ERRADO, gera loop infinito -> CONSERTADO: de WAIT para DECODE.
 		end
 		DECODE: begin
-			pc_write=1'b0;//PC agora e PC+4
+			pc_write=1'b0; //PC agora e PC+4
 			mux_2=2'b0;
 			mux_1=2'b0;
-			mem_write=1'b0;//coloca rs e rt no banco de registradores
+			mem_write=1'b1;      // --> ERRADO <-- coloca rs e rt no banco de registradores
 			ss_control=1'b0;
 			mult_div=2'b0;
 			hi_lo=1'b0;
@@ -262,60 +264,146 @@ always@(posedge clock) begin
 			mux_7=4'b0;
 			mux_6=3'b0;
 			REG_WRITE=1'b0;
-			REG_B=1'b0;
-			mux_8=2'b0;//escolhe PC
-			mux_9=3'b0;//escolhe sinal extendido e shiftado de 15-0
-			ALU_CONTROL=3'b0;//faz PC+o escrito acima
-			ALU_OUT=1'b1;//salva a soma em ALU_OUT
+			mux_8=2'b0;                     //escolhe PC
+			mux_9=3'b0;                     //->ERRADO, acho q deveria ser b1000 <-escolhe sinal extendido e shiftado de 15-0
+			ALU_CONTROL=3'b0;               //ERRADO, soma é b1 <- faz PC+o escrito acima
+			ALU_OUT=1'b1;                   //salva a soma em ALU_OUT
 			EPC_CONTROL=1'b0;
-			mux_10=3'b0;//escolhe PC+4
-			REG_A=2'b0;//load rs em a
-			REG_B=2'b0;//load rt em b
+			mux_10=3'b0;
+			REG_A=2'b0;//load rs em a // ERRADO, é pra ser b1 pra dar write;
+
+			REG_B=2'b0;//load rt em b // ERRADO, é pra ser b1 pra dar write;
 			
-			case(opcode)
+			case(opcode) // essa linha tem que estar dentro de um estado tbm
 				6'b0: begin // caso formato r
 					case(funct)
-						6'h20: nextState = ADD;
-                        6'h24: nextState = AND;
-                        6'h22: nextState = SUB;
-                        6'h0: nextState = SHIFT_SHAMT;
-                        6'h2: nextState = SHIFT_SHAMT;
-                        6'h3: nextState = SHIFT_SHAMT;
-                        6'h4: nextState = SHIFT_REG;
-                        6'h7: nextState = SHIFT_REG;
-                        6'h10: nextState = MFHI;
-                        6'h12: nextState = MFLO;
-                        6'h2a: nextState = SLT;
-                        6'h8: nextState = JR;
-                        6'h13: nextState = RTE;
-                        6'hd: nextState = BREAK;
-                        6'h18: nextState = MULT_LOAD;
-                        6'h1a: nextState = DIV_LOAD;
+						6'h20: next_state = ADD;
+                        6'h24: next_state = AND;
+                        6'h22: next_state = SUB;
+                        6'h0: next_state = SHIFT_SHAMT;
+                        6'h2: next_state = SHIFT_SHAMT;
+                        6'h3: next_state = SHIFT_SHAMT;
+                        6'h4: next_state = SHIFT_REG;
+                        6'h7: next_state = SHIFT_REG;
+                        6'h10: next_state = MFHI;
+                        6'h12: next_state = MFLO;
+                        6'h2a: next_state = SLT;
+                        6'h8: next_state = JR;
+                        6'h13: next_state = RTE;
+                        6'hd: next_state = BREAK;
+                        6'h18: next_state = MULT_LOAD;
+                        6'h1a: next_state = DIV_LOAD;
                     endcase
                 end
-
-                6'h3: nextState = JAL;
-                6'h2: nextState = J;
-                6'h10: nextState = INCDEC;
-                6'h11: nextState = INCDEC;
-                6'h8: nextState = ADDI;
-                6'h9: nextState = ADDIU;
-                6'h4: nextState = BEQ;
-                6'h5: nextState = BNE;
-                6'h6: nextState = BLE;
-                6'h7: nextState = BGT;
-                6'hf: nextState = LUI;
-                6'ha: nextState = SLTI;
-                6'h28: nextState = LS_CALC;
-                6'h29: nextState = LS_CALC;
-                6'h2b: nextState = LS_CALC;
-                6'h20: nextState = LS_CALC;
-                6'h21: nextState = LS_CALC;
-                6'h23: nextState = LS_CALC;
-                default: nextState = NOPCODE;
+ 
+                6'h3: next_state = JAL;
+                6'h2: next_state = J;
+                6'h10: next_state = INCDEC;
+                6'h11: next_state = INCDEC;
+                6'h8: next_state = ADDI;
+                6'h9: next_state = ADDIU;
+                6'h4: next_state = BEQ;
+                6'h5: next_state = BNE;
+                6'h6: next_state = BLE;
+                6'h7: next_state = BGT;
+                6'hf: next_state = LUI;
+                6'ha: next_state = SLTI;
+                6'h28: next_state = LS_CALC;
+                6'h29: next_state = LS_CALC;
+                6'h2b: next_state = LS_CALC;
+                6'h20: next_state = LS_CALC;
+                6'h21: next_state = LS_CALC;
+                6'h23: next_state = LS_CALC;
+                default: next_state = NOPCODE;
             endcase
 		end
-		
+		ADD: begin
+			pc_write=1'b0;
+			mux_1=2'b0;
+			mux_2=2'b0;
+			mux_3=1'b0;
+			mux_4=1'b0;
+			mux_6=3'b0;
+			mux_7=4'b0;
+			mux_8=2'b10;//escolhe A
+			mux_9=3'b0;//escolhe B
+			mux_10=3'b0;
+			mux_11=1'b0;
+			shift_control=1'b0;
+			ss_control=1'b0;
+			mem_write=1'b0;
+			mult_div=2'b0;
+			ir_write=1'b0;    
+			hi_lo=1'b0;
+			EPC_CONTROL=1'b0;
+			MDR_CONTROL=1'b0;
+			LOAD_SIZE=1'b0;
+			ALU_CONTROL=3'b1;//soma A + B
+			ALU_OUT=1'b1;//salva A+B em ALU_OUT
+			REG_A=2'b0;
+			REG_B=1'b0;
+			REG_WRITE=1'b0;
+			XCH_CONTROL = 1'b0;
+			next_state = WRITE_ARIT; // next_state = ADD/AND/SUB_2;
+		end
+		WRITE_ARIT: begin //tem q criar esse parametro
+			pc_write=1'b0;
+			mux_1=2'b0;
+			mux_2=2'b0;
+			mux_3=1'b0;
+			mux_4=1'b0;
+			mux_6=3'b10;//escolhe rd
+			mux_7=4'b0;// escolhe o que está em ALU_OUT
+			mux_8=2'b0;
+			mux_9=3'b0;
+			mux_10=3'b0;
+			mux_11=1'b0;
+			shift_control=1'b0;
+			ss_control=1'b0;
+			mem_write=1'b0;
+			mult_div=2'b0;
+			ir_write=1'b0;    
+			hi_lo=1'b0;
+			EPC_CONTROL=1'b0;
+			MDR_CONTROL=1'b0;
+			LOAD_SIZE=1'b0;
+			ALU_CONTROL=3'b0;
+			ALU_OUT=1'b0;
+			REG_A=2'b0;
+			REG_B=1'b0;
+			REG_WRITE=1'b1;//permite escrever no banco de regs
+			XCH_CONTROL = 1'b0;
+			next_state = FINAL;
+		end
+		FINAL: begin // tem q criar esse parametro
+			pc_write=1'b0;
+			mux_1=2'b0;
+			mux_2=2'b0;
+			mux_3=1'b0;
+			mux_4=1'b0;
+			mux_6=3'b0;
+			mux_7=4'b0;
+			mux_8=2'b0;
+			mux_9=3'b0;
+			mux_10=3'b0;
+			mux_11=1'b0;
+			shift_control=1'b0;
+			ss_control=1'b0;
+			mem_write=1'b0;
+			mult_div=2'b0;
+			ir_write=1'b0;    
+			hi_lo=1'b0;
+			EPC_CONTROL=1'b0;
+			MDR_CONTROL=1'b0;
+			LOAD_SIZE=1'b0;
+			ALU_CONTROL=3'b0;
+			ALU_OUT=1'b0;
+			REG_A=2'b0;
+			REG_B=1'b0;
+			REG_WRITE=1'b0;
+			XCH_CONTROL = 1'b0;
+			next_state = FETCH;
+		end
     endcase
 	
 end

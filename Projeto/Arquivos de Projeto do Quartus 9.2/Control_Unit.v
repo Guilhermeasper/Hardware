@@ -30,7 +30,7 @@ module Control_Unit(
 	output reg EPC_CONTROL,
 	output reg MDR_CONTROL,
 	output reg LOAD_SIZE,
-	output reg ALU_CONTROL,
+	output reg[2:0] ALU_CONTROL,
 	output reg ALU_OUT,
 	output reg REG_A,
 	output reg REG_B,
