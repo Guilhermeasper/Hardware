@@ -13,8 +13,8 @@ module Control_Unit(
 	output reg pc_write,
 	output reg[1:0] mux_1,       //mux_to_mux_mem
 	output reg[1:0] mux_2,       //mux_mem
-	output reg mux_3,             //shift_source
-	output reg mux_4,             //shamt
+	output reg mux_3,            //shift_source
+	output reg mux_4,            //shamt
 	output reg[2:0] mux_6,       //regDST
 	output reg[3:0] mux_7,       //mem_to_reg
 	output reg[1:0] mux_8,       //ALUSourceA
@@ -35,97 +35,95 @@ module Control_Unit(
 	output reg REG_A,
 	output reg REG_B,
 	output reg REG_WRITE,
-	output reg XCH_CONTROL
+	output reg XCH_CONTROL,
+	output reg[7:0] state,
+	output reg[7:0] next_state
+
 );
 
-integer counter;
-reg[7:0] state;
-reg [5:0]next_state;
+reg[7:0] counter;
 reg[1:0] stateOverflow;
 
 initial begin
     state = 8'b0;
     stateOverflow = 2'b0;
-    counter = 0;
+    counter = 8'd0;
     next_state = 8'b0;
 end
 
-parameter RESET = 6'd0;
-parameter FETCH = 6'd1;
-parameter FETCH_2 = 6'd2;
-parameter WAIT = 6'd4;
-parameter DECODE = 6'd5;
-parameter ADD = 6'd6;
-parameter AND = 6'd7;
-parameter SUB = 6'd8;
+parameter RESET = 8'd0;
+parameter FETCH = 8'd1;
+parameter FETCH_2 = 8'd2;
+parameter WAIT = 8'd3;
+parameter DECODE = 8'd4;
+parameter ADD = 8'd5;
+parameter AND = 8'd6;
+parameter SUB = 6'd63; // <-------------- MUDAR DEPOIS!!!!!!!!
 //INCONSISTENCIA
-parameter WRITE_ARIT = 6'd7;
-parameter SHIFT_SHAMT = 6'd8;
-parameter SLL = 6'd9;
-parameter SRA = 6'd10;
-parameter SRL = 6'd11;
-parameter SHIFT_REG = 6'd12;
-parameter SLLV = 6'd13;
-parameter SRAV = 6'd14;
-parameter WRITERD_SHIFT = 6'd15;
-parameter MFHI = 6'd16;
-parameter MFLO = 6'd17;
-parameter SLT = 6'd18;
-parameter JR = 6'd19;
-parameter RTE = 6'd20;
-parameter BREAK = 6'd21;
-parameter MULT_LOAD = 6'd22;
-parameter MULT_CALC = 6'd23;
-parameter MULT_RESULT = 6'd24;
-parameter DIV_LOAD = 6'd25;
-parameter DIV_CALC = 6'd26;
-parameter DIV_RESULT = 6'd27;
-parameter JAL = 6'd28;
-parameter RETURN_ADDRESS = 6'd29;
-parameter J = 6'd30;
-parameter INCDEC = 6'd31;
-parameter INCDEC_WAIT = 6'd32;
-parameter DEC_OP = 6'd33;
-parameter INC_OP = 6'd34;
-parameter INCDEC_ST = 6'd35;
-parameter ADDIU = 6'd36;
-parameter ADDI = 6'd37;
-parameter BEQ = 6'd39;
-parameter BNE = 6'd40;
-parameter BLE = 6'd41;
-parameter BGT = 6'd42;
-parameter LUI = 6'd43;
-parameter SLTI = 6'd44;
-parameter LS_CALC = 6'd45;
-parameter LS_START = 6'd46;
-parameter LS_WAIT = 6'd47;
-parameter SB_END = 6'd48;
-parameter SH_END = 6'd49;
-parameter SW_END = 6'd50;
-parameter LB_END = 6'd51;
-parameter LH_END = 6'd52;
-parameter LW_END = 6'd53;
-parameter OVERFLOW = 6'd54;
-parameter DIVZERO = 6'd55;
-parameter NOPCODE = 6'd56;
-parameter EXP_WAIT = 6'd57;
-parameter EXP_WRITE = 6'd58;
-parameter WAIT_2 = 6'd59;
-parameter INCDEC_WAIT_2 = 6'd60;
-parameter LS_WAIT_2 = 6'd61;
-parameter EXP_WAIT_2 = 6'd62;
+parameter WRITE_ARIT = 8'd7;
+parameter SHIFT_SHAMT = 8'd8;
+parameter SLL = 8'd9;
+parameter SRA = 8'd10;
+parameter SRL = 8'd11;
+parameter SHIFT_REG = 8'd12;
+parameter SLLV = 8'd13;
+parameter SRAV = 8'd14;
+parameter WRITERD_SHIFT = 8'd15;
+parameter MFHI = 8'd16;
+parameter MFLO = 8'd17;
+parameter SLT = 8'd18;
+parameter JR = 8'd19;
+parameter RTE = 8'd20;
+parameter BREAK = 8'd21;
+parameter MULT_LOAD = 8'd22;
+parameter MULT_CALC = 8'd23;
+parameter MULT_RESULT = 8'd24;
+parameter DIV_LOAD = 8'd25;
+parameter DIV_CALC = 8'd26;
+parameter DIV_RESULT = 8'd27;
+parameter JAL = 8'd28;
+parameter RETURN_ADDRESS = 8'd29;
+parameter J = 8'd30;
+parameter INCDEC = 8'd31;
+parameter INCDEC_WAIT = 8'd32;
+parameter DEC_OP = 8'd33;
+parameter INC_OP = 8'd34;
+parameter INCDEC_ST = 8'd35;
+parameter ADDIU = 8'd36;
+parameter ADDI = 8'd37;
+parameter BEQ = 8'd39;
+parameter BNE = 8'd40;
+parameter BLE = 8'd41;
+parameter BGT = 8'd42;
+parameter LUI = 8'd43;
+parameter SLTI = 8'd44;
+parameter LS_CALC = 8'd45;
+parameter LS_START = 8'd46;
+parameter LS_WAIT = 8'd47;
+parameter SB_END = 8'd48;
+parameter SH_END = 8'd49;
+parameter SW_END = 8'd50;
+parameter LB_END = 8'd51;
+parameter LH_END = 8'd52;
+parameter LW_END = 8'd53;
+parameter OVERFLOW = 8'd54;
+parameter DIVZERO = 8'd55;
+parameter NOPCODE = 8'd56;
+parameter EXP_WAIT = 8'd57;
+parameter EXP_WRITE = 8'd58;
+parameter WAIT_2 = 8'd59;
+parameter INCDEC_WAIT_2 = 8'd60;
+parameter LS_WAIT_2 = 8'd61;
+parameter EXP_WAIT_2 = 8'd62;
 
-parameter FINAL = 6'd255;
-
-always@(posedge clock or posedge reset) begin
-	if (reset)
-		state = RESET;
-	else
-		state = next_state;
-end 
+parameter FINAL = 8'd255;
 
 always@(posedge clock) begin
-	case(state)
+	if (reset) begin
+		next_state = RESET;
+	end	
+
+	case(next_state)
 		RESET: begin
 			pc_write = 1'b0;
 			mux_1 = 2'b0;
@@ -172,7 +170,7 @@ always@(posedge clock) begin
             ss_control = 1'b0;
             mem_write = 1'b0;
             mult_div = 2'b0;
-            ir_write = 1'b1;      //escreve a instrucao em ir_write
+            ir_write = 1'b0;      //escreve a instrucao em ir_write
             hi_lo = 1'b0;
             EPC_CONTROL=1'b0;
             MDR_CONTROL = 1'b0;
@@ -183,8 +181,15 @@ always@(posedge clock) begin
             REG_B=2'b0;
             REG_WRITE = 1'b0;
             XCH_CONTROL = 1'b0;
-            
-            next_state = FETCH_2;
+			
+			if(counter == 8'd1) begin
+				counter = 8'd0;
+				next_state = FETCH_2;
+			end
+			else begin
+				counter = counter + 8'd1;
+			end
+
 		end
 		FETCH_2: begin
 			pc_write = 1'b1;
@@ -195,7 +200,7 @@ always@(posedge clock) begin
             mux_6 = 3'b0;
             mux_7 = 4'b0;
             mux_8 = 2'b0;         
-            mux_9 = 3'b0;         
+            mux_9 = 3'b1;         
             mux_10= 3'b0;          
             mux_11 = 1'b0;
             shift_control = 1'b0;
@@ -207,17 +212,18 @@ always@(posedge clock) begin
             EPC_CONTROL=1'b0;
             MDR_CONTROL = 1'b0;
             LOAD_SIZE = 1'b0;
-            ALU_CONTROL=3'b0;
+            ALU_CONTROL=3'b1;
             ALU_OUT=1'b0;
             REG_A=2'b0;
             REG_B=2'b0;
             REG_WRITE = 1'b0;
             XCH_CONTROL = 1'b0;
 
-			next_state = WAIT;
+			next_state = 8'd4;
+			counter = 8'd0;
 		end
 		WAIT: begin
-			pc_write=1'b0;
+			pc_write=1'b1;
 			mux_1=2'b0;
 			mux_2=2'b0;
 			mux_3=1'b0;
@@ -232,7 +238,7 @@ always@(posedge clock) begin
 			ss_control=1'b0;
 			mem_write=1'b0;
 			mult_div=2'b0;
-			ir_write=1'b0;
+			ir_write=1'b1;
  			hi_lo=1'b0;
 			EPC_CONTROL=1'b0;
 			MDR_CONTROL=1'b0;
@@ -244,7 +250,7 @@ always@(posedge clock) begin
 			REG_WRITE=1'b0;
 			XCH_CONTROL = 1'b0;
 
-			next_state = DECODE; //ERRADO, gera loop infinito -> CONSERTADO: de WAIT para DECODE.
+			next_state = DECODE;
 		end
 		DECODE: begin
 			pc_write=1'b0; //PC agora e PC+4
@@ -270,8 +276,8 @@ always@(posedge clock) begin
 			ALU_OUT=1'b1;                   //salva a soma em ALU_OUT
 			EPC_CONTROL=1'b0;
 			mux_10=3'b0;
+			
 			REG_A=2'b0;//load rs em a // ERRADO, é pra ser b1 pra dar write;
-
 			REG_B=2'b0;//load rt em b // ERRADO, é pra ser b1 pra dar write;
 			
 			case(opcode) // essa linha tem que estar dentro de um estado tbm
