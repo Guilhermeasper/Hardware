@@ -2,22 +2,42 @@
 Timing Analyzer Summary
 --------------------------------------------------------------------------------------
 
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 5.600 ns
+From           : funct[2]
+To             : next_state.000000
+From Clock     : --
+To Clock       : clock
+Failed Paths   : 0
+
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 7.408 ns
-From           : REG_WRITE~reg0
-To             : mux_7[0]
+Actual Time    : 7.152 ns
+From           : mux_7[0]~reg0
+To             : mux_6[2]
 From Clock     : clock
 To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -2.897 ns
+From           : funct[5]
+To             : next_state.ADD
+From Clock     : --
+To Clock       : clock
 Failed Paths   : 0
 
 Type           : Clock Setup: 'clock'
 Slack          : N/A
 Required Time  : None
 Actual Time    : Restricted to 500.00 MHz ( period = 2.000 ns )
-From           : state.FETCH_2
-To             : ALU_CONTROL~reg0
+From           : state.DECODE
+To             : ALU_OUT~reg0
 From Clock     : clock
 To Clock       : clock
 Failed Paths   : 0

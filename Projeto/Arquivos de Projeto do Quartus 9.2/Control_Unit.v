@@ -59,7 +59,7 @@ parameter ADD = 6'd6;
 parameter AND = 6'd7;
 parameter SUB = 6'd8;
 //INCONSISTENCIA
-parameter WRITERD_ARIT = 6'd7;
+parameter WRITE_ARIT = 6'd7;
 parameter SHIFT_SHAMT = 6'd8;
 parameter SLL = 6'd9;
 parameter SRA = 6'd10;
@@ -114,6 +114,8 @@ parameter WAIT_2 = 6'd59;
 parameter INCDEC_WAIT_2 = 6'd60;
 parameter LS_WAIT_2 = 6'd61;
 parameter EXP_WAIT_2 = 6'd62;
+
+parameter FINAL = 6'd255;
 
 always@(posedge clock or posedge reset) begin
 	if (reset)
@@ -201,7 +203,7 @@ always@(posedge clock) begin
             mem_write = 1'b0;
             mult_div = 2'b0;
             ir_write = 1'b1; // de 1'b0 para 1'b1 
-            hi_lo = 
+            hi_lo = 1'b0;
             EPC_CONTROL=1'b0;
             MDR_CONTROL = 1'b0;
             LOAD_SIZE = 1'b0;
@@ -342,9 +344,9 @@ always@(posedge clock) begin
 			REG_B=1'b0;
 			REG_WRITE=1'b0;
 			XCH_CONTROL = 1'b0;
-			next_state = ADD/AND/SUB_2;
-		end;
-		ADD/AND/SUB_2: begin //tem q criar esse parametro
+			next_state = WRITE_ARIT; // next_state = ADD/AND/SUB_2;
+		end
+		WRITE_ARIT: begin //tem q criar esse parametro
 			pc_write=1'b0;
 			mux_1=2'b0;
 			mux_2=2'b0;
@@ -372,7 +374,7 @@ always@(posedge clock) begin
 			REG_WRITE=1'b1;//permite escrever no banco de regs
 			XCH_CONTROL = 1'b0;
 			next_state = FINAL;
-		end;
+		end
 		FINAL: begin // tem q criar esse parametro
 			pc_write=1'b0;
 			mux_1=2'b0;
@@ -401,7 +403,7 @@ always@(posedge clock) begin
 			REG_WRITE=1'b0;
 			XCH_CONTROL = 1'b0;
 			next_state = FETCH;
-		end;
+		end
     endcase
 	
 end

@@ -1,0 +1,9 @@
+module SignalExtend16to32 (
+	input[15:0] Input,
+	output reg[31:0] ExtendedOutput
+);
+
+always @(*)
+	ExtendedOutput <= $signed(Input);
+
+endmodule 
