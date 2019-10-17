@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Stratix III"
 set_global_assignment -name DEVICE AUTO
-set_global_assignment -name TOP_LEVEL_ENTITY StoreSize
+set_global_assignment -name TOP_LEVEL_ENTITY Control_Unit
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:03:19  OCTOBER 08, 2019"
 set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
@@ -49,11 +49,6 @@ set_global_assignment -name USE_CONFIGURATION_DEVICE ON
 set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE Waveform.vwf
 set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
 set_global_assignment -name TIMEQUEST_DO_CCPP_REMOVAL ON
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
-set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name BSF_FILE LoadSize.bsf
 set_global_assignment -name BSF_FILE ShiftLeft2.bsf
 set_global_assignment -name BSF_FILE ShiftLeft2of26to28.bsf
@@ -87,3 +82,8 @@ set_global_assignment -name VERILOG_FILE Mux6.v
 set_global_assignment -name BDF_FILE Processador.bdf
 set_global_assignment -name VERILOG_FILE SignalExtend16to32.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

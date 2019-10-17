@@ -22,7 +22,7 @@ module Control_Unit(
 	output reg[2:0] mux_10,      //mux_to_pc
 	output reg[1:0] mux_11,      //mux_to_mem_to_reg
 	output reg shift_control,
-	output reg ss_control,
+	output reg[1:0] ss_control,
 	output reg mem_write,
 	output reg [1:0] mult_div,
 	output reg ir_write,
@@ -51,19 +51,6 @@ initial begin
     next_state = 8'b0;
 end
 
-parameter RESET = 8'b00000000;
-parameter FETCH = 8'd1;
-parameter FETCH_2 = 8'd2;
-parameter WAIT = 8'd3;
-parameter DECODE = 8'd4;
-parameter ADD = 8'd5;
-parameter AND = 8'd6;
-parameter SUB = 6'd63; // <-------------- MUDAR DEPOIS!!!!!!!!
-//INCONSISTENCIA
-parameter WRITE_ARIT = 8'd7;
-parameter SHIFT_SHAMT = 8'd8;
-
-parameter FINAL = 8'd255;
 
 always@(posedge clock) begin
 	if (reset) begin

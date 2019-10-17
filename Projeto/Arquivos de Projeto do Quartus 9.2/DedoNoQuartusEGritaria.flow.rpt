@@ -1,5 +1,5 @@
 Flow report for DedoNoQuartusEGritaria
-Thu Oct 17 15:29:15 2019
+Thu Oct 17 16:49:05 2019
 Quartus II 64-Bit Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
 
 
@@ -38,18 +38,18 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +-------------------------------+-----------------------------------------------+
-; Flow Status                   ; Successful - Thu Oct 17 15:29:13 2019         ;
+; Flow Status                   ; Successful - Thu Oct 17 16:49:01 2019         ;
 ; Quartus II 64-Bit Version     ; 9.1 Build 350 03/24/2010 SP 2 SJ Full Version ;
 ; Revision Name                 ; DedoNoQuartusEGritaria                        ;
-; Top-level Entity Name         ; StoreSize                                     ;
+; Top-level Entity Name         ; Control_Unit                                  ;
 ; Family                        ; Stratix III                                   ;
 ; Met timing requirements       ; N/A                                           ;
 ; Logic utilization             ; < 1 %                                         ;
-;     Combinational ALUTs       ; 57 / 38,000 ( < 1 % )                         ;
+;     Combinational ALUTs       ; 48 / 38,000 ( < 1 % )                         ;
 ;     Memory ALUTs              ; 0 / 19,000 ( 0 % )                            ;
-;     Dedicated logic registers ; 0 / 38,000 ( 0 % )                            ;
-; Total registers               ; 0                                             ;
-; Total pins                    ; 98 / 296 ( 33 % )                             ;
+;     Dedicated logic registers ; 23 / 38,000 ( < 1 % )                         ;
+; Total registers               ; 23                                            ;
+; Total pins                    ; 80 / 296 ( 27 % )                             ;
 ; Total virtual pins            ; 0                                             ;
 ; Total block memory bits       ; 0 / 1,880,064 ( 0 % )                         ;
 ; DSP block 18-bit elements     ; 0 / 216 ( 0 % )                               ;
@@ -65,23 +65,23 @@ applicable agreement for further details.
 +-------------------+------------------------+
 ; Option            ; Setting                ;
 +-------------------+------------------------+
-; Start date & time ; 10/17/2019 15:28:28    ;
+; Start date & time ; 10/17/2019 16:48:16    ;
 ; Main task         ; Compilation            ;
 ; Revision Name     ; DedoNoQuartusEGritaria ;
 +-------------------+------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                             ;
-+------------------------------------+---------------------------------+------------------------+-------------+----------------+
-; Assignment Name                    ; Value                           ; Default Value          ; Entity Name ; Section Id     ;
-+------------------------------------+---------------------------------+------------------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 229335799398898.157133690711332 ; --                     ; --          ; --             ;
-; PARTITION_COLOR                    ; 16764057                        ; --                     ; StoreSize   ; Top            ;
-; PARTITION_NETLIST_TYPE             ; SOURCE                          ; --                     ; StoreSize   ; Top            ;
-; TOP_LEVEL_ENTITY                   ; StoreSize                       ; DedoNoQuartusEGritaria ; --          ; --             ;
-; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                             ; --                     ; --          ; eda_blast_fpga ;
-+------------------------------------+---------------------------------+------------------------+-------------+----------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                              ;
++------------------------------------+---------------------------------+------------------------+--------------+----------------+
+; Assignment Name                    ; Value                           ; Default Value          ; Entity Name  ; Section Id     ;
++------------------------------------+---------------------------------+------------------------+--------------+----------------+
+; COMPILER_SIGNATURE_ID              ; 229335799398898.157134169614836 ; --                     ; --           ; --             ;
+; PARTITION_COLOR                    ; 16764057                        ; --                     ; Control_Unit ; Top            ;
+; PARTITION_NETLIST_TYPE             ; SOURCE                          ; --                     ; Control_Unit ; Top            ;
+; TOP_LEVEL_ENTITY                   ; Control_Unit                    ; DedoNoQuartusEGritaria ; --           ; --             ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                             ; --                     ; --           ; eda_blast_fpga ;
++------------------------------------+---------------------------------+------------------------+--------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -89,11 +89,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:09     ; 1.0                     ; 4494 MB             ; 00:00:04                           ;
-; Fitter                    ; 00:00:12     ; 1.9                     ; 4713 MB             ; 00:00:10                           ;
-; TimeQuest Timing Analyzer ; 00:00:13     ; 1.0                     ; 4577 MB             ; 00:00:03                           ;
-; Assembler                 ; 00:00:11     ; 1.0                     ; 4543 MB             ; 00:00:04                           ;
-; Total                     ; 00:00:34     ; --                      ; --                  ; 00:00:18                           ;
+; Analysis & Synthesis      ; 00:00:07     ; 1.0                     ; 4494 MB             ; 00:00:05                           ;
+; Fitter                    ; 00:00:11     ; 1.0                     ; 4713 MB             ; 00:00:11                           ;
+; TimeQuest Timing Analyzer ; 00:00:16     ; 1.7                     ; 4577 MB             ; 00:00:03                           ;
+; Assembler                 ; 00:00:12     ; 1.0                     ; 4542 MB             ; 00:00:04                           ;
+; Total                     ; 00:00:34     ; --                      ; --                  ; 00:00:20                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

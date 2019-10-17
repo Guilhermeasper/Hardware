@@ -22,7 +22,7 @@ module Control_Unit(
 	output reg[2:0] mux_10,      //mux_to_pc
 	output reg[1:0] mux_11,      //mux_to_mem_to_reg
 	output reg shift_control,
-	output reg ss_control,
+	output reg[1:0] ss_control,
 	output reg mem_write,
 	output reg [1:0] mult_div,
 	output reg ir_write,
@@ -290,7 +290,7 @@ always@(posedge clock) begin
 			EPC_CONTROL=1'b0;
 			MDR_CONTROL=1'b0;
 			LOAD_SIZE=2'b0;
-			ALU_CONTROL=3'b10;//subtrai A - B
+			ALU_CONTROL=3'b11;//FAZ A && B
 			ALU_OUT=1'b1;//salva A+B em ALU_OUT
 			REG_A=2'b0;
 			REG_B=1'b0;
