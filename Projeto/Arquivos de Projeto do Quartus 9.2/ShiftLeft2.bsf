@@ -20,7 +20,7 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 256 112)
+	(rect 64 64 240 160)
 	(text "ShiftLeft2" (rect 5 0 54 12)(font "Arial" ))
 	(text "inst" (rect 8 80 25 92)(font "Arial" ))
 	(port
@@ -31,13 +31,13 @@ applicable agreement for further details.
 		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
-		(pt 240 32)
+		(pt 176 64)
 		(output)
-		(text "SL2_OUTPUT[31..0]" (rect 0 0 100 12)(font "Arial" ))
-		(text "SL2_OUTPUT[31..0]" (rect 119 27 219 39)(font "Arial" ))
-		(line (pt 240 32)(pt 224 32)(line_width 3))
+		(text "SL2_OUTPUT[31..0]" (rect -64 0 36 12)(font "Arial" ))
+		(text "SL2_OUTPUT[31..0]" (rect 64 64 164 76)(font "Arial" ))
+		(line (pt 176 64)(pt 160 64)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 224 80)(line_width 1))
+		(rectangle (rect 16 16 160 80)(line_width 1))
 	)
 )
