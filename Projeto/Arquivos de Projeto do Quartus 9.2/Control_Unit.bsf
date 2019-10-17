@@ -20,7 +20,7 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 64 64 248 576)
+	(rect 16 16 240 528)
 	(text "Control_Unit" (rect 5 0 66 12)(font "Arial" ))
 	(text "inst" (rect 8 496 25 508)(font "Arial" ))
 	(port
@@ -94,523 +94,523 @@ applicable agreement for further details.
 		(line (pt 0 176)(pt 16 176)(line_width 1))
 	)
 	(port
-		(pt 184 32)
+		(pt 224 32)
 		(output)
-		(text "pc_write" (rect -40 0 0 12)(font "Arial" ))
-		(text "pc_write" (rect 123 27 163 39)(font "Arial" ))
-		(line (pt 184 32)(pt 168 32)(line_width 1))
+		(text "pc_write" (rect 0 0 40 12)(font "Arial" ))
+		(text "pc_write" (rect 163 27 203 39)(font "Arial" ))
+		(line (pt 224 32)(pt 208 32)(line_width 1))
 	)
 	(port
-		(pt 184 48)
+		(pt 224 48)
 		(output)
-		(text "mux_1[1..0]" (rect -40 0 19 12)(font "Arial" ))
-		(text "mux_1[1..0]" (rect 104 43 163 55)(font "Arial" ))
-		(line (pt 184 48)(pt 168 48)(line_width 3))
+		(text "mux_1[1..0]" (rect 0 0 59 12)(font "Arial" ))
+		(text "mux_1[1..0]" (rect 144 43 203 55)(font "Arial" ))
+		(line (pt 224 48)(pt 208 48)(line_width 3))
 	)
 	(port
-		(pt 184 64)
+		(pt 224 64)
 		(output)
-		(text "mux_2[1..0]" (rect -40 0 19 12)(font "Arial" ))
-		(text "mux_2[1..0]" (rect 104 59 163 71)(font "Arial" ))
-		(line (pt 184 64)(pt 168 64)(line_width 3))
+		(text "mux_2[1..0]" (rect 0 0 59 12)(font "Arial" ))
+		(text "mux_2[1..0]" (rect 144 59 203 71)(font "Arial" ))
+		(line (pt 224 64)(pt 208 64)(line_width 3))
 	)
 	(port
-		(pt 184 80)
+		(pt 224 80)
 		(output)
-		(text "mux_3" (rect -40 0 -7 12)(font "Arial" ))
-		(text "mux_3" (rect 130 75 163 87)(font "Arial" ))
-		(line (pt 184 80)(pt 168 80)(line_width 1))
+		(text "mux_3" (rect 0 0 33 12)(font "Arial" ))
+		(text "mux_3" (rect 170 75 203 87)(font "Arial" ))
+		(line (pt 224 80)(pt 208 80)(line_width 1))
 	)
 	(port
-		(pt 184 96)
+		(pt 224 96)
 		(output)
-		(text "mux_4" (rect -40 0 -7 12)(font "Arial" ))
-		(text "mux_4" (rect 130 91 163 103)(font "Arial" ))
-		(line (pt 184 96)(pt 168 96)(line_width 1))
+		(text "mux_4" (rect 0 0 33 12)(font "Arial" ))
+		(text "mux_4" (rect 170 91 203 103)(font "Arial" ))
+		(line (pt 224 96)(pt 208 96)(line_width 1))
 	)
 	(port
-		(pt 184 112)
+		(pt 224 112)
 		(output)
-		(text "mux_6[2..0]" (rect -40 0 19 12)(font "Arial" ))
-		(text "mux_6[2..0]" (rect 104 107 163 119)(font "Arial" ))
-		(line (pt 184 112)(pt 168 112)(line_width 3))
+		(text "mux_6[2..0]" (rect 0 0 59 12)(font "Arial" ))
+		(text "mux_6[2..0]" (rect 144 107 203 119)(font "Arial" ))
+		(line (pt 224 112)(pt 208 112)(line_width 3))
 	)
 	(port
-		(pt 184 128)
+		(pt 224 128)
 		(output)
-		(text "mux_7[3..0]" (rect -40 0 19 12)(font "Arial" ))
-		(text "mux_7[3..0]" (rect 104 123 163 135)(font "Arial" ))
-		(line (pt 184 128)(pt 168 128)(line_width 3))
+		(text "mux_7[3..0]" (rect 0 0 59 12)(font "Arial" ))
+		(text "mux_7[3..0]" (rect 144 123 203 135)(font "Arial" ))
+		(line (pt 224 128)(pt 208 128)(line_width 3))
 	)
 	(port
-		(pt 184 144)
+		(pt 224 144)
 		(output)
-		(text "mux_8[1..0]" (rect -40 0 19 12)(font "Arial" ))
-		(text "mux_8[1..0]" (rect 104 139 163 151)(font "Arial" ))
-		(line (pt 184 144)(pt 168 144)(line_width 3))
+		(text "mux_8[1..0]" (rect 0 0 59 12)(font "Arial" ))
+		(text "mux_8[1..0]" (rect 144 139 203 151)(font "Arial" ))
+		(line (pt 224 144)(pt 208 144)(line_width 3))
 	)
 	(port
-		(pt 184 160)
+		(pt 224 160)
 		(output)
-		(text "mux_9[2..0]" (rect -40 0 19 12)(font "Arial" ))
-		(text "mux_9[2..0]" (rect 104 155 163 167)(font "Arial" ))
-		(line (pt 184 160)(pt 168 160)(line_width 3))
+		(text "mux_9[2..0]" (rect 0 0 59 12)(font "Arial" ))
+		(text "mux_9[2..0]" (rect 144 155 203 167)(font "Arial" ))
+		(line (pt 224 160)(pt 208 160)(line_width 3))
 	)
 	(port
-		(pt 184 176)
+		(pt 224 176)
 		(output)
-		(text "mux_10[2..0]" (rect -40 0 24 12)(font "Arial" ))
-		(text "mux_10[2..0]" (rect 99 171 163 183)(font "Arial" ))
-		(line (pt 184 176)(pt 168 176)(line_width 3))
+		(text "mux_10[2..0]" (rect 0 0 64 12)(font "Arial" ))
+		(text "mux_10[2..0]" (rect 139 171 203 183)(font "Arial" ))
+		(line (pt 224 176)(pt 208 176)(line_width 3))
 	)
 	(port
-		(pt 184 192)
+		(pt 224 192)
 		(output)
-		(text "mux_11[1..0]" (rect -40 0 24 12)(font "Arial" ))
-		(text "mux_11[1..0]" (rect 99 187 163 199)(font "Arial" ))
-		(line (pt 184 192)(pt 168 192)(line_width 3))
+		(text "mux_11[1..0]" (rect 0 0 64 12)(font "Arial" ))
+		(text "mux_11[1..0]" (rect 139 187 203 199)(font "Arial" ))
+		(line (pt 224 192)(pt 208 192)(line_width 3))
 	)
 	(port
-		(pt 184 208)
+		(pt 224 208)
 		(output)
-		(text "shift_control" (rect -40 0 21 12)(font "Arial" ))
-		(text "shift_control" (rect 102 203 163 215)(font "Arial" ))
-		(line (pt 184 208)(pt 168 208)(line_width 1))
+		(text "shift_control" (rect 0 0 61 12)(font "Arial" ))
+		(text "shift_control" (rect 142 203 203 215)(font "Arial" ))
+		(line (pt 224 208)(pt 208 208)(line_width 1))
 	)
 	(port
-		(pt 184 224)
+		(pt 224 224)
 		(output)
-		(text "ss_control" (rect -40 0 10 12)(font "Arial" ))
-		(text "ss_control" (rect 113 219 163 231)(font "Arial" ))
-		(line (pt 184 224)(pt 168 224)(line_width 1))
+		(text "ss_control" (rect 0 0 50 12)(font "Arial" ))
+		(text "ss_control" (rect 153 219 203 231)(font "Arial" ))
+		(line (pt 224 224)(pt 208 224)(line_width 1))
 	)
 	(port
-		(pt 184 240)
+		(pt 224 240)
 		(output)
-		(text "mem_write" (rect -40 0 13 12)(font "Arial" ))
-		(text "mem_write" (rect 110 235 163 247)(font "Arial" ))
-		(line (pt 184 240)(pt 168 240)(line_width 1))
+		(text "mem_write" (rect 0 0 53 12)(font "Arial" ))
+		(text "mem_write" (rect 150 235 203 247)(font "Arial" ))
+		(line (pt 224 240)(pt 208 240)(line_width 1))
 	)
 	(port
-		(pt 184 256)
+		(pt 224 256)
 		(output)
-		(text "mult_div[1..0]" (rect -40 0 28 12)(font "Arial" ))
-		(text "mult_div[1..0]" (rect 95 251 163 263)(font "Arial" ))
-		(line (pt 184 256)(pt 168 256)(line_width 3))
+		(text "mult_div[1..0]" (rect 0 0 68 12)(font "Arial" ))
+		(text "mult_div[1..0]" (rect 135 251 203 263)(font "Arial" ))
+		(line (pt 224 256)(pt 208 256)(line_width 3))
 	)
 	(port
-		(pt 184 272)
+		(pt 224 272)
 		(output)
-		(text "ir_write" (rect -40 0 -6 12)(font "Arial" ))
-		(text "ir_write" (rect 129 267 163 279)(font "Arial" ))
-		(line (pt 184 272)(pt 168 272)(line_width 1))
+		(text "ir_write" (rect 0 0 34 12)(font "Arial" ))
+		(text "ir_write" (rect 169 267 203 279)(font "Arial" ))
+		(line (pt 224 272)(pt 208 272)(line_width 1))
 	)
 	(port
-		(pt 184 288)
+		(pt 224 288)
 		(output)
-		(text "hi_lo" (rect -40 0 -18 12)(font "Arial" ))
-		(text "hi_lo" (rect 141 283 163 295)(font "Arial" ))
-		(line (pt 184 288)(pt 168 288)(line_width 1))
+		(text "hi_lo" (rect 0 0 22 12)(font "Arial" ))
+		(text "hi_lo" (rect 181 283 203 295)(font "Arial" ))
+		(line (pt 224 288)(pt 208 288)(line_width 1))
 	)
 	(port
-		(pt 184 304)
+		(pt 224 304)
 		(output)
-		(text "EPC_CONTROL" (rect -40 0 41 12)(font "Arial" ))
-		(text "EPC_CONTROL" (rect 82 299 163 311)(font "Arial" ))
-		(line (pt 184 304)(pt 168 304)(line_width 1))
+		(text "EPC_CONTROL" (rect 0 0 81 12)(font "Arial" ))
+		(text "EPC_CONTROL" (rect 122 299 203 311)(font "Arial" ))
+		(line (pt 224 304)(pt 208 304)(line_width 1))
 	)
 	(port
-		(pt 184 320)
+		(pt 224 320)
 		(output)
-		(text "MDR_CONTROL" (rect -40 0 43 12)(font "Arial" ))
-		(text "MDR_CONTROL" (rect 80 315 163 327)(font "Arial" ))
-		(line (pt 184 320)(pt 168 320)(line_width 1))
+		(text "MDR_CONTROL" (rect 0 0 83 12)(font "Arial" ))
+		(text "MDR_CONTROL" (rect 120 315 203 327)(font "Arial" ))
+		(line (pt 224 320)(pt 208 320)(line_width 1))
 	)
 	(port
-		(pt 184 336)
+		(pt 224 336)
 		(output)
-		(text "LOAD_SIZE" (rect -40 0 20 12)(font "Arial" ))
-		(text "LOAD_SIZE" (rect 103 331 163 343)(font "Arial" ))
-		(line (pt 184 336)(pt 168 336)(line_width 1))
+		(text "LOAD_SIZE" (rect 0 0 60 12)(font "Arial" ))
+		(text "LOAD_SIZE" (rect 143 331 203 343)(font "Arial" ))
+		(line (pt 224 336)(pt 208 336)(line_width 1))
 	)
 	(port
-		(pt 184 352)
+		(pt 224 352)
 		(output)
-		(text "ALU_CONTROL[2..0]" (rect -40 0 66 12)(font "Arial" ))
-		(text "ALU_CONTROL[2..0]" (rect 57 347 163 359)(font "Arial" ))
-		(line (pt 184 352)(pt 168 352)(line_width 3))
+		(text "ALU_CONTROL[2..0]" (rect 0 0 106 12)(font "Arial" ))
+		(text "ALU_CONTROL[2..0]" (rect 97 347 203 359)(font "Arial" ))
+		(line (pt 224 352)(pt 208 352)(line_width 3))
 	)
 	(port
-		(pt 184 368)
+		(pt 224 368)
 		(output)
-		(text "ALU_OUT" (rect -40 0 9 12)(font "Arial" ))
-		(text "ALU_OUT" (rect 114 363 163 375)(font "Arial" ))
-		(line (pt 184 368)(pt 168 368)(line_width 1))
+		(text "ALU_OUT" (rect 0 0 49 12)(font "Arial" ))
+		(text "ALU_OUT" (rect 154 363 203 375)(font "Arial" ))
+		(line (pt 224 368)(pt 208 368)(line_width 1))
 	)
 	(port
-		(pt 184 384)
+		(pt 224 384)
 		(output)
-		(text "REG_A" (rect -40 0 -4 12)(font "Arial" ))
-		(text "REG_A" (rect 127 379 163 391)(font "Arial" ))
-		(line (pt 184 384)(pt 168 384)(line_width 1))
+		(text "REG_A" (rect 0 0 36 12)(font "Arial" ))
+		(text "REG_A" (rect 167 379 203 391)(font "Arial" ))
+		(line (pt 224 384)(pt 208 384)(line_width 1))
 	)
 	(port
-		(pt 184 400)
+		(pt 224 400)
 		(output)
-		(text "REG_B" (rect -40 0 -4 12)(font "Arial" ))
-		(text "REG_B" (rect 127 395 163 407)(font "Arial" ))
-		(line (pt 184 400)(pt 168 400)(line_width 1))
+		(text "REG_B" (rect 0 0 36 12)(font "Arial" ))
+		(text "REG_B" (rect 167 395 203 407)(font "Arial" ))
+		(line (pt 224 400)(pt 208 400)(line_width 1))
 	)
 	(port
-		(pt 184 416)
+		(pt 224 416)
 		(output)
-		(text "REG_WRITE" (rect -40 0 24 12)(font "Arial" ))
-		(text "REG_WRITE" (rect 99 411 163 423)(font "Arial" ))
-		(line (pt 184 416)(pt 168 416)(line_width 1))
+		(text "REG_WRITE" (rect 0 0 64 12)(font "Arial" ))
+		(text "REG_WRITE" (rect 139 411 203 423)(font "Arial" ))
+		(line (pt 224 416)(pt 208 416)(line_width 1))
 	)
 	(port
-		(pt 184 432)
+		(pt 224 432)
 		(output)
-		(text "XCH_CONTROL" (rect -40 0 41 12)(font "Arial" ))
-		(text "XCH_CONTROL" (rect 82 427 163 439)(font "Arial" ))
-		(line (pt 184 432)(pt 168 432)(line_width 1))
+		(text "XCH_CONTROL" (rect 0 0 81 12)(font "Arial" ))
+		(text "XCH_CONTROL" (rect 122 427 203 439)(font "Arial" ))
+		(line (pt 224 432)(pt 208 432)(line_width 1))
 	)
 	(port
-		(pt 184 448)
+		(pt 224 448)
 		(output)
-		(text "state[7..0]" (rect -40 0 10 12)(font "Arial" ))
-		(text "state[7..0]" (rect 113 443 163 455)(font "Arial" ))
-		(line (pt 184 448)(pt 168 448)(line_width 3))
+		(text "state[7..0]" (rect 0 0 50 12)(font "Arial" ))
+		(text "state[7..0]" (rect 153 443 203 455)(font "Arial" ))
+		(line (pt 224 448)(pt 208 448)(line_width 3))
 	)
 	(port
-		(pt 184 464)
+		(pt 224 464)
 		(output)
-		(text "next_state[5..0]" (rect -40 0 37 12)(font "Arial" ))
-		(text "next_state[5..0]" (rect 86 459 163 471)(font "Arial" ))
-		(line (pt 184 464)(pt 168 464)(line_width 3))
+		(text "next_state[7..0]" (rect 0 0 77 12)(font "Arial" ))
+		(text "next_state[7..0]" (rect 126 459 203 471)(font "Arial" ))
+		(line (pt 224 464)(pt 208 464)(line_width 3))
 	)
 	(parameter
 		"RESET"
-		"000000"
+		"00000000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"FETCH"
-		"000001"
+		"00000001"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"FETCH_2"
-		"000010"
+		"00000010"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"WAIT"
-		"000100"
+		"00000011"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"DECODE"
-		"000101"
+		"00000100"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"ADD"
-		"000110"
+		"00000101"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"AND"
-		"000111"
+		"00000110"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"SUB"
-		"001000"
+		"111111"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"WRITE_ARIT"
-		"000111"
+		"00000111"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"SHIFT_SHAMT"
-		"001000"
+		"00001000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"SLL"
-		"001001"
+		"00001001"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"SRA"
-		"001010"
+		"00001010"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"SRL"
-		"001011"
+		"00001011"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"SHIFT_REG"
-		"001100"
+		"00001100"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"SLLV"
-		"001101"
+		"00001101"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"SRAV"
-		"001110"
+		"00001110"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"WRITERD_SHIFT"
-		"001111"
+		"00001111"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"MFHI"
-		"010000"
+		"00010000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"MFLO"
-		"010001"
+		"00010001"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"SLT"
-		"010010"
+		"00010010"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"JR"
-		"010011"
+		"00010011"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"RTE"
-		"010100"
+		"00010100"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"BREAK"
-		"010101"
+		"00010101"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"MULT_LOAD"
-		"010110"
+		"00010110"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"MULT_CALC"
-		"010111"
+		"00010111"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"MULT_RESULT"
-		"011000"
+		"00011000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"DIV_LOAD"
-		"011001"
+		"00011001"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"DIV_CALC"
-		"011010"
+		"00011010"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"DIV_RESULT"
-		"011011"
+		"00011011"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"JAL"
-		"011100"
+		"00011100"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"RETURN_ADDRESS"
-		"011101"
+		"00011101"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"J"
-		"011110"
+		"00011110"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"INCDEC"
-		"011111"
+		"00011111"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"INCDEC_WAIT"
-		"100000"
+		"00100000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"DEC_OP"
-		"100001"
+		"00100001"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"INC_OP"
-		"100010"
+		"00100010"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"INCDEC_ST"
-		"100011"
+		"00100011"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"ADDIU"
-		"100100"
+		"00100100"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"ADDI"
-		"100101"
+		"00100101"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"BEQ"
-		"100111"
+		"00100111"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"BNE"
-		"101000"
+		"00101000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"BLE"
-		"101001"
+		"00101001"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"BGT"
-		"101010"
+		"00101010"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"LUI"
-		"101011"
+		"00101011"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"SLTI"
-		"101100"
+		"00101100"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"LS_CALC"
-		"101101"
+		"00101101"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"LS_START"
-		"101110"
+		"00101110"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"LS_WAIT"
-		"101111"
+		"00101111"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"SB_END"
-		"110000"
+		"00110000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"SH_END"
-		"110001"
+		"00110001"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"SW_END"
-		"110010"
+		"00110010"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"LB_END"
-		"110011"
+		"00110011"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"LH_END"
-		"110100"
+		"00110100"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"LW_END"
-		"110101"
+		"00110101"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"OVERFLOW"
-		"110110"
+		"00110110"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"DIVZERO"
-		"110111"
+		"00110111"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"NOPCODE"
-		"111000"
+		"00111000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"EXP_WAIT"
-		"111001"
+		"00111001"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"EXP_WRITE"
-		"111010"
+		"00111010"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"WAIT_2"
-		"111011"
+		"00111011"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"INCDEC_WAIT_2"
-		"111100"
+		"00111100"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"LS_WAIT_2"
-		"111101"
+		"00111101"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"EXP_WAIT_2"
-		"111110"
+		"00111110"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"FINAL"
-		"111111"
+		"11111111"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(drawing
-		(rectangle (rect 16 16 184 496)(line_width 1))
+		(rectangle (rect 16 16 208 496)(line_width 1))
 	)
-	(annotation_block (parameter)(rect 240 -896 464 16))
+	(annotation_block (parameter)(rect 240 -64 340 16))
 )

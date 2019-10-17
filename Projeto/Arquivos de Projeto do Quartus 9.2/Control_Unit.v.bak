@@ -51,7 +51,7 @@ initial begin
     next_state = 8'b0;
 end
 
-parameter RESET = 8'd0;
+parameter RESET = 8'b00000000;
 parameter FETCH = 8'd1;
 parameter FETCH_2 = 8'd2;
 parameter WAIT = 8'd3;
@@ -120,11 +120,11 @@ parameter FINAL = 8'd255;
 
 always@(posedge clock) begin
 	if (reset) begin
-		next_state = RESET;
+		next_state = 8'b00000000;
 	end	
 
 	case(next_state)
-		RESET: begin
+		8'b00000000: begin
 			pc_write = 1'b0;
 			mux_1 = 2'b0;
 			mux_2 = 2'b0;
@@ -152,9 +152,9 @@ always@(posedge clock) begin
 			REG_WRITE = 1'b1;
 			XCH_CONTROL = 1'b0;
 			
-			next_state = FETCH;
+			next_state = 8'b00000001;
 		end
-		FETCH: begin
+		8'b00000001: begin
 			pc_write = 1'b0;
             mux_1 = 2'b0;
             mux_2 = 2'b0;         //escolhe o PC
@@ -184,14 +184,14 @@ always@(posedge clock) begin
 			
 			if(counter == 8'd1) begin
 				counter = 8'd0;
-				next_state = FETCH_2;
+				next_state = 8'b00000010;
 			end
 			else begin
 				counter = counter + 8'd1;
 			end
 
 		end
-		FETCH_2: begin
+		8'b00000010: begin
 			pc_write = 1'b1;
             mux_1 = 2'b0;
             mux_2 = 2'b0;         
@@ -200,7 +200,7 @@ always@(posedge clock) begin
             mux_6 = 3'b0;
             mux_7 = 4'b0;
             mux_8 = 2'b0;         
-            mux_9 = 3'b0;         
+            mux_9 = 3'b1;         
             mux_10= 3'b0;          
             mux_11 = 1'b0;
             shift_control = 1'b0;
@@ -219,40 +219,10 @@ always@(posedge clock) begin
             REG_WRITE = 1'b0;
             XCH_CONTROL = 1'b0;
 
-			next_state = DECODE;
+			next_state = 8'b00000011;
 			counter = 8'd0;
 		end
-		WAIT: begin
-			pc_write=1'b1;
-			mux_1=2'b0;
-			mux_2=2'b0;
-			mux_3=1'b0;
-			mux_4=1'b0;
-			mux_6=3'b0;
-			mux_7=4'b0;
-			mux_8=2'b0;
-			mux_9=3'b0;
-			mux_10=3'b0;
-			mux_11=1'b0;
-			shift_control=1'b0;
-			ss_control=1'b0;
-			mem_write=1'b0;
-			mult_div=2'b0;
-			ir_write=1'b1;
- 			hi_lo=1'b0;
-			EPC_CONTROL=1'b0;
-			MDR_CONTROL=1'b0;
-			LOAD_SIZE=1'b0;
-			ALU_CONTROL=3'b0;
-			ALU_OUT=1'b0;
-			REG_A=2'b0;
-			REG_B=1'b0;
-			REG_WRITE=1'b0;
-			XCH_CONTROL = 1'b0;
-
-			next_state = DECODE;
-		end
-		DECODE: begin
+		8'b00000011: begin
 			pc_write=1'b0; //PC agora e PC+4
 			mux_2=2'b0;
 			mux_1=2'b0;
@@ -279,51 +249,51 @@ always@(posedge clock) begin
 			
 			REG_A=2'b0;//load rs em a // ERRADO, é pra ser b1 pra dar write;
 			REG_B=2'b0;//load rt em b // ERRADO, é pra ser b1 pra dar write;
-			
 			case(opcode) // essa linha tem que estar dentro de um estado tbm
 				6'b0: begin // caso formato r
 					case(funct)
-						6'h20: next_state = ADD;
-                        6'h24: next_state = AND;
-                        6'h22: next_state = SUB;
-                        6'h0: next_state = SHIFT_SHAMT;
-                        6'h2: next_state = SHIFT_SHAMT;
-                        6'h3: next_state = SHIFT_SHAMT;
-                        6'h4: next_state = SHIFT_REG;
-                        6'h7: next_state = SHIFT_REG;
-                        6'h10: next_state = MFHI;
-                        6'h12: next_state = MFLO;
-                        6'h2a: next_state = SLT;
-                        6'h8: next_state = JR;
-                        6'h13: next_state = RTE;
-                        6'hd: next_state = BREAK;
-                        6'h18: next_state = MULT_LOAD;
-                        6'h1a: next_state = DIV_LOAD;
+						6'h20: next_state = 8'b00000100;
+                        6'h24: next_state = 8'b00000100;
+                        6'h22: next_state = 8'b00000100;
+                        6'h0: next_state = 8'b00000100;
+                        6'h2: next_state = 8'b00000100;
+                        6'h3: next_state = 8'b00000100;
+                        6'h4: next_state = 8'b00000100;
+                        6'h7: next_state = 8'b00000100;
+                        6'h10: next_state = 8'b00000100;
+                        6'h12: next_state = 8'b00000100;
+                        6'h2a: next_state = 8'b00000100;
+                        6'h8: next_state = 8'b00000100;
+                        6'h13: next_state = 8'b00000100;
+                        6'hd: next_state = 8'b00000100;
+                        6'h18: next_state = 8'b00000100;
+                        6'h1a: next_state = 8'b00000100;
                     endcase
                 end
  
-                6'h3: next_state = JAL;
-                6'h2: next_state = J;
-                6'h10: next_state = INCDEC;
-                6'h11: next_state = INCDEC;
-                6'h8: next_state = ADDI;
-                6'h9: next_state = ADDIU;
-                6'h4: next_state = BEQ;
-                6'h5: next_state = BNE;
-                6'h6: next_state = BLE;
-                6'h7: next_state = BGT;
-                6'hf: next_state = LUI;
-                6'ha: next_state = SLTI;
-                6'h28: next_state = LS_CALC;
-                6'h29: next_state = LS_CALC;
-                6'h2b: next_state = LS_CALC;
-                6'h20: next_state = LS_CALC;
-                6'h21: next_state = LS_CALC;
-                6'h23: next_state = LS_CALC;
-                default: next_state = NOPCODE;
+                6'h3: next_state = 8'b00000100;
+                6'h2: next_state =8'b00000100;
+                6'h10: next_state = 8'b00000100;
+                6'h11: next_state = 8'b00000100;
+                6'h8: next_state = 8'b00000100;
+                6'h9: next_state = 8'b00000100;
+                6'h4: next_state = 8'b00000100;
+                6'h5: next_state = 8'b00000100;
+                6'h6: next_state = 8'b00000100;
+                6'h7: next_state = 8'b00000100;
+                6'hf: next_state = 8'b00000100;
+                6'ha: next_state = 8'b00000100;
+                6'h28: next_state = 8'b00000100;
+                6'h29: next_state = 8'b00000100;
+                6'h2b: next_state = 8'b00000100;
+                6'h20: next_state = 8'b00000100;
+                6'h21: next_state = 8'b00000100;
+                6'h23: next_state = 8'b00000100;
+                default: next_state = 8'b00000100;
             endcase
 		end
-		ADD: begin
+			
+		8'b00000100: begin
 			pc_write=1'b0;
 			mux_1=2'b0;
 			mux_2=2'b0;
@@ -350,9 +320,9 @@ always@(posedge clock) begin
 			REG_B=1'b0;
 			REG_WRITE=1'b0;
 			XCH_CONTROL = 1'b0;
-			next_state = WRITE_ARIT; // next_state = ADD/AND/SUB_2;
+			next_state = 8'b00000101; // next_state = ADD/AND/SUB_2;
 		end
-		WRITE_ARIT: begin //tem q criar esse parametro
+		8'b00000101: begin //tem q criar esse parametro
 			pc_write=1'b0;
 			mux_1=2'b0;
 			mux_2=2'b0;
@@ -379,9 +349,9 @@ always@(posedge clock) begin
 			REG_B=1'b0;
 			REG_WRITE=1'b1;//permite escrever no banco de regs
 			XCH_CONTROL = 1'b0;
-			next_state = FINAL;
+			next_state = 8'b00000110;
 		end
-		FINAL: begin // tem q criar esse parametro
+		8'b00000110: begin // tem q criar esse parametro
 			pc_write=1'b0;
 			mux_1=2'b0;
 			mux_2=2'b0;
@@ -408,7 +378,7 @@ always@(posedge clock) begin
 			REG_B=1'b0;
 			REG_WRITE=1'b0;
 			XCH_CONTROL = 1'b0;
-			next_state = FETCH;
+			next_state = 8'b00000001;
 		end
     endcase
 	

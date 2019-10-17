@@ -2,24 +2,34 @@
 Timing Analyzer Summary
 --------------------------------------------------------------------------------------
 
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 5.946 ns
+From           : controle[1]
+To             : saida[9]$latch
+From Clock     : --
+To Clock       : controle[0]
+Failed Paths   : 0
+
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 12.612 ns
-From           : Registrador:inst10|Saida[6]
-To             : MUX_PC[29]
-From Clock     : clock
+Actual Time    : 9.211 ns
+From           : saida[9]$latch
+To             : saida[9]
+From Clock     : controle[2]
 To Clock       : --
 Failed Paths   : 0
 
-Type           : Clock Setup: 'clock'
+Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : 168.83 MHz ( period = 5.923 ns )
-From           : Registrador:inst10|Saida[6]
-To             : Registrador:inst10|Saida[30]
-From Clock     : clock
-To Clock       : clock
+Actual Time    : 0.881 ns
+From           : entrada1[18]
+To             : saida[18]$latch
+From Clock     : --
+To Clock       : controle[2]
 Failed Paths   : 0
 
 Type           : Total number of failed paths

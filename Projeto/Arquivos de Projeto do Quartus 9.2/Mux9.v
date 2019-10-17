@@ -1,4 +1,4 @@
-module mux9(clock, entrada0, entrada1, entrada2, entrada3, entrada4, controle, saida);
+module Mux9(clock, entrada0, entrada1, entrada2, entrada3, entrada4, controle, saida);
 	
 	//Iniciando os fio tudo.
 	input wire clock;

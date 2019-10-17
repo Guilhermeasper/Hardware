@@ -2,12 +2,12 @@ module mux2(clock, entrada0, entrada1, entrada2, entrada3, controle, saida);
 	
 	//Iniciando os fio tudo.
 	input wire clock;
-	input wire [15:0]entrada0;
-	input wire [15:0]entrada1;
-	input wire [15:0]entrada2;
-	input wire [15:0]entrada3;
+	input wire [31:0]entrada0;
+	input wire [31:0]entrada1;
+	input wire [31:0]entrada2;
+	input wire [31:0]entrada3;
 	input wire [1:0]controle;
-	output reg [15:0]saida;
+	output reg [31:0]saida;
 
 	parameter selectEntrada0=2'b00;
 	parameter selectEntrada1=2'b01;
@@ -16,7 +16,7 @@ module mux2(clock, entrada0, entrada1, entrada2, entrada3, controle, saida);
 	
 	//Setando estado inicial para todos os fios.
 	initial begin
-		saida <= 16'b0000000000000000;
+		saida <= 31'b0000000000000000;
 	end
 
 	always@(*) begin

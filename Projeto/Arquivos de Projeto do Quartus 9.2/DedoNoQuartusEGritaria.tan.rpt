@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for DedoNoQuartusEGritaria
-Wed Oct 16 16:55:41 2019
+Wed Oct 16 18:38:16 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -11,9 +11,10 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   3. Timing Analyzer Settings
   4. Clock Settings Summary
   5. Parallel Compilation
-  6. Clock Setup: 'clock'
+  6. tsu
   7. tco
-  8. Timing Analyzer Messages
+  8. th
+  9. Timing Analyzer Messages
 
 
 
@@ -36,15 +37,16 @@ applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Timing Analyzer Summary                                                                                                                                                                     ;
-+------------------------------+-------+---------------+----------------------------------+-----------------------------+------------------------------+------------+----------+--------------+
-; Type                         ; Slack ; Required Time ; Actual Time                      ; From                        ; To                           ; From Clock ; To Clock ; Failed Paths ;
-+------------------------------+-------+---------------+----------------------------------+-----------------------------+------------------------------+------------+----------+--------------+
-; Worst-case tco               ; N/A   ; None          ; 12.612 ns                        ; Registrador:inst10|Saida[6] ; MUX_PC[29]                   ; clock      ; --       ; 0            ;
-; Clock Setup: 'clock'         ; N/A   ; None          ; 168.83 MHz ( period = 5.923 ns ) ; Registrador:inst10|Saida[6] ; Registrador:inst10|Saida[30] ; clock      ; clock    ; 0            ;
-; Total number of failed paths ;       ;               ;                                  ;                             ;                              ;            ;          ; 0            ;
-+------------------------------+-------+---------------+----------------------------------+-----------------------------+------------------------------+------------+----------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                          ;
++------------------------------+-------+---------------+-------------+----------------+-----------------+-------------+-------------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time ; From           ; To              ; From Clock  ; To Clock    ; Failed Paths ;
++------------------------------+-------+---------------+-------------+----------------+-----------------+-------------+-------------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 5.946 ns    ; controle[1]    ; saida[9]$latch  ; --          ; controle[0] ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 9.211 ns    ; saida[9]$latch ; saida[9]        ; controle[2] ; --          ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 0.881 ns    ; entrada1[18]   ; saida[18]$latch ; --          ; controle[2] ; 0            ;
+; Total number of failed paths ;       ;               ;             ;                ;                 ;             ;             ; 0            ;
++------------------------------+-------+---------------+-------------+----------------+-----------------+-------------+-------------+--------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -52,7 +54,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
 ; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
 +------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
-; Device Name                                                                                          ; EP2S15F672C3       ;      ;    ;             ;
+; Device Name                                                                                          ; EP2S15F484C3       ;      ;    ;             ;
 ; Timing Models                                                                                        ; Final              ;      ;    ;             ;
 ; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
 ; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
@@ -84,7 +86,10 @@ applicable agreement for further details.
 +-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
 ; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
 +-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
-; clock           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; controle[0]     ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; controle[1]     ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; controle[3]     ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; controle[2]     ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
 +-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
 
 
@@ -94,427 +99,563 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 6      ;
+; Number detected on machine ; 2      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clock Setup: 'clock'                                                                                                                                                                                                                                                         ;
-+-----------------------------------------+-----------------------------------------------------+-----------------------------------+------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
-; Slack                                   ; Actual fmax (period)                                ; From                              ; To                           ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
-+-----------------------------------------+-----------------------------------------------------+-----------------------------------+------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
-; N/A                                     ; 168.83 MHz ( period = 5.923 ns )                    ; Registrador:inst10|Saida[6]       ; Registrador:inst10|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 5.739 ns                ;
-; N/A                                     ; 170.82 MHz ( period = 5.854 ns )                    ; Registrador:inst10|Saida[6]       ; Registrador:inst24|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 5.670 ns                ;
-; N/A                                     ; 170.82 MHz ( period = 5.854 ns )                    ; Registrador:inst10|Saida[6]       ; Registrador:inst24|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 5.670 ns                ;
-; N/A                                     ; 171.32 MHz ( period = 5.837 ns )                    ; Registrador:inst10|Saida[6]       ; Registrador:inst10|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 5.653 ns                ;
-; N/A                                     ; 173.46 MHz ( period = 5.765 ns )                    ; Registrador:inst10|Saida[6]       ; Registrador:inst10|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 5.596 ns                ;
-; N/A                                     ; 176.52 MHz ( period = 5.665 ns )                    ; Control_Unit:inst2|ALU_CONTROL[0] ; Registrador:inst10|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 5.468 ns                ;
-; N/A                                     ; 177.12 MHz ( period = 5.646 ns )                    ; Registrador:inst10|Saida[2]       ; Registrador:inst10|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 5.462 ns                ;
-; N/A                                     ; 178.70 MHz ( period = 5.596 ns )                    ; Control_Unit:inst2|ALU_CONTROL[0] ; Registrador:inst24|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 5.399 ns                ;
-; N/A                                     ; 178.70 MHz ( period = 5.596 ns )                    ; Control_Unit:inst2|ALU_CONTROL[0] ; Registrador:inst24|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 5.399 ns                ;
-; N/A                                     ; 179.24 MHz ( period = 5.579 ns )                    ; Control_Unit:inst2|ALU_CONTROL[0] ; Registrador:inst10|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 5.382 ns                ;
-; N/A                                     ; 179.31 MHz ( period = 5.577 ns )                    ; Registrador:inst10|Saida[2]       ; Registrador:inst24|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 5.393 ns                ;
-; N/A                                     ; 179.31 MHz ( period = 5.577 ns )                    ; Registrador:inst10|Saida[2]       ; Registrador:inst24|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 5.393 ns                ;
-; N/A                                     ; 179.86 MHz ( period = 5.560 ns )                    ; Registrador:inst10|Saida[2]       ; Registrador:inst10|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 5.376 ns                ;
-; N/A                                     ; 181.59 MHz ( period = 5.507 ns )                    ; Control_Unit:inst2|ALU_CONTROL[0] ; Registrador:inst10|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 5.325 ns                ;
-; N/A                                     ; 182.22 MHz ( period = 5.488 ns )                    ; Registrador:inst10|Saida[2]       ; Registrador:inst10|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 5.319 ns                ;
-; N/A                                     ; 183.08 MHz ( period = 5.462 ns )                    ; Registrador:inst10|Saida[6]       ; Registrador:inst24|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 5.278 ns                ;
-; N/A                                     ; 183.28 MHz ( period = 5.456 ns )                    ; Registrador:inst10|Saida[6]       ; Registrador:inst24|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 5.272 ns                ;
-; N/A                                     ; 185.98 MHz ( period = 5.377 ns )                    ; Registrador:inst10|Saida[6]       ; Registrador:inst10|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 5.193 ns                ;
-; N/A                                     ; 186.05 MHz ( period = 5.375 ns )                    ; Registrador:inst10|Saida[6]       ; Registrador:inst10|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 5.191 ns                ;
-; N/A                                     ; 187.09 MHz ( period = 5.345 ns )                    ; Control_Unit:inst2|mux_8[1]       ; Registrador:inst10|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 5.161 ns                ;
-; N/A                                     ; 188.57 MHz ( period = 5.303 ns )                    ; Registrador:inst10|Saida[7]       ; Registrador:inst10|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 5.119 ns                ;
-; N/A                                     ; 189.25 MHz ( period = 5.284 ns )                    ; Registrador:inst10|Saida[10]      ; Registrador:inst10|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 5.102 ns                ;
-; N/A                                     ; 189.54 MHz ( period = 5.276 ns )                    ; Registrador:inst10|Saida[11]      ; Registrador:inst10|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 5.094 ns                ;
-; N/A                                     ; 189.54 MHz ( period = 5.276 ns )                    ; Control_Unit:inst2|mux_8[1]       ; Registrador:inst24|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 5.092 ns                ;
-; N/A                                     ; 189.54 MHz ( period = 5.276 ns )                    ; Control_Unit:inst2|mux_8[1]       ; Registrador:inst24|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 5.092 ns                ;
-; N/A                                     ; 190.04 MHz ( period = 5.262 ns )                    ; Control_Unit:inst2|mux_9[0]       ; Registrador:inst10|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 5.065 ns                ;
-; N/A                                     ; 190.15 MHz ( period = 5.259 ns )                    ; Control_Unit:inst2|mux_8[1]       ; Registrador:inst10|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 5.075 ns                ;
-; N/A                                     ; 191.06 MHz ( period = 5.234 ns )                    ; Registrador:inst10|Saida[7]       ; Registrador:inst24|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 5.050 ns                ;
-; N/A                                     ; 191.06 MHz ( period = 5.234 ns )                    ; Registrador:inst10|Saida[7]       ; Registrador:inst24|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 5.050 ns                ;
-; N/A                                     ; 191.68 MHz ( period = 5.217 ns )                    ; Registrador:inst10|Saida[7]       ; Registrador:inst10|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 5.033 ns                ;
-; N/A                                     ; 191.75 MHz ( period = 5.215 ns )                    ; Registrador:inst10|Saida[10]      ; Registrador:inst24|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 5.033 ns                ;
-; N/A                                     ; 191.75 MHz ( period = 5.215 ns )                    ; Registrador:inst10|Saida[10]      ; Registrador:inst24|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 5.033 ns                ;
-; N/A                                     ; 192.05 MHz ( period = 5.207 ns )                    ; Registrador:inst10|Saida[11]      ; Registrador:inst24|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 5.025 ns                ;
-; N/A                                     ; 192.05 MHz ( period = 5.207 ns )                    ; Registrador:inst10|Saida[11]      ; Registrador:inst24|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 5.025 ns                ;
-; N/A                                     ; 192.16 MHz ( period = 5.204 ns )                    ; Control_Unit:inst2|ALU_CONTROL[0] ; Registrador:inst24|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 5.007 ns                ;
-; N/A                                     ; 192.38 MHz ( period = 5.198 ns )                    ; Registrador:inst10|Saida[10]      ; Registrador:inst10|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 5.016 ns                ;
-; N/A                                     ; 192.38 MHz ( period = 5.198 ns )                    ; Control_Unit:inst2|ALU_CONTROL[0] ; Registrador:inst24|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 5.001 ns                ;
-; N/A                                     ; 192.38 MHz ( period = 5.198 ns )                    ; Registrador:inst10|Saida[6]       ; Registrador:inst24|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 5.014 ns                ;
-; N/A                                     ; 192.57 MHz ( period = 5.193 ns )                    ; Control_Unit:inst2|mux_9[0]       ; Registrador:inst24|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.996 ns                ;
-; N/A                                     ; 192.57 MHz ( period = 5.193 ns )                    ; Control_Unit:inst2|mux_9[0]       ; Registrador:inst24|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.996 ns                ;
-; N/A                                     ; 192.68 MHz ( period = 5.190 ns )                    ; Registrador:inst10|Saida[11]      ; Registrador:inst10|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 5.008 ns                ;
-; N/A                                     ; 192.68 MHz ( period = 5.190 ns )                    ; Registrador:inst10|Saida[4]       ; Registrador:inst10|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 5.006 ns                ;
-; N/A                                     ; 192.79 MHz ( period = 5.187 ns )                    ; Control_Unit:inst2|mux_8[1]       ; Registrador:inst10|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 5.018 ns                ;
-; N/A                                     ; 192.86 MHz ( period = 5.185 ns )                    ; Registrador:inst10|Saida[2]       ; Registrador:inst24|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 5.001 ns                ;
-; N/A                                     ; 193.09 MHz ( period = 5.179 ns )                    ; Registrador:inst10|Saida[2]       ; Registrador:inst24|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.995 ns                ;
-; N/A                                     ; 193.20 MHz ( period = 5.176 ns )                    ; Control_Unit:inst2|mux_9[0]       ; Registrador:inst10|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.979 ns                ;
-; N/A                                     ; 194.36 MHz ( period = 5.145 ns )                    ; Registrador:inst10|Saida[7]       ; Registrador:inst10|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 4.976 ns                ;
-; N/A                                     ; 194.59 MHz ( period = 5.139 ns )                    ; Registrador:inst10|Saida[8]       ; Registrador:inst10|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 4.957 ns                ;
-; N/A                                     ; 194.86 MHz ( period = 5.132 ns )                    ; Registrador:inst10|Saida[5]       ; Registrador:inst10|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 4.948 ns                ;
-; N/A                                     ; 195.08 MHz ( period = 5.126 ns )                    ; Registrador:inst10|Saida[10]      ; Registrador:inst10|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 4.959 ns                ;
-; N/A                                     ; 195.27 MHz ( period = 5.121 ns )                    ; Registrador:inst10|Saida[4]       ; Registrador:inst24|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.937 ns                ;
-; N/A                                     ; 195.27 MHz ( period = 5.121 ns )                    ; Registrador:inst10|Saida[4]       ; Registrador:inst24|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.937 ns                ;
-; N/A                                     ; 195.35 MHz ( period = 5.119 ns )                    ; Control_Unit:inst2|ALU_CONTROL[0] ; Registrador:inst10|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.922 ns                ;
-; N/A                                     ; 195.39 MHz ( period = 5.118 ns )                    ; Registrador:inst10|Saida[11]      ; Registrador:inst10|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 4.951 ns                ;
-; N/A                                     ; 195.43 MHz ( period = 5.117 ns )                    ; Registrador:inst10|Saida[15]      ; Registrador:inst10|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 4.937 ns                ;
-; N/A                                     ; 195.43 MHz ( period = 5.117 ns )                    ; Control_Unit:inst2|ALU_CONTROL[0] ; Registrador:inst10|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.920 ns                ;
-; N/A                                     ; 195.92 MHz ( period = 5.104 ns )                    ; Registrador:inst10|Saida[4]       ; Registrador:inst10|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.920 ns                ;
-; N/A                                     ; 195.92 MHz ( period = 5.104 ns )                    ; Control_Unit:inst2|mux_9[0]       ; Registrador:inst10|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 4.922 ns                ;
-; N/A                                     ; 196.08 MHz ( period = 5.100 ns )                    ; Registrador:inst10|Saida[2]       ; Registrador:inst10|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.916 ns                ;
-; N/A                                     ; 196.16 MHz ( period = 5.098 ns )                    ; Registrador:inst10|Saida[2]       ; Registrador:inst10|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.914 ns                ;
-; N/A                                     ; 197.12 MHz ( period = 5.073 ns )                    ; Registrador:inst10|Saida[3]       ; Registrador:inst10|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 4.889 ns                ;
-; N/A                                     ; 197.24 MHz ( period = 5.070 ns )                    ; Registrador:inst10|Saida[8]       ; Registrador:inst24|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.888 ns                ;
-; N/A                                     ; 197.24 MHz ( period = 5.070 ns )                    ; Registrador:inst10|Saida[8]       ; Registrador:inst24|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.888 ns                ;
-; N/A                                     ; 197.43 MHz ( period = 5.065 ns )                    ; Registrador:inst10|Saida[6]       ; Registrador:inst10|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 4.879 ns                ;
-; N/A                                     ; 197.51 MHz ( period = 5.063 ns )                    ; Registrador:inst10|Saida[5]       ; Registrador:inst24|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.879 ns                ;
-; N/A                                     ; 197.51 MHz ( period = 5.063 ns )                    ; Registrador:inst10|Saida[5]       ; Registrador:inst24|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.879 ns                ;
-; N/A                                     ; 197.90 MHz ( period = 5.053 ns )                    ; Registrador:inst10|Saida[8]       ; Registrador:inst10|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.871 ns                ;
-; N/A                                     ; 198.10 MHz ( period = 5.048 ns )                    ; Registrador:inst10|Saida[15]      ; Registrador:inst24|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.868 ns                ;
-; N/A                                     ; 198.10 MHz ( period = 5.048 ns )                    ; Registrador:inst10|Saida[15]      ; Registrador:inst24|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.868 ns                ;
-; N/A                                     ; 198.18 MHz ( period = 5.046 ns )                    ; Registrador:inst10|Saida[5]       ; Registrador:inst10|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.862 ns                ;
-; N/A                                     ; 198.33 MHz ( period = 5.042 ns )                    ; Registrador:inst10|Saida[9]       ; Registrador:inst10|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 4.860 ns                ;
-; N/A                                     ; 198.73 MHz ( period = 5.032 ns )                    ; Registrador:inst10|Saida[4]       ; Registrador:inst10|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 4.863 ns                ;
-; N/A                                     ; 198.77 MHz ( period = 5.031 ns )                    ; Registrador:inst10|Saida[15]      ; Registrador:inst10|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.851 ns                ;
-; N/A                                     ; 199.84 MHz ( period = 5.004 ns )                    ; Registrador:inst10|Saida[3]       ; Registrador:inst24|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.820 ns                ;
-; N/A                                     ; 199.84 MHz ( period = 5.004 ns )                    ; Registrador:inst10|Saida[3]       ; Registrador:inst24|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.820 ns                ;
-; N/A                                     ; 200.52 MHz ( period = 4.987 ns )                    ; Registrador:inst10|Saida[3]       ; Registrador:inst10|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.803 ns                ;
-; N/A                                     ; 200.76 MHz ( period = 4.981 ns )                    ; Registrador:inst10|Saida[8]       ; Registrador:inst10|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 4.814 ns                ;
-; N/A                                     ; 201.05 MHz ( period = 4.974 ns )                    ; Registrador:inst10|Saida[5]       ; Registrador:inst10|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 4.805 ns                ;
-; N/A                                     ; 201.09 MHz ( period = 4.973 ns )                    ; Registrador:inst10|Saida[9]       ; Registrador:inst24|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.791 ns                ;
-; N/A                                     ; 201.09 MHz ( period = 4.973 ns )                    ; Registrador:inst10|Saida[9]       ; Registrador:inst24|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.791 ns                ;
-; N/A                                     ; 201.65 MHz ( period = 4.959 ns )                    ; Registrador:inst10|Saida[15]      ; Registrador:inst10|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 4.794 ns                ;
-; N/A                                     ; 201.78 MHz ( period = 4.956 ns )                    ; Registrador:inst10|Saida[9]       ; Registrador:inst10|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.774 ns                ;
-; N/A                                     ; 202.10 MHz ( period = 4.948 ns )                    ; Registrador:inst10|Saida[6]       ; Registrador:inst24|Saida[24] ; clock      ; clock    ; None                        ; None                      ; 4.764 ns                ;
-; N/A                                     ; 202.43 MHz ( period = 4.940 ns )                    ; Control_Unit:inst2|ALU_CONTROL[0] ; Registrador:inst24|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 4.743 ns                ;
-; N/A                                     ; 202.68 MHz ( period = 4.934 ns )                    ; Registrador:inst10|Saida[6]       ; Registrador:inst10|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 4.750 ns                ;
-; N/A                                     ; 202.80 MHz ( period = 4.931 ns )                    ; Registrador:inst10|Saida[6]       ; Registrador:inst24|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 4.747 ns                ;
-; N/A                                     ; 203.21 MHz ( period = 4.921 ns )                    ; Registrador:inst10|Saida[2]       ; Registrador:inst24|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 4.737 ns                ;
-; N/A                                     ; 203.46 MHz ( period = 4.915 ns )                    ; Registrador:inst10|Saida[3]       ; Registrador:inst10|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 4.746 ns                ;
-; N/A                                     ; 204.29 MHz ( period = 4.895 ns )                    ; Registrador:inst10|Saida[13]      ; Registrador:inst10|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 4.711 ns                ;
-; N/A                                     ; 204.71 MHz ( period = 4.885 ns )                    ; Registrador:inst10|Saida[12]      ; Registrador:inst10|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 4.705 ns                ;
-; N/A                                     ; 204.75 MHz ( period = 4.884 ns )                    ; Registrador:inst10|Saida[9]       ; Registrador:inst10|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 4.717 ns                ;
-; N/A                                     ; 204.75 MHz ( period = 4.884 ns )                    ; Control_Unit:inst2|mux_8[1]       ; Registrador:inst24|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 4.700 ns                ;
-; N/A                                     ; 205.00 MHz ( period = 4.878 ns )                    ; Control_Unit:inst2|mux_8[1]       ; Registrador:inst24|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.694 ns                ;
-; N/A                                     ; 206.53 MHz ( period = 4.842 ns )                    ; Registrador:inst10|Saida[7]       ; Registrador:inst24|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 4.658 ns                ;
-; N/A                                     ; 206.78 MHz ( period = 4.836 ns )                    ; Registrador:inst10|Saida[7]       ; Registrador:inst24|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.652 ns                ;
-; N/A                                     ; 207.21 MHz ( period = 4.826 ns )                    ; Registrador:inst10|Saida[13]      ; Registrador:inst24|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.642 ns                ;
-; N/A                                     ; 207.21 MHz ( period = 4.826 ns )                    ; Registrador:inst10|Saida[13]      ; Registrador:inst24|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.642 ns                ;
-; N/A                                     ; 207.34 MHz ( period = 4.823 ns )                    ; Registrador:inst10|Saida[10]      ; Registrador:inst24|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 4.641 ns                ;
-; N/A                                     ; 207.60 MHz ( period = 4.817 ns )                    ; Registrador:inst10|Saida[10]      ; Registrador:inst24|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.635 ns                ;
-; N/A                                     ; 207.64 MHz ( period = 4.816 ns )                    ; Registrador:inst10|Saida[12]      ; Registrador:inst24|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.636 ns                ;
-; N/A                                     ; 207.64 MHz ( period = 4.816 ns )                    ; Registrador:inst10|Saida[12]      ; Registrador:inst24|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.636 ns                ;
-; N/A                                     ; 207.68 MHz ( period = 4.815 ns )                    ; Registrador:inst10|Saida[11]      ; Registrador:inst24|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 4.633 ns                ;
-; N/A                                     ; 207.94 MHz ( period = 4.809 ns )                    ; Registrador:inst10|Saida[13]      ; Registrador:inst10|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.625 ns                ;
-; N/A                                     ; 207.94 MHz ( period = 4.809 ns )                    ; Registrador:inst10|Saida[11]      ; Registrador:inst24|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.627 ns                ;
-; N/A                                     ; 208.03 MHz ( period = 4.807 ns )                    ; Control_Unit:inst2|ALU_CONTROL[0] ; Registrador:inst10|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 4.608 ns                ;
-; N/A                                     ; 208.29 MHz ( period = 4.801 ns )                    ; Control_Unit:inst2|mux_9[0]       ; Registrador:inst24|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 4.604 ns                ;
-; N/A                                     ; 208.38 MHz ( period = 4.799 ns )                    ; Registrador:inst10|Saida[12]      ; Registrador:inst10|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.619 ns                ;
-; N/A                                     ; 208.38 MHz ( period = 4.799 ns )                    ; Control_Unit:inst2|mux_8[1]       ; Registrador:inst10|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.615 ns                ;
-; N/A                                     ; 208.46 MHz ( period = 4.797 ns )                    ; Control_Unit:inst2|mux_8[1]       ; Registrador:inst10|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.613 ns                ;
-; N/A                                     ; 208.55 MHz ( period = 4.795 ns )                    ; Control_Unit:inst2|mux_9[0]       ; Registrador:inst24|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.598 ns                ;
-; N/A                                     ; 208.55 MHz ( period = 4.795 ns )                    ; Registrador:inst10|Saida[6]       ; Registrador:inst24|Saida[22] ; clock      ; clock    ; None                        ; None                      ; 4.609 ns                ;
-; N/A                                     ; 208.81 MHz ( period = 4.789 ns )                    ; Registrador:inst10|Saida[6]       ; Registrador:inst24|Saida[23] ; clock      ; clock    ; None                        ; None                      ; 4.603 ns                ;
-; N/A                                     ; 208.86 MHz ( period = 4.788 ns )                    ; Registrador:inst10|Saida[2]       ; Registrador:inst10|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 4.602 ns                ;
-; N/A                                     ; 210.22 MHz ( period = 4.757 ns )                    ; Registrador:inst10|Saida[7]       ; Registrador:inst10|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.573 ns                ;
-; N/A                                     ; 210.30 MHz ( period = 4.755 ns )                    ; Registrador:inst10|Saida[7]       ; Registrador:inst10|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.571 ns                ;
-; N/A                                     ; 211.06 MHz ( period = 4.738 ns )                    ; Registrador:inst10|Saida[10]      ; Registrador:inst10|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.556 ns                ;
-; N/A                                     ; 211.10 MHz ( period = 4.737 ns )                    ; Registrador:inst10|Saida[13]      ; Registrador:inst10|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 4.568 ns                ;
-; N/A                                     ; 211.15 MHz ( period = 4.736 ns )                    ; Registrador:inst10|Saida[10]      ; Registrador:inst10|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.554 ns                ;
-; N/A                                     ; 211.42 MHz ( period = 4.730 ns )                    ; Registrador:inst10|Saida[11]      ; Registrador:inst10|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.548 ns                ;
-; N/A                                     ; 211.46 MHz ( period = 4.729 ns )                    ; Registrador:inst10|Saida[4]       ; Registrador:inst24|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 4.545 ns                ;
-; N/A                                     ; 211.51 MHz ( period = 4.728 ns )                    ; Registrador:inst10|Saida[11]      ; Registrador:inst10|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.546 ns                ;
-; N/A                                     ; 211.55 MHz ( period = 4.727 ns )                    ; Registrador:inst10|Saida[12]      ; Registrador:inst10|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 4.562 ns                ;
-; N/A                                     ; 211.73 MHz ( period = 4.723 ns )                    ; Registrador:inst10|Saida[4]       ; Registrador:inst24|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.539 ns                ;
-; N/A                                     ; 212.04 MHz ( period = 4.716 ns )                    ; Control_Unit:inst2|mux_9[0]       ; Registrador:inst10|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.519 ns                ;
-; N/A                                     ; 212.13 MHz ( period = 4.714 ns )                    ; Control_Unit:inst2|mux_9[0]       ; Registrador:inst10|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.517 ns                ;
-; N/A                                     ; 213.22 MHz ( period = 4.690 ns )                    ; Registrador:inst10|Saida[6]       ; Registrador:inst24|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 4.504 ns                ;
-; N/A                                     ; 213.22 MHz ( period = 4.690 ns )                    ; Control_Unit:inst2|ALU_CONTROL[0] ; Registrador:inst24|Saida[24] ; clock      ; clock    ; None                        ; None                      ; 4.493 ns                ;
-; N/A                                     ; 213.77 MHz ( period = 4.678 ns )                    ; Registrador:inst10|Saida[6]       ; Registrador:inst10|Saida[24] ; clock      ; clock    ; None                        ; None                      ; 4.494 ns                ;
-; N/A                                     ; 213.77 MHz ( period = 4.678 ns )                    ; Registrador:inst10|Saida[8]       ; Registrador:inst24|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 4.496 ns                ;
-; N/A                                     ; 213.86 MHz ( period = 4.676 ns )                    ; Control_Unit:inst2|ALU_CONTROL[0] ; Registrador:inst10|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 4.479 ns                ;
-; N/A                                     ; 214.00 MHz ( period = 4.673 ns )                    ; Control_Unit:inst2|ALU_CONTROL[0] ; Registrador:inst24|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 4.476 ns                ;
-; N/A                                     ; 214.04 MHz ( period = 4.672 ns )                    ; Registrador:inst10|Saida[8]       ; Registrador:inst24|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.490 ns                ;
-; N/A                                     ; 214.09 MHz ( period = 4.671 ns )                    ; Registrador:inst10|Saida[5]       ; Registrador:inst24|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 4.487 ns                ;
-; N/A                                     ; 214.09 MHz ( period = 4.671 ns )                    ; Registrador:inst10|Saida[2]       ; Registrador:inst24|Saida[24] ; clock      ; clock    ; None                        ; None                      ; 4.487 ns                ;
-; N/A                                     ; 214.36 MHz ( period = 4.665 ns )                    ; Registrador:inst10|Saida[5]       ; Registrador:inst24|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.481 ns                ;
-; N/A                                     ; 214.73 MHz ( period = 4.657 ns )                    ; Registrador:inst10|Saida[2]       ; Registrador:inst10|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 4.473 ns                ;
-; N/A                                     ; 214.78 MHz ( period = 4.656 ns )                    ; Registrador:inst10|Saida[15]      ; Registrador:inst24|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 4.476 ns                ;
-; N/A                                     ; 214.87 MHz ( period = 4.654 ns )                    ; Registrador:inst10|Saida[2]       ; Registrador:inst24|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 4.470 ns                ;
-; N/A                                     ; 215.05 MHz ( period = 4.650 ns )                    ; Registrador:inst10|Saida[15]      ; Registrador:inst24|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.470 ns                ;
-; N/A                                     ; 215.33 MHz ( period = 4.644 ns )                    ; Registrador:inst10|Saida[4]       ; Registrador:inst10|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.460 ns                ;
-; N/A                                     ; 215.42 MHz ( period = 4.642 ns )                    ; Registrador:inst10|Saida[4]       ; Registrador:inst10|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.458 ns                ;
-; N/A                                     ; 215.94 MHz ( period = 4.631 ns )                    ; Registrador:inst10|Saida[14]      ; Registrador:inst10|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 4.451 ns                ;
-; N/A                                     ; 216.03 MHz ( period = 4.629 ns )                    ; Registrador:inst10|Saida[26]      ; Registrador:inst10|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 4.445 ns                ;
-; N/A                                     ; 216.45 MHz ( period = 4.620 ns )                    ; Control_Unit:inst2|mux_8[1]       ; Registrador:inst24|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 4.436 ns                ;
-; N/A                                     ; 216.83 MHz ( period = 4.612 ns )                    ; Registrador:inst10|Saida[3]       ; Registrador:inst24|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 4.428 ns                ;
-; N/A                                     ; 217.11 MHz ( period = 4.606 ns )                    ; Registrador:inst10|Saida[3]       ; Registrador:inst24|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.422 ns                ;
-; N/A                                     ; 217.72 MHz ( period = 4.593 ns )                    ; Registrador:inst10|Saida[8]       ; Registrador:inst10|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.411 ns                ;
-; N/A                                     ; 217.82 MHz ( period = 4.591 ns )                    ; Registrador:inst10|Saida[8]       ; Registrador:inst10|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.409 ns                ;
-; N/A                                     ; 218.05 MHz ( period = 4.586 ns )                    ; Registrador:inst10|Saida[5]       ; Registrador:inst10|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.402 ns                ;
-; N/A                                     ; 218.15 MHz ( period = 4.584 ns )                    ; Registrador:inst10|Saida[5]       ; Registrador:inst10|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.400 ns                ;
-; N/A                                     ; 218.29 MHz ( period = 4.581 ns )                    ; Registrador:inst10|Saida[9]       ; Registrador:inst24|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 4.399 ns                ;
-; N/A                                     ; 218.44 MHz ( period = 4.578 ns )                    ; Registrador:inst10|Saida[7]       ; Registrador:inst24|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 4.394 ns                ;
-; N/A                                     ; 218.58 MHz ( period = 4.575 ns )                    ; Registrador:inst10|Saida[9]       ; Registrador:inst24|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.393 ns                ;
-; N/A                                     ; 218.77 MHz ( period = 4.571 ns )                    ; Registrador:inst10|Saida[15]      ; Registrador:inst10|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.391 ns                ;
-; N/A                                     ; 218.87 MHz ( period = 4.569 ns )                    ; Registrador:inst10|Saida[15]      ; Registrador:inst10|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.389 ns                ;
-; N/A                                     ; 219.20 MHz ( period = 4.562 ns )                    ; Registrador:inst10|Saida[14]      ; Registrador:inst24|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.382 ns                ;
-; N/A                                     ; 219.20 MHz ( period = 4.562 ns )                    ; Registrador:inst10|Saida[14]      ; Registrador:inst24|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.382 ns                ;
-; N/A                                     ; 219.30 MHz ( period = 4.560 ns )                    ; Registrador:inst10|Saida[26]      ; Registrador:inst24|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.376 ns                ;
-; N/A                                     ; 219.30 MHz ( period = 4.560 ns )                    ; Registrador:inst10|Saida[26]      ; Registrador:inst24|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.376 ns                ;
-; N/A                                     ; 219.35 MHz ( period = 4.559 ns )                    ; Registrador:inst10|Saida[10]      ; Registrador:inst24|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 4.377 ns                ;
-; N/A                                     ; 219.73 MHz ( period = 4.551 ns )                    ; Registrador:inst10|Saida[11]      ; Registrador:inst24|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 4.369 ns                ;
-; N/A                                     ; 220.02 MHz ( period = 4.545 ns )                    ; Registrador:inst10|Saida[14]      ; Registrador:inst10|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.365 ns                ;
-; N/A                                     ; 220.12 MHz ( period = 4.543 ns )                    ; Registrador:inst10|Saida[26]      ; Registrador:inst10|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.359 ns                ;
-; N/A                                     ; 220.41 MHz ( period = 4.537 ns )                    ; Control_Unit:inst2|mux_9[0]       ; Registrador:inst24|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 4.340 ns                ;
-; N/A                                     ; 220.41 MHz ( period = 4.537 ns )                    ; Control_Unit:inst2|ALU_CONTROL[0] ; Registrador:inst24|Saida[22] ; clock      ; clock    ; None                        ; None                      ; 4.338 ns                ;
-; N/A                                     ; 220.70 MHz ( period = 4.531 ns )                    ; Control_Unit:inst2|ALU_CONTROL[0] ; Registrador:inst24|Saida[23] ; clock      ; clock    ; None                        ; None                      ; 4.332 ns                ;
-; N/A                                     ; 220.90 MHz ( period = 4.527 ns )                    ; Registrador:inst10|Saida[3]       ; Registrador:inst10|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.343 ns                ;
-; N/A                                     ; 220.99 MHz ( period = 4.525 ns )                    ; Registrador:inst10|Saida[3]       ; Registrador:inst10|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.341 ns                ;
-; N/A                                     ; 221.34 MHz ( period = 4.518 ns )                    ; Registrador:inst10|Saida[2]       ; Registrador:inst24|Saida[22] ; clock      ; clock    ; None                        ; None                      ; 4.332 ns                ;
-; N/A                                     ; 221.63 MHz ( period = 4.512 ns )                    ; Registrador:inst10|Saida[2]       ; Registrador:inst24|Saida[23] ; clock      ; clock    ; None                        ; None                      ; 4.326 ns                ;
-; N/A                                     ; 222.42 MHz ( period = 4.496 ns )                    ; Registrador:inst10|Saida[9]       ; Registrador:inst10|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.314 ns                ;
-; N/A                                     ; 222.52 MHz ( period = 4.494 ns )                    ; Registrador:inst10|Saida[9]       ; Registrador:inst10|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.312 ns                ;
-; N/A                                     ; 222.87 MHz ( period = 4.487 ns )                    ; Control_Unit:inst2|mux_8[1]       ; Registrador:inst10|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 4.301 ns                ;
-; N/A                                     ; 223.46 MHz ( period = 4.475 ns )                    ; Registrador:inst10|Saida[6]       ; Registrador:inst24|Saida[19] ; clock      ; clock    ; None                        ; None                      ; 4.306 ns                ;
-; N/A                                     ; 223.56 MHz ( period = 4.473 ns )                    ; Registrador:inst10|Saida[14]      ; Registrador:inst10|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 4.308 ns                ;
-; N/A                                     ; 223.66 MHz ( period = 4.471 ns )                    ; Registrador:inst10|Saida[6]       ; Registrador:inst24|Saida[20] ; clock      ; clock    ; None                        ; None                      ; 4.302 ns                ;
-; N/A                                     ; 223.96 MHz ( period = 4.465 ns )                    ; Registrador:inst10|Saida[4]       ; Registrador:inst24|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 4.281 ns                ;
-; N/A                                     ; 224.01 MHz ( period = 4.464 ns )                    ; Registrador:inst10|Saida[6]       ; Registrador:inst10|Saida[21] ; clock      ; clock    ; None                        ; None                      ; 4.295 ns                ;
-; N/A                                     ; 224.97 MHz ( period = 4.445 ns )                    ; Registrador:inst10|Saida[7]       ; Registrador:inst10|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 4.259 ns                ;
-; N/A                                     ; 225.53 MHz ( period = 4.434 ns )                    ; Registrador:inst10|Saida[13]      ; Registrador:inst24|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 4.250 ns                ;
-; N/A                                     ; 225.63 MHz ( period = 4.432 ns )                    ; Control_Unit:inst2|ALU_CONTROL[0] ; Registrador:inst24|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 4.233 ns                ;
-; N/A                                     ; 225.84 MHz ( period = 4.428 ns )                    ; Registrador:inst10|Saida[13]      ; Registrador:inst24|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.244 ns                ;
-; N/A                                     ; 225.94 MHz ( period = 4.426 ns )                    ; Registrador:inst10|Saida[10]      ; Registrador:inst10|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 4.242 ns                ;
-; N/A                                     ; 226.04 MHz ( period = 4.424 ns )                    ; Registrador:inst10|Saida[12]      ; Registrador:inst24|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 4.244 ns                ;
-; N/A                                     ; 226.24 MHz ( period = 4.420 ns )                    ; Control_Unit:inst2|ALU_CONTROL[0] ; Registrador:inst10|Saida[24] ; clock      ; clock    ; None                        ; None                      ; 4.223 ns                ;
-; N/A                                     ; 226.35 MHz ( period = 4.418 ns )                    ; Registrador:inst10|Saida[11]      ; Registrador:inst10|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 4.234 ns                ;
-; N/A                                     ; 226.35 MHz ( period = 4.418 ns )                    ; Registrador:inst10|Saida[12]      ; Registrador:inst24|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.238 ns                ;
-; N/A                                     ; 226.50 MHz ( period = 4.415 ns )                    ; Registrador:inst10|Saida[6]       ; Registrador:inst10|Saida[22] ; clock      ; clock    ; None                        ; None                      ; 4.229 ns                ;
-; N/A                                     ; 226.50 MHz ( period = 4.415 ns )                    ; Registrador:inst10|Saida[6]       ; Registrador:inst10|Saida[23] ; clock      ; clock    ; None                        ; None                      ; 4.229 ns                ;
-; N/A                                     ; 226.55 MHz ( period = 4.414 ns )                    ; Registrador:inst10|Saida[8]       ; Registrador:inst24|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 4.232 ns                ;
-; N/A                                     ; 226.60 MHz ( period = 4.413 ns )                    ; Registrador:inst10|Saida[2]       ; Registrador:inst24|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 4.227 ns                ;
-; N/A                                     ; 226.91 MHz ( period = 4.407 ns )                    ; Registrador:inst10|Saida[5]       ; Registrador:inst24|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 4.223 ns                ;
-; N/A                                     ; 227.07 MHz ( period = 4.404 ns )                    ; Control_Unit:inst2|mux_9[0]       ; Registrador:inst10|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 4.205 ns                ;
-; N/A                                     ; 227.22 MHz ( period = 4.401 ns )                    ; Registrador:inst10|Saida[2]       ; Registrador:inst10|Saida[24] ; clock      ; clock    ; None                        ; None                      ; 4.217 ns                ;
-; N/A                                     ; 227.69 MHz ( period = 4.392 ns )                    ; Registrador:inst10|Saida[15]      ; Registrador:inst24|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 4.212 ns                ;
-; N/A                                     ; 228.83 MHz ( period = 4.370 ns )                    ; Control_Unit:inst2|mux_8[1]       ; Registrador:inst24|Saida[24] ; clock      ; clock    ; None                        ; None                      ; 4.186 ns                ;
-; N/A                                     ; 229.57 MHz ( period = 4.356 ns )                    ; Control_Unit:inst2|mux_8[1]       ; Registrador:inst10|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 4.172 ns                ;
-; N/A                                     ; 229.73 MHz ( period = 4.353 ns )                    ; Control_Unit:inst2|mux_8[1]       ; Registrador:inst24|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 4.169 ns                ;
-; N/A                                     ; 229.94 MHz ( period = 4.349 ns )                    ; Registrador:inst10|Saida[13]      ; Registrador:inst10|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.165 ns                ;
-; N/A                                     ; 229.99 MHz ( period = 4.348 ns )                    ; Registrador:inst10|Saida[3]       ; Registrador:inst24|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 4.164 ns                ;
-; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                   ;                              ;            ;          ;                             ;                           ;                         ;
-+-----------------------------------------+-----------------------------------------------------+-----------------------------------+------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                                                                      ;
++-----------------------------------------+-----------------------------------------------------+------------+-------------+-----------------+-------------+
+; Slack                                   ; Required tsu                                        ; Actual tsu ; From        ; To              ; To Clock    ;
++-----------------------------------------+-----------------------------------------------------+------------+-------------+-----------------+-------------+
+; N/A                                     ; None                                                ; 5.946 ns   ; controle[1] ; saida[9]$latch  ; controle[0] ;
+; N/A                                     ; None                                                ; 5.940 ns   ; controle[1] ; saida[10]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 5.925 ns   ; controle[1] ; saida[11]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 5.840 ns   ; entrada2[5] ; saida[5]$latch  ; controle[0] ;
+; N/A                                     ; None                                                ; 5.803 ns   ; controle[1] ; saida[9]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; 5.797 ns   ; controle[1] ; saida[10]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 5.782 ns   ; controle[1] ; saida[11]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 5.752 ns   ; controle[1] ; saida[9]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; 5.746 ns   ; controle[1] ; saida[10]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 5.731 ns   ; controle[1] ; saida[11]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 5.724 ns   ; controle[1] ; saida[20]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 5.697 ns   ; entrada2[5] ; saida[5]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; 5.667 ns   ; controle[2] ; saida[28]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 5.646 ns   ; entrada2[5] ; saida[5]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; 5.630 ns   ; controle[1] ; saida[9]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; 5.624 ns   ; controle[1] ; saida[10]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 5.609 ns   ; controle[1] ; saida[11]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 5.581 ns   ; controle[1] ; saida[20]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 5.530 ns   ; controle[1] ; saida[20]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 5.526 ns   ; controle[2] ; saida[29]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 5.525 ns   ; entrada4[5] ; saida[5]$latch  ; controle[0] ;
+; N/A                                     ; None                                                ; 5.524 ns   ; controle[2] ; saida[28]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 5.524 ns   ; entrada2[5] ; saida[5]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; 5.507 ns   ; controle[0] ; saida[9]$latch  ; controle[0] ;
+; N/A                                     ; None                                                ; 5.505 ns   ; controle[1] ; saida[18]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 5.501 ns   ; controle[0] ; saida[10]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 5.499 ns   ; controle[1] ; saida[28]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 5.493 ns   ; controle[1] ; saida[19]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 5.486 ns   ; controle[0] ; saida[11]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 5.473 ns   ; controle[2] ; saida[28]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 5.408 ns   ; controle[1] ; saida[20]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 5.383 ns   ; controle[2] ; saida[29]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 5.382 ns   ; entrada4[5] ; saida[5]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; 5.379 ns   ; controle[2] ; saida[27]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 5.364 ns   ; controle[0] ; saida[9]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; 5.362 ns   ; controle[1] ; saida[18]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 5.358 ns   ; controle[0] ; saida[10]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 5.356 ns   ; controle[1] ; saida[28]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 5.351 ns   ; controle[2] ; saida[28]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 5.350 ns   ; controle[1] ; saida[19]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 5.343 ns   ; controle[0] ; saida[11]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 5.332 ns   ; controle[2] ; saida[29]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 5.331 ns   ; entrada4[5] ; saida[5]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; 5.315 ns   ; controle[1] ; saida[31]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 5.313 ns   ; controle[0] ; saida[9]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; 5.311 ns   ; controle[1] ; saida[18]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 5.307 ns   ; controle[0] ; saida[10]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 5.305 ns   ; controle[1] ; saida[28]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 5.299 ns   ; controle[1] ; saida[19]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 5.292 ns   ; controle[0] ; saida[11]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 5.285 ns   ; controle[0] ; saida[20]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 5.275 ns   ; controle[1] ; saida[27]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 5.236 ns   ; controle[2] ; saida[27]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 5.210 ns   ; controle[2] ; saida[29]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 5.209 ns   ; entrada4[5] ; saida[5]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; 5.202 ns   ; controle[2] ; saida[9]$latch  ; controle[0] ;
+; N/A                                     ; None                                                ; 5.196 ns   ; controle[2] ; saida[10]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 5.191 ns   ; controle[0] ; saida[9]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; 5.189 ns   ; controle[1] ; saida[18]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 5.185 ns   ; controle[2] ; saida[27]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 5.185 ns   ; controle[0] ; saida[10]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 5.183 ns   ; controle[1] ; saida[28]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 5.181 ns   ; controle[2] ; saida[11]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 5.177 ns   ; controle[1] ; saida[19]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 5.172 ns   ; controle[1] ; saida[31]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 5.170 ns   ; controle[0] ; saida[11]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 5.142 ns   ; controle[0] ; saida[20]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 5.132 ns   ; controle[1] ; saida[27]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 5.121 ns   ; controle[1] ; saida[31]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 5.105 ns   ; controle[1] ; saida[29]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 5.091 ns   ; controle[0] ; saida[20]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 5.081 ns   ; controle[1] ; saida[27]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 5.066 ns   ; controle[0] ; saida[18]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 5.063 ns   ; controle[2] ; saida[27]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 5.060 ns   ; controle[0] ; saida[28]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 5.059 ns   ; controle[2] ; saida[9]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; 5.054 ns   ; controle[0] ; saida[19]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 5.053 ns   ; controle[2] ; saida[10]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 5.044 ns   ; controle[1] ; saida[30]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 5.038 ns   ; controle[2] ; saida[11]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 5.016 ns   ; controle[2] ; saida[25]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 5.008 ns   ; controle[2] ; saida[9]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; 5.002 ns   ; controle[2] ; saida[10]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.999 ns   ; controle[1] ; saida[31]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 4.987 ns   ; controle[2] ; saida[11]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.980 ns   ; controle[2] ; saida[20]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 4.969 ns   ; controle[0] ; saida[20]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 4.962 ns   ; controle[1] ; saida[29]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.959 ns   ; controle[1] ; saida[27]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 4.923 ns   ; controle[0] ; saida[18]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.917 ns   ; controle[0] ; saida[28]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.913 ns   ; controle[1] ; saida[8]$latch  ; controle[0] ;
+; N/A                                     ; None                                                ; 4.911 ns   ; controle[1] ; saida[29]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.911 ns   ; controle[0] ; saida[19]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.901 ns   ; controle[1] ; saida[30]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.889 ns   ; controle[2] ; saida[26]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 4.886 ns   ; controle[2] ; saida[9]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; 4.880 ns   ; controle[2] ; saida[10]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 4.876 ns   ; controle[0] ; saida[31]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 4.873 ns   ; controle[2] ; saida[25]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.872 ns   ; controle[0] ; saida[18]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.866 ns   ; controle[0] ; saida[28]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.865 ns   ; controle[2] ; saida[11]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 4.860 ns   ; controle[0] ; saida[19]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.856 ns   ; controle[1] ; saida[25]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 4.850 ns   ; controle[1] ; saida[30]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.844 ns   ; controle[1] ; saida[6]$latch  ; controle[0] ;
+; N/A                                     ; None                                                ; 4.837 ns   ; controle[2] ; saida[20]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.836 ns   ; controle[0] ; saida[27]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 4.822 ns   ; controle[2] ; saida[24]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 4.822 ns   ; controle[2] ; saida[25]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.789 ns   ; controle[1] ; saida[29]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 4.786 ns   ; controle[2] ; saida[20]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.770 ns   ; controle[1] ; saida[8]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; 4.761 ns   ; controle[2] ; saida[18]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 4.756 ns   ; controle[1] ; saida[7]$latch  ; controle[0] ;
+; N/A                                     ; None                                                ; 4.754 ns   ; controle[1] ; saida[5]$latch  ; controle[0] ;
+; N/A                                     ; None                                                ; 4.750 ns   ; controle[0] ; saida[18]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 4.749 ns   ; controle[2] ; saida[19]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 4.746 ns   ; controle[2] ; saida[26]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.744 ns   ; controle[0] ; saida[28]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 4.738 ns   ; controle[0] ; saida[19]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 4.733 ns   ; controle[1] ; saida[26]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 4.733 ns   ; controle[0] ; saida[31]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.728 ns   ; controle[1] ; saida[30]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 4.721 ns   ; entrada0[5] ; saida[5]$latch  ; controle[0] ;
+; N/A                                     ; None                                                ; 4.720 ns   ; controle[1] ; saida[13]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 4.719 ns   ; controle[1] ; saida[8]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; 4.714 ns   ; controle[1] ; saida[21]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 4.713 ns   ; controle[1] ; saida[25]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.706 ns   ; controle[1] ; saida[22]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 4.701 ns   ; controle[1] ; saida[6]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; 4.700 ns   ; controle[2] ; saida[25]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 4.695 ns   ; controle[2] ; saida[26]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.693 ns   ; controle[0] ; saida[27]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.692 ns   ; controle[1] ; saida[23]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 4.682 ns   ; controle[0] ; saida[31]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.679 ns   ; controle[2] ; saida[24]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.666 ns   ; controle[0] ; saida[29]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 4.664 ns   ; controle[2] ; saida[20]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 4.662 ns   ; controle[1] ; saida[25]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.661 ns   ; controle[1] ; saida[24]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 4.650 ns   ; controle[1] ; saida[6]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; 4.642 ns   ; controle[0] ; saida[27]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.628 ns   ; controle[2] ; saida[24]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.618 ns   ; controle[2] ; saida[18]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.613 ns   ; controle[1] ; saida[7]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; 4.611 ns   ; controle[1] ; saida[5]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; 4.606 ns   ; controle[2] ; saida[19]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.605 ns   ; controle[0] ; saida[30]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 4.597 ns   ; controle[1] ; saida[8]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; 4.590 ns   ; controle[1] ; saida[26]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.586 ns   ; controle[2] ; saida[12]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 4.578 ns   ; entrada0[5] ; saida[5]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; 4.577 ns   ; controle[1] ; saida[13]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.576 ns   ; entrada6[5] ; saida[5]$latch  ; controle[0] ;
+; N/A                                     ; None                                                ; 4.573 ns   ; controle[2] ; saida[26]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 4.571 ns   ; controle[2] ; saida[31]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 4.571 ns   ; controle[1] ; saida[21]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.567 ns   ; controle[2] ; saida[18]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.563 ns   ; controle[1] ; saida[22]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.562 ns   ; controle[1] ; saida[7]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; 4.560 ns   ; controle[1] ; saida[5]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; 4.560 ns   ; controle[0] ; saida[31]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 4.555 ns   ; controle[2] ; saida[19]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.549 ns   ; controle[1] ; saida[23]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.540 ns   ; controle[1] ; saida[25]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 4.539 ns   ; controle[1] ; saida[26]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.528 ns   ; controle[1] ; saida[6]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; 4.527 ns   ; entrada0[5] ; saida[5]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; 4.526 ns   ; controle[1] ; saida[13]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.523 ns   ; controle[0] ; saida[29]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.520 ns   ; controle[1] ; saida[21]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.520 ns   ; controle[0] ; saida[27]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 4.518 ns   ; controle[1] ; saida[24]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.512 ns   ; controle[1] ; saida[22]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.506 ns   ; controle[2] ; saida[24]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 4.500 ns   ; controle[1] ; saida[14]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 4.498 ns   ; controle[1] ; saida[23]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.491 ns   ; controle[2] ; saida[13]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 4.474 ns   ; controle[0] ; saida[8]$latch  ; controle[0] ;
+; N/A                                     ; None                                                ; 4.472 ns   ; controle[0] ; saida[29]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.467 ns   ; controle[1] ; saida[24]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.462 ns   ; controle[0] ; saida[30]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.445 ns   ; controle[2] ; saida[18]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 4.443 ns   ; controle[2] ; saida[12]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.440 ns   ; controle[1] ; saida[7]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; 4.438 ns   ; controle[1] ; saida[5]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; 4.433 ns   ; controle[2] ; saida[19]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 4.433 ns   ; entrada6[5] ; saida[5]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; 4.429 ns   ; controle[1] ; saida[12]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 4.428 ns   ; controle[2] ; saida[31]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 4.417 ns   ; controle[1] ; saida[26]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 4.417 ns   ; controle[0] ; saida[25]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; 4.411 ns   ; controle[0] ; saida[30]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 4.405 ns   ; controle[0] ; saida[6]$latch  ; controle[0] ;
+; N/A                                     ; None                                                ; 4.405 ns   ; entrada0[5] ; saida[5]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; 4.404 ns   ; controle[1] ; saida[13]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 4.398 ns   ; controle[1] ; saida[21]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 4.392 ns   ; controle[2] ; saida[12]$latch ; controle[3] ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;             ;                 ;             ;
++-----------------------------------------+-----------------------------------------------------+------------+-------------+-----------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; tco                                                                                                                                                                      ;
-+-----------------------------------------+-----------------------------------------------------+------------+-----------------------------------+------------+------------+
-; Slack                                   ; Required tco                                        ; Actual tco ; From                              ; To         ; From Clock ;
-+-----------------------------------------+-----------------------------------------------------+------------+-----------------------------------+------------+------------+
-; N/A                                     ; None                                                ; 12.612 ns  ; Registrador:inst10|Saida[6]       ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 12.354 ns  ; Control_Unit:inst2|ALU_CONTROL[0] ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 12.335 ns  ; Registrador:inst10|Saida[2]       ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 12.263 ns  ; Registrador:inst10|Saida[6]       ; MUX_PC[30] ; clock      ;
-; N/A                                     ; None                                                ; 12.240 ns  ; Registrador:inst10|Saida[6]       ; ULA[29]    ; clock      ;
-; N/A                                     ; None                                                ; 12.074 ns  ; Registrador:inst10|Saida[6]       ; ULA[30]    ; clock      ;
-; N/A                                     ; None                                                ; 12.034 ns  ; Control_Unit:inst2|mux_8[1]       ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 12.005 ns  ; Control_Unit:inst2|ALU_CONTROL[0] ; MUX_PC[30] ; clock      ;
-; N/A                                     ; None                                                ; 11.992 ns  ; Registrador:inst10|Saida[7]       ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 11.986 ns  ; Registrador:inst10|Saida[2]       ; MUX_PC[30] ; clock      ;
-; N/A                                     ; None                                                ; 11.982 ns  ; Control_Unit:inst2|ALU_CONTROL[0] ; ULA[29]    ; clock      ;
-; N/A                                     ; None                                                ; 11.973 ns  ; Registrador:inst10|Saida[10]      ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 11.965 ns  ; Registrador:inst10|Saida[11]      ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 11.963 ns  ; Registrador:inst10|Saida[2]       ; ULA[29]    ; clock      ;
-; N/A                                     ; None                                                ; 11.951 ns  ; Control_Unit:inst2|mux_9[0]       ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 11.879 ns  ; Registrador:inst10|Saida[4]       ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 11.828 ns  ; Registrador:inst10|Saida[8]       ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 11.821 ns  ; Registrador:inst10|Saida[5]       ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 11.816 ns  ; Control_Unit:inst2|ALU_CONTROL[0] ; ULA[30]    ; clock      ;
-; N/A                                     ; None                                                ; 11.806 ns  ; Registrador:inst10|Saida[15]      ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 11.797 ns  ; Registrador:inst10|Saida[2]       ; ULA[30]    ; clock      ;
-; N/A                                     ; None                                                ; 11.762 ns  ; Registrador:inst10|Saida[3]       ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 11.731 ns  ; Registrador:inst10|Saida[9]       ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 11.685 ns  ; Control_Unit:inst2|mux_8[1]       ; MUX_PC[30] ; clock      ;
-; N/A                                     ; None                                                ; 11.662 ns  ; Control_Unit:inst2|mux_8[1]       ; ULA[29]    ; clock      ;
-; N/A                                     ; None                                                ; 11.643 ns  ; Registrador:inst10|Saida[7]       ; MUX_PC[30] ; clock      ;
-; N/A                                     ; None                                                ; 11.634 ns  ; Registrador:inst10|Saida[6]       ; MUX_PC[28] ; clock      ;
-; N/A                                     ; None                                                ; 11.624 ns  ; Registrador:inst10|Saida[10]      ; MUX_PC[30] ; clock      ;
-; N/A                                     ; None                                                ; 11.620 ns  ; Registrador:inst10|Saida[7]       ; ULA[29]    ; clock      ;
-; N/A                                     ; None                                                ; 11.616 ns  ; Registrador:inst10|Saida[11]      ; MUX_PC[30] ; clock      ;
-; N/A                                     ; None                                                ; 11.602 ns  ; Control_Unit:inst2|mux_9[0]       ; MUX_PC[30] ; clock      ;
-; N/A                                     ; None                                                ; 11.601 ns  ; Registrador:inst10|Saida[10]      ; ULA[29]    ; clock      ;
-; N/A                                     ; None                                                ; 11.593 ns  ; Registrador:inst10|Saida[11]      ; ULA[29]    ; clock      ;
-; N/A                                     ; None                                                ; 11.584 ns  ; Registrador:inst10|Saida[13]      ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 11.579 ns  ; Control_Unit:inst2|mux_9[0]       ; ULA[29]    ; clock      ;
-; N/A                                     ; None                                                ; 11.574 ns  ; Registrador:inst10|Saida[12]      ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 11.547 ns  ; Registrador:inst10|Saida[6]       ; MUX_PC[31] ; clock      ;
-; N/A                                     ; None                                                ; 11.530 ns  ; Registrador:inst10|Saida[4]       ; MUX_PC[30] ; clock      ;
-; N/A                                     ; None                                                ; 11.509 ns  ; Registrador:inst10|Saida[6]       ; MUX_PC[27] ; clock      ;
-; N/A                                     ; None                                                ; 11.507 ns  ; Registrador:inst10|Saida[4]       ; ULA[29]    ; clock      ;
-; N/A                                     ; None                                                ; 11.496 ns  ; Control_Unit:inst2|mux_8[1]       ; ULA[30]    ; clock      ;
-; N/A                                     ; None                                                ; 11.479 ns  ; Registrador:inst10|Saida[8]       ; MUX_PC[30] ; clock      ;
-; N/A                                     ; None                                                ; 11.472 ns  ; Registrador:inst10|Saida[5]       ; MUX_PC[30] ; clock      ;
-; N/A                                     ; None                                                ; 11.457 ns  ; Registrador:inst10|Saida[15]      ; MUX_PC[30] ; clock      ;
-; N/A                                     ; None                                                ; 11.456 ns  ; Registrador:inst10|Saida[8]       ; ULA[29]    ; clock      ;
-; N/A                                     ; None                                                ; 11.454 ns  ; Registrador:inst10|Saida[7]       ; ULA[30]    ; clock      ;
-; N/A                                     ; None                                                ; 11.449 ns  ; Registrador:inst10|Saida[5]       ; ULA[29]    ; clock      ;
-; N/A                                     ; None                                                ; 11.435 ns  ; Registrador:inst10|Saida[10]      ; ULA[30]    ; clock      ;
-; N/A                                     ; None                                                ; 11.434 ns  ; Registrador:inst10|Saida[15]      ; ULA[29]    ; clock      ;
-; N/A                                     ; None                                                ; 11.427 ns  ; Registrador:inst10|Saida[11]      ; ULA[30]    ; clock      ;
-; N/A                                     ; None                                                ; 11.413 ns  ; Control_Unit:inst2|mux_9[0]       ; ULA[30]    ; clock      ;
-; N/A                                     ; None                                                ; 11.413 ns  ; Registrador:inst10|Saida[3]       ; MUX_PC[30] ; clock      ;
-; N/A                                     ; None                                                ; 11.390 ns  ; Registrador:inst10|Saida[3]       ; ULA[29]    ; clock      ;
-; N/A                                     ; None                                                ; 11.382 ns  ; Registrador:inst10|Saida[9]       ; MUX_PC[30] ; clock      ;
-; N/A                                     ; None                                                ; 11.377 ns  ; Registrador:inst10|Saida[6]       ; ULA[28]    ; clock      ;
-; N/A                                     ; None                                                ; 11.376 ns  ; Control_Unit:inst2|ALU_CONTROL[0] ; MUX_PC[28] ; clock      ;
-; N/A                                     ; None                                                ; 11.359 ns  ; Registrador:inst10|Saida[9]       ; ULA[29]    ; clock      ;
-; N/A                                     ; None                                                ; 11.357 ns  ; Registrador:inst10|Saida[2]       ; MUX_PC[28] ; clock      ;
-; N/A                                     ; None                                                ; 11.351 ns  ; Registrador:inst10|Saida[6]       ; ULA[26]    ; clock      ;
-; N/A                                     ; None                                                ; 11.351 ns  ; Registrador:inst10|Saida[6]       ; MUX_PC[26] ; clock      ;
-; N/A                                     ; None                                                ; 11.341 ns  ; Registrador:inst10|Saida[4]       ; ULA[30]    ; clock      ;
-; N/A                                     ; None                                                ; 11.320 ns  ; Registrador:inst10|Saida[14]      ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 11.318 ns  ; Registrador:inst10|Saida[26]      ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 11.304 ns  ; Registrador:inst10|Saida[6]       ; ULA[31]    ; clock      ;
-; N/A                                     ; None                                                ; 11.290 ns  ; Registrador:inst10|Saida[8]       ; ULA[30]    ; clock      ;
-; N/A                                     ; None                                                ; 11.289 ns  ; Control_Unit:inst2|ALU_CONTROL[0] ; MUX_PC[31] ; clock      ;
-; N/A                                     ; None                                                ; 11.283 ns  ; Registrador:inst10|Saida[5]       ; ULA[30]    ; clock      ;
-; N/A                                     ; None                                                ; 11.270 ns  ; Registrador:inst10|Saida[2]       ; MUX_PC[31] ; clock      ;
-; N/A                                     ; None                                                ; 11.268 ns  ; Registrador:inst10|Saida[15]      ; ULA[30]    ; clock      ;
-; N/A                                     ; None                                                ; 11.251 ns  ; Control_Unit:inst2|ALU_CONTROL[0] ; MUX_PC[27] ; clock      ;
-; N/A                                     ; None                                                ; 11.235 ns  ; Registrador:inst10|Saida[13]      ; MUX_PC[30] ; clock      ;
-; N/A                                     ; None                                                ; 11.232 ns  ; Registrador:inst10|Saida[2]       ; MUX_PC[27] ; clock      ;
-; N/A                                     ; None                                                ; 11.225 ns  ; Registrador:inst10|Saida[12]      ; MUX_PC[30] ; clock      ;
-; N/A                                     ; None                                                ; 11.224 ns  ; Registrador:inst10|Saida[3]       ; ULA[30]    ; clock      ;
-; N/A                                     ; None                                                ; 11.212 ns  ; Registrador:inst10|Saida[6]       ; ULA[27]    ; clock      ;
-; N/A                                     ; None                                                ; 11.212 ns  ; Registrador:inst10|Saida[13]      ; ULA[29]    ; clock      ;
-; N/A                                     ; None                                                ; 11.202 ns  ; Registrador:inst10|Saida[12]      ; ULA[29]    ; clock      ;
-; N/A                                     ; None                                                ; 11.193 ns  ; Registrador:inst10|Saida[9]       ; ULA[30]    ; clock      ;
-; N/A                                     ; None                                                ; 11.119 ns  ; Control_Unit:inst2|ALU_CONTROL[0] ; ULA[28]    ; clock      ;
-; N/A                                     ; None                                                ; 11.100 ns  ; Registrador:inst10|Saida[2]       ; ULA[28]    ; clock      ;
-; N/A                                     ; None                                                ; 11.093 ns  ; Control_Unit:inst2|ALU_CONTROL[0] ; ULA[26]    ; clock      ;
-; N/A                                     ; None                                                ; 11.093 ns  ; Control_Unit:inst2|ALU_CONTROL[0] ; MUX_PC[26] ; clock      ;
-; N/A                                     ; None                                                ; 11.074 ns  ; Registrador:inst10|Saida[2]       ; ULA[26]    ; clock      ;
-; N/A                                     ; None                                                ; 11.074 ns  ; Registrador:inst10|Saida[2]       ; MUX_PC[26] ; clock      ;
-; N/A                                     ; None                                                ; 11.056 ns  ; Control_Unit:inst2|mux_8[1]       ; MUX_PC[28] ; clock      ;
-; N/A                                     ; None                                                ; 11.046 ns  ; Registrador:inst10|Saida[13]      ; ULA[30]    ; clock      ;
-; N/A                                     ; None                                                ; 11.046 ns  ; Control_Unit:inst2|ALU_CONTROL[0] ; ULA[31]    ; clock      ;
-; N/A                                     ; None                                                ; 11.046 ns  ; Registrador:inst10|Saida[6]       ; MUX_PC[22] ; clock      ;
-; N/A                                     ; None                                                ; 11.036 ns  ; Registrador:inst10|Saida[12]      ; ULA[30]    ; clock      ;
-; N/A                                     ; None                                                ; 11.035 ns  ; Registrador:inst10|Saida[22]      ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 11.027 ns  ; Registrador:inst10|Saida[2]       ; ULA[31]    ; clock      ;
-; N/A                                     ; None                                                ; 11.016 ns  ; Registrador:inst10|Saida[6]       ; ULA[22]    ; clock      ;
-; N/A                                     ; None                                                ; 11.014 ns  ; Registrador:inst10|Saida[7]       ; MUX_PC[28] ; clock      ;
-; N/A                                     ; None                                                ; 10.995 ns  ; Registrador:inst10|Saida[10]      ; MUX_PC[28] ; clock      ;
-; N/A                                     ; None                                                ; 10.987 ns  ; Registrador:inst10|Saida[11]      ; MUX_PC[28] ; clock      ;
-; N/A                                     ; None                                                ; 10.973 ns  ; Control_Unit:inst2|mux_9[0]       ; MUX_PC[28] ; clock      ;
-; N/A                                     ; None                                                ; 10.971 ns  ; Registrador:inst10|Saida[14]      ; MUX_PC[30] ; clock      ;
-; N/A                                     ; None                                                ; 10.969 ns  ; Registrador:inst10|Saida[26]      ; MUX_PC[30] ; clock      ;
-; N/A                                     ; None                                                ; 10.969 ns  ; Control_Unit:inst2|mux_8[1]       ; MUX_PC[31] ; clock      ;
-; N/A                                     ; None                                                ; 10.954 ns  ; Control_Unit:inst2|ALU_CONTROL[0] ; ULA[27]    ; clock      ;
-; N/A                                     ; None                                                ; 10.948 ns  ; Registrador:inst10|Saida[14]      ; ULA[29]    ; clock      ;
-; N/A                                     ; None                                                ; 10.946 ns  ; Registrador:inst10|Saida[26]      ; ULA[29]    ; clock      ;
-; N/A                                     ; None                                                ; 10.935 ns  ; Registrador:inst10|Saida[2]       ; ULA[27]    ; clock      ;
-; N/A                                     ; None                                                ; 10.931 ns  ; Control_Unit:inst2|mux_8[1]       ; MUX_PC[27] ; clock      ;
-; N/A                                     ; None                                                ; 10.927 ns  ; Registrador:inst10|Saida[7]       ; MUX_PC[31] ; clock      ;
-; N/A                                     ; None                                                ; 10.911 ns  ; Registrador:inst10|Saida[6]       ; MUX_PC[16] ; clock      ;
-; N/A                                     ; None                                                ; 10.908 ns  ; Registrador:inst10|Saida[10]      ; MUX_PC[31] ; clock      ;
-; N/A                                     ; None                                                ; 10.901 ns  ; Registrador:inst10|Saida[4]       ; MUX_PC[28] ; clock      ;
-; N/A                                     ; None                                                ; 10.900 ns  ; Registrador:inst10|Saida[11]      ; MUX_PC[31] ; clock      ;
-; N/A                                     ; None                                                ; 10.889 ns  ; Registrador:inst10|Saida[7]       ; MUX_PC[27] ; clock      ;
-; N/A                                     ; None                                                ; 10.886 ns  ; Control_Unit:inst2|mux_9[0]       ; MUX_PC[31] ; clock      ;
-; N/A                                     ; None                                                ; 10.870 ns  ; Registrador:inst10|Saida[10]      ; MUX_PC[27] ; clock      ;
-; N/A                                     ; None                                                ; 10.862 ns  ; Registrador:inst10|Saida[11]      ; MUX_PC[27] ; clock      ;
-; N/A                                     ; None                                                ; 10.854 ns  ; Registrador:inst10|Saida[18]      ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 10.850 ns  ; Registrador:inst10|Saida[8]       ; MUX_PC[28] ; clock      ;
-; N/A                                     ; None                                                ; 10.848 ns  ; Control_Unit:inst2|mux_9[0]       ; MUX_PC[27] ; clock      ;
-; N/A                                     ; None                                                ; 10.843 ns  ; Registrador:inst10|Saida[5]       ; MUX_PC[28] ; clock      ;
-; N/A                                     ; None                                                ; 10.828 ns  ; Registrador:inst10|Saida[15]      ; MUX_PC[28] ; clock      ;
-; N/A                                     ; None                                                ; 10.827 ns  ; Registrador:inst10|Saida[16]      ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 10.814 ns  ; Registrador:inst10|Saida[4]       ; MUX_PC[31] ; clock      ;
-; N/A                                     ; None                                                ; 10.799 ns  ; Control_Unit:inst2|mux_8[1]       ; ULA[28]    ; clock      ;
-; N/A                                     ; None                                                ; 10.788 ns  ; Control_Unit:inst2|ALU_CONTROL[0] ; MUX_PC[22] ; clock      ;
-; N/A                                     ; None                                                ; 10.786 ns  ; Registrador:inst10|Saida[17]      ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 10.784 ns  ; Registrador:inst10|Saida[3]       ; MUX_PC[28] ; clock      ;
-; N/A                                     ; None                                                ; 10.782 ns  ; Registrador:inst10|Saida[14]      ; ULA[30]    ; clock      ;
-; N/A                                     ; None                                                ; 10.780 ns  ; Registrador:inst10|Saida[26]      ; ULA[30]    ; clock      ;
-; N/A                                     ; None                                                ; 10.776 ns  ; Registrador:inst10|Saida[4]       ; MUX_PC[27] ; clock      ;
-; N/A                                     ; None                                                ; 10.773 ns  ; Control_Unit:inst2|mux_8[1]       ; ULA[26]    ; clock      ;
-; N/A                                     ; None                                                ; 10.773 ns  ; Control_Unit:inst2|mux_8[1]       ; MUX_PC[26] ; clock      ;
-; N/A                                     ; None                                                ; 10.769 ns  ; Registrador:inst10|Saida[2]       ; MUX_PC[22] ; clock      ;
-; N/A                                     ; None                                                ; 10.763 ns  ; Registrador:inst10|Saida[8]       ; MUX_PC[31] ; clock      ;
-; N/A                                     ; None                                                ; 10.758 ns  ; Control_Unit:inst2|ALU_CONTROL[0] ; ULA[22]    ; clock      ;
-; N/A                                     ; None                                                ; 10.757 ns  ; Registrador:inst10|Saida[7]       ; ULA[28]    ; clock      ;
-; N/A                                     ; None                                                ; 10.756 ns  ; Registrador:inst10|Saida[5]       ; MUX_PC[31] ; clock      ;
-; N/A                                     ; None                                                ; 10.754 ns  ; Registrador:inst10|Saida[6]       ; MUX_PC[17] ; clock      ;
-; N/A                                     ; None                                                ; 10.753 ns  ; Registrador:inst10|Saida[9]       ; MUX_PC[28] ; clock      ;
-; N/A                                     ; None                                                ; 10.742 ns  ; Registrador:inst10|Saida[6]       ; ULA[24]    ; clock      ;
-; N/A                                     ; None                                                ; 10.741 ns  ; Registrador:inst10|Saida[15]      ; MUX_PC[31] ; clock      ;
-; N/A                                     ; None                                                ; 10.739 ns  ; Registrador:inst10|Saida[2]       ; ULA[22]    ; clock      ;
-; N/A                                     ; None                                                ; 10.738 ns  ; Registrador:inst10|Saida[10]      ; ULA[28]    ; clock      ;
-; N/A                                     ; None                                                ; 10.732 ns  ; Registrador:inst10|Saida[6]       ; MUX_PC[24] ; clock      ;
-; N/A                                     ; None                                                ; 10.731 ns  ; Registrador:inst10|Saida[7]       ; ULA[26]    ; clock      ;
-; N/A                                     ; None                                                ; 10.731 ns  ; Registrador:inst10|Saida[7]       ; MUX_PC[26] ; clock      ;
-; N/A                                     ; None                                                ; 10.730 ns  ; Registrador:inst10|Saida[11]      ; ULA[28]    ; clock      ;
-; N/A                                     ; None                                                ; 10.726 ns  ; Control_Unit:inst2|mux_8[1]       ; ULA[31]    ; clock      ;
-; N/A                                     ; None                                                ; 10.725 ns  ; Registrador:inst10|Saida[8]       ; MUX_PC[27] ; clock      ;
-; N/A                                     ; None                                                ; 10.718 ns  ; Registrador:inst10|Saida[5]       ; MUX_PC[27] ; clock      ;
-; N/A                                     ; None                                                ; 10.716 ns  ; Control_Unit:inst2|mux_9[0]       ; ULA[28]    ; clock      ;
-; N/A                                     ; None                                                ; 10.712 ns  ; Registrador:inst10|Saida[10]      ; ULA[26]    ; clock      ;
-; N/A                                     ; None                                                ; 10.712 ns  ; Registrador:inst10|Saida[10]      ; MUX_PC[26] ; clock      ;
-; N/A                                     ; None                                                ; 10.709 ns  ; Registrador:inst10|Saida[6]       ; MUX_PC[25] ; clock      ;
-; N/A                                     ; None                                                ; 10.704 ns  ; Registrador:inst10|Saida[11]      ; ULA[26]    ; clock      ;
-; N/A                                     ; None                                                ; 10.704 ns  ; Registrador:inst10|Saida[11]      ; MUX_PC[26] ; clock      ;
-; N/A                                     ; None                                                ; 10.703 ns  ; Registrador:inst10|Saida[15]      ; MUX_PC[27] ; clock      ;
-; N/A                                     ; None                                                ; 10.697 ns  ; Registrador:inst10|Saida[3]       ; MUX_PC[31] ; clock      ;
-; N/A                                     ; None                                                ; 10.690 ns  ; Control_Unit:inst2|mux_9[0]       ; ULA[26]    ; clock      ;
-; N/A                                     ; None                                                ; 10.690 ns  ; Control_Unit:inst2|mux_9[0]       ; MUX_PC[26] ; clock      ;
-; N/A                                     ; None                                                ; 10.686 ns  ; Registrador:inst10|Saida[22]      ; MUX_PC[30] ; clock      ;
-; N/A                                     ; None                                                ; 10.684 ns  ; Registrador:inst10|Saida[7]       ; ULA[31]    ; clock      ;
-; N/A                                     ; None                                                ; 10.666 ns  ; Registrador:inst10|Saida[9]       ; MUX_PC[31] ; clock      ;
-; N/A                                     ; None                                                ; 10.665 ns  ; Registrador:inst10|Saida[10]      ; ULA[31]    ; clock      ;
-; N/A                                     ; None                                                ; 10.663 ns  ; Registrador:inst10|Saida[22]      ; ULA[29]    ; clock      ;
-; N/A                                     ; None                                                ; 10.659 ns  ; Registrador:inst10|Saida[3]       ; MUX_PC[27] ; clock      ;
-; N/A                                     ; None                                                ; 10.657 ns  ; Registrador:inst10|Saida[11]      ; ULA[31]    ; clock      ;
-; N/A                                     ; None                                                ; 10.653 ns  ; Control_Unit:inst2|ALU_CONTROL[0] ; MUX_PC[16] ; clock      ;
-; N/A                                     ; None                                                ; 10.646 ns  ; Registrador:inst10|Saida[20]      ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 10.644 ns  ; Registrador:inst10|Saida[4]       ; ULA[28]    ; clock      ;
-; N/A                                     ; None                                                ; 10.643 ns  ; Control_Unit:inst2|mux_9[0]       ; ULA[31]    ; clock      ;
-; N/A                                     ; None                                                ; 10.634 ns  ; Control_Unit:inst2|mux_8[1]       ; ULA[27]    ; clock      ;
-; N/A                                     ; None                                                ; 10.634 ns  ; Registrador:inst10|Saida[2]       ; MUX_PC[16] ; clock      ;
-; N/A                                     ; None                                                ; 10.628 ns  ; Registrador:inst10|Saida[9]       ; MUX_PC[27] ; clock      ;
-; N/A                                     ; None                                                ; 10.622 ns  ; Registrador:inst10|Saida[6]       ; ULA[25]    ; clock      ;
-; N/A                                     ; None                                                ; 10.618 ns  ; Registrador:inst10|Saida[4]       ; ULA[26]    ; clock      ;
-; N/A                                     ; None                                                ; 10.618 ns  ; Registrador:inst10|Saida[4]       ; MUX_PC[26] ; clock      ;
-; N/A                                     ; None                                                ; 10.606 ns  ; Registrador:inst10|Saida[13]      ; MUX_PC[28] ; clock      ;
-; N/A                                     ; None                                                ; 10.596 ns  ; Registrador:inst10|Saida[12]      ; MUX_PC[28] ; clock      ;
-; N/A                                     ; None                                                ; 10.593 ns  ; Registrador:inst10|Saida[8]       ; ULA[28]    ; clock      ;
-; N/A                                     ; None                                                ; 10.592 ns  ; Registrador:inst10|Saida[7]       ; ULA[27]    ; clock      ;
-; N/A                                     ; None                                                ; 10.586 ns  ; Registrador:inst10|Saida[5]       ; ULA[28]    ; clock      ;
-; N/A                                     ; None                                                ; 10.582 ns  ; Registrador:inst10|Saida[6]       ; ULA[23]    ; clock      ;
-; N/A                                     ; None                                                ; 10.582 ns  ; Registrador:inst10|Saida[6]       ; MUX_PC[23] ; clock      ;
-; N/A                                     ; None                                                ; 10.573 ns  ; Registrador:inst10|Saida[10]      ; ULA[27]    ; clock      ;
-; N/A                                     ; None                                                ; 10.571 ns  ; Registrador:inst10|Saida[15]      ; ULA[28]    ; clock      ;
-; N/A                                     ; None                                                ; 10.571 ns  ; Registrador:inst10|Saida[4]       ; ULA[31]    ; clock      ;
-; N/A                                     ; None                                                ; 10.567 ns  ; Registrador:inst10|Saida[8]       ; ULA[26]    ; clock      ;
-; N/A                                     ; None                                                ; 10.567 ns  ; Registrador:inst10|Saida[8]       ; MUX_PC[26] ; clock      ;
-; N/A                                     ; None                                                ; 10.565 ns  ; Registrador:inst10|Saida[11]      ; ULA[27]    ; clock      ;
-; N/A                                     ; None                                                ; 10.560 ns  ; Registrador:inst10|Saida[5]       ; ULA[26]    ; clock      ;
-; N/A                                     ; None                                                ; 10.560 ns  ; Registrador:inst10|Saida[5]       ; MUX_PC[26] ; clock      ;
-; N/A                                     ; None                                                ; 10.551 ns  ; Control_Unit:inst2|mux_9[0]       ; ULA[27]    ; clock      ;
-; N/A                                     ; None                                                ; 10.549 ns  ; Registrador:inst10|Saida[23]      ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 10.545 ns  ; Registrador:inst10|Saida[15]      ; ULA[26]    ; clock      ;
-; N/A                                     ; None                                                ; 10.545 ns  ; Registrador:inst10|Saida[15]      ; MUX_PC[26] ; clock      ;
-; N/A                                     ; None                                                ; 10.539 ns  ; Registrador:inst10|Saida[19]      ; MUX_PC[29] ; clock      ;
-; N/A                                     ; None                                                ; 10.527 ns  ; Registrador:inst10|Saida[3]       ; ULA[28]    ; clock      ;
-; N/A                                     ; None                                                ; 10.520 ns  ; Registrador:inst10|Saida[8]       ; ULA[31]    ; clock      ;
-; N/A                                     ; None                                                ; 10.519 ns  ; Registrador:inst10|Saida[13]      ; MUX_PC[31] ; clock      ;
-; N/A                                     ; None                                                ; 10.513 ns  ; Registrador:inst10|Saida[5]       ; ULA[31]    ; clock      ;
-; N/A                                     ; None                                                ; 10.512 ns  ; Registrador:inst10|Saida[6]       ; ULA[16]    ; clock      ;
-; N/A                                     ; None                                                ; 10.509 ns  ; Registrador:inst10|Saida[12]      ; MUX_PC[31] ; clock      ;
-; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;                                   ;            ;            ;
-+-----------------------------------------+-----------------------------------------------------+------------+-----------------------------------+------------+------------+
++-------------------------------------------------------------------------------+
+; tco                                                                           ;
++-------+--------------+------------+-----------------+-----------+-------------+
+; Slack ; Required tco ; Actual tco ; From            ; To        ; From Clock  ;
++-------+--------------+------------+-----------------+-----------+-------------+
+; N/A   ; None         ; 9.211 ns   ; saida[9]$latch  ; saida[9]  ; controle[2] ;
+; N/A   ; None         ; 9.100 ns   ; saida[11]$latch ; saida[11] ; controle[2] ;
+; N/A   ; None         ; 9.089 ns   ; saida[9]$latch  ; saida[9]  ; controle[3] ;
+; N/A   ; None         ; 9.042 ns   ; saida[24]$latch ; saida[24] ; controle[2] ;
+; N/A   ; None         ; 9.038 ns   ; saida[9]$latch  ; saida[9]  ; controle[1] ;
+; N/A   ; None         ; 8.978 ns   ; saida[11]$latch ; saida[11] ; controle[3] ;
+; N/A   ; None         ; 8.927 ns   ; saida[11]$latch ; saida[11] ; controle[1] ;
+; N/A   ; None         ; 8.924 ns   ; saida[8]$latch  ; saida[8]  ; controle[2] ;
+; N/A   ; None         ; 8.920 ns   ; saida[24]$latch ; saida[24] ; controle[3] ;
+; N/A   ; None         ; 8.895 ns   ; saida[9]$latch  ; saida[9]  ; controle[0] ;
+; N/A   ; None         ; 8.869 ns   ; saida[24]$latch ; saida[24] ; controle[1] ;
+; N/A   ; None         ; 8.859 ns   ; saida[16]$latch ; saida[16] ; controle[2] ;
+; N/A   ; None         ; 8.802 ns   ; saida[8]$latch  ; saida[8]  ; controle[3] ;
+; N/A   ; None         ; 8.784 ns   ; saida[11]$latch ; saida[11] ; controle[0] ;
+; N/A   ; None         ; 8.751 ns   ; saida[8]$latch  ; saida[8]  ; controle[1] ;
+; N/A   ; None         ; 8.745 ns   ; saida[0]$latch  ; saida[0]  ; controle[2] ;
+; N/A   ; None         ; 8.737 ns   ; saida[16]$latch ; saida[16] ; controle[3] ;
+; N/A   ; None         ; 8.726 ns   ; saida[24]$latch ; saida[24] ; controle[0] ;
+; N/A   ; None         ; 8.686 ns   ; saida[16]$latch ; saida[16] ; controle[1] ;
+; N/A   ; None         ; 8.623 ns   ; saida[0]$latch  ; saida[0]  ; controle[3] ;
+; N/A   ; None         ; 8.608 ns   ; saida[8]$latch  ; saida[8]  ; controle[0] ;
+; N/A   ; None         ; 8.572 ns   ; saida[0]$latch  ; saida[0]  ; controle[1] ;
+; N/A   ; None         ; 8.543 ns   ; saida[16]$latch ; saida[16] ; controle[0] ;
+; N/A   ; None         ; 8.477 ns   ; saida[6]$latch  ; saida[6]  ; controle[2] ;
+; N/A   ; None         ; 8.468 ns   ; saida[2]$latch  ; saida[2]  ; controle[2] ;
+; N/A   ; None         ; 8.431 ns   ; saida[13]$latch ; saida[13] ; controle[2] ;
+; N/A   ; None         ; 8.429 ns   ; saida[0]$latch  ; saida[0]  ; controle[0] ;
+; N/A   ; None         ; 8.413 ns   ; saida[17]$latch ; saida[17] ; controle[2] ;
+; N/A   ; None         ; 8.393 ns   ; saida[4]$latch  ; saida[4]  ; controle[2] ;
+; N/A   ; None         ; 8.368 ns   ; saida[15]$latch ; saida[15] ; controle[2] ;
+; N/A   ; None         ; 8.355 ns   ; saida[6]$latch  ; saida[6]  ; controle[3] ;
+; N/A   ; None         ; 8.352 ns   ; saida[22]$latch ; saida[22] ; controle[2] ;
+; N/A   ; None         ; 8.346 ns   ; saida[2]$latch  ; saida[2]  ; controle[3] ;
+; N/A   ; None         ; 8.309 ns   ; saida[13]$latch ; saida[13] ; controle[3] ;
+; N/A   ; None         ; 8.304 ns   ; saida[6]$latch  ; saida[6]  ; controle[1] ;
+; N/A   ; None         ; 8.295 ns   ; saida[2]$latch  ; saida[2]  ; controle[1] ;
+; N/A   ; None         ; 8.291 ns   ; saida[17]$latch ; saida[17] ; controle[3] ;
+; N/A   ; None         ; 8.271 ns   ; saida[4]$latch  ; saida[4]  ; controle[3] ;
+; N/A   ; None         ; 8.258 ns   ; saida[13]$latch ; saida[13] ; controle[1] ;
+; N/A   ; None         ; 8.246 ns   ; saida[15]$latch ; saida[15] ; controle[3] ;
+; N/A   ; None         ; 8.240 ns   ; saida[17]$latch ; saida[17] ; controle[1] ;
+; N/A   ; None         ; 8.230 ns   ; saida[22]$latch ; saida[22] ; controle[3] ;
+; N/A   ; None         ; 8.220 ns   ; saida[4]$latch  ; saida[4]  ; controle[1] ;
+; N/A   ; None         ; 8.202 ns   ; saida[31]$latch ; saida[31] ; controle[2] ;
+; N/A   ; None         ; 8.195 ns   ; saida[15]$latch ; saida[15] ; controle[1] ;
+; N/A   ; None         ; 8.179 ns   ; saida[22]$latch ; saida[22] ; controle[1] ;
+; N/A   ; None         ; 8.161 ns   ; saida[6]$latch  ; saida[6]  ; controle[0] ;
+; N/A   ; None         ; 8.152 ns   ; saida[2]$latch  ; saida[2]  ; controle[0] ;
+; N/A   ; None         ; 8.115 ns   ; saida[13]$latch ; saida[13] ; controle[0] ;
+; N/A   ; None         ; 8.097 ns   ; saida[17]$latch ; saida[17] ; controle[0] ;
+; N/A   ; None         ; 8.080 ns   ; saida[31]$latch ; saida[31] ; controle[3] ;
+; N/A   ; None         ; 8.077 ns   ; saida[4]$latch  ; saida[4]  ; controle[0] ;
+; N/A   ; None         ; 8.059 ns   ; saida[26]$latch ; saida[26] ; controle[2] ;
+; N/A   ; None         ; 8.052 ns   ; saida[15]$latch ; saida[15] ; controle[0] ;
+; N/A   ; None         ; 8.036 ns   ; saida[22]$latch ; saida[22] ; controle[0] ;
+; N/A   ; None         ; 8.029 ns   ; saida[31]$latch ; saida[31] ; controle[1] ;
+; N/A   ; None         ; 7.937 ns   ; saida[26]$latch ; saida[26] ; controle[3] ;
+; N/A   ; None         ; 7.886 ns   ; saida[31]$latch ; saida[31] ; controle[0] ;
+; N/A   ; None         ; 7.886 ns   ; saida[26]$latch ; saida[26] ; controle[1] ;
+; N/A   ; None         ; 7.772 ns   ; saida[19]$latch ; saida[19] ; controle[2] ;
+; N/A   ; None         ; 7.772 ns   ; saida[18]$latch ; saida[18] ; controle[2] ;
+; N/A   ; None         ; 7.750 ns   ; saida[12]$latch ; saida[12] ; controle[2] ;
+; N/A   ; None         ; 7.743 ns   ; saida[26]$latch ; saida[26] ; controle[0] ;
+; N/A   ; None         ; 7.731 ns   ; saida[20]$latch ; saida[20] ; controle[2] ;
+; N/A   ; None         ; 7.650 ns   ; saida[19]$latch ; saida[19] ; controle[3] ;
+; N/A   ; None         ; 7.650 ns   ; saida[18]$latch ; saida[18] ; controle[3] ;
+; N/A   ; None         ; 7.628 ns   ; saida[12]$latch ; saida[12] ; controle[3] ;
+; N/A   ; None         ; 7.609 ns   ; saida[20]$latch ; saida[20] ; controle[3] ;
+; N/A   ; None         ; 7.599 ns   ; saida[19]$latch ; saida[19] ; controle[1] ;
+; N/A   ; None         ; 7.599 ns   ; saida[18]$latch ; saida[18] ; controle[1] ;
+; N/A   ; None         ; 7.577 ns   ; saida[12]$latch ; saida[12] ; controle[1] ;
+; N/A   ; None         ; 7.558 ns   ; saida[20]$latch ; saida[20] ; controle[1] ;
+; N/A   ; None         ; 7.550 ns   ; saida[7]$latch  ; saida[7]  ; controle[2] ;
+; N/A   ; None         ; 7.456 ns   ; saida[19]$latch ; saida[19] ; controle[0] ;
+; N/A   ; None         ; 7.456 ns   ; saida[18]$latch ; saida[18] ; controle[0] ;
+; N/A   ; None         ; 7.434 ns   ; saida[12]$latch ; saida[12] ; controle[0] ;
+; N/A   ; None         ; 7.428 ns   ; saida[7]$latch  ; saida[7]  ; controle[3] ;
+; N/A   ; None         ; 7.415 ns   ; saida[20]$latch ; saida[20] ; controle[0] ;
+; N/A   ; None         ; 7.410 ns   ; saida[25]$latch ; saida[25] ; controle[2] ;
+; N/A   ; None         ; 7.399 ns   ; saida[1]$latch  ; saida[1]  ; controle[2] ;
+; N/A   ; None         ; 7.377 ns   ; saida[7]$latch  ; saida[7]  ; controle[1] ;
+; N/A   ; None         ; 7.373 ns   ; saida[5]$latch  ; saida[5]  ; controle[2] ;
+; N/A   ; None         ; 7.337 ns   ; saida[3]$latch  ; saida[3]  ; controle[2] ;
+; N/A   ; None         ; 7.305 ns   ; saida[23]$latch ; saida[23] ; controle[2] ;
+; N/A   ; None         ; 7.288 ns   ; saida[25]$latch ; saida[25] ; controle[3] ;
+; N/A   ; None         ; 7.277 ns   ; saida[1]$latch  ; saida[1]  ; controle[3] ;
+; N/A   ; None         ; 7.263 ns   ; saida[10]$latch ; saida[10] ; controle[2] ;
+; N/A   ; None         ; 7.251 ns   ; saida[5]$latch  ; saida[5]  ; controle[3] ;
+; N/A   ; None         ; 7.237 ns   ; saida[25]$latch ; saida[25] ; controle[1] ;
+; N/A   ; None         ; 7.234 ns   ; saida[7]$latch  ; saida[7]  ; controle[0] ;
+; N/A   ; None         ; 7.226 ns   ; saida[1]$latch  ; saida[1]  ; controle[1] ;
+; N/A   ; None         ; 7.219 ns   ; saida[14]$latch ; saida[14] ; controle[2] ;
+; N/A   ; None         ; 7.215 ns   ; saida[3]$latch  ; saida[3]  ; controle[3] ;
+; N/A   ; None         ; 7.200 ns   ; saida[5]$latch  ; saida[5]  ; controle[1] ;
+; N/A   ; None         ; 7.183 ns   ; saida[23]$latch ; saida[23] ; controle[3] ;
+; N/A   ; None         ; 7.164 ns   ; saida[3]$latch  ; saida[3]  ; controle[1] ;
+; N/A   ; None         ; 7.158 ns   ; saida[30]$latch ; saida[30] ; controle[2] ;
+; N/A   ; None         ; 7.141 ns   ; saida[10]$latch ; saida[10] ; controle[3] ;
+; N/A   ; None         ; 7.132 ns   ; saida[27]$latch ; saida[27] ; controle[2] ;
+; N/A   ; None         ; 7.132 ns   ; saida[23]$latch ; saida[23] ; controle[1] ;
+; N/A   ; None         ; 7.115 ns   ; saida[28]$latch ; saida[28] ; controle[2] ;
+; N/A   ; None         ; 7.097 ns   ; saida[14]$latch ; saida[14] ; controle[3] ;
+; N/A   ; None         ; 7.094 ns   ; saida[25]$latch ; saida[25] ; controle[0] ;
+; N/A   ; None         ; 7.090 ns   ; saida[10]$latch ; saida[10] ; controle[1] ;
+; N/A   ; None         ; 7.083 ns   ; saida[1]$latch  ; saida[1]  ; controle[0] ;
+; N/A   ; None         ; 7.057 ns   ; saida[5]$latch  ; saida[5]  ; controle[0] ;
+; N/A   ; None         ; 7.046 ns   ; saida[14]$latch ; saida[14] ; controle[1] ;
+; N/A   ; None         ; 7.036 ns   ; saida[30]$latch ; saida[30] ; controle[3] ;
+; N/A   ; None         ; 7.026 ns   ; saida[21]$latch ; saida[21] ; controle[2] ;
+; N/A   ; None         ; 7.021 ns   ; saida[3]$latch  ; saida[3]  ; controle[0] ;
+; N/A   ; None         ; 7.010 ns   ; saida[27]$latch ; saida[27] ; controle[3] ;
+; N/A   ; None         ; 6.993 ns   ; saida[28]$latch ; saida[28] ; controle[3] ;
+; N/A   ; None         ; 6.989 ns   ; saida[23]$latch ; saida[23] ; controle[0] ;
+; N/A   ; None         ; 6.985 ns   ; saida[30]$latch ; saida[30] ; controle[1] ;
+; N/A   ; None         ; 6.959 ns   ; saida[27]$latch ; saida[27] ; controle[1] ;
+; N/A   ; None         ; 6.947 ns   ; saida[10]$latch ; saida[10] ; controle[0] ;
+; N/A   ; None         ; 6.942 ns   ; saida[28]$latch ; saida[28] ; controle[1] ;
+; N/A   ; None         ; 6.933 ns   ; saida[29]$latch ; saida[29] ; controle[2] ;
+; N/A   ; None         ; 6.904 ns   ; saida[21]$latch ; saida[21] ; controle[3] ;
+; N/A   ; None         ; 6.903 ns   ; saida[14]$latch ; saida[14] ; controle[0] ;
+; N/A   ; None         ; 6.853 ns   ; saida[21]$latch ; saida[21] ; controle[1] ;
+; N/A   ; None         ; 6.842 ns   ; saida[30]$latch ; saida[30] ; controle[0] ;
+; N/A   ; None         ; 6.816 ns   ; saida[27]$latch ; saida[27] ; controle[0] ;
+; N/A   ; None         ; 6.811 ns   ; saida[29]$latch ; saida[29] ; controle[3] ;
+; N/A   ; None         ; 6.799 ns   ; saida[28]$latch ; saida[28] ; controle[0] ;
+; N/A   ; None         ; 6.760 ns   ; saida[29]$latch ; saida[29] ; controle[1] ;
+; N/A   ; None         ; 6.710 ns   ; saida[21]$latch ; saida[21] ; controle[0] ;
+; N/A   ; None         ; 6.617 ns   ; saida[29]$latch ; saida[29] ; controle[0] ;
++-------+--------------+------------+-----------------+-----------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                                                       ;
++-----------------------------------------+-----------------------------------------------------+-----------+--------------+-----------------+-------------+
+; Minimum Slack                           ; Required th                                         ; Actual th ; From         ; To              ; To Clock    ;
++-----------------------------------------+-----------------------------------------------------+-----------+--------------+-----------------+-------------+
+; N/A                                     ; None                                                ; 0.881 ns  ; entrada1[18] ; saida[18]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; 0.759 ns  ; entrada1[18] ; saida[18]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; 0.708 ns  ; entrada1[18] ; saida[18]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; 0.565 ns  ; entrada1[18] ; saida[18]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; -0.499 ns ; entrada5[17] ; saida[17]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.529 ns ; entrada3[24] ; saida[24]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.552 ns ; entrada1[28] ; saida[28]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.601 ns ; entrada1[17] ; saida[17]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.610 ns ; entrada3[16] ; saida[16]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.621 ns ; entrada5[17] ; saida[17]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -0.651 ns ; entrada3[24] ; saida[24]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -0.663 ns ; entrada1[29] ; saida[29]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.672 ns ; entrada5[17] ; saida[17]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -0.674 ns ; entrada1[28] ; saida[28]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -0.683 ns ; entrada3[29] ; saida[29]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.685 ns ; entrada3[26] ; saida[26]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.695 ns ; entrada5[15] ; saida[15]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.702 ns ; entrada3[24] ; saida[24]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -0.709 ns ; entrada5[28] ; saida[28]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.723 ns ; entrada1[17] ; saida[17]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -0.725 ns ; entrada1[28] ; saida[28]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -0.732 ns ; entrada3[16] ; saida[16]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -0.760 ns ; entrada3[10] ; saida[10]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.774 ns ; entrada1[17] ; saida[17]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -0.783 ns ; entrada3[16] ; saida[16]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -0.785 ns ; entrada1[29] ; saida[29]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -0.791 ns ; entrada3[27] ; saida[27]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.804 ns ; entrada3[5]  ; saida[5]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -0.805 ns ; entrada3[29] ; saida[29]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -0.807 ns ; entrada3[26] ; saida[26]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -0.807 ns ; entrada1[0]  ; saida[0]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -0.815 ns ; entrada3[22] ; saida[22]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.815 ns ; entrada5[17] ; saida[17]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; -0.817 ns ; entrada5[15] ; saida[15]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -0.817 ns ; entrada5[0]  ; saida[0]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -0.818 ns ; entrada5[1]  ; saida[1]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -0.831 ns ; entrada5[28] ; saida[28]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -0.836 ns ; entrada1[29] ; saida[29]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -0.843 ns ; entrada5[9]  ; saida[9]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -0.845 ns ; entrada3[24] ; saida[24]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; -0.855 ns ; entrada1[24] ; saida[24]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.856 ns ; entrada3[29] ; saida[29]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -0.858 ns ; entrada3[26] ; saida[26]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -0.858 ns ; entrada3[6]  ; saida[6]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -0.868 ns ; entrada1[28] ; saida[28]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; -0.868 ns ; entrada5[15] ; saida[15]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -0.873 ns ; entrada5[11] ; saida[11]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.882 ns ; entrada5[28] ; saida[28]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -0.882 ns ; entrada3[10] ; saida[10]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -0.895 ns ; entrada1[21] ; saida[21]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.900 ns ; entrada3[9]  ; saida[9]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -0.903 ns ; entrada5[4]  ; saida[4]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -0.907 ns ; entrada1[1]  ; saida[1]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -0.910 ns ; entrada1[9]  ; saida[9]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -0.913 ns ; entrada3[27] ; saida[27]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -0.914 ns ; entrada3[25] ; saida[25]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.917 ns ; entrada1[17] ; saida[17]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; -0.926 ns ; entrada3[16] ; saida[16]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; -0.926 ns ; entrada3[5]  ; saida[5]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; -0.928 ns ; entrada1[8]  ; saida[8]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -0.929 ns ; entrada1[0]  ; saida[0]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; -0.933 ns ; entrada3[10] ; saida[10]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -0.937 ns ; entrada3[22] ; saida[22]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -0.939 ns ; entrada5[0]  ; saida[0]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; -0.940 ns ; entrada5[1]  ; saida[1]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; -0.960 ns ; entrada3[21] ; saida[21]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.964 ns ; entrada3[27] ; saida[27]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -0.965 ns ; entrada5[9]  ; saida[9]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; -0.975 ns ; controle[0]  ; saida[0]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -0.977 ns ; entrada1[24] ; saida[24]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -0.977 ns ; entrada3[5]  ; saida[5]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; -0.979 ns ; entrada1[29] ; saida[29]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; -0.980 ns ; entrada3[6]  ; saida[6]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; -0.980 ns ; entrada1[0]  ; saida[0]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; -0.986 ns ; controle[2]  ; saida[0]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -0.987 ns ; entrada1[15] ; saida[15]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.988 ns ; entrada3[22] ; saida[22]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -0.988 ns ; entrada5[10] ; saida[10]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.990 ns ; entrada5[0]  ; saida[0]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; -0.991 ns ; entrada5[1]  ; saida[1]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; -0.994 ns ; entrada2[15] ; saida[15]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.994 ns ; entrada1[5]  ; saida[5]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -0.995 ns ; entrada5[11] ; saida[11]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -0.995 ns ; entrada1[10] ; saida[10]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.998 ns ; entrada5[29] ; saida[29]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.999 ns ; entrada3[31] ; saida[31]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -0.999 ns ; entrada3[29] ; saida[29]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; -1.001 ns ; entrada3[26] ; saida[26]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; -1.003 ns ; entrada2[24] ; saida[24]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -1.006 ns ; entrada1[27] ; saida[27]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -1.011 ns ; entrada5[15] ; saida[15]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; -1.016 ns ; entrada5[9]  ; saida[9]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; -1.017 ns ; entrada1[21] ; saida[21]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -1.017 ns ; entrada5[2]  ; saida[2]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -1.020 ns ; entrada1[22] ; saida[22]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -1.022 ns ; entrada3[9]  ; saida[9]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; -1.025 ns ; entrada5[28] ; saida[28]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; -1.025 ns ; entrada3[14] ; saida[14]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -1.025 ns ; entrada5[4]  ; saida[4]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; -1.028 ns ; entrada1[24] ; saida[24]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -1.029 ns ; entrada1[1]  ; saida[1]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; -1.031 ns ; entrada3[6]  ; saida[6]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; -1.032 ns ; entrada1[9]  ; saida[9]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; -1.036 ns ; entrada3[25] ; saida[25]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -1.038 ns ; controle[0]  ; saida[3]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -1.044 ns ; entrada1[16] ; saida[16]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -1.044 ns ; entrada3[15] ; saida[15]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -1.046 ns ; entrada5[11] ; saida[11]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -1.048 ns ; entrada0[3]  ; saida[3]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -1.050 ns ; entrada1[8]  ; saida[8]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; -1.058 ns ; entrada3[2]  ; saida[2]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -1.068 ns ; entrada1[21] ; saida[21]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -1.073 ns ; entrada3[9]  ; saida[9]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; -1.076 ns ; controle[2]  ; saida[4]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -1.076 ns ; entrada3[10] ; saida[10]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; -1.076 ns ; entrada5[4]  ; saida[4]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; -1.080 ns ; entrada1[1]  ; saida[1]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; -1.081 ns ; entrada5[21] ; saida[21]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -1.082 ns ; entrada3[21] ; saida[21]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -1.083 ns ; entrada1[9]  ; saida[9]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; -1.087 ns ; entrada3[25] ; saida[25]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -1.097 ns ; controle[0]  ; saida[0]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; -1.101 ns ; entrada1[8]  ; saida[8]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; -1.107 ns ; entrada3[27] ; saida[27]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; -1.108 ns ; controle[2]  ; saida[0]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; -1.109 ns ; entrada1[15] ; saida[15]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -1.110 ns ; entrada5[10] ; saida[10]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -1.116 ns ; entrada2[15] ; saida[15]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -1.116 ns ; entrada1[5]  ; saida[5]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; -1.117 ns ; entrada1[10] ; saida[10]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -1.120 ns ; entrada5[29] ; saida[29]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -1.120 ns ; entrada5[22] ; saida[22]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -1.120 ns ; entrada3[5]  ; saida[5]$latch  ; controle[0] ;
+; N/A                                     ; None                                                ; -1.121 ns ; entrada3[31] ; saida[31]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -1.122 ns ; entrada1[7]  ; saida[7]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -1.123 ns ; entrada6[22] ; saida[22]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -1.123 ns ; entrada1[0]  ; saida[0]$latch  ; controle[0] ;
+; N/A                                     ; None                                                ; -1.124 ns ; controle[2]  ; saida[1]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -1.125 ns ; entrada2[24] ; saida[24]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -1.128 ns ; entrada1[27] ; saida[27]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -1.131 ns ; entrada3[22] ; saida[22]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; -1.133 ns ; entrada3[21] ; saida[21]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -1.133 ns ; entrada5[0]  ; saida[0]$latch  ; controle[0] ;
+; N/A                                     ; None                                                ; -1.134 ns ; entrada5[1]  ; saida[1]$latch  ; controle[0] ;
+; N/A                                     ; None                                                ; -1.137 ns ; controle[0]  ; saida[16]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -1.139 ns ; entrada2[6]  ; saida[6]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -1.139 ns ; entrada5[2]  ; saida[2]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; -1.140 ns ; controle[2]  ; saida[2]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -1.142 ns ; controle[0]  ; saida[1]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -1.142 ns ; entrada1[22] ; saida[22]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -1.143 ns ; entrada3[7]  ; saida[7]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -1.145 ns ; entrada1[6]  ; saida[6]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -1.147 ns ; entrada3[14] ; saida[14]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -1.148 ns ; controle[0]  ; saida[0]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; -1.151 ns ; controle[0]  ; saida[2]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -1.154 ns ; entrada5[14] ; saida[14]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -1.159 ns ; controle[2]  ; saida[0]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; -1.159 ns ; entrada5[9]  ; saida[9]$latch  ; controle[0] ;
+; N/A                                     ; None                                                ; -1.160 ns ; controle[0]  ; saida[3]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; -1.160 ns ; entrada1[15] ; saida[15]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -1.161 ns ; entrada5[10] ; saida[10]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -1.166 ns ; entrada1[16] ; saida[16]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -1.166 ns ; entrada3[15] ; saida[15]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -1.167 ns ; entrada2[15] ; saida[15]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -1.167 ns ; entrada1[5]  ; saida[5]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; -1.168 ns ; entrada1[10] ; saida[10]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -1.170 ns ; entrada0[3]  ; saida[3]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; -1.171 ns ; entrada5[29] ; saida[29]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -1.171 ns ; entrada1[24] ; saida[24]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; -1.172 ns ; entrada3[31] ; saida[31]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -1.174 ns ; entrada3[6]  ; saida[6]$latch  ; controle[0] ;
+; N/A                                     ; None                                                ; -1.176 ns ; entrada2[24] ; saida[24]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -1.179 ns ; entrada1[27] ; saida[27]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -1.179 ns ; entrada3[11] ; saida[11]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -1.180 ns ; entrada3[2]  ; saida[2]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; -1.189 ns ; entrada5[11] ; saida[11]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; -1.190 ns ; entrada5[2]  ; saida[2]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; -1.191 ns ; entrada1[3]  ; saida[3]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -1.193 ns ; entrada1[22] ; saida[22]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -1.198 ns ; controle[2]  ; saida[4]$latch  ; controle[3] ;
+; N/A                                     ; None                                                ; -1.198 ns ; entrada3[14] ; saida[14]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -1.202 ns ; entrada6[17] ; saida[17]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -1.203 ns ; entrada5[21] ; saida[21]$latch ; controle[3] ;
+; N/A                                     ; None                                                ; -1.206 ns ; controle[0]  ; saida[4]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -1.211 ns ; controle[0]  ; saida[3]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; -1.211 ns ; entrada1[21] ; saida[21]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; -1.216 ns ; entrada3[9]  ; saida[9]$latch  ; controle[0] ;
+; N/A                                     ; None                                                ; -1.217 ns ; entrada3[18] ; saida[18]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -1.217 ns ; entrada1[16] ; saida[16]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -1.217 ns ; entrada3[15] ; saida[15]$latch ; controle[1] ;
+; N/A                                     ; None                                                ; -1.219 ns ; entrada5[4]  ; saida[4]$latch  ; controle[0] ;
+; N/A                                     ; None                                                ; -1.220 ns ; entrada4[25] ; saida[25]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -1.221 ns ; entrada0[3]  ; saida[3]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; -1.223 ns ; entrada1[1]  ; saida[1]$latch  ; controle[0] ;
+; N/A                                     ; None                                                ; -1.226 ns ; entrada1[9]  ; saida[9]$latch  ; controle[0] ;
+; N/A                                     ; None                                                ; -1.229 ns ; entrada5[5]  ; saida[5]$latch  ; controle[2] ;
+; N/A                                     ; None                                                ; -1.230 ns ; entrada3[25] ; saida[25]$latch ; controle[0] ;
+; N/A                                     ; None                                                ; -1.230 ns ; entrada2[16] ; saida[16]$latch ; controle[2] ;
+; N/A                                     ; None                                                ; -1.231 ns ; entrada3[2]  ; saida[2]$latch  ; controle[1] ;
+; N/A                                     ; None                                                ; -1.234 ns ; entrada5[23] ; saida[23]$latch ; controle[2] ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;           ;              ;                 ;             ;
++-----------------------------------------+-----------------------------------------------------+-----------+--------------+-----------------+-------------+
 
 
 +--------------------------+
@@ -523,72 +664,96 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed Oct 16 16:55:41 2019
+    Info: Processing started: Wed Oct 16 18:38:16 2019
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off DedoNoQuartusEGritaria -c DedoNoQuartusEGritaria --timing_analysis_only
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "saida[0]$latch" is a latch
+    Warning: Node "saida[1]$latch" is a latch
+    Warning: Node "saida[2]$latch" is a latch
+    Warning: Node "saida[3]$latch" is a latch
+    Warning: Node "saida[4]$latch" is a latch
+    Warning: Node "saida[5]$latch" is a latch
+    Warning: Node "saida[6]$latch" is a latch
+    Warning: Node "saida[7]$latch" is a latch
+    Warning: Node "saida[8]$latch" is a latch
+    Warning: Node "saida[9]$latch" is a latch
+    Warning: Node "saida[10]$latch" is a latch
+    Warning: Node "saida[11]$latch" is a latch
+    Warning: Node "saida[12]$latch" is a latch
+    Warning: Node "saida[13]$latch" is a latch
+    Warning: Node "saida[14]$latch" is a latch
+    Warning: Node "saida[15]$latch" is a latch
+    Warning: Node "saida[16]$latch" is a latch
+    Warning: Node "saida[17]$latch" is a latch
+    Warning: Node "saida[18]$latch" is a latch
+    Warning: Node "saida[19]$latch" is a latch
+    Warning: Node "saida[20]$latch" is a latch
+    Warning: Node "saida[21]$latch" is a latch
+    Warning: Node "saida[22]$latch" is a latch
+    Warning: Node "saida[23]$latch" is a latch
+    Warning: Node "saida[24]$latch" is a latch
+    Warning: Node "saida[25]$latch" is a latch
+    Warning: Node "saida[26]$latch" is a latch
+    Warning: Node "saida[27]$latch" is a latch
+    Warning: Node "saida[28]$latch" is a latch
+    Warning: Node "saida[29]$latch" is a latch
+    Warning: Node "saida[30]$latch" is a latch
+    Warning: Node "saida[31]$latch" is a latch
 Warning: Found pins functioning as undefined clocks and/or memory enables
-    Info: Assuming node "clock" is an undefined clock
-Info: Clock "clock" has Internal fmax of 168.83 MHz between source register "Registrador:inst10|Saida[6]" and destination register "Registrador:inst10|Saida[30]" (period= 5.923 ns)
-    Info: + Longest register to register delay is 5.739 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X19_Y15_N21; Fanout = 6; REG Node = 'Registrador:inst10|Saida[6]'
-        Info: 2: + IC(1.029 ns) + CELL(0.053 ns) = 1.082 ns; Loc. = LCCOMB_X17_Y15_N18; Fanout = 4; COMB Node = 'mux8:inst28|Mux6~0'
-        Info: 3: + IC(0.372 ns) + CELL(0.378 ns) = 1.832 ns; Loc. = LCCOMB_X18_Y15_N4; Fanout = 4; COMB Node = 'Ula32:inst26|carry_temp[7]~2'
-        Info: 4: + IC(0.212 ns) + CELL(0.053 ns) = 2.097 ns; Loc. = LCCOMB_X18_Y15_N10; Fanout = 3; COMB Node = 'Ula32:inst26|carry_temp[11]~4'
-        Info: 5: + IC(0.212 ns) + CELL(0.053 ns) = 2.362 ns; Loc. = LCCOMB_X18_Y15_N14; Fanout = 3; COMB Node = 'Ula32:inst26|carry_temp[13]~5'
-        Info: 6: + IC(0.215 ns) + CELL(0.053 ns) = 2.630 ns; Loc. = LCCOMB_X18_Y15_N0; Fanout = 3; COMB Node = 'Ula32:inst26|carry_temp[15]~6'
-        Info: 7: + IC(0.222 ns) + CELL(0.053 ns) = 2.905 ns; Loc. = LCCOMB_X18_Y15_N16; Fanout = 3; COMB Node = 'Ula32:inst26|carry_temp[17]~7'
-        Info: 8: + IC(0.212 ns) + CELL(0.053 ns) = 3.170 ns; Loc. = LCCOMB_X18_Y15_N22; Fanout = 3; COMB Node = 'Ula32:inst26|carry_temp[19]~8'
-        Info: 9: + IC(0.310 ns) + CELL(0.053 ns) = 3.533 ns; Loc. = LCCOMB_X18_Y15_N26; Fanout = 3; COMB Node = 'Ula32:inst26|carry_temp[21]~9'
-        Info: 10: + IC(0.219 ns) + CELL(0.053 ns) = 3.805 ns; Loc. = LCCOMB_X18_Y15_N28; Fanout = 3; COMB Node = 'Ula32:inst26|carry_temp[23]~10'
-        Info: 11: + IC(0.369 ns) + CELL(0.053 ns) = 4.227 ns; Loc. = LCCOMB_X18_Y15_N30; Fanout = 3; COMB Node = 'Ula32:inst26|carry_temp[25]~11'
-        Info: 12: + IC(0.219 ns) + CELL(0.053 ns) = 4.499 ns; Loc. = LCCOMB_X18_Y15_N24; Fanout = 3; COMB Node = 'Ula32:inst26|carry_temp[27]~12'
-        Info: 13: + IC(0.302 ns) + CELL(0.053 ns) = 4.854 ns; Loc. = LCCOMB_X18_Y15_N20; Fanout = 2; COMB Node = 'Ula32:inst26|carry_temp[29]~13'
-        Info: 14: + IC(0.216 ns) + CELL(0.053 ns) = 5.123 ns; Loc. = LCCOMB_X18_Y15_N12; Fanout = 4; COMB Node = 'Ula32:inst26|Mux1~0'
-        Info: 15: + IC(0.307 ns) + CELL(0.309 ns) = 5.739 ns; Loc. = LCFF_X19_Y15_N11; Fanout = 2; REG Node = 'Registrador:inst10|Saida[30]'
-        Info: Total cell delay = 1.323 ns ( 23.05 % )
-        Info: Total interconnect delay = 4.416 ns ( 76.95 % )
-    Info: - Smallest clock skew is 0.000 ns
-        Info: + Shortest clock path from clock "clock" to destination register is 2.463 ns
-            Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_P23; Fanout = 1; CLK Node = 'clock'
-            Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 232; COMB Node = 'clock~clkctrl'
-            Info: 3: + IC(0.648 ns) + CELL(0.618 ns) = 2.463 ns; Loc. = LCFF_X19_Y15_N11; Fanout = 2; REG Node = 'Registrador:inst10|Saida[30]'
-            Info: Total cell delay = 1.472 ns ( 59.76 % )
-            Info: Total interconnect delay = 0.991 ns ( 40.24 % )
-        Info: - Longest clock path from clock "clock" to source register is 2.463 ns
-            Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_P23; Fanout = 1; CLK Node = 'clock'
-            Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 232; COMB Node = 'clock~clkctrl'
-            Info: 3: + IC(0.648 ns) + CELL(0.618 ns) = 2.463 ns; Loc. = LCFF_X19_Y15_N21; Fanout = 6; REG Node = 'Registrador:inst10|Saida[6]'
-            Info: Total cell delay = 1.472 ns ( 59.76 % )
-            Info: Total interconnect delay = 0.991 ns ( 40.24 % )
-    Info: + Micro clock to output delay of source is 0.094 ns
-    Info: + Micro setup delay of destination is 0.090 ns
-Info: tco from clock "clock" to destination pin "MUX_PC[29]" through register "Registrador:inst10|Saida[6]" is 12.612 ns
-    Info: + Longest clock path from clock "clock" to source register is 2.463 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_P23; Fanout = 1; CLK Node = 'clock'
-        Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 232; COMB Node = 'clock~clkctrl'
-        Info: 3: + IC(0.648 ns) + CELL(0.618 ns) = 2.463 ns; Loc. = LCFF_X19_Y15_N21; Fanout = 6; REG Node = 'Registrador:inst10|Saida[6]'
-        Info: Total cell delay = 1.472 ns ( 59.76 % )
-        Info: Total interconnect delay = 0.991 ns ( 40.24 % )
-    Info: + Micro clock to output delay of source is 0.094 ns
-    Info: + Longest register to pin delay is 10.055 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X19_Y15_N21; Fanout = 6; REG Node = 'Registrador:inst10|Saida[6]'
-        Info: 2: + IC(1.029 ns) + CELL(0.053 ns) = 1.082 ns; Loc. = LCCOMB_X17_Y15_N18; Fanout = 4; COMB Node = 'mux8:inst28|Mux6~0'
-        Info: 3: + IC(0.372 ns) + CELL(0.378 ns) = 1.832 ns; Loc. = LCCOMB_X18_Y15_N4; Fanout = 4; COMB Node = 'Ula32:inst26|carry_temp[7]~2'
-        Info: 4: + IC(0.212 ns) + CELL(0.053 ns) = 2.097 ns; Loc. = LCCOMB_X18_Y15_N10; Fanout = 3; COMB Node = 'Ula32:inst26|carry_temp[11]~4'
-        Info: 5: + IC(0.212 ns) + CELL(0.053 ns) = 2.362 ns; Loc. = LCCOMB_X18_Y15_N14; Fanout = 3; COMB Node = 'Ula32:inst26|carry_temp[13]~5'
-        Info: 6: + IC(0.215 ns) + CELL(0.053 ns) = 2.630 ns; Loc. = LCCOMB_X18_Y15_N0; Fanout = 3; COMB Node = 'Ula32:inst26|carry_temp[15]~6'
-        Info: 7: + IC(0.222 ns) + CELL(0.053 ns) = 2.905 ns; Loc. = LCCOMB_X18_Y15_N16; Fanout = 3; COMB Node = 'Ula32:inst26|carry_temp[17]~7'
-        Info: 8: + IC(0.212 ns) + CELL(0.053 ns) = 3.170 ns; Loc. = LCCOMB_X18_Y15_N22; Fanout = 3; COMB Node = 'Ula32:inst26|carry_temp[19]~8'
-        Info: 9: + IC(0.310 ns) + CELL(0.053 ns) = 3.533 ns; Loc. = LCCOMB_X18_Y15_N26; Fanout = 3; COMB Node = 'Ula32:inst26|carry_temp[21]~9'
-        Info: 10: + IC(0.219 ns) + CELL(0.053 ns) = 3.805 ns; Loc. = LCCOMB_X18_Y15_N28; Fanout = 3; COMB Node = 'Ula32:inst26|carry_temp[23]~10'
-        Info: 11: + IC(0.369 ns) + CELL(0.053 ns) = 4.227 ns; Loc. = LCCOMB_X18_Y15_N30; Fanout = 3; COMB Node = 'Ula32:inst26|carry_temp[25]~11'
-        Info: 12: + IC(0.219 ns) + CELL(0.053 ns) = 4.499 ns; Loc. = LCCOMB_X18_Y15_N24; Fanout = 3; COMB Node = 'Ula32:inst26|carry_temp[27]~12'
-        Info: 13: + IC(0.312 ns) + CELL(0.225 ns) = 5.036 ns; Loc. = LCCOMB_X19_Y15_N12; Fanout = 4; COMB Node = 'Ula32:inst26|Mux2~0'
-        Info: 14: + IC(2.865 ns) + CELL(2.154 ns) = 10.055 ns; Loc. = PIN_V3; Fanout = 0; PIN Node = 'MUX_PC[29]'
-        Info: Total cell delay = 3.287 ns ( 32.69 % )
-        Info: Total interconnect delay = 6.768 ns ( 67.31 % )
-Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 183 megabytes
-    Info: Processing ended: Wed Oct 16 16:55:41 2019
+    Info: Assuming node "controle[0]" is a latch enable. Will not compute fmax for this pin.
+    Info: Assuming node "controle[1]" is a latch enable. Will not compute fmax for this pin.
+    Info: Assuming node "controle[3]" is a latch enable. Will not compute fmax for this pin.
+    Info: Assuming node "controle[2]" is a latch enable. Will not compute fmax for this pin.
+Warning: Found 1 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected gated clock "Mux32~0" as buffer
+Info: tsu for register "saida[9]$latch" (data pin = "controle[1]", clock pin = "controle[0]") is 5.946 ns
+    Info: + Longest pin to register delay is 9.544 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.820 ns) = 0.820 ns; Loc. = PIN_G4; Fanout = 35; CLK Node = 'controle[1]'
+        Info: 2: + IC(3.959 ns) + CELL(0.366 ns) = 5.145 ns; Loc. = LCCOMB_X39_Y23_N12; Fanout = 32; COMB Node = 'Mux0~1'
+        Info: 3: + IC(3.774 ns) + CELL(0.154 ns) = 9.073 ns; Loc. = LCCOMB_X3_Y3_N6; Fanout = 1; COMB Node = 'Mux9~1'
+        Info: 4: + IC(0.243 ns) + CELL(0.228 ns) = 9.544 ns; Loc. = LCCOMB_X3_Y3_N8; Fanout = 1; REG Node = 'saida[9]$latch'
+        Info: Total cell delay = 1.568 ns ( 16.43 % )
+        Info: Total interconnect delay = 7.976 ns ( 83.57 % )
+    Info: + Micro setup delay of destination is 0.495 ns
+    Info: - Shortest clock path from clock "controle[0]" to destination register is 4.093 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.830 ns) = 0.830 ns; Loc. = PIN_F2; Fanout = 3; CLK Node = 'controle[0]'
+        Info: 2: + IC(0.589 ns) + CELL(0.053 ns) = 1.472 ns; Loc. = LCCOMB_X39_Y23_N14; Fanout = 1; COMB Node = 'Mux32~0'
+        Info: 3: + IC(1.645 ns) + CELL(0.000 ns) = 3.117 ns; Loc. = CLKCTRL_G10; Fanout = 32; COMB Node = 'Mux32~0clkctrl'
+        Info: 4: + IC(0.923 ns) + CELL(0.053 ns) = 4.093 ns; Loc. = LCCOMB_X3_Y3_N8; Fanout = 1; REG Node = 'saida[9]$latch'
+        Info: Total cell delay = 0.936 ns ( 22.87 % )
+        Info: Total interconnect delay = 3.157 ns ( 77.13 % )
+Info: tco from clock "controle[2]" to destination pin "saida[9]" through register "saida[9]$latch" is 9.211 ns
+    Info: + Longest clock path from clock "controle[2]" to source register is 4.409 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.830 ns) = 0.830 ns; Loc. = PIN_F1; Fanout = 34; CLK Node = 'controle[2]'
+        Info: 2: + IC(0.612 ns) + CELL(0.346 ns) = 1.788 ns; Loc. = LCCOMB_X39_Y23_N14; Fanout = 1; COMB Node = 'Mux32~0'
+        Info: 3: + IC(1.645 ns) + CELL(0.000 ns) = 3.433 ns; Loc. = CLKCTRL_G10; Fanout = 32; COMB Node = 'Mux32~0clkctrl'
+        Info: 4: + IC(0.923 ns) + CELL(0.053 ns) = 4.409 ns; Loc. = LCCOMB_X3_Y3_N8; Fanout = 1; REG Node = 'saida[9]$latch'
+        Info: Total cell delay = 1.229 ns ( 27.87 % )
+        Info: Total interconnect delay = 3.180 ns ( 72.13 % )
+    Info: + Micro clock to output delay of source is 0.000 ns
+    Info: + Longest register to pin delay is 4.802 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X3_Y3_N8; Fanout = 1; REG Node = 'saida[9]$latch'
+        Info: 2: + IC(2.698 ns) + CELL(2.104 ns) = 4.802 ns; Loc. = PIN_P7; Fanout = 0; PIN Node = 'saida[9]'
+        Info: Total cell delay = 2.104 ns ( 43.82 % )
+        Info: Total interconnect delay = 2.698 ns ( 56.18 % )
+Info: th for register "saida[18]$latch" (data pin = "entrada1[18]", clock pin = "controle[2]") is 0.881 ns
+    Info: + Longest clock path from clock "controle[2]" to destination register is 4.429 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.830 ns) = 0.830 ns; Loc. = PIN_F1; Fanout = 34; CLK Node = 'controle[2]'
+        Info: 2: + IC(0.612 ns) + CELL(0.346 ns) = 1.788 ns; Loc. = LCCOMB_X39_Y23_N14; Fanout = 1; COMB Node = 'Mux32~0'
+        Info: 3: + IC(1.645 ns) + CELL(0.000 ns) = 3.433 ns; Loc. = CLKCTRL_G10; Fanout = 32; COMB Node = 'Mux32~0clkctrl'
+        Info: 4: + IC(0.943 ns) + CELL(0.053 ns) = 4.429 ns; Loc. = LCCOMB_X11_Y10_N8; Fanout = 1; REG Node = 'saida[18]$latch'
+        Info: Total cell delay = 1.229 ns ( 27.75 % )
+        Info: Total interconnect delay = 3.200 ns ( 72.25 % )
+    Info: + Micro hold delay of destination is 0.000 ns
+    Info: - Shortest pin to register delay is 3.548 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.864 ns) = 0.864 ns; Loc. = PIN_M2; Fanout = 1; PIN Node = 'entrada1[18]'
+        Info: 2: + IC(2.059 ns) + CELL(0.154 ns) = 3.077 ns; Loc. = LCCOMB_X11_Y10_N6; Fanout = 1; COMB Node = 'Mux18~1'
+        Info: 3: + IC(0.243 ns) + CELL(0.228 ns) = 3.548 ns; Loc. = LCCOMB_X11_Y10_N8; Fanout = 1; REG Node = 'saida[18]$latch'
+        Info: Total cell delay = 1.246 ns ( 35.12 % )
+        Info: Total interconnect delay = 2.302 ns ( 64.88 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 35 warnings
+    Info: Peak virtual memory: 182 megabytes
+    Info: Processing ended: Wed Oct 16 18:38:16 2019
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 

@@ -1,5 +1,5 @@
 Flow report for DedoNoQuartusEGritaria
-Wed Oct 16 16:55:41 2019
+Wed Oct 16 21:39:56 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,23 +38,24 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Flow Summary                                                                 ;
 +-------------------------------+----------------------------------------------+
-; Flow Status                   ; Successful - Wed Oct 16 16:55:41 2019        ;
+; Flow Status                   ; Successful - Wed Oct 16 21:39:52 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; DedoNoQuartusEGritaria                       ;
 ; Top-level Entity Name         ; Processador                                  ;
-; Family                        ; Stratix II                                   ;
-; Met timing requirements       ; Yes                                          ;
-; Logic utilization             ; 1 %                                          ;
-;     Combinational ALUTs       ; 96 / 12,480 ( < 1 % )                        ;
-;     Dedicated logic registers ; 108 / 12,480 ( < 1 % )                       ;
-; Total registers               ; 108                                          ;
-; Total pins                    ; 347 / 367 ( 95 % )                           ;
+; Family                        ; Stratix III                                  ;
+; Met timing requirements       ; N/A                                          ;
+; Logic utilization             ; 5 %                                          ;
+;     Combinational ALUTs       ; 944 / 38,000 ( 2 % )                         ;
+;     Memory ALUTs              ; 0 / 19,000 ( 0 % )                           ;
+;     Dedicated logic registers ; 1,206 / 38,000 ( 3 % )                       ;
+; Total registers               ; 1206                                         ;
+; Total pins                    ; 349 / 488 ( 72 % )                           ;
 ; Total virtual pins            ; 0                                            ;
-; Total block memory bits       ; 8,192 / 419,328 ( 2 % )                      ;
-; DSP block 9-bit elements      ; 0 / 96 ( 0 % )                               ;
-; Total PLLs                    ; 0 / 6 ( 0 % )                                ;
-; Total DLLs                    ; 0 / 2 ( 0 % )                                ;
-; Device                        ; EP2S15F672C3                                 ;
+; Total block memory bits       ; 8,192 / 1,880,064 ( < 1 % )                  ;
+; DSP block 18-bit elements     ; 0 / 216 ( 0 % )                              ;
+; Total PLLs                    ; 0 / 4 ( 0 % )                                ;
+; Total DLLs                    ; 0 / 4 ( 0 % )                                ;
+; Device                        ; EP3SL50F780C2                                ;
 ; Timing Models                 ; Final                                        ;
 +-------------------------------+----------------------------------------------+
 
@@ -64,48 +65,48 @@ applicable agreement for further details.
 +-------------------+------------------------+
 ; Option            ; Setting                ;
 +-------------------+------------------------+
-; Start date & time ; 10/16/2019 16:55:26    ;
+; Start date & time ; 10/16/2019 21:38:39    ;
 ; Main task         ; Compilation            ;
 ; Revision Name     ; DedoNoQuartusEGritaria ;
 +-------------------+------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                            ;
-+------------------------------------+--------------------------------+------------------------+-------------+----------------+
-; Assignment Name                    ; Value                          ; Default Value          ; Entity Name ; Section Id     ;
-+------------------------------------+--------------------------------+------------------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 93180997441463.157125572516836 ; --                     ; --          ; --             ;
-; PARTITION_COLOR                    ; 16764057                       ; --                     ; Processador ; Top            ;
-; PARTITION_NETLIST_TYPE             ; SOURCE                         ; --                     ; Processador ; Top            ;
-; TOP_LEVEL_ENTITY                   ; Processador                    ; DedoNoQuartusEGritaria ; --          ; --             ;
-; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                            ; --                     ; --          ; eda_blast_fpga ;
-+------------------------------------+--------------------------------+------------------------+-------------+----------------+
++------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                             ;
++------------------------------------+---------------------------------+------------------------+-------------+----------------+
+; Assignment Name                    ; Value                           ; Default Value          ; Entity Name ; Section Id     ;
++------------------------------------+---------------------------------+------------------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID              ; 110073156516272.157127271908488 ; --                     ; --          ; --             ;
+; PARTITION_COLOR                    ; 16764057                        ; --                     ; Processador ; Top            ;
+; PARTITION_NETLIST_TYPE             ; SOURCE                          ; --                     ; Processador ; Top            ;
+; TOP_LEVEL_ENTITY                   ; Processador                     ; DedoNoQuartusEGritaria ; --          ; --             ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                             ; --                     ; --          ; eda_blast_fpga ;
++------------------------------------+---------------------------------+------------------------+-------------+----------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                           ;
-+-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:04     ; 1.0                     ; 263 MB              ; 00:00:05                           ;
-; Fitter                  ; 00:00:05     ; 1.0                     ; 270 MB              ; 00:00:06                           ;
-; Assembler               ; 00:00:02     ; 1.0                     ; 237 MB              ; 00:00:02                           ;
-; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 168 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:11     ; --                      ; --                  ; 00:00:13                           ;
-+-------------------------+--------------+-------------------------+---------------------+------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:12     ; 1.0                     ; 278 MB              ; 00:00:13                           ;
+; Fitter                    ; 00:00:46     ; 1.0                     ; 368 MB              ; 00:00:49                           ;
+; TimeQuest Timing Analyzer ; 00:00:14     ; 1.0                     ; 300 MB              ; 00:00:13                           ;
+; Assembler                 ; 00:00:10     ; 1.0                     ; 327 MB              ; 00:00:09                           ;
+; Total                     ; 00:01:12     ; --                      ; --                  ; 00:01:15                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                          ;
-+-------------------------+------------------+---------------+------------+----------------+
-; Module Name             ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
-+-------------------------+------------------+---------------+------------+----------------+
-; Analysis & Synthesis    ; G7-Erick-Win     ; Windows Vista ; 6.2        ; x86_64         ;
-; Fitter                  ; G7-Erick-Win     ; Windows Vista ; 6.2        ; x86_64         ;
-; Assembler               ; G7-Erick-Win     ; Windows Vista ; 6.2        ; x86_64         ;
-; Classic Timing Analyzer ; G7-Erick-Win     ; Windows Vista ; 6.2        ; x86_64         ;
-+-------------------------+------------------+---------------+------------+----------------+
++--------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                            ;
++---------------------------+------------------+---------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
++---------------------------+------------------+---------------+------------+----------------+
+; Analysis & Synthesis      ; DESKTOP-U0AHJU8  ; Windows Vista ; 6.2        ; x86_64         ;
+; Fitter                    ; DESKTOP-U0AHJU8  ; Windows Vista ; 6.2        ; x86_64         ;
+; Assembler                 ; DESKTOP-U0AHJU8  ; Windows Vista ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-U0AHJU8  ; Windows Vista ; 6.2        ; x86_64         ;
++---------------------------+------------------+---------------+------------+----------------+
 
 
 ------------
@@ -114,7 +115,7 @@ applicable agreement for further details.
 quartus_map --read_settings_files=on --write_settings_files=off DedoNoQuartusEGritaria -c DedoNoQuartusEGritaria
 quartus_fit --read_settings_files=off --write_settings_files=off DedoNoQuartusEGritaria -c DedoNoQuartusEGritaria
 quartus_asm --read_settings_files=off --write_settings_files=off DedoNoQuartusEGritaria -c DedoNoQuartusEGritaria
-quartus_tan --read_settings_files=off --write_settings_files=off DedoNoQuartusEGritaria -c DedoNoQuartusEGritaria --timing_analysis_only
+quartus_sta DedoNoQuartusEGritaria -c DedoNoQuartusEGritaria
 
 
 

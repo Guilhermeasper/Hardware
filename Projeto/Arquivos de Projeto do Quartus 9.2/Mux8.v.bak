@@ -2,11 +2,11 @@ module mux8(clock, entrada0, entrada1, entrada2, controle, saida);
 	
 	//Iniciando os fio tudo.
 	input wire clock;
-	input wire [15:0]entrada0;
-	input wire [15:0]entrada1;
-	input wire [15:0]entrada2;
+	input wire [31:0]entrada0;
+	input wire [31:0]entrada1;
+	input wire [31:0]entrada2;
 	input wire [1:0]controle;
-	output reg [15:0]saida;
+	output reg [31:0]saida;
 
 	parameter selectEntrada0=2'b00;
 	parameter selectEntrada1=2'b01;
@@ -14,7 +14,7 @@ module mux8(clock, entrada0, entrada1, entrada2, controle, saida);
 	
 	//Setando estado inicial para todos os fios.
 	initial begin
-		saida <= 16'b0000000000000000;
+		saida <= 32'b0000000000000000;
 	end
 
 	always@(*) begin

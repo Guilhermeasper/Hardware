@@ -1,4 +1,4 @@
-module mux8(clock, entrada0, entrada1, entrada2, controle, saida);
+module Mux8(clock, entrada0, entrada1, entrada2, controle, saida);
 	
 	//Iniciando os fio tudo.
 	input wire clock;

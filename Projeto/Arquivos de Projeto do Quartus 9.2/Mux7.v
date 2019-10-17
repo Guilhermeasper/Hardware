@@ -1,4 +1,4 @@
- module mux7(clock, entrada0, entrada1, entrada2, entrada3, entrada4, entrada5, entrada6, entrada7, entrada8, entrada9, entrada10, controle, saida);
+ module Mux7(clock, entrada0, entrada1, entrada2, entrada3, entrada4, entrada5, entrada6, entrada7, entrada8, entrada9, entrada10, controle, saida);
 	
 	//Iniciando os fio tudo.
 	input wire clock;
@@ -15,62 +15,58 @@
 	input wire [31:0]entrada10;
 	input wire [3:0]controle;
 	output reg [31:0]saida;
-
-	parameter selectEntrada0=4'b0000;
-	parameter selectEntrada1=4'b0001;
-	parameter selectEntrada2=4'b0010;
-	parameter selectEntrada3=4'b0011;
-	parameter selectEntrada4=4'b0100;
-	parameter selectEntrada5=4'b0101;
-	parameter selectEntrada6=4'b0110;
-	parameter selectEntrada7=4'b0111;
-	parameter selectEntrada8=4'b1000;
-	parameter selectEntrada9=4'b1001;
-	parameter selectEntrada10=4'b1010;
 	
 	//Setando estado inicial para todos os fios.
 	initial begin
-		saida <= 31'b0000000000000000;
+		saida <= 32'b0000000000000000;
 	end
 
 	always@(*) begin
 		case (controle)
-			selectEntrada0: begin
+			4'b0000: begin
 				saida <= entrada0;
 			end
 
-			selectEntrada1: begin
+			4'b0001: begin
 				saida <= entrada1;
 			end
 
-			selectEntrada2: begin
+			4'b0010: begin
 				saida <= entrada2;
 			end
 
-			selectEntrada3: begin
+			4'b0011: begin
 				saida <= entrada3;
 			end
-			selectEntrada4: begin
+			
+			4'b0100: begin
 				saida <= entrada4;
 			end
-			selectEntrada5: begin
+			
+			4'b0101: begin
 				saida <= entrada5;
 			end
-			selectEntrada6: begin
+			
+			4'b0110: begin
 				saida <= entrada6;
 			end
-			selectEntrada7: begin
+			
+			4'b0111: begin
 				saida <= entrada7;
 			end
-			selectEntrada8: begin
+			
+			4'b1000: begin
 				saida <= entrada8;
 			end
-			selectEntrada9: begin
+			
+			4'b1001: begin
 				saida <= entrada9;
 			end
-			selectEntrada10: begin
+			
+			4'b1010: begin
 				saida <= entrada10;
 			end
+			
 		endcase
 	end
 endmodule
