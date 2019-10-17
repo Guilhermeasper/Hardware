@@ -29,7 +29,7 @@ module Control_Unit(
 	output reg hi_lo,
 	output reg EPC_CONTROL,
 	output reg MDR_CONTROL,
-	output reg LOAD_SIZE,
+	output reg[1:0] LOAD_SIZE,
 	output reg[2:0] ALU_CONTROL,
 	output reg ALU_OUT,
 	output reg REG_A,
@@ -71,7 +71,7 @@ always@(posedge clock) begin
 	end	
 
 	case(next_state)
-		8'b00000000: begin
+		8'b00000000: begin // RESET
 			pc_write = 1'b0;
 			mux_1 = 2'b0;
 			mux_2 = 2'b0;
@@ -91,7 +91,7 @@ always@(posedge clock) begin
 			hi_lo = 1'b0;
 			EPC_CONTROL = 1'b0;
 			MDR_CONTROL = 1'b0;
-			LOAD_SIZE = 1'b0;
+			LOAD_SIZE = 2'b0;
 			ALU_CONTROL = 3'b0;
 			ALU_OUT = 1'b0;
 			REG_A = 2'b0;
@@ -101,7 +101,7 @@ always@(posedge clock) begin
 			
 			next_state = 8'b00000001;
 		end
-		8'b00000001: begin
+		8'b00000001: begin // FETCH
 			pc_write = 1'b0;
             mux_1 = 2'b0;
             mux_2 = 2'b0;         //escolhe o PC
@@ -121,7 +121,7 @@ always@(posedge clock) begin
             hi_lo = 1'b0;
             EPC_CONTROL=1'b0;
             MDR_CONTROL = 1'b0;
-            LOAD_SIZE = 1'b0;
+            LOAD_SIZE = 2'b0;
             ALU_CONTROL=3'b1;     //faz PC+4
             ALU_OUT=1'b0;
             REG_A=2'b0;
@@ -129,7 +129,7 @@ always@(posedge clock) begin
             REG_WRITE = 1'b0;
             XCH_CONTROL = 1'b0;
 			
-			if(counter == 8'd1) begin
+			if(counter == 8'd1) begin //WAIT
 				counter = 8'd0;
 				next_state = 8'b00000010;
 			end
@@ -138,7 +138,7 @@ always@(posedge clock) begin
 			end
 
 		end
-		8'b00000010: begin
+		8'b00000010: begin // FETCH_2
 			pc_write = 1'b1;
             mux_1 = 2'b0;
             mux_2 = 2'b0;         
@@ -158,7 +158,7 @@ always@(posedge clock) begin
             hi_lo = 1'b0;
             EPC_CONTROL=1'b0;
             MDR_CONTROL = 1'b0;
-            LOAD_SIZE = 1'b0;
+            LOAD_SIZE = 2'b0;
             ALU_CONTROL=3'b1;
             ALU_OUT=1'b0;
             REG_A=2'b0;
@@ -169,7 +169,7 @@ always@(posedge clock) begin
 			next_state = 8'b00000011;
 			counter = 8'd0;
 		end
-		8'b00000011: begin
+		8'b00000011: begin // DECODE
 			pc_write=1'b0; //PC agora e PC+4
 			mux_2=2'b0;
 			mux_1=2'b0;
@@ -179,7 +179,7 @@ always@(posedge clock) begin
 			hi_lo=1'b0;
 			ir_write=1'b0;
 			MDR_CONTROL=1'b0;
-			LOAD_SIZE=1'b0;
+			LOAD_SIZE=2'b0;
 			mux_4=1'b0;
 			mux_3=1'b0;
 			shift_control=1'b0;
@@ -200,8 +200,8 @@ always@(posedge clock) begin
 				6'b0: begin // caso formato r
 					case(funct)
 						6'h20: next_state = 8'b00000100;
-                        6'h24: next_state = 8'b00000100;
-                        6'h22: next_state = 8'b00000100;
+                        6'h24: next_state = 8'b00000101;
+                        6'h22: next_state = 8'b00000110;
                         6'h0: next_state = 8'b00000100;
                         6'h2: next_state = 8'b00000100;
                         6'h3: next_state = 8'b00000100;
@@ -236,11 +236,11 @@ always@(posedge clock) begin
                 6'h20: next_state = 8'b00000100;
                 6'h21: next_state = 8'b00000100;
                 6'h23: next_state = 8'b00000100;
-                default: next_state = 8'b00000100;
+                default: next_state = 8'b00000101;
             endcase
 		end
 			
-		8'b00000100: begin
+		8'b00000100: begin // ADD
 			pc_write=1'b0;
 			mux_1=2'b0;
 			mux_2=2'b0;
@@ -260,16 +260,74 @@ always@(posedge clock) begin
 			hi_lo=1'b0;
 			EPC_CONTROL=1'b0;
 			MDR_CONTROL=1'b0;
-			LOAD_SIZE=1'b0;
+			LOAD_SIZE=2'b0;
 			ALU_CONTROL=3'b1;//soma A + B
 			ALU_OUT=1'b1;//salva A+B em ALU_OUT
 			REG_A=2'b0;
 			REG_B=1'b0;
 			REG_WRITE=1'b0;
 			XCH_CONTROL = 1'b0;
-			next_state = 8'b00000101; // next_state = ADD/AND/SUB_2;
+			next_state = 8'b10000101; // next_state = ADD/AND/SUB_2;
 		end
-		8'b00000101: begin //tem q criar esse parametro
+		8'b00000101: begin // AND
+			pc_write=1'b0;
+			mux_1=2'b0;
+			mux_2=2'b0;
+			mux_3=1'b0;
+			mux_4=1'b0;
+			mux_6=3'b0;
+			mux_7=4'b0;
+			mux_8=2'b10;//escolhe A
+			mux_9=3'b0;//escolhe B
+			mux_10=3'b0;
+			mux_11=1'b0;
+			shift_control=1'b0;
+			ss_control=1'b0;
+			mem_write=1'b0;
+			mult_div=2'b0;
+			ir_write=1'b0;    
+			hi_lo=1'b0;
+			EPC_CONTROL=1'b0;
+			MDR_CONTROL=1'b0;
+			LOAD_SIZE=2'b0;
+			ALU_CONTROL=3'b11;//FAZ A && B
+			ALU_OUT=1'b1;//salva A+B em ALU_OUT
+			REG_A=2'b0;
+			REG_B=1'b0;
+			REG_WRITE=1'b0;
+			XCH_CONTROL = 1'b0;
+			next_state = 8'b10000101; // next_state = ADD/AND/SUB_2;
+		end
+		8'b00000110: begin // SUB
+			pc_write=1'b0;
+			mux_1=2'b0;
+			mux_2=2'b0;
+			mux_3=1'b0;
+			mux_4=1'b0;
+			mux_6=3'b0;
+			mux_7=4'b0;
+			mux_8=2'b10;//escolhe A
+			mux_9=3'b0;//escolhe B
+			mux_10=3'b0;
+			mux_11=1'b0;
+			shift_control=1'b0;
+			ss_control=1'b0;
+			mem_write=1'b0;
+			mult_div=2'b0;
+			ir_write=1'b0;    
+			hi_lo=1'b0;
+			EPC_CONTROL=1'b0;
+			MDR_CONTROL=1'b0;
+			LOAD_SIZE=2'b0;
+			ALU_CONTROL=3'b10;//subtrai A - B
+			ALU_OUT=1'b1;//salva A+B em ALU_OUT
+			REG_A=2'b0;
+			REG_B=1'b0;
+			REG_WRITE=1'b0;
+			XCH_CONTROL = 1'b0;
+			next_state = 8'b10000101; // next_state = ADD/AND/SUB_2;
+		end
+		8'b10000101: begin // WRITE_ARIT
 			pc_write=1'b0;
 			mux_1=2'b0;
 			mux_2=2'b0;
@@ -289,16 +347,16 @@ always@(posedge clock) begin
 			hi_lo=1'b0;
 			EPC_CONTROL=1'b0;
 			MDR_CONTROL=1'b0;
-			LOAD_SIZE=1'b0;
+			LOAD_SIZE=2'b0;
 			ALU_CONTROL=3'b0;
 			ALU_OUT=1'b0;
 			REG_A=2'b0;
 			REG_B=1'b0;
 			REG_WRITE=1'b1;//permite escrever no banco de regs
 			XCH_CONTROL = 1'b0;
-			next_state = 8'b00000110;
+			next_state = 8'b10000110;
 		end
-		8'b00000110: begin // tem q criar esse parametro
+		8'b10000110: begin // FINAL
 			pc_write=1'b0;
 			mux_1=2'b0;
 			mux_2=2'b0;
@@ -318,7 +376,7 @@ always@(posedge clock) begin
 			hi_lo=1'b0;
 			EPC_CONTROL=1'b0;
 			MDR_CONTROL=1'b0;
-			LOAD_SIZE=1'b0;
+			LOAD_SIZE=2'b0;
 			ALU_CONTROL=3'b0;
 			ALU_OUT=1'b0;
 			REG_A=2'b0;

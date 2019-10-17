@@ -2,16 +2,112 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Clk'
-Slack : -0.373
-TNS   : -992.904
+Type  : Slow 1100mV 85C Model Setup 'clock'
+Slack : -4.361
+TNS   : -2071.790
 
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Clk'
-Slack : -0.374
-TNS   : -993.146
+Type  : Slow 1100mV 85C Model Setup 'Control_Unit:inst2|REG_B'
+Slack : -0.932
+TNS   : -19.339
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Clk'
-Slack : -0.312
-TNS   : -616.083
+Type  : Slow 1100mV 85C Model Setup 'Control_Unit:inst2|mux_6[1]'
+Slack : -0.128
+TNS   : -0.168
+
+Type  : Slow 1100mV 85C Model Hold 'Control_Unit:inst2|mux_6[1]'
+Slack : -1.389
+TNS   : -6.463
+
+Type  : Slow 1100mV 85C Model Hold 'Control_Unit:inst2|REG_B'
+Slack : -0.332
+TNS   : -4.779
+
+Type  : Slow 1100mV 85C Model Hold 'clock'
+Slack : 0.013
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clock'
+Slack : -0.769
+TNS   : -1216.058
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Control_Unit:inst2|REG_B'
+Slack : 0.384
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Control_Unit:inst2|mux_6[1]'
+Slack : 0.442
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'clock'
+Slack : -3.903
+TNS   : -1787.727
+
+Type  : Slow 1100mV 0C Model Setup 'Control_Unit:inst2|REG_B'
+Slack : -0.851
+TNS   : -17.398
+
+Type  : Slow 1100mV 0C Model Setup 'Control_Unit:inst2|mux_6[1]'
+Slack : -0.119
+TNS   : -0.169
+
+Type  : Slow 1100mV 0C Model Hold 'Control_Unit:inst2|mux_6[1]'
+Slack : -1.228
+TNS   : -5.625
+
+Type  : Slow 1100mV 0C Model Hold 'Control_Unit:inst2|REG_B'
+Slack : -0.264
+TNS   : -2.702
+
+Type  : Slow 1100mV 0C Model Hold 'clock'
+Slack : 0.040
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock'
+Slack : -0.769
+TNS   : -1216.786
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Control_Unit:inst2|REG_B'
+Slack : 0.385
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Control_Unit:inst2|mux_6[1]'
+Slack : 0.404
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'clock'
+Slack : -2.492
+TNS   : -1023.810
+
+Type  : Fast 1100mV 0C Model Setup 'Control_Unit:inst2|REG_B'
+Slack : -0.371
+TNS   : -7.766
+
+Type  : Fast 1100mV 0C Model Setup 'Control_Unit:inst2|mux_6[1]'
+Slack : 0.248
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'Control_Unit:inst2|mux_6[1]'
+Slack : -0.930
+TNS   : -4.124
+
+Type  : Fast 1100mV 0C Model Hold 'Control_Unit:inst2|REG_B'
+Slack : -0.041
+TNS   : -0.065
+
+Type  : Fast 1100mV 0C Model Hold 'clock'
+Slack : 0.085
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock'
+Slack : -0.330
+TNS   : -737.886
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Control_Unit:inst2|REG_B'
+Slack : 0.410
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Control_Unit:inst2|mux_6[1]'
+Slack : 0.426
+TNS   : 0.000
 
 ------------------------------------------------------------
