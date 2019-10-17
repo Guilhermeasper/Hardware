@@ -170,7 +170,7 @@ always@(posedge clock) begin
             ss_control = 1'b0;
             mem_write = 1'b0;
             mult_div = 2'b0;
-            ir_write = 1'b0;      //escreve a instrucao em ir_write
+            ir_write = 1'b1;      //escreve a instrucao em ir_write
             hi_lo = 1'b0;
             EPC_CONTROL=1'b0;
             MDR_CONTROL = 1'b0;
@@ -207,7 +207,7 @@ always@(posedge clock) begin
             ss_control = 1'b0;
             mem_write = 1'b0;
             mult_div = 2'b0;
-            ir_write = 1'b1; // de 1'b0 para 1'b1 
+            ir_write = 1'b0; // de 1'b0 para 1'b1 
             hi_lo = 1'b0;
             EPC_CONTROL=1'b0;
             MDR_CONTROL = 1'b0;
@@ -226,7 +226,7 @@ always@(posedge clock) begin
 			pc_write=1'b0; //PC agora e PC+4
 			mux_2=2'b0;
 			mux_1=2'b0;
-			mem_write=1'b1;      // --> ERRADO <-- coloca rs e rt no banco de registradores
+			mem_write=1'b0;      // --> ERRADO <-- coloca rs e rt no banco de registradores
 			ss_control=1'b0;
 			mult_div=2'b0;
 			hi_lo=1'b0;
@@ -241,14 +241,14 @@ always@(posedge clock) begin
 			mux_6=3'b0;
 			REG_WRITE=1'b0;
 			mux_8=2'b0;                     //escolhe PC
-			mux_9=3'b0;                     //->ERRADO, acho q deveria ser b1000 <-escolhe sinal extendido e shiftado de 15-0
-			ALU_CONTROL=3'b0;               //ERRADO, soma é b1 <- faz PC+o escrito acima
+			mux_9=3'b100;             //        //->ERRADO, acho q deveria ser b1000 <-escolhe sinal extendido e shiftado de 15-0
+			ALU_CONTROL=3'b1;               //ERRADO, soma é b1 <- faz PC+o escrito acima
 			ALU_OUT=1'b1;                   //salva a soma em ALU_OUT
 			EPC_CONTROL=1'b0;
 			mux_10=3'b0;
 			
-			REG_A=2'b0;//load rs em a // ERRADO, é pra ser b1 pra dar write;
-			REG_B=2'b0;//load rt em b // ERRADO, é pra ser b1 pra dar write;
+			REG_A=2'b1;//load rs em a // ERRADO, é pra ser b1 pra dar write;
+			REG_B=2'b1;//load rt em b // ERRADO, é pra ser b1 pra dar write;
 			case(opcode) // essa linha tem que estar dentro de um estado tbm
 				6'b0: begin // caso formato r
 					case(funct)
