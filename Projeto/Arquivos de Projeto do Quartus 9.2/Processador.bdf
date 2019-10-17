@@ -817,7 +817,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 808 576 944 816)
+	(rect 480 712 616 952)
 	(text "Registrador" (rect 5 0 61 12)(font "Arial" ))
 	(text "inst29" (rect 8 168 37 180)(font "Arial" ))
 	(port
@@ -2081,7 +2081,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 448 584 648 680)
+	(rect 464 584 664 680)
 	(text "StoreSize" (rect 5 0 51 12)(font "Arial" ))
 	(text "inst4" (rect 8 80 31 92)(font "Arial" ))
 	(port
@@ -2335,11 +2335,6 @@ applicable agreement for further details.
 	(pt 2520 152)
 )
 (connector
-	(pt 808 704)
-	(pt 800 704)
-	(bus)
-)
-(connector
 	(pt 800 352)
 	(pt 800 704)
 	(bus)
@@ -2353,10 +2348,6 @@ applicable agreement for further details.
 	(pt 800 352)
 	(pt 792 352)
 	(bus)
-)
-(connector
-	(pt 784 688)
-	(pt 808 688)
 )
 (connector
 	(pt 120 408)
@@ -2694,10 +2685,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 784 -144)
-	(pt 784 688)
-)
-(connector
 	(pt 1064 592)
 	(pt 984 592)
 	(bus)
@@ -2737,10 +2724,6 @@ applicable agreement for further details.
 (connector
 	(pt 688 552)
 	(pt 688 1464)
-)
-(connector
-	(pt 808 672)
-	(pt 752 672)
 )
 (connector
 	(pt 176 696)
@@ -2860,10 +2843,6 @@ applicable agreement for further details.
 	(pt 432 1504)
 )
 (connector
-	(pt 904 816)
-	(pt 904 1504)
-)
-(connector
 	(pt 1488 -432)
 	(pt 1488 1504)
 )
@@ -2872,20 +2851,8 @@ applicable agreement for further details.
 	(pt 216 1504)
 )
 (connector
-	(pt 688 1464)
-	(pt 752 1464)
-)
-(connector
 	(pt 160 1464)
 	(pt 176 1464)
-)
-(connector
-	(pt 176 1464)
-	(pt 688 1464)
-)
-(connector
-	(pt 752 672)
-	(pt 752 1464)
 )
 (connector
 	(pt 752 1464)
@@ -2948,18 +2915,6 @@ applicable agreement for further details.
 (connector
 	(pt 216 1504)
 	(pt 432 1504)
-)
-(connector
-	(pt 432 1504)
-	(pt 720 1504)
-)
-(connector
-	(pt 720 1504)
-	(pt 904 1504)
-)
-(connector
-	(pt 904 1504)
-	(pt 952 1504)
 )
 (connector
 	(pt 952 1504)
@@ -3139,10 +3094,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 784 -144)
-	(pt 760 -144)
-)
-(connector
 	(pt 848 -40)
 	(pt 808 -40)
 )
@@ -3222,10 +3173,6 @@ applicable agreement for further details.
 (connector
 	(pt 808 -192)
 	(pt 808 -40)
-)
-(connector
-	(pt 760 -192)
-	(pt 760 -144)
 )
 (connector
 	(pt 728 -192)
@@ -3424,16 +3371,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 648 616)
-	(pt 648 520)
-	(bus)
-)
-(connector
-	(pt 648 520)
-	(pt 576 520)
-	(bus)
-)
-(connector
 	(pt 576 520)
 	(pt 576 416)
 	(bus)
@@ -3459,33 +3396,8 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 400 616)
-	(pt 400 1040)
-	(bus)
-)
-(connector
-	(pt 400 616)
-	(pt 448 616)
-	(bus)
-)
-(connector
 	(pt 856 -192)
 	(pt 856 -184)
-	(bus)
-)
-(connector
-	(pt 448 656)
-	(pt 408 656)
-	(bus)
-)
-(connector
-	(pt 856 -184)
-	(pt 408 -184)
-	(bus)
-)
-(connector
-	(pt 408 -184)
-	(pt 408 656)
 	(bus)
 )
 (connector
@@ -3559,6 +3471,108 @@ applicable agreement for further details.
 	(pt 1456 416)
 	(bus)
 )
+(connector
+	(pt 576 1504)
+	(pt 576 952)
+)
+(connector
+	(pt 720 1504)
+	(pt 952 1504)
+)
+(connector
+	(pt 432 1504)
+	(pt 576 1504)
+)
+(connector
+	(pt 576 1504)
+	(pt 720 1504)
+)
+(connector
+	(pt 760 -192)
+	(pt 760 104)
+)
+(connector
+	(pt 856 -184)
+	(pt 24 -184)
+	(bus)
+)
+(connector
+	(pt 664 520)
+	(pt 664 616)
+	(bus)
+)
+(connector
+	(pt 576 520)
+	(pt 664 520)
+	(bus)
+)
+(connector
+	(pt 400 1040)
+	(pt 400 616)
+	(bus)
+)
+(connector
+	(pt 24 -184)
+	(pt 24 656)
+	(bus)
+)
+(connector
+	(pt 400 616)
+	(pt 464 616)
+	(bus)
+)
+(connector
+	(pt 24 656)
+	(pt 464 656)
+	(bus)
+)
+(connector
+	(pt 760 104)
+	(pt 440 104)
+)
+(connector
+	(pt 800 704)
+	(pt 464 704)
+	(bus)
+)
+(connector
+	(pt 464 704)
+	(pt 464 840)
+	(bus)
+)
+(connector
+	(pt 464 840)
+	(pt 480 840)
+	(bus)
+)
+(connector
+	(pt 688 1464)
+	(pt 752 1464)
+)
+(connector
+	(pt 416 808)
+	(pt 416 1464)
+)
+(connector
+	(pt 176 1464)
+	(pt 416 1464)
+)
+(connector
+	(pt 416 1464)
+	(pt 688 1464)
+)
+(connector
+	(pt 440 824)
+	(pt 440 104)
+)
+(connector
+	(pt 440 824)
+	(pt 480 824)
+)
+(connector
+	(pt 416 808)
+	(pt 480 808)
+)
 (junction (pt 1128 384))
 (junction (pt 800 352))
 (junction (pt 2688 528))
@@ -3573,7 +3587,6 @@ applicable agreement for further details.
 (junction (pt 216 1504))
 (junction (pt 688 1464))
 (junction (pt 176 1464))
-(junction (pt 752 1464))
 (junction (pt 1712 1480))
 (junction (pt 1744 1480))
 (junction (pt 1904 1504))
@@ -3587,7 +3600,6 @@ applicable agreement for further details.
 (junction (pt 1344 1504))
 (junction (pt 2848 1504))
 (junction (pt 432 1504))
-(junction (pt 904 1504))
 (junction (pt 1488 1504))
 (junction (pt 288 240))
 (junction (pt 824 352))
@@ -3609,4 +3621,6 @@ applicable agreement for further details.
 (junction (pt 112 256))
 (junction (pt 848 304))
 (junction (pt 1976 648))
+(junction (pt 576 1504))
+(junction (pt 416 1464))
 (text "'" (rect 264 880 266 894)(font "Arial" (font_size 8)))
