@@ -1,5 +1,5 @@
 Fitter report for DedoNoQuartusEGritaria
-Thu Oct 17 16:48:37 2019
+Thu Oct 17 18:06:42 2019
 Quartus II 64-Bit Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
 
 
@@ -67,7 +67,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +-------------------------------+-----------------------------------------------+
-; Fitter Status                 ; Successful - Thu Oct 17 16:48:37 2019         ;
+; Fitter Status                 ; Successful - Thu Oct 17 18:06:42 2019         ;
 ; Quartus II 64-Bit Version     ; 9.1 Build 350 03/24/2010 SP 2 SJ Full Version ;
 ; Revision Name                 ; DedoNoQuartusEGritaria                        ;
 ; Top-level Entity Name         ; Control_Unit                                  ;
@@ -1700,7 +1700,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Fitter
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
-    Info: Processing started: Thu Oct 17 16:48:26 2019
+    Info: Processing started: Thu Oct 17 18:06:31 2019
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off DedoNoQuartusEGritaria -c DedoNoQuartusEGritaria
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Automatically selected device EP3SL50F484C2 for design DedoNoQuartusEGritaria
@@ -1840,9 +1840,9 @@ Info: Delay annotation completed successfully
 Info: Generated suppressed messages file H:/Hardware/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/DedoNoQuartusEGritaria.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 3 warnings
     Info: Peak virtual memory: 4713 megabytes
-    Info: Processing ended: Thu Oct 17 16:48:41 2019
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:11
+    Info: Processing ended: Thu Oct 17 18:06:44 2019
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:12
 
 
 +----------------------------+

@@ -32,7 +32,7 @@ module Mux9(clock, entrada0, entrada1, entrada2, entrada3, entrada4, controle, s
 			end
 
 			selectEntrada2: begin
-				saida <= entrada2;
+				saida <= 32'b001;
 			end
 
 			selectEntrada3: begin
