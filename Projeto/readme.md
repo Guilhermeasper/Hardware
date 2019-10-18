@@ -15,13 +15,13 @@
 
 ## Relatório
 
-- [ ] Capa
+- [x] Capa
 - [ ] Sumário
-- [ ] Introdução
-- [ ] Unidade de Processamento
+- [x] Introdução
+- [x] Unidade de Processamento
 - [ ] Descrição das Entidades
-  - [ ] Entradas
-  - [ ] Saídas
+  - [x] Entradas
+  - [x] Saídas
   - [ ] Objetivo
   - [ ] Algoritmo
 - [ ] Unidade de Controle
