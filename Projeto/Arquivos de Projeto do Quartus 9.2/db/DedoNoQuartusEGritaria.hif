@@ -1,5 +1,5 @@
-Quartus II 64-Bit
-Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+Quartus II
+Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 43
 3700
 OFF
@@ -20,10 +20,30 @@ VHSM_ON
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
 # entity
-Control_Unit
+Processador
 # storage
 db|DedoNoQuartusEGritaria.(0).cnf
 db|DedoNoQuartusEGritaria.(0).cnf
+# case_insensitive
+# source_file
+processador.bdf
+d512d48a7620c1d843128048e190a8c
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+Control_Unit
+# storage
+db|DedoNoQuartusEGritaria.(1).cnf
+db|DedoNoQuartusEGritaria.(1).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -50,7 +70,1518 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
 # hierarchies {
-|
+Control_Unit:inst2
+}
+# macro_sequence
+
+# end
+# entity
+Instr_Reg
+# storage
+db|DedoNoQuartusEGritaria.(2).cnf
+db|DedoNoQuartusEGritaria.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+instr_reg.vhd
+2210c8a335c3f44acebaf05a94bee
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+Instr_Reg:inst12
+}
+# lmf
+e:|portableware|quartus|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+Memoria
+# storage
+db|DedoNoQuartusEGritaria.(3).cnf
+db|DedoNoQuartusEGritaria.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+memoria.vhd
+e840e08f265efe707f9293934bfc4e8d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+Memoria:inst11
+}
+# lmf
+e:|portableware|quartus|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+LPM_RAM_DQ
+# storage
+db|DedoNoQuartusEGritaria.(4).cnf
+db|DedoNoQuartusEGritaria.(4).cnf
+# case_insensitive
+# source_file
+e:|portableware|quartus|quartus|libraries|megafunctions|lpm_ram_dq.tdf
+8cb8fb4e8f3e90656f489fc92aabb9
+7
+# user_parameter {
+LPM_WIDTH
+8
+PARAMETER_SIGNED_DEC
+USR
+LPM_WIDTHAD
+8
+PARAMETER_SIGNED_DEC
+USR
+LPM_NUMWORDS
+0
+PARAMETER_SIGNED_DEC
+USR
+LPM_INDATA
+REGISTERED
+PARAMETER_UNKNOWN
+USR
+LPM_ADDRESS_CONTROL
+REGISTERED
+PARAMETER_UNKNOWN
+USR
+LPM_OUTDATA
+REGISTERED
+PARAMETER_UNKNOWN
+USR
+LPM_FILE
+instructions.mif
+PARAMETER_UNKNOWN
+USR
+USE_EAB
+ON
+PARAMETER_UNKNOWN
+USR
+DEVICE_FAMILY
+Stratix III
+PARAMETER_UNKNOWN
+USR
+CBXI_PARAMETER
+NOTHING
+PARAMETER_UNKNOWN
+DEF
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+}
+# used_port {
+WE
+-1
+3
+Q7
+-1
+3
+Q6
+-1
+3
+Q5
+-1
+3
+Q4
+-1
+3
+Q3
+-1
+3
+Q2
+-1
+3
+Q1
+-1
+3
+Q0
+-1
+3
+OUTCLOCK
+-1
+3
+INCLOCK
+-1
+3
+DATA7
+-1
+3
+DATA6
+-1
+3
+DATA5
+-1
+3
+DATA4
+-1
+3
+DATA3
+-1
+3
+DATA2
+-1
+3
+DATA1
+-1
+3
+DATA0
+-1
+3
+ADDRESS7
+-1
+3
+ADDRESS6
+-1
+3
+ADDRESS5
+-1
+3
+ADDRESS4
+-1
+3
+ADDRESS3
+-1
+3
+ADDRESS2
+-1
+3
+ADDRESS1
+-1
+3
+ADDRESS0
+-1
+3
+}
+# hierarchies {
+Memoria:inst11|lpm_ram_dq:MEM
+Memoria:inst11|lpm_ram_dq:MEM_plus_One
+Memoria:inst11|lpm_ram_dq:MEM_plus_Two
+Memoria:inst11|lpm_ram_dq:MEM_plus_Three
+}
+# macro_sequence
+
+# end
+# entity
+altram
+# storage
+db|DedoNoQuartusEGritaria.(5).cnf
+db|DedoNoQuartusEGritaria.(5).cnf
+# case_insensitive
+# source_file
+e:|portableware|quartus|quartus|libraries|megafunctions|altram.tdf
+c72d5dfba4da3c5a1457d7f3112cd3b
+7
+# user_parameter {
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+WIDTH_BYTEENA_A
+1
+PARAMETER_UNKNOWN
+DEF
+WIDTH_BYTEENA_B
+1
+PARAMETER_UNKNOWN
+DEF
+WIDTH
+8
+PARAMETER_UNKNOWN
+USR
+AD_WIDTH
+8
+PARAMETER_UNKNOWN
+USR
+NUMWORDS
+256
+PARAMETER_UNKNOWN
+USR
+FILE
+instructions.mif
+PARAMETER_UNKNOWN
+USR
+REGISTERINPUTMODE
+ALL
+PARAMETER_UNKNOWN
+USR
+USE_EAB
+ON
+PARAMETER_UNKNOWN
+USR
+MAXIMUM_DEPTH
+2048
+PARAMETER_UNKNOWN
+DEF
+DEVICE_FAMILY
+Stratix III
+PARAMETER_UNKNOWN
+USR
+SUPPRESS_MEMORY_CONVERSION_WARNINGS
+OFF
+PARAMETER_UNKNOWN
+DEF
+ENABLE_RAM_BENCHMARKING_MODE
+OFF
+PARAMETER_UNKNOWN
+DEF
+}
+# used_port {
+we
+-1
+3
+q7
+-1
+3
+q6
+-1
+3
+q5
+-1
+3
+q4
+-1
+3
+q3
+-1
+3
+q2
+-1
+3
+q1
+-1
+3
+q0
+-1
+3
+data7
+-1
+3
+data6
+-1
+3
+data5
+-1
+3
+data4
+-1
+3
+data3
+-1
+3
+data2
+-1
+3
+data1
+-1
+3
+data0
+-1
+3
+clocko
+-1
+3
+clocki
+-1
+3
+address7
+-1
+3
+address6
+-1
+3
+address5
+-1
+3
+address4
+-1
+3
+address3
+-1
+3
+address2
+-1
+3
+address1
+-1
+3
+address0
+-1
+3
+}
+# hierarchies {
+Memoria:inst11|lpm_ram_dq:MEM|altram:sram
+Memoria:inst11|lpm_ram_dq:MEM_plus_One|altram:sram
+Memoria:inst11|lpm_ram_dq:MEM_plus_Two|altram:sram
+Memoria:inst11|lpm_ram_dq:MEM_plus_Three|altram:sram
+}
+# macro_sequence
+
+# end
+# entity
+altsyncram
+# storage
+db|DedoNoQuartusEGritaria.(6).cnf
+db|DedoNoQuartusEGritaria.(6).cnf
+# case_insensitive
+# source_file
+e:|portableware|quartus|quartus|libraries|megafunctions|altsyncram.tdf
+67d9a3902c8a461c1d5750189e124f2
+7
+# user_parameter {
+BYTE_SIZE_BLOCK
+8
+PARAMETER_UNKNOWN
+DEF
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+WIDTH_BYTEENA
+1
+PARAMETER_UNKNOWN
+DEF
+OPERATION_MODE
+SINGLE_PORT
+PARAMETER_UNKNOWN
+USR
+WIDTH_A
+8
+PARAMETER_UNKNOWN
+USR
+WIDTHAD_A
+8
+PARAMETER_UNKNOWN
+USR
+NUMWORDS_A
+256
+PARAMETER_UNKNOWN
+USR
+OUTDATA_REG_A
+CLOCK1
+PARAMETER_UNKNOWN
+USR
+ADDRESS_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+OUTDATA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+WRCONTROL_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+INDATA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+BYTEENA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+WIDTH_B
+1
+PARAMETER_UNKNOWN
+DEF
+WIDTHAD_B
+1
+PARAMETER_UNKNOWN
+DEF
+NUMWORDS_B
+1
+PARAMETER_UNKNOWN
+DEF
+INDATA_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+WRCONTROL_WRADDRESS_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+RDCONTROL_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+ADDRESS_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+OUTDATA_REG_B
+UNREGISTERED
+PARAMETER_UNKNOWN
+DEF
+BYTEENA_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+INDATA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+WRCONTROL_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+ADDRESS_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+OUTDATA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+RDCONTROL_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+BYTEENA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+WIDTH_BYTEENA_A
+1
+PARAMETER_UNKNOWN
+USR
+WIDTH_BYTEENA_B
+1
+PARAMETER_UNKNOWN
+USR
+RAM_BLOCK_TYPE
+AUTO
+PARAMETER_UNKNOWN
+DEF
+BYTE_SIZE
+8
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_MIXED_PORTS
+DONT_CARE
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_PORT_A
+NEW_DATA_NO_NBE_READ
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_PORT_B
+NEW_DATA_NO_NBE_READ
+PARAMETER_UNKNOWN
+DEF
+INIT_FILE
+instructions.mif
+PARAMETER_UNKNOWN
+USR
+INIT_FILE_LAYOUT
+PORT_A
+PARAMETER_UNKNOWN
+DEF
+MAXIMUM_DEPTH
+0
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_INPUT_A
+NORMAL
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_INPUT_B
+NORMAL
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_OUTPUT_A
+NORMAL
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_OUTPUT_B
+NORMAL
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_CORE_A
+USE_INPUT_CLKEN
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_CORE_B
+USE_INPUT_CLKEN
+PARAMETER_UNKNOWN
+DEF
+ENABLE_ECC
+FALSE
+PARAMETER_UNKNOWN
+DEF
+DEVICE_FAMILY
+Stratix III
+PARAMETER_UNKNOWN
+USR
+CBXI_PARAMETER
+altsyncram_tqg1
+PARAMETER_UNKNOWN
+USR
+}
+# used_port {
+wren_a
+-1
+3
+q_a7
+-1
+3
+q_a6
+-1
+3
+q_a5
+-1
+3
+q_a4
+-1
+3
+q_a3
+-1
+3
+q_a2
+-1
+3
+q_a1
+-1
+3
+q_a0
+-1
+3
+data_a7
+-1
+3
+data_a6
+-1
+3
+data_a5
+-1
+3
+data_a4
+-1
+3
+data_a3
+-1
+3
+data_a2
+-1
+3
+data_a1
+-1
+3
+data_a0
+-1
+3
+clock1
+-1
+3
+clock0
+-1
+3
+address_a7
+-1
+3
+address_a6
+-1
+3
+address_a5
+-1
+3
+address_a4
+-1
+3
+address_a3
+-1
+3
+address_a2
+-1
+3
+address_a1
+-1
+3
+address_a0
+-1
+3
+}
+# hierarchies {
+Memoria:inst11|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block
+Memoria:inst11|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block
+Memoria:inst11|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block
+Memoria:inst11|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block
+}
+# macro_sequence
+
+# end
+# entity
+altsyncram_tqg1
+# storage
+db|DedoNoQuartusEGritaria.(7).cnf
+db|DedoNoQuartusEGritaria.(7).cnf
+# case_insensitive
+# source_file
+db|altsyncram_tqg1.tdf
+f4215bede2f4425be1ec45e24a1499
+7
+# used_port {
+wren_a
+-1
+3
+q_a7
+-1
+3
+q_a6
+-1
+3
+q_a5
+-1
+3
+q_a4
+-1
+3
+q_a3
+-1
+3
+q_a2
+-1
+3
+q_a1
+-1
+3
+q_a0
+-1
+3
+data_a7
+-1
+3
+data_a6
+-1
+3
+data_a5
+-1
+3
+data_a4
+-1
+3
+data_a3
+-1
+3
+data_a2
+-1
+3
+data_a1
+-1
+3
+data_a0
+-1
+3
+clock1
+-1
+3
+clock0
+-1
+3
+address_a7
+-1
+3
+address_a6
+-1
+3
+address_a5
+-1
+3
+address_a4
+-1
+3
+address_a3
+-1
+3
+address_a2
+-1
+3
+address_a1
+-1
+3
+address_a0
+-1
+3
+}
+# memory_file {
+instructions.mif
+2d896be853c349364c9c5b591e1c93ed
+}
+# hierarchies {
+Memoria:inst11|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
+Memoria:inst11|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
+Memoria:inst11|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
+Memoria:inst11|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
+}
+# macro_sequence
+
+# end
+# entity
+Mux2
+# storage
+db|DedoNoQuartusEGritaria.(8).cnf
+db|DedoNoQuartusEGritaria.(8).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+mux2.v
+8c5142253a824eea10f18439a94e7156
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+selectEntrada0
+00
+PARAMETER_UNSIGNED_BIN
+USR
+selectEntrada1
+01
+PARAMETER_UNSIGNED_BIN
+USR
+selectEntrada2
+10
+PARAMETER_UNSIGNED_BIN
+USR
+selectEntrada3
+11
+PARAMETER_UNSIGNED_BIN
+USR
+}
+# hierarchies {
+Mux2:inst
+}
+# macro_sequence
+
+# end
+# entity
+Registrador
+# storage
+db|DedoNoQuartusEGritaria.(9).cnf
+db|DedoNoQuartusEGritaria.(9).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+registrador.vhd
+9c2fa77c717e3583f352d6d9d43cb93
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+Registrador:PC
+Registrador:A
+Registrador:ULA_OUT
+Registrador:B
+Registrador:MDR
+Registrador:XCH
+Registrador:EPC
+}
+# lmf
+e:|portableware|quartus|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+mux10
+# storage
+db|DedoNoQuartusEGritaria.(10).cnf
+db|DedoNoQuartusEGritaria.(10).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+mux10.v
+3f3543df934362b2fcf97fa3a17630
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+selectEntrada0
+000
+PARAMETER_UNSIGNED_BIN
+USR
+selectEntrada1
+001
+PARAMETER_UNSIGNED_BIN
+USR
+selectEntrada2
+010
+PARAMETER_UNSIGNED_BIN
+USR
+selectEntrada3
+011
+PARAMETER_UNSIGNED_BIN
+USR
+selectEntrada4
+100
+PARAMETER_UNSIGNED_BIN
+USR
+}
+# hierarchies {
+mux10:inst18
+}
+# macro_sequence
+
+# end
+# entity
+Ula32
+# storage
+db|DedoNoQuartusEGritaria.(11).cnf
+db|DedoNoQuartusEGritaria.(11).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+ula32.vhd
+d6bb5bfd211de44547e9b6fe9d17a72
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+Ula32:inst26
+}
+# lmf
+e:|portableware|quartus|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+Mux8
+# storage
+db|DedoNoQuartusEGritaria.(12).cnf
+db|DedoNoQuartusEGritaria.(12).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+mux8.v
+edd5a1434e75458f7fe9563655d6629e
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+selectEntrada0
+00
+PARAMETER_UNSIGNED_BIN
+USR
+selectEntrada1
+01
+PARAMETER_UNSIGNED_BIN
+USR
+selectEntrada2
+10
+PARAMETER_UNSIGNED_BIN
+USR
+}
+# hierarchies {
+Mux8:inst28
+}
+# macro_sequence
+
+# end
+# entity
+Banco_reg
+# storage
+db|DedoNoQuartusEGritaria.(13).cnf
+db|DedoNoQuartusEGritaria.(13).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+banco_reg.vhd
+50231793bb2cfb98ed3a4b76c3bf6ca
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+Banco_reg:inst14
+}
+# lmf
+e:|portableware|quartus|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+Mux7
+# storage
+db|DedoNoQuartusEGritaria.(14).cnf
+db|DedoNoQuartusEGritaria.(14).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+mux7.v
+51828fc2c2e49725862453b3f04b408e
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+Mux7:inst19
+}
+# macro_sequence
+
+# end
+# entity
+ShiftLeft16
+# storage
+db|DedoNoQuartusEGritaria.(15).cnf
+db|DedoNoQuartusEGritaria.(15).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+shiftleft16.v
+9e37885c67388092d17e39755d862
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+ShiftLeft16:inst3
+}
+# macro_sequence
+
+# end
+# entity
+LoadSize
+# storage
+db|DedoNoQuartusEGritaria.(16).cnf
+db|DedoNoQuartusEGritaria.(16).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+loadsize.v
+e041ea7eb3852e4a527597a759f5beb
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+LoadSize:inst6
+}
+# macro_sequence
+
+# end
+# entity
+SignalExtend16to32
+# storage
+db|DedoNoQuartusEGritaria.(17).cnf
+db|DedoNoQuartusEGritaria.(17).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+signalextend16to32.v
+fd114672622517da6ffc886755d1722
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+SignalExtend16to32:inst1
+}
+# macro_sequence
+
+# end
+# entity
+SignalExtend1to32
+# storage
+db|DedoNoQuartusEGritaria.(18).cnf
+db|DedoNoQuartusEGritaria.(18).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+signalextend1to32.v
+a043dd9f4e51b179ecd989e44c5687b
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+SignalExtend1to32:inst8
+}
+# macro_sequence
+
+# end
+# entity
+Mux6
+# storage
+db|DedoNoQuartusEGritaria.(19).cnf
+db|DedoNoQuartusEGritaria.(19).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+mux6.v
+dc0d536b1fbf315d0e88137f1bee18c
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+selectEntrada0
+000
+PARAMETER_UNSIGNED_BIN
+USR
+selectEntrada1
+001
+PARAMETER_UNSIGNED_BIN
+USR
+selectEntrada2
+010
+PARAMETER_UNSIGNED_BIN
+USR
+selectEntrada3
+011
+PARAMETER_UNSIGNED_BIN
+USR
+selectEntrada4
+100
+PARAMETER_UNSIGNED_BIN
+USR
+}
+# hierarchies {
+Mux6:inst16
+}
+# macro_sequence
+
+# end
+# entity
+Mux9
+# storage
+db|DedoNoQuartusEGritaria.(20).cnf
+db|DedoNoQuartusEGritaria.(20).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+mux9.v
+238feb49662c05f2f519e50b0d35fce
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+selectEntrada0
+00
+PARAMETER_UNSIGNED_BIN
+USR
+selectEntrada1
+01
+PARAMETER_UNSIGNED_BIN
+USR
+selectEntrada2
+10
+PARAMETER_UNSIGNED_BIN
+USR
+selectEntrada3
+11
+PARAMETER_UNSIGNED_BIN
+USR
+selectEntrada4
+100
+PARAMETER_UNSIGNED_BIN
+USR
+}
+# hierarchies {
+Mux9:inst27
+}
+# macro_sequence
+
+# end
+# entity
+ShiftLeft2
+# storage
+db|DedoNoQuartusEGritaria.(21).cnf
+db|DedoNoQuartusEGritaria.(21).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+shiftleft2.v
+b7a6af74245d4f83db3a57352a7a53
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+ShiftLeft2:inst5
+}
+# macro_sequence
+
+# end
+# entity
+ShiftLeft2of26to28
+# storage
+db|DedoNoQuartusEGritaria.(22).cnf
+db|DedoNoQuartusEGritaria.(22).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+shiftleft2of26to28.v
+fe1c396fec61c5ee3ad3f92242da38f8
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+ShiftLeft2of26to28:inst15
+}
+# macro_sequence
+
+# end
+# entity
+IRConcat
+# storage
+db|DedoNoQuartusEGritaria.(23).cnf
+db|DedoNoQuartusEGritaria.(23).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+irconcat.v
+85b08e57ff5791b14763d7b16b55d3f7
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+IRConcat:inst13
+}
+# macro_sequence
+
+# end
+# entity
+StoreSize
+# storage
+db|DedoNoQuartusEGritaria.(24).cnf
+db|DedoNoQuartusEGritaria.(24).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+storesize.v
+336eb4efbef05bc35c2e63cd773c9751
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+StoreSize:inst4
 }
 # macro_sequence
 

@@ -1,6 +1,6 @@
 Assembler report for DedoNoQuartusEGritaria
-Thu Oct 17 18:06:59 2019
-Quartus II 64-Bit Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+Thu Oct 17 21:48:44 2019
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
 ---------------------
@@ -10,7 +10,7 @@ Quartus II 64-Bit Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Versio
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: H:/Hardware/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/DedoNoQuartusEGritaria.sof
+  5. Assembler Device Options: D:/Users/Erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/DedoNoQuartusEGritaria.sof
   6. Assembler Messages
 
 
@@ -37,11 +37,11 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu Oct 17 18:06:59 2019 ;
+; Assembler Status      ; Successful - Thu Oct 17 21:48:44 2019 ;
 ; Revision Name         ; DedoNoQuartusEGritaria                ;
-; Top-level Entity Name ; Control_Unit                          ;
+; Top-level Entity Name ; Processador                           ;
 ; Family                ; Stratix III                           ;
-; Device                ; EP3SL50F484C2                         ;
+; Device                ; EP3SL50F780C2                         ;
 +-----------------------+---------------------------------------+
 
 
@@ -77,40 +77,40 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+--------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                  ;
-+--------------------------------------------------------------------------------------------+
-; File Name                                                                                  ;
-+--------------------------------------------------------------------------------------------+
-; H:/Hardware/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/DedoNoQuartusEGritaria.sof ;
-+--------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                      ;
++----------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                      ;
++----------------------------------------------------------------------------------------------------------------+
+; D:/Users/Erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/DedoNoQuartusEGritaria.sof ;
++----------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: H:/Hardware/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/DedoNoQuartusEGritaria.sof ;
-+----------------+-----------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                             ;
-+----------------+-----------------------------------------------------------------------------------------------------+
-; Device         ; EP3SL50F484C2                                                                                       ;
-; JTAG usercode  ; 0xFFFFFFFF                                                                                          ;
-; Checksum       ; 0x02220C41                                                                                          ;
-+----------------+-----------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: D:/Users/Erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/DedoNoQuartusEGritaria.sof ;
++----------------+-------------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                                 ;
++----------------+-------------------------------------------------------------------------------------------------------------------------+
+; Device         ; EP3SL50F780C2                                                                                                           ;
+; JTAG usercode  ; 0xFFFFFFFF                                                                                                              ;
+; Checksum       ; 0x023D2C14                                                                                                              ;
++----------------+-------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
 ; Assembler Messages ;
 +--------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Assembler
-    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
-    Info: Processing started: Thu Oct 17 18:06:51 2019
+Info: Running Quartus II Assembler
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Thu Oct 17 21:48:40 2019
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off DedoNoQuartusEGritaria -c DedoNoQuartusEGritaria
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
-Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4542 megabytes
-    Info: Processing ended: Thu Oct 17 18:06:59 2019
-    Info: Elapsed time: 00:00:08
+Info: Quartus II Assembler was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 329 megabytes
+    Info: Processing ended: Thu Oct 17 21:48:44 2019
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:04
 
 
