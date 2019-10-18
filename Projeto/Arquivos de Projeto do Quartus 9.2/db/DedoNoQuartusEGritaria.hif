@@ -800,8 +800,10 @@ Registrador:PC
 Registrador:ULA_OUT
 Registrador:EPC
 Registrador:B
-Registrador:MDR
+Registrador:HI
 Registrador:A
+Registrador:LO
+Registrador:MDR
 Registrador:XCH
 }
 # lmf
@@ -1567,26 +1569,6 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
-Processador
-# storage
-db|DedoNoQuartusEGritaria.(0).cnf
-db|DedoNoQuartusEGritaria.(0).cnf
-# case_insensitive
-# source_file
-processador.bdf
-40994c9f4b3fc19966ae9f43befde71
-26
-# internal_option {
-BLOCK_DESIGN_NAMING
-AUTO
-}
-# hierarchies {
-|
-}
-# macro_sequence
-
-# end
-# entity
 Control_Unit
 # storage
 db|DedoNoQuartusEGritaria.(1).cnf
@@ -1758,6 +1740,190 @@ Banco_reg:inst14
 # lmf
 e:|portableware|quartus|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+MultDivControlBox
+# storage
+db|DedoNoQuartusEGritaria.(29).cnf
+db|DedoNoQuartusEGritaria.(29).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+multdivcontrolbox.v
+4df15b71bc477a72c8ce35d764eefd5d
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+MultDiv:inst24|MultDivControlBox:inst
+}
+# macro_sequence
+
+# end
+# entity
+DivBox
+# storage
+db|DedoNoQuartusEGritaria.(32).cnf
+db|DedoNoQuartusEGritaria.(32).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+divbox.v
+ec23a0706ff58d472c8d9b13c15e92
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+MultDiv:inst24|DivBox:inst11
+}
+# macro_sequence
+
+# end
+# entity
+MultDivMuxBox
+# storage
+db|DedoNoQuartusEGritaria.(33).cnf
+db|DedoNoQuartusEGritaria.(33).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+multdivmuxbox.v
+8f240966bc3e2ff06f90fb5df620
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+MultDiv:inst24|MultDivMuxBox:inst7
+}
+# macro_sequence
+
+# end
+# entity
+MultBox
+# storage
+db|DedoNoQuartusEGritaria.(31).cnf
+db|DedoNoQuartusEGritaria.(31).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+multbox.v
+b36b576f5891c017f341e8d315ac51
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+MultDiv:inst24|MultBox:inst6
+}
+# macro_sequence
+
+# end
+# entity
+Processador
+# storage
+db|DedoNoQuartusEGritaria.(0).cnf
+db|DedoNoQuartusEGritaria.(0).cnf
+# case_insensitive
+# source_file
+processador.bdf
+e64b812d6fdcc15c95d2ef1570729e78
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+MultDiv
+# storage
+db|DedoNoQuartusEGritaria.(30).cnf
+db|DedoNoQuartusEGritaria.(30).cnf
+# case_insensitive
+# source_file
+multdiv.bdf
+3d856bbf8d1abe76d1c5338bfdb69084
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+MultDiv:inst24
+}
 # macro_sequence
 
 # end
