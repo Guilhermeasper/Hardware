@@ -23,7 +23,7 @@
   - [x] Entradas
   - [x] Saídas
   - [ ] Objetivo
-  - [ ] Algoritmo
+  - [x] Algoritmo
 - [ ] Unidade de Controle
 - [ ] Descrição dos Estados de Controle
 - [ ] Conjunto de Simulações
