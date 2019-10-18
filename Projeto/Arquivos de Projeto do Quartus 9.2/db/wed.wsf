@@ -4497,7 +4497,7 @@ VECTOR("D:/Users/Erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do 
 {
 	ZOOM{
 		ZBEGIN = 0;
-		ZEND = 235868;
+		ZEND = 182373;
 		NUMERATOR = 1433;
 		DENOMINATOR = 250000;
 		TOP_INDEX = 1;

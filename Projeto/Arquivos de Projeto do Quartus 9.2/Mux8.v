@@ -32,4 +32,4 @@ module Mux8(clock, entrada0, entrada1, entrada2, controle, saida);
 			end
 		endcase
 	end
-endmodule
+endmodule 
