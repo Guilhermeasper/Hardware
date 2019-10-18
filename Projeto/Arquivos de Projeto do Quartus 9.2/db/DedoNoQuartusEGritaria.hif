@@ -20,62 +20,6 @@ VHSM_ON
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
 # entity
-Processador
-# storage
-db|DedoNoQuartusEGritaria.(0).cnf
-db|DedoNoQuartusEGritaria.(0).cnf
-# case_insensitive
-# source_file
-processador.bdf
-d512d48a7620c1d843128048e190a8c
-26
-# internal_option {
-BLOCK_DESIGN_NAMING
-AUTO
-}
-# hierarchies {
-|
-}
-# macro_sequence
-
-# end
-# entity
-Control_Unit
-# storage
-db|DedoNoQuartusEGritaria.(1).cnf
-db|DedoNoQuartusEGritaria.(1).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-control_unit.v
-d5ad6e8dae98ae17608d55d3ef44f7f7
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-Control_Unit:inst2
-}
-# macro_sequence
-
-# end
-# entity
 Instr_Reg
 # storage
 db|DedoNoQuartusEGritaria.(2).cnf
@@ -959,12 +903,12 @@ ON
 }
 # hierarchies {
 Registrador:PC
-Registrador:A
 Registrador:ULA_OUT
+Registrador:EPC
 Registrador:B
 Registrador:MDR
 Registrador:XCH
-Registrador:EPC
+Registrador:A
 }
 # lmf
 e:|portableware|quartus|quartus|lmf|maxplus2.lmf
@@ -1143,42 +1087,6 @@ Banco_reg:inst14
 # lmf
 e:|portableware|quartus|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-Mux7
-# storage
-db|DedoNoQuartusEGritaria.(14).cnf
-db|DedoNoQuartusEGritaria.(14).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-mux7.v
-51828fc2c2e49725862453b3f04b408e
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-Mux7:inst19
-}
 # macro_sequence
 
 # end
@@ -1582,6 +1490,148 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # hierarchies {
 StoreSize:inst4
+}
+# macro_sequence
+
+# end
+# entity
+Mux7
+# storage
+db|DedoNoQuartusEGritaria.(14).cnf
+db|DedoNoQuartusEGritaria.(14).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+mux7.v
+236aea9f328c466b0103a59a435b5b
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+Mux7:inst19
+}
+# macro_sequence
+
+# end
+# entity
+mux1
+# storage
+db|DedoNoQuartusEGritaria.(25).cnf
+db|DedoNoQuartusEGritaria.(25).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+mux1.v
+56f1f3e9a5ec61f9be322f756611149b
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+selectEntrada0
+00
+PARAMETER_UNSIGNED_BIN
+USR
+selectEntrada1
+01
+PARAMETER_UNSIGNED_BIN
+USR
+selectEntrada2
+10
+PARAMETER_UNSIGNED_BIN
+USR
+}
+# hierarchies {
+mux1:inst7
+}
+# macro_sequence
+
+# end
+# entity
+Processador
+# storage
+db|DedoNoQuartusEGritaria.(0).cnf
+db|DedoNoQuartusEGritaria.(0).cnf
+# case_insensitive
+# source_file
+processador.bdf
+d96c2eaeadeff55463956d46adfcd4a9
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+Control_Unit
+# storage
+db|DedoNoQuartusEGritaria.(1).cnf
+db|DedoNoQuartusEGritaria.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+control_unit.v
+277531bf9558beb5cd8efb28acd66340
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+Control_Unit:inst2
 }
 # macro_sequence
 

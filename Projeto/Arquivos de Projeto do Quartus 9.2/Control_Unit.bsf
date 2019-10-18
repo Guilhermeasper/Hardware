@@ -94,6 +94,13 @@ applicable agreement for further details.
 		(line (pt 0 176)(pt 16 176)(line_width 1))
 	)
 	(port
+		(pt 0 192)
+		(input)
+		(text "zero" (rect 0 0 20 12)(font "Arial" ))
+		(text "zero" (rect 21 187 41 199)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192)(line_width 1))
+	)
+	(port
 		(pt 224 32)
 		(output)
 		(text "pc_write" (rect 0 0 40 12)(font "Arial" ))
@@ -173,9 +180,9 @@ applicable agreement for further details.
 	(port
 		(pt 224 208)
 		(output)
-		(text "shift_control" (rect 0 0 61 12)(font "Arial" ))
-		(text "shift_control" (rect 142 203 203 215)(font "Arial" ))
-		(line (pt 224 208)(pt 208 208)(line_width 1))
+		(text "shift_control[2..0]" (rect 0 0 87 12)(font "Arial" ))
+		(text "shift_control[2..0]" (rect 116 203 203 215)(font "Arial" ))
+		(line (pt 224 208)(pt 208 208)(line_width 3))
 	)
 	(port
 		(pt 224 224)
@@ -289,63 +296,7 @@ applicable agreement for further details.
 		(text "next_state[7..0]" (rect 126 459 203 471)(font "Arial" ))
 		(line (pt 224 464)(pt 208 464)(line_width 3))
 	)
-	(parameter
-		"RESET"
-		"00000000"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(parameter
-		"FETCH"
-		"00000001"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(parameter
-		"FETCH_2"
-		"00000010"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(parameter
-		"WAIT"
-		"00000011"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(parameter
-		"DECODE"
-		"00000100"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(parameter
-		"ADD"
-		"00000101"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(parameter
-		"AND"
-		"00000110"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(parameter
-		"SUB"
-		"111111"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(parameter
-		"WRITE_ARIT"
-		"00000111"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(parameter
-		"SHIFT_SHAMT"
-		"00001000"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(parameter
-		"FINAL"
-		"11111111"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
 	(drawing
 		(rectangle (rect 16 16 208 496)(line_width 1))
 	)
-	(annotation_block (parameter)(rect 240 -64 340 16))
 )

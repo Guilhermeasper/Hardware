@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DedoNoQuartusEGritaria
-Thu Oct 17 21:48:12 2019
+Thu Oct 17 23:05:03 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -24,16 +24,17 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
  16. Source assignments for Memoria:inst11|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
  17. Source assignments for Memoria:inst11|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
  18. Source assignments for Memoria:inst11|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
- 19. Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM
- 20. Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM_plus_One
- 21. Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM_plus_Two
- 22. Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM_plus_Three
- 23. Parameter Settings for User Entity Instance: Mux2:inst
- 24. Parameter Settings for User Entity Instance: mux10:inst18
- 25. Parameter Settings for User Entity Instance: Mux8:inst28
- 26. Parameter Settings for User Entity Instance: Mux6:inst16
- 27. Parameter Settings for User Entity Instance: Mux9:inst27
- 28. Analysis & Synthesis Messages
+ 19. Parameter Settings for User Entity Instance: Mux8:inst28
+ 20. Parameter Settings for User Entity Instance: mux10:inst18
+ 21. Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM
+ 22. Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM_plus_One
+ 23. Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM_plus_Two
+ 24. Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM_plus_Three
+ 25. Parameter Settings for User Entity Instance: Mux2:inst
+ 26. Parameter Settings for User Entity Instance: mux1:inst7
+ 27. Parameter Settings for User Entity Instance: Mux6:inst16
+ 28. Parameter Settings for User Entity Instance: Mux9:inst27
+ 29. Analysis & Synthesis Messages
 
 
 
@@ -59,13 +60,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Thu Oct 17 21:48:12 2019        ;
+; Analysis & Synthesis Status   ; Successful - Thu Oct 17 23:05:03 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; DedoNoQuartusEGritaria                       ;
 ; Top-level Entity Name         ; Processador                                  ;
 ; Family                        ; Stratix III                                  ;
 ; Logic utilization             ; N/A                                          ;
-;     Combinational ALUTs       ; 1,033                                        ;
+;     Combinational ALUTs       ; 1,070                                        ;
 ;     Memory ALUTs              ; 0                                            ;
 ;     Dedicated logic registers ; 1,207                                        ;
 ; Total registers               ; 1207                                         ;
@@ -174,6 +175,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------------------------------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                               ;
 +----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------------------------------+
+; mux1.v                           ; yes             ; User Verilog HDL File                  ; D:/Users/Erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/mux1.v                 ;
 ; ShiftLeft16.v                    ; yes             ; User Verilog HDL File                  ; D:/Users/Erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/ShiftLeft16.v          ;
 ; ShiftLeft2of26to28.v             ; yes             ; User Verilog HDL File                  ; D:/Users/Erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/ShiftLeft2of26to28.v   ;
 ; LoadSize.v                       ; yes             ; User Verilog HDL File                  ; D:/Users/Erick/Projetos/CC-UFPE/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/LoadSize.v             ;
@@ -208,46 +210,46 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------+-------------+
 ; Resource                                      ; Usage       ;
 +-----------------------------------------------+-------------+
-; Estimated ALUTs Used                          ; 1033        ;
-;     -- Combinational ALUTs                    ; 1033        ;
+; Estimated ALUTs Used                          ; 1070        ;
+;     -- Combinational ALUTs                    ; 1070        ;
 ;     -- Memory ALUTs                           ; 0           ;
 ;     -- LUT_REGs                               ; 0           ;
 ; Dedicated logic registers                     ; 1207        ;
 ;                                               ;             ;
-; Estimated ALUTs Unavailable                   ; 0           ;
-;     -- Due to unpartnered combinational logic ; 0           ;
+; Estimated ALUTs Unavailable                   ; 4           ;
+;     -- Due to unpartnered combinational logic ; 4           ;
 ;     -- Due to Memory ALUTs                    ; 0           ;
 ;                                               ;             ;
-; Total combinational functions                 ; 1033        ;
+; Total combinational functions                 ; 1070        ;
 ; Combinational ALUT usage by number of inputs  ;             ;
 ;     -- 7 input functions                      ; 0           ;
-;     -- 6 input functions                      ; 702         ;
+;     -- 6 input functions                      ; 705         ;
 ;     -- 5 input functions                      ; 46          ;
 ;     -- 4 input functions                      ; 60          ;
-;     -- <=3 input functions                    ; 225         ;
+;     -- <=3 input functions                    ; 259         ;
 ;                                               ;             ;
 ; Combinational ALUTs by mode                   ;             ;
-;     -- normal mode                            ; 1002        ;
+;     -- normal mode                            ; 1039        ;
 ;     -- extended LUT mode                      ; 0           ;
 ;     -- arithmetic mode                        ; 31          ;
 ;     -- shared arithmetic mode                 ; 0           ;
 ;                                               ;             ;
-; Estimated ALUT/register pairs used            ; 1981        ;
+; Estimated ALUT/register pairs used            ; 1989        ;
 ;                                               ;             ;
 ; Total registers                               ; 1207        ;
 ;     -- Dedicated logic registers              ; 1207        ;
 ;     -- I/O registers                          ; 0           ;
 ;     -- LUT_REGs                               ; 0           ;
 ;                                               ;             ;
-; Estimated ALMs:  partially or completely used ; 991         ;
+; Estimated ALMs:  partially or completely used ; 995         ;
 ;                                               ;             ;
 ; I/O pins                                      ; 349         ;
 ; Total MLAB memory bits                        ; 0           ;
 ; Total block memory bits                       ; 8192        ;
 ; Maximum fan-out node                          ; clock~input ;
 ; Maximum fan-out                               ; 1239        ;
-; Total fan-out                                 ; 12123       ;
-; Average fan-out                               ; 4.08        ;
+; Total fan-out                                 ; 11185       ;
+; Average fan-out                               ; 3.72        ;
 +-----------------------------------------------+-------------+
 
 
@@ -256,36 +258,36 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 12x12 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                   ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+--------------+
-; |Processador                                    ; 1033 (1)          ; 1207 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0         ; 349  ; 0            ; |Processador                                                                                                          ; work         ;
-;    |Banco_reg:inst14|                           ; 738 (738)         ; 1024 (1024)  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Banco_reg:inst14                                                                                         ; work         ;
+; |Processador                                    ; 1070 (1)          ; 1207 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0         ; 349  ; 0            ; |Processador                                                                                                          ; work         ;
+;    |Banco_reg:inst14|                           ; 740 (740)         ; 1024 (1024)  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Banco_reg:inst14                                                                                         ; work         ;
 ;    |Control_Unit:inst2|                         ; 45 (45)           ; 23 (23)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Control_Unit:inst2                                                                                       ;              ;
 ;    |Instr_Reg:inst12|                           ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Instr_Reg:inst12                                                                                         ; work         ;
-;    |Memoria:inst11|                             ; 23 (23)           ; 0 (0)        ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11                                                                                           ;              ;
+;    |Memoria:inst11|                             ; 23 (23)           ; 0 (0)        ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11                                                                                           ; work         ;
 ;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_One                                                                   ; work         ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ;              ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ; work         ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ; work         ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ;              ;
 ;                |altsyncram_tqg1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated   ;              ;
 ;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Three                                                                 ;              ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ; work         ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ;              ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ; work         ;
 ;                |altsyncram_tqg1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated ; work         ;
-;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Two                                                                   ; work         ;
+;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Two                                                                   ;              ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ;              ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ; work         ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ;              ;
 ;                |altsyncram_tqg1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated   ;              ;
 ;       |lpm_ram_dq:MEM|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM                                                                            ; work         ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM|altram:sram                                                                ;              ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM|altram:sram                                                                ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ; work         ;
-;                |altsyncram_tqg1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated            ;              ;
-;    |Mux6:inst16|                                ; 11 (11)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Mux6:inst16                                                                                              ;              ;
-;    |Mux7:inst19|                                ; 2 (2)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Mux7:inst19                                                                                              ; work         ;
-;    |Mux8:inst28|                                ; 32 (32)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Mux8:inst28                                                                                              ; work         ;
+;                |altsyncram_tqg1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated            ; work         ;
+;    |Mux6:inst16|                                ; 11 (11)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Mux6:inst16                                                                                              ; work         ;
+;    |Mux7:inst19|                                ; 32 (32)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Mux7:inst19                                                                                              ; work         ;
+;    |Mux8:inst28|                                ; 32 (32)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Mux8:inst28                                                                                              ;              ;
 ;    |Mux9:inst27|                                ; 65 (65)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Mux9:inst27                                                                                              ; work         ;
 ;    |Registrador:A|                              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Registrador:A                                                                                            ; work         ;
-;    |Registrador:B|                              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Registrador:B                                                                                            ;              ;
+;    |Registrador:B|                              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Registrador:B                                                                                            ; work         ;
 ;    |Registrador:PC|                             ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Registrador:PC                                                                                           ; work         ;
 ;    |Registrador:ULA_OUT|                        ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Registrador:ULA_OUT                                                                                      ; work         ;
-;    |Ula32:inst26|                               ; 116 (116)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Ula32:inst26                                                                                             ; work         ;
+;    |Ula32:inst26|                               ; 121 (121)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Ula32:inst26                                                                                             ; work         ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -367,16 +369,17 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Control_Unit:inst2|mux_7[3]             ; Stuck at GND due to stuck port data_in       ;
 ; Control_Unit:inst2|mux_6[0]             ; Stuck at GND due to stuck port data_in       ;
 ; Control_Unit:inst2|mux_2[0..1]          ; Stuck at GND due to stuck port data_in       ;
-; Registrador:EPC|Saida[0..31]            ; Stuck at GND due to stuck port clock_enable  ;
+; Control_Unit:inst2|mux_1[0..1]          ; Stuck at GND due to stuck port data_in       ;
 ; Registrador:XCH|Saida[0..31]            ; Stuck at GND due to stuck port clock_enable  ;
 ; Registrador:MDR|Saida[0..31]            ; Stuck at GND due to stuck port clock_enable  ;
+; Registrador:EPC|Saida[0..31]            ; Stuck at GND due to stuck port clock_enable  ;
 ; Control_Unit:inst2|REG_A                ; Merged with Control_Unit:inst2|REG_B         ;
 ; Control_Unit:inst2|mux_9[2]             ; Merged with Control_Unit:inst2|REG_B         ;
 ; Control_Unit:inst2|mux_7[1..2]          ; Merged with Control_Unit:inst2|mux_7[0]      ;
 ; Control_Unit:inst2|mux_6[2]             ; Merged with Control_Unit:inst2|mux_7[0]      ;
 ; Control_Unit:inst2|next_state[4..6]     ; Merged with Control_Unit:inst2|next_state[3] ;
 ; Control_Unit:inst2|next_state[3]        ; Stuck at GND due to stuck port data_in       ;
-; Total Number of Removed Registers = 123 ;                                              ;
+; Total Number of Removed Registers = 125 ;                                              ;
 +-----------------------------------------+----------------------------------------------+
 
 
@@ -427,11 +430,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 1207  ;
-; Number of registers using Synchronous Clear  ; 1029  ;
+; Number of registers using Synchronous Clear  ; 9     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 1184  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1201  ;
+; Number of registers using Clock Enable       ; 1203  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -441,8 +444,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; Banco_reg:inst14|Reg1[0]               ; 3       ;
-; Banco_reg:inst14|Reg3[0]               ; 3       ;
+; Banco_reg:inst14|Reg1[0]               ; 2       ;
+; Banco_reg:inst14|Reg3[0]               ; 2       ;
 ; Banco_reg:inst14|Reg2[0]               ; 2       ;
 ; Banco_reg:inst14|Reg2[1]               ; 2       ;
 ; Total number of inverted registers = 4 ;         ;
@@ -500,6 +503,32 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------------------------------+--------------------+------+-------------------------------------------------------------------+
 ; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                 ;
 +---------------------------------+--------------------+------+-------------------------------------------------------------------+
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Mux8:inst28 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; selectEntrada0 ; 00    ; Unsigned Binary                 ;
+; selectEntrada1 ; 01    ; Unsigned Binary                 ;
+; selectEntrada2 ; 10    ; Unsigned Binary                 ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux10:inst18 ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; selectEntrada0 ; 000   ; Unsigned Binary                  ;
+; selectEntrada1 ; 001   ; Unsigned Binary                  ;
+; selectEntrada2 ; 010   ; Unsigned Binary                  ;
+; selectEntrada3 ; 011   ; Unsigned Binary                  ;
+; selectEntrada4 ; 100   ; Unsigned Binary                  ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +----------------------------------------------------------------------------+
@@ -607,29 +636,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mux10:inst18 ;
-+----------------+-------+----------------------------------+
-; Parameter Name ; Value ; Type                             ;
-+----------------+-------+----------------------------------+
-; selectEntrada0 ; 000   ; Unsigned Binary                  ;
-; selectEntrada1 ; 001   ; Unsigned Binary                  ;
-; selectEntrada2 ; 010   ; Unsigned Binary                  ;
-; selectEntrada3 ; 011   ; Unsigned Binary                  ;
-; selectEntrada4 ; 100   ; Unsigned Binary                  ;
-+----------------+-------+----------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Mux8:inst28 ;
-+----------------+-------+---------------------------------+
-; Parameter Name ; Value ; Type                            ;
-+----------------+-------+---------------------------------+
-; selectEntrada0 ; 00    ; Unsigned Binary                 ;
-; selectEntrada1 ; 01    ; Unsigned Binary                 ;
-; selectEntrada2 ; 10    ; Unsigned Binary                 ;
-+----------------+-------+---------------------------------+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux1:inst7 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; selectEntrada0 ; 00    ; Unsigned Binary                ;
+; selectEntrada1 ; 01    ; Unsigned Binary                ;
+; selectEntrada2 ; 10    ; Unsigned Binary                ;
++----------------+-------+--------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -667,8 +682,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu Oct 17 21:48:03 2019
+    Info: Processing started: Thu Oct 17 23:04:56 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DedoNoQuartusEGritaria -c DedoNoQuartusEGritaria
+Info: Found 1 design units, including 1 entities, in source file mux1.v
+    Info: Found entity 1: mux1
 Info: Found 1 design units, including 1 entities, in source file signalextend26to32.v
     Info: Found entity 1: SignalExtend26to32
 Info: Found 1 design units, including 1 entities, in source file shiftleft16.v
@@ -727,82 +744,20 @@ Info: Found 1 design units, including 1 entities, in source file irconcat.v
 Info: Elaborating entity "Processador" for the top level hierarchy
 Warning: Block or symbol "mux6" of instance "inst16" overlaps another block or symbol
 Info: Elaborating entity "Control_Unit" for hierarchy "Control_Unit:inst2"
-Warning (10036): Verilog HDL or VHDL warning at Control_Unit.v(45): object "stateOverflow" assigned a value but never read
-Warning (10230): Verilog HDL assignment warning at Control_Unit.v(84): truncated value with size 2 to match size of target (1)
+Warning (10036): Verilog HDL or VHDL warning at Control_Unit.v(46): object "stateOverflow" assigned a value but never read
 Warning (10230): Verilog HDL assignment warning at Control_Unit.v(85): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at Control_Unit.v(114): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Control_Unit.v(86): truncated value with size 2 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at Control_Unit.v(115): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at Control_Unit.v(151): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Control_Unit.v(116): truncated value with size 2 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at Control_Unit.v(152): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at Control_Unit.v(184): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Control_Unit.v(153): truncated value with size 2 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at Control_Unit.v(185): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at Control_Unit.v(253): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at Control_Unit.v(282): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at Control_Unit.v(311): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at Control_Unit.v(340): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at Control_Unit.v(369): truncated value with size 2 to match size of target (1)
-Info: Elaborating entity "Instr_Reg" for hierarchy "Instr_Reg:inst12"
-Info: Elaborating entity "Memoria" for hierarchy "Memoria:inst11"
-Info: Elaborating entity "LPM_RAM_DQ" for hierarchy "Memoria:inst11|LPM_RAM_DQ:MEM"
-Info: Elaborated megafunction instantiation "Memoria:inst11|LPM_RAM_DQ:MEM"
-Info: Instantiated megafunction "Memoria:inst11|LPM_RAM_DQ:MEM" with the following parameter:
-    Info: Parameter "LPM_WIDTH" = "8"
-    Info: Parameter "LPM_WIDTHAD" = "8"
-    Info: Parameter "LPM_NUMWORDS" = "0"
-    Info: Parameter "LPM_INDATA" = "REGISTERED"
-    Info: Parameter "LPM_ADDRESS_CONTROL" = "REGISTERED"
-    Info: Parameter "LPM_OUTDATA" = "REGISTERED"
-    Info: Parameter "LPM_FILE" = "instructions.mif"
-    Info: Parameter "LPM_TYPE" = "LPM_RAM_DQ"
-    Info: Parameter "USE_EAB" = "ON"
-    Info: Parameter "INTENDED_DEVICE_FAMILY" = "UNUSED"
-    Info: Parameter "LPM_HINT" = "UNUSED"
-Info: Elaborating entity "altram" for hierarchy "Memoria:inst11|LPM_RAM_DQ:MEM|altram:sram"
-Warning: Assertion warning: altram does not support Stratix III device family -- attempting best-case memory conversions, but power-up states and read during write behavior will be different for Stratix III devices
-Info: Elaborated megafunction instantiation "Memoria:inst11|LPM_RAM_DQ:MEM|altram:sram", which is child of megafunction instantiation "Memoria:inst11|LPM_RAM_DQ:MEM"
-Info: Elaborating entity "altsyncram" for hierarchy "Memoria:inst11|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block"
-Info: Elaborated megafunction instantiation "Memoria:inst11|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block", which is child of megafunction instantiation "Memoria:inst11|LPM_RAM_DQ:MEM"
-Info: Found 1 design units, including 1 entities, in source file db/altsyncram_tqg1.tdf
-    Info: Found entity 1: altsyncram_tqg1
-Info: Elaborating entity "altsyncram_tqg1" for hierarchy "Memoria:inst11|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated"
-Critical Warning: Memory depth (256) in the design file differs from memory depth (4) in the Memory Initialization File "instructions.mif" -- setting initial value for remaining addresses to 0
-Info: Elaborating entity "Mux2" for hierarchy "Mux2:inst"
-Info: Elaborating entity "Registrador" for hierarchy "Registrador:PC"
-Info: Elaborating entity "mux10" for hierarchy "mux10:inst18"
-Warning (10270): Verilog HDL Case Statement warning at mux10.v(25): incomplete case statement has no default case item
-Warning (10240): Verilog HDL Always Construct warning at mux10.v(25): inferring latch(es) for variable "saida", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "saida[0]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[1]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[2]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[3]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[4]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[5]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[6]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[7]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[8]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[9]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[10]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[11]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[12]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[13]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[14]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[15]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[16]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[17]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[18]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[19]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[20]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[21]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[22]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[23]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[24]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[25]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[26]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[27]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[28]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[29]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[30]" at mux10.v(25)
-Info (10041): Inferred latch for "saida[31]" at mux10.v(25)
+Warning (10230): Verilog HDL assignment warning at Control_Unit.v(186): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Control_Unit.v(254): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Control_Unit.v(283): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Control_Unit.v(312): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Control_Unit.v(341): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Control_Unit.v(370): truncated value with size 2 to match size of target (1)
 Info: Elaborating entity "Ula32" for hierarchy "Ula32:inst26"
 Info: Elaborating entity "Mux8" for hierarchy "Mux8:inst28"
 Warning (10270): Verilog HDL Case Statement warning at Mux8.v(21): incomplete case statement has no default case item
@@ -839,6 +794,138 @@ Info (10041): Inferred latch for "saida[28]" at Mux8.v(21)
 Info (10041): Inferred latch for "saida[29]" at Mux8.v(21)
 Info (10041): Inferred latch for "saida[30]" at Mux8.v(21)
 Info (10041): Inferred latch for "saida[31]" at Mux8.v(21)
+Info: Elaborating entity "Registrador" for hierarchy "Registrador:PC"
+Info: Elaborating entity "mux10" for hierarchy "mux10:inst18"
+Warning (10270): Verilog HDL Case Statement warning at mux10.v(25): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at mux10.v(25): inferring latch(es) for variable "saida", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "saida[0]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[1]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[2]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[3]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[4]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[5]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[6]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[7]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[8]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[9]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[10]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[11]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[12]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[13]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[14]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[15]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[16]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[17]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[18]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[19]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[20]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[21]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[22]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[23]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[24]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[25]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[26]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[27]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[28]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[29]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[30]" at mux10.v(25)
+Info (10041): Inferred latch for "saida[31]" at mux10.v(25)
+Info: Elaborating entity "ShiftLeft2of26to28" for hierarchy "ShiftLeft2of26to28:inst15"
+Info: Elaborating entity "IRConcat" for hierarchy "IRConcat:inst13"
+Info: Elaborating entity "Instr_Reg" for hierarchy "Instr_Reg:inst12"
+Info: Elaborating entity "Memoria" for hierarchy "Memoria:inst11"
+Info: Elaborating entity "LPM_RAM_DQ" for hierarchy "Memoria:inst11|LPM_RAM_DQ:MEM"
+Info: Elaborated megafunction instantiation "Memoria:inst11|LPM_RAM_DQ:MEM"
+Info: Instantiated megafunction "Memoria:inst11|LPM_RAM_DQ:MEM" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "8"
+    Info: Parameter "LPM_WIDTHAD" = "8"
+    Info: Parameter "LPM_NUMWORDS" = "0"
+    Info: Parameter "LPM_INDATA" = "REGISTERED"
+    Info: Parameter "LPM_ADDRESS_CONTROL" = "REGISTERED"
+    Info: Parameter "LPM_OUTDATA" = "REGISTERED"
+    Info: Parameter "LPM_FILE" = "instructions.mif"
+    Info: Parameter "LPM_TYPE" = "LPM_RAM_DQ"
+    Info: Parameter "USE_EAB" = "ON"
+    Info: Parameter "INTENDED_DEVICE_FAMILY" = "UNUSED"
+    Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Elaborating entity "altram" for hierarchy "Memoria:inst11|LPM_RAM_DQ:MEM|altram:sram"
+Warning: Assertion warning: altram does not support Stratix III device family -- attempting best-case memory conversions, but power-up states and read during write behavior will be different for Stratix III devices
+Info: Elaborated megafunction instantiation "Memoria:inst11|LPM_RAM_DQ:MEM|altram:sram", which is child of megafunction instantiation "Memoria:inst11|LPM_RAM_DQ:MEM"
+Info: Elaborating entity "altsyncram" for hierarchy "Memoria:inst11|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block"
+Info: Elaborated megafunction instantiation "Memoria:inst11|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block", which is child of megafunction instantiation "Memoria:inst11|LPM_RAM_DQ:MEM"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_tqg1.tdf
+    Info: Found entity 1: altsyncram_tqg1
+Info: Elaborating entity "altsyncram_tqg1" for hierarchy "Memoria:inst11|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated"
+Info: Elaborating entity "Mux2" for hierarchy "Mux2:inst"
+Info: Elaborating entity "mux1" for hierarchy "mux1:inst7"
+Warning (10270): Verilog HDL Case Statement warning at mux1.v(16): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at mux1.v(16): inferring latch(es) for variable "saida", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "saida[0]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[1]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[2]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[3]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[4]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[5]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[6]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[7]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[8]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[9]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[10]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[11]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[12]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[13]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[14]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[15]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[16]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[17]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[18]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[19]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[20]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[21]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[22]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[23]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[24]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[25]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[26]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[27]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[28]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[29]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[30]" at mux1.v(16)
+Info (10041): Inferred latch for "saida[31]" at mux1.v(16)
+Info: Elaborating entity "StoreSize" for hierarchy "StoreSize:inst4"
+Warning (10240): Verilog HDL Always Construct warning at StoreSize.v(9): inferring latch(es) for variable "WRITE_DATA", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "WRITE_DATA[0]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[1]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[2]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[3]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[4]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[5]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[6]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[7]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[8]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[9]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[10]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[11]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[12]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[13]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[14]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[15]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[16]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[17]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[18]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[19]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[20]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[21]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[22]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[23]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[24]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[25]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[26]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[27]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[28]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[29]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[30]" at StoreSize.v(9)
+Info (10041): Inferred latch for "WRITE_DATA[31]" at StoreSize.v(9)
 Info: Elaborating entity "Banco_reg" for hierarchy "Banco_reg:inst14"
 Info: Elaborating entity "Mux7" for hierarchy "Mux7:inst19"
 Warning (10270): Verilog HDL Case Statement warning at Mux7.v(25): incomplete case statement has no default case item
@@ -956,42 +1043,6 @@ Info (10041): Inferred latch for "saida[29]" at Mux9.v(25)
 Info (10041): Inferred latch for "saida[30]" at Mux9.v(25)
 Info (10041): Inferred latch for "saida[31]" at Mux9.v(25)
 Info: Elaborating entity "ShiftLeft2" for hierarchy "ShiftLeft2:inst5"
-Info: Elaborating entity "ShiftLeft2of26to28" for hierarchy "ShiftLeft2of26to28:inst15"
-Info: Elaborating entity "IRConcat" for hierarchy "IRConcat:inst13"
-Info: Elaborating entity "StoreSize" for hierarchy "StoreSize:inst4"
-Warning (10240): Verilog HDL Always Construct warning at StoreSize.v(9): inferring latch(es) for variable "WRITE_DATA", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "WRITE_DATA[0]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[1]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[2]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[3]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[4]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[5]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[6]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[7]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[8]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[9]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[10]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[11]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[12]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[13]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[14]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[15]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[16]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[17]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[18]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[19]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[20]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[21]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[22]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[23]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[24]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[25]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[26]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[27]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[28]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[29]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[30]" at StoreSize.v(9)
-Info (10041): Inferred latch for "WRITE_DATA[31]" at StoreSize.v(9)
 Warning: LATCH primitive "mux10:inst18|saida[0]" is permanently enabled
 Warning: LATCH primitive "mux10:inst18|saida[1]" is permanently enabled
 Warning: LATCH primitive "mux10:inst18|saida[2]" is permanently enabled
@@ -1260,15 +1311,15 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "state[0]" is stuck at GND
     Warning (13410): Pin "ULA_OP[2]" is stuck at GND
 Info: Timing-Driven Synthesis is running
-Info: Implemented 2533 device resources after synthesis - the final resource count might be different
+Info: Implemented 2569 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
     Info: Implemented 347 output pins
-    Info: Implemented 2152 logic cells
+    Info: Implemented 2188 logic cells
     Info: Implemented 32 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 296 warnings
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 297 warnings
     Info: Peak virtual memory: 280 megabytes
-    Info: Processing ended: Thu Oct 17 21:48:12 2019
-    Info: Elapsed time: 00:00:09
+    Info: Processing ended: Thu Oct 17 23:05:03 2019
+    Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:07
 
 

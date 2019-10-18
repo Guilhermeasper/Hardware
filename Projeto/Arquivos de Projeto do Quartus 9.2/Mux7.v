@@ -52,7 +52,7 @@
 			end
 			
 			4'b0111: begin
-				saida <= entrada7;
+				saida <= 32'd227;
 			end
 			
 			4'b1000: begin

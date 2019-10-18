@@ -10,6 +10,7 @@ module Control_Unit(
 	input overflow,
 	input reset,
 	input negative,
+	input zero,
 	output reg pc_write,
 	output reg[1:0] mux_1,       //mux_to_mux_mem
 	output reg[1:0] mux_2,       //mux_mem
@@ -21,7 +22,7 @@ module Control_Unit(
 	output reg[2:0] mux_9,       //ALUSourceB
 	output reg[2:0] mux_10,      //mux_to_pc
 	output reg[1:0] mux_11,      //mux_to_mem_to_reg
-	output reg shift_control,
+	output reg[2:0] shift_control,
 	output reg[1:0] ss_control,
 	output reg mem_write,
 	output reg [1:0] mult_div,
