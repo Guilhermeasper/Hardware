@@ -1567,6 +1567,26 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
+Processador
+# storage
+db|DedoNoQuartusEGritaria.(0).cnf
+db|DedoNoQuartusEGritaria.(0).cnf
+# case_insensitive
+# source_file
+processador.bdf
+40994c9f4b3fc19966ae9f43befde71
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
 Control_Unit
 # storage
 db|DedoNoQuartusEGritaria.(1).cnf
@@ -1578,7 +1598,7 @@ ON
 # case_sensitive
 # source_file
 control_unit.v
-50c3ceae8415c198757ddc972eeda37
+7ddad4228f825132b63b142bba83e1
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1697,7 +1717,7 @@ address_a0
 }
 # memory_file {
 instructions.mif
-5d2715b608e42fac8ac2476a9b0dbaa
+6fb1d6b4d71acb6efe222c4e7f1482c0
 }
 # hierarchies {
 Memoria:inst11|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
@@ -1720,7 +1740,7 @@ ON
 # case_insensitive
 # source_file
 banco_reg.vhd
-ee6f2c57311b94123e1c1533e749e87c
+2cadfcaf44a2386f30e8abc1e4fa4f58
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1738,26 +1758,6 @@ Banco_reg:inst14
 # lmf
 e:|portableware|quartus|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-Processador
-# storage
-db|DedoNoQuartusEGritaria.(0).cnf
-db|DedoNoQuartusEGritaria.(0).cnf
-# case_insensitive
-# source_file
-processador.bdf
-9115bfbf111b74469a927a5dc2dc53
-26
-# internal_option {
-BLOCK_DESIGN_NAMING
-AUTO
-}
-# hierarchies {
-|
-}
 # macro_sequence
 
 # end

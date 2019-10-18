@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DedoNoQuartusEGritaria
-Fri Oct 18 02:39:59 2019
+Fri Oct 18 14:01:27 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -18,25 +18,24 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
  10. Registers Removed During Synthesis
  11. Removed Registers Triggering Further Register Optimizations
  12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for Memoria:inst11|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
- 16. Source assignments for Memoria:inst11|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
- 17. Source assignments for Memoria:inst11|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
- 18. Source assignments for Memoria:inst11|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
- 19. Parameter Settings for User Entity Instance: Mux8:inst28
- 20. Parameter Settings for User Entity Instance: mux10:inst18
- 21. Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM
- 22. Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM_plus_One
- 23. Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM_plus_Two
- 24. Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM_plus_Three
- 25. Parameter Settings for User Entity Instance: Mux2:inst
- 26. Parameter Settings for User Entity Instance: mux1:inst7
- 27. Parameter Settings for User Entity Instance: Mux4:inst10
- 28. Parameter Settings for User Entity Instance: Mux3:inst9
- 29. Parameter Settings for User Entity Instance: Mux6:inst16
- 30. Parameter Settings for User Entity Instance: Mux9:inst27
- 31. Analysis & Synthesis Messages
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for Memoria:inst11|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
+ 15. Source assignments for Memoria:inst11|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
+ 16. Source assignments for Memoria:inst11|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
+ 17. Source assignments for Memoria:inst11|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
+ 18. Parameter Settings for User Entity Instance: Mux8:inst28
+ 19. Parameter Settings for User Entity Instance: mux10:inst18
+ 20. Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM
+ 21. Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM_plus_One
+ 22. Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM_plus_Two
+ 23. Parameter Settings for User Entity Instance: Memoria:inst11|LPM_RAM_DQ:MEM_plus_Three
+ 24. Parameter Settings for User Entity Instance: Mux2:inst
+ 25. Parameter Settings for User Entity Instance: mux1:inst7
+ 26. Parameter Settings for User Entity Instance: Mux4:inst10
+ 27. Parameter Settings for User Entity Instance: Mux3:inst9
+ 28. Parameter Settings for User Entity Instance: Mux6:inst16
+ 29. Parameter Settings for User Entity Instance: Mux9:inst27
+ 30. Analysis & Synthesis Messages
 
 
 
@@ -62,16 +61,16 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Fri Oct 18 02:39:59 2019        ;
+; Analysis & Synthesis Status   ; Successful - Fri Oct 18 14:01:27 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; DedoNoQuartusEGritaria                       ;
 ; Top-level Entity Name         ; Processador                                  ;
 ; Family                        ; Stratix III                                  ;
 ; Logic utilization             ; N/A                                          ;
-;     Combinational ALUTs       ; 1,666                                        ;
+;     Combinational ALUTs       ; 1,650                                        ;
 ;     Memory ALUTs              ; 0                                            ;
-;     Dedicated logic registers ; 1,285                                        ;
-; Total registers               ; 1285                                         ;
+;     Dedicated logic registers ; 1,284                                        ;
+; Total registers               ; 1284                                         ;
 ; Total pins                    ; 387                                          ;
 ; Total virtual pins            ; 0                                            ;
 ; Total block memory bits       ; 8,192                                        ;
@@ -215,46 +214,46 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------+-------------+
 ; Resource                                      ; Usage       ;
 +-----------------------------------------------+-------------+
-; Estimated ALUTs Used                          ; 1666        ;
-;     -- Combinational ALUTs                    ; 1666        ;
+; Estimated ALUTs Used                          ; 1650        ;
+;     -- Combinational ALUTs                    ; 1650        ;
 ;     -- Memory ALUTs                           ; 0           ;
 ;     -- LUT_REGs                               ; 0           ;
-; Dedicated logic registers                     ; 1285        ;
+; Dedicated logic registers                     ; 1284        ;
 ;                                               ;             ;
-; Estimated ALUTs Unavailable                   ; 218         ;
-;     -- Due to unpartnered combinational logic ; 218         ;
+; Estimated ALUTs Unavailable                   ; 210         ;
+;     -- Due to unpartnered combinational logic ; 210         ;
 ;     -- Due to Memory ALUTs                    ; 0           ;
 ;                                               ;             ;
-; Total combinational functions                 ; 1666        ;
+; Total combinational functions                 ; 1650        ;
 ; Combinational ALUT usage by number of inputs  ;             ;
-;     -- 7 input functions                      ; 20          ;
-;     -- 6 input functions                      ; 896         ;
+;     -- 7 input functions                      ; 19          ;
+;     -- 6 input functions                      ; 895         ;
 ;     -- 5 input functions                      ; 254         ;
-;     -- 4 input functions                      ; 149         ;
-;     -- <=3 input functions                    ; 347         ;
+;     -- 4 input functions                      ; 153         ;
+;     -- <=3 input functions                    ; 329         ;
 ;                                               ;             ;
 ; Combinational ALUTs by mode                   ;             ;
-;     -- normal mode                            ; 1615        ;
-;     -- extended LUT mode                      ; 20          ;
+;     -- normal mode                            ; 1600        ;
+;     -- extended LUT mode                      ; 19          ;
 ;     -- arithmetic mode                        ; 31          ;
 ;     -- shared arithmetic mode                 ; 0           ;
 ;                                               ;             ;
-; Estimated ALUT/register pairs used            ; 2699        ;
+; Estimated ALUT/register pairs used            ; 2682        ;
 ;                                               ;             ;
-; Total registers                               ; 1285        ;
-;     -- Dedicated logic registers              ; 1285        ;
+; Total registers                               ; 1284        ;
+;     -- Dedicated logic registers              ; 1284        ;
 ;     -- I/O registers                          ; 0           ;
 ;     -- LUT_REGs                               ; 0           ;
 ;                                               ;             ;
-; Estimated ALMs:  partially or completely used ; 1,350       ;
+; Estimated ALMs:  partially or completely used ; 1,341       ;
 ;                                               ;             ;
 ; I/O pins                                      ; 387         ;
 ; Total MLAB memory bits                        ; 0           ;
 ; Total block memory bits                       ; 8192        ;
 ; Maximum fan-out node                          ; clock~input ;
-; Maximum fan-out                               ; 1317        ;
-; Total fan-out                                 ; 14549       ;
-; Average fan-out                               ; 3.87        ;
+; Maximum fan-out                               ; 1316        ;
+; Total fan-out                                 ; 14513       ;
+; Average fan-out                               ; 3.88        ;
 +-----------------------------------------------+-------------+
 
 
@@ -263,32 +262,32 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 12x12 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                   ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+--------------+
-; |Processador                                    ; 1666 (1)          ; 1285 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0         ; 387  ; 0            ; |Processador                                                                                                          ; work         ;
-;    |Banco_reg:inst14|                           ; 745 (745)         ; 1024 (1024)  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Banco_reg:inst14                                                                                         ; work         ;
-;    |Control_Unit:inst2|                         ; 119 (119)         ; 37 (37)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Control_Unit:inst2                                                                                       ;              ;
+; |Processador                                    ; 1650 (1)          ; 1284 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0         ; 387  ; 0            ; |Processador                                                                                                          ; work         ;
+;    |Banco_reg:inst14|                           ; 736 (736)         ; 1024 (1024)  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Banco_reg:inst14                                                                                         ; work         ;
+;    |Control_Unit:inst2|                         ; 117 (117)         ; 36 (36)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Control_Unit:inst2                                                                                       ;              ;
 ;    |Instr_Reg:inst12|                           ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Instr_Reg:inst12                                                                                         ; work         ;
 ;    |Memoria:inst11|                             ; 23 (23)           ; 0 (0)        ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11                                                                                           ; work         ;
 ;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_One                                                                   ; work         ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ;              ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ;              ;
 ;                |altsyncram_tqg1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated   ;              ;
-;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Three                                                                 ;              ;
+;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Three                                                                 ; work         ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ; work         ;
 ;                |altsyncram_tqg1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated ; work         ;
-;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Two                                                                   ;              ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ;              ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ;              ;
-;                |altsyncram_tqg1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated   ;              ;
+;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Two                                                                   ; work         ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ; work         ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ; work         ;
+;                |altsyncram_tqg1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated   ; work         ;
 ;       |lpm_ram_dq:MEM|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM                                                                            ; work         ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM|altram:sram                                                                ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ; work         ;
 ;                |altsyncram_tqg1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated            ; work         ;
 ;    |Mux3:inst9|                                 ; 5 (5)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Mux3:inst9                                                                                               ; work         ;
 ;    |Mux4:inst10|                                ; 5 (5)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Mux4:inst10                                                                                              ; work         ;
-;    |Mux6:inst16|                                ; 11 (11)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Mux6:inst16                                                                                              ; work         ;
+;    |Mux6:inst16|                                ; 5 (5)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Mux6:inst16                                                                                              ; work         ;
 ;    |Mux7:inst19|                                ; 131 (131)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Mux7:inst19                                                                                              ; work         ;
-;    |Mux8:inst28|                                ; 32 (32)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Mux8:inst28                                                                                              ; work         ;
+;    |Mux8:inst28|                                ; 32 (32)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Mux8:inst28                                                                                              ;              ;
 ;    |Mux9:inst27|                                ; 65 (65)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Mux9:inst27                                                                                              ; work         ;
 ;    |RegDesloc:inst17|                           ; 357 (357)         ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|RegDesloc:inst17                                                                                         ; work         ;
 ;    |Registrador:A|                              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Registrador:A                                                                                            ; work         ;
@@ -297,7 +296,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |Registrador:ULA_OUT|                        ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Registrador:ULA_OUT                                                                                      ; work         ;
 ;    |Registrador:XCH|                            ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Registrador:XCH                                                                                          ; work         ;
 ;    |Ula32:inst26|                               ; 140 (140)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Ula32:inst26                                                                                             ; work         ;
-;    |mux10:inst18|                               ; 32 (32)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|mux10:inst18                                                                                             ; work         ;
+;    |mux10:inst18|                               ; 33 (33)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|mux10:inst18                                                                                             ; work         ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -383,12 +382,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Mux7:inst19|saida[2]                                ; Mux7:inst19|Mux32   ; yes                    ;
 ; Mux7:inst19|saida[1]                                ; Mux7:inst19|Mux32   ; yes                    ;
 ; Mux7:inst19|saida[0]                                ; Mux7:inst19|Mux32   ; yes                    ;
-; Mux6:inst16|saida[4]                                ; Mux6:inst16|Mux5    ; yes                    ;
-; Mux6:inst16|saida[3]                                ; Mux6:inst16|Mux5    ; yes                    ;
-; Mux6:inst16|saida[2]                                ; Mux6:inst16|Mux5    ; yes                    ;
-; Mux6:inst16|saida[1]                                ; Mux6:inst16|Mux5    ; yes                    ;
-; Mux6:inst16|saida[0]                                ; Mux6:inst16|Mux5    ; yes                    ;
-; Number of user-specified and inferred latches = 69  ;                     ;                        ;
+; Number of user-specified and inferred latches = 64  ;                     ;                        ;
 +-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -409,6 +403,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Control_Unit:inst2|mux_10[0,2]         ; Merged with Control_Unit:inst2|LOAD_SIZE[0]  ;
 ; Control_Unit:inst2|mux_9[1]            ; Merged with Control_Unit:inst2|LOAD_SIZE[0]  ;
 ; Control_Unit:inst2|mux_8[0]            ; Merged with Control_Unit:inst2|LOAD_SIZE[0]  ;
+; Control_Unit:inst2|mux_6[2]            ; Merged with Control_Unit:inst2|LOAD_SIZE[0]  ;
 ; Control_Unit:inst2|mux_2[0..1]         ; Merged with Control_Unit:inst2|LOAD_SIZE[0]  ;
 ; Control_Unit:inst2|mux_1[0..1]         ; Merged with Control_Unit:inst2|LOAD_SIZE[0]  ;
 ; Control_Unit:inst2|mux_3               ; Merged with Control_Unit:inst2|mux_4         ;
@@ -416,7 +411,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Control_Unit:inst2|LOAD_SIZE[0]        ; Stuck at GND due to stuck port data_in       ;
 ; Registrador:EPC|Saida[0..31]           ; Stuck at GND due to stuck port clock_enable  ;
 ; Registrador:MDR|Saida[0..31]           ; Stuck at GND due to stuck port clock_enable  ;
-; Total Number of Removed Registers = 84 ;                                              ;
+; Total Number of Removed Registers = 85 ;                                              ;
 +----------------------------------------+----------------------------------------------+
 
 
@@ -455,59 +450,41 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1285  ;
-; Number of registers using Synchronous Clear  ; 55    ;
+; Total registers                              ; 1284  ;
+; Number of registers using Synchronous Clear  ; 54    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 1248  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1271  ;
+; Number of registers using Clock Enable       ; 1270  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; Banco_reg:inst14|Reg1[0]               ; 2       ;
-; Banco_reg:inst14|Reg3[0]               ; 2       ;
-; Banco_reg:inst14|Reg4[0]               ; 2       ;
-; Banco_reg:inst14|Reg2[0]               ; 2       ;
-; Banco_reg:inst14|Reg8[0]               ; 2       ;
-; Banco_reg:inst14|Reg5[1]               ; 2       ;
-; Banco_reg:inst14|Reg4[1]               ; 2       ;
-; Banco_reg:inst14|Reg2[1]               ; 2       ;
-; Banco_reg:inst14|Reg7[2]               ; 2       ;
-; Total number of inverted registers = 9 ;         ;
-+----------------------------------------+---------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
-; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |Processador|Registrador:B|Saida[20]          ;
-; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |Processador|Registrador:A|Saida[0]           ;
-; 129:1              ; 8 bits    ; 688 ALUTs     ; 0 ALUTs              ; 688 ALUTs              ; Yes        ; |Processador|Control_Unit:inst2|counter[4]    ;
-; 129:1              ; 19 bits   ; 1634 ALUTs    ; 228 ALUTs            ; 1406 ALUTs             ; Yes        ; |Processador|Control_Unit:inst2|mux_8[1]      ;
-; 14:1               ; 13 bits   ; 117 ALUTs     ; 78 ALUTs             ; 39 ALUTs               ; Yes        ; |Processador|RegDesloc:inst17|temp[3]         ;
-; 14:1               ; 13 bits   ; 117 ALUTs     ; 78 ALUTs             ; 39 ALUTs               ; Yes        ; |Processador|RegDesloc:inst17|temp[23]        ;
-; 132:1              ; 2 bits    ; 176 ALUTs     ; 40 ALUTs             ; 136 ALUTs              ; Yes        ; |Processador|Control_Unit:inst2|next_state[5] ;
-; 191:1              ; 4 bits    ; 508 ALUTs     ; 48 ALUTs             ; 460 ALUTs              ; Yes        ; |Processador|Control_Unit:inst2|mux_4         ;
-; 194:1              ; 4 bits    ; 516 ALUTs     ; 156 ALUTs            ; 360 ALUTs              ; Yes        ; |Processador|Control_Unit:inst2|next_state[4] ;
-; 3:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux8:inst28|Mux10                ;
-; 8:1                ; 32 bits   ; 160 ALUTs     ; 64 ALUTs             ; 96 ALUTs               ; No         ; |Processador|Ula32:inst26|Mux46               ;
-; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |Processador|Ula32:inst26|Mux13               ;
-; 5:1                ; 5 bits    ; 15 ALUTs      ; 15 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux6:inst16|Mux1                 ;
-; 4:1                ; 17 bits   ; 34 ALUTs      ; 34 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux9:inst27|Mux31                ;
-; 5:1                ; 2 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; No         ; |Processador|Mux9:inst27|Mux1                 ;
-; 5:1                ; 13 bits   ; 39 ALUTs      ; 39 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux9:inst27|Mux7                 ;
-; 9:1                ; 16 bits   ; 96 ALUTs      ; 96 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux7:inst19|Mux16                ;
-; 10:1               ; 7 bits    ; 42 ALUTs      ; 42 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux7:inst19|Mux9                 ;
-; 10:1               ; 7 bits    ; 42 ALUTs      ; 42 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux7:inst19|Mux3                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |Processador|Registrador:B|Saida[10]             ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |Processador|Registrador:A|Saida[23]             ;
+; 129:1              ; 8 bits    ; 688 ALUTs     ; 0 ALUTs              ; 688 ALUTs              ; Yes        ; |Processador|Control_Unit:inst2|counter[6]       ;
+; 129:1              ; 18 bits   ; 1548 ALUTs    ; 216 ALUTs            ; 1332 ALUTs             ; Yes        ; |Processador|Control_Unit:inst2|ALU_CONTROL[0]   ;
+; 14:1               ; 13 bits   ; 117 ALUTs     ; 78 ALUTs             ; 39 ALUTs               ; Yes        ; |Processador|RegDesloc:inst17|temp[12]           ;
+; 14:1               ; 13 bits   ; 117 ALUTs     ; 78 ALUTs             ; 39 ALUTs               ; Yes        ; |Processador|RegDesloc:inst17|temp[17]           ;
+; 132:1              ; 2 bits    ; 176 ALUTs     ; 40 ALUTs             ; 136 ALUTs              ; Yes        ; |Processador|Control_Unit:inst2|next_state[7]    ;
+; 191:1              ; 4 bits    ; 508 ALUTs     ; 48 ALUTs             ; 460 ALUTs              ; Yes        ; |Processador|Control_Unit:inst2|shift_control[1] ;
+; 194:1              ; 4 bits    ; 516 ALUTs     ; 156 ALUTs            ; 360 ALUTs              ; Yes        ; |Processador|Control_Unit:inst2|next_state[1]    ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux8:inst28|Mux6                    ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 64 ALUTs             ; 96 ALUTs               ; No         ; |Processador|Ula32:inst26|Mux36                  ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |Processador|Ula32:inst26|Mux8                   ;
+; 5:1                ; 5 bits    ; 15 ALUTs      ; 15 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux6:inst16|Mux0                    ;
+; 4:1                ; 17 bits   ; 34 ALUTs      ; 34 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux9:inst27|Mux29                   ;
+; 5:1                ; 2 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; No         ; |Processador|Mux9:inst27|Mux1                    ;
+; 5:1                ; 13 bits   ; 39 ALUTs      ; 39 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux9:inst27|Mux3                    ;
+; 9:1                ; 16 bits   ; 96 ALUTs      ; 96 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux7:inst19|Mux16                   ;
+; 10:1               ; 7 bits    ; 42 ALUTs      ; 42 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux7:inst19|Mux8                    ;
+; 10:1               ; 7 bits    ; 42 ALUTs      ; 42 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux7:inst19|Mux1                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -745,7 +722,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Fri Oct 18 02:39:46 2019
+    Info: Processing started: Fri Oct 18 14:01:14 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DedoNoQuartusEGritaria -c DedoNoQuartusEGritaria
 Info: Found 1 design units, including 1 entities, in source file mux1.v
     Info: Found entity 1: mux1
@@ -939,6 +916,7 @@ Info: Elaborated megafunction instantiation "Memoria:inst11|LPM_RAM_DQ:MEM|altra
 Info: Found 1 design units, including 1 entities, in source file db/altsyncram_tqg1.tdf
     Info: Found entity 1: altsyncram_tqg1
 Info: Elaborating entity "altsyncram_tqg1" for hierarchy "Memoria:inst11|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated"
+Critical Warning: Memory depth (256) in the design file differs from memory depth (32) in the Memory Initialization File "instructions.mif" -- setting initial value for remaining addresses to 0
 Info: Elaborating entity "Mux2" for hierarchy "Mux2:inst"
 Info: Elaborating entity "mux1" for hierarchy "mux1:inst7"
 Warning (10270): Verilog HDL Case Statement warning at mux1.v(16): incomplete case statement has no default case item
@@ -1226,10 +1204,15 @@ Warning: LATCH primitive "Mux8:inst28|saida[3]" is permanently enabled
 Warning: LATCH primitive "Mux8:inst28|saida[2]" is permanently enabled
 Warning: LATCH primitive "Mux8:inst28|saida[1]" is permanently enabled
 Warning: LATCH primitive "Mux8:inst28|saida[0]" is permanently enabled
+Warning: LATCH primitive "Mux6:inst16|saida[4]" is permanently enabled
+Warning: LATCH primitive "Mux6:inst16|saida[3]" is permanently enabled
+Warning: LATCH primitive "Mux6:inst16|saida[2]" is permanently enabled
+Warning: LATCH primitive "Mux6:inst16|saida[1]" is permanently enabled
+Warning: LATCH primitive "Mux6:inst16|saida[0]" is permanently enabled
 Warning: Latch Mux9:inst27|saida[0] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|REG_B
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
 Warning: Latch Mux9:inst27|saida[1] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|REG_B
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
 Warning: Latch Mux9:inst27|saida[2] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|REG_B
 Warning: Latch Mux9:inst27|saida[3] has unsafe behavior
@@ -1354,16 +1337,6 @@ Warning: Latch Mux7:inst19|saida[1] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_7[1]
 Warning: Latch Mux7:inst19|saida[0] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_7[3]
-Warning: Latch Mux6:inst16|saida[4] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_6[1]
-Warning: Latch Mux6:inst16|saida[3] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_6[1]
-Warning: Latch Mux6:inst16|saida[2] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_6[1]
-Warning: Latch Mux6:inst16|saida[1] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_6[2]
-Warning: Latch Mux6:inst16|saida[0] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_6[1]
 Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "MEM_WRITE" is stuck at GND
     Warning (13410): Pin "MUX_ULA_A_CONTROL[0]" is stuck at GND
@@ -1377,15 +1350,15 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "state[1]" is stuck at GND
     Warning (13410): Pin "state[0]" is stuck at GND
 Info: Timing-Driven Synthesis is running
-Info: Implemented 3230 device resources after synthesis - the final resource count might be different
+Info: Implemented 3222 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
     Info: Implemented 385 output pins
-    Info: Implemented 2811 logic cells
+    Info: Implemented 2803 logic cells
     Info: Implemented 32 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 293 warnings
-    Info: Peak virtual memory: 285 megabytes
-    Info: Processing ended: Fri Oct 18 02:39:59 2019
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 289 warnings
+    Info: Peak virtual memory: 286 megabytes
+    Info: Processing ended: Fri Oct 18 14:01:27 2019
     Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:14
+    Info: Total CPU time (on all processors): 00:00:13
 
 

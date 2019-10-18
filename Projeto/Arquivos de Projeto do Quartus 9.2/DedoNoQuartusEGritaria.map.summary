@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Fri Oct 18 02:39:59 2019
+Analysis & Synthesis Status : Successful - Fri Oct 18 14:01:27 2019
 Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
 Revision Name : DedoNoQuartusEGritaria
 Top-level Entity Name : Processador
 Family : Stratix III
 Logic utilization : N/A
-    Combinational ALUTs : 1,666
+    Combinational ALUTs : 1,650
     Memory ALUTs : 0
-    Dedicated logic registers : 1,285
-Total registers : 1285
+    Dedicated logic registers : 1,284
+Total registers : 1284
 Total pins : 387
 Total virtual pins : 0
 Total block memory bits : 8,192
