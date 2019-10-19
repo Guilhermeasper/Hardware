@@ -176,13 +176,13 @@ always@(posedge clock) begin
 			REG_WRITE=1'b0;
 			mux_8=2'b0;                     //escolhe PC
 			mux_9=3'b100;             //        //->ERRADO, acho q deveria ser b1000 <-escolhe sinal extendido e shiftado de 15-0
-			ALU_CONTROL=3'b1;               //ERRADO, soma é b1 <- faz PC+o escrito acima
+			ALU_CONTROL=3'b1;               //ERRADO, soma ï¿½ b1 <- faz PC+o escrito acima
 			ALU_OUT=1'b1;                   //salva a soma em ALU_OUT
 			EPC_CONTROL=1'b0;
 			mux_10=3'b0;
 			XCH_CONTROL = 1'b1;//load a em xch
-			REG_A=2'b1;//load rs em a // ERRADO, é pra ser b1 pra dar write;
-			REG_B=2'b1;//load rt em b // ERRADO, é pra ser b1 pra dar write;
+			REG_A=2'b1;//load rs em a // ERRADO, ï¿½ pra ser b1 pra dar write;
+			REG_B=2'b1;//load rt em b // ERRADO, ï¿½ pra ser b1 pra dar write;
 			case(opcode) // essa linha tem que estar dentro de um estado tbm
 				6'b0: begin // caso formato r
 					case(funct)
@@ -382,7 +382,7 @@ always@(posedge clock) begin
 			mux_3=1'b0;
 			mux_4=1'b0;
 			mux_6=3'b10;//escolhe rd
-			mux_7=4'b10;// escolhe o que está em HI
+			mux_7=4'b10;// escolhe o que estï¿½ em HI
 			mux_8=2'b0;
 			mux_9=3'b0;
 			mux_10=3'b0;
@@ -411,7 +411,7 @@ always@(posedge clock) begin
 			mux_3=1'b0;
 			mux_4=1'b0;
 			mux_6=3'b10;//escolhe rd
-			mux_7=4'b11;// escolhe o que está em LO
+			mux_7=4'b11;// escolhe o que estï¿½ em LO
 			mux_8=2'b0;
 			mux_9=3'b0;
 			mux_10=3'b0;
@@ -434,7 +434,7 @@ always@(posedge clock) begin
 			next_state = 8'b11111111; //passa pra final
 		end
 		8'b00010000: begin //RTE
-			pc_write=1'b1;//abilita para escrita no próximo ciclo
+			pc_write=1'b1;//abilita para escrita no prï¿½ximo ciclo
 			mux_1=2'b0;
 			mux_2=2'b0;
 			mux_3=1'b0;
@@ -463,7 +463,7 @@ always@(posedge clock) begin
 			next_state = 8'b11111111;//passa pra final
 		end
 		8'b00010001: begin //BREAK
-			pc_write=1'b1;//abilita para escrita no próximo ciclo
+			pc_write=1'b1;//abilita para escrita no prï¿½ximo ciclo
 			mux_1=2'b0;
 			mux_2=2'b0;
 			mux_3=1'b0;
@@ -483,7 +483,7 @@ always@(posedge clock) begin
 			EPC_CONTROL=1'b0;
 			MDR_CONTROL=1'b0;
 			LOAD_SIZE=2'b0;
-			ALU_CONTROL=3'b10;//escolhe subtração
+			ALU_CONTROL=3'b10;//escolhe subtraï¿½ï¿½o
 			ALU_OUT=1'b0;
 			REG_A=2'b0;
 			REG_B=1'b0;
@@ -512,7 +512,7 @@ always@(posedge clock) begin
 			EPC_CONTROL=1'b0;
 			MDR_CONTROL=1'b0;
 			LOAD_SIZE=2'b0;
-			ALU_CONTROL=3'b111;//escolhe comparação
+			ALU_CONTROL=3'b111;//escolhe comparaï¿½ï¿½o
 			ALU_OUT=1'b0;
 			REG_A=2'b0;
 			REG_B=1'b0;
@@ -521,14 +521,14 @@ always@(posedge clock) begin
 			next_state = 8'b11111111;//passa pra final
 		end
 		8'b00001111: begin // JR
-			pc_write=1'b1;
+			pc_write=1'b1;//habilita para escrita no prÃ³ximo ciclo
 			mux_1=2'b0;
 			mux_2=2'b0;
 			mux_3=1'b0;
 			mux_4=1'b0;
 			mux_6=3'b0;
 			mux_7=4'b0;
-			mux_8=2'b10;
+			mux_8=2'b10;// escolhe rs
 			mux_9=3'b0;
 			mux_10=3'b0;
 			mux_11=1'b0;
@@ -547,7 +547,94 @@ always@(posedge clock) begin
 			REG_B=1'b0;
 			REG_WRITE=1'b0;
 			XCH_CONTROL = 1'b0;
-			next_state = 8'b11111111;
+			next_state = 8'b11111111;// passa pro final
+		end
+		8'b00010101: begin //J
+			pc_write=1'b1;//habilita escrita em pc no prÃ³ximo ciclo 
+			mux_1=2'b0;
+			mux_2=2'b0;
+			mux_3=1'b0;
+			mux_4=1'b0;
+			mux_6=3'b0;
+			mux_7=4'b0;
+			mux_8=2'b0;
+			mux_9=3'b0;
+			mux_10=3'b11;//escolhe pc+offset
+			mux_11=1'b0;
+			shift_control=3'b0;
+			ss_control=1'b0;
+			mem_write=1'b0;
+			mult_div=2'b0;
+			ir_write=1'b0;    
+			hi_lo=1'b0;
+			EPC_CONTROL=1'b0;
+			MDR_CONTROL=1'b0;
+			LOAD_SIZE=2'b0;
+			ALU_CONTROL=3'b0;
+			ALU_OUT=1'b0;
+			REG_A=2'b0;
+			REG_B=1'b0;
+			REG_WRITE=1'b0;
+			XCH_CONTROL = 1'b0;
+			next_state = 8'b11111111;//passa pro final
+		end
+		8'b00010110: begin//JAL_1/2
+			pc_write=1'b0; 
+			mux_1=2'b0;
+			mux_2=2'b0;
+			mux_3=1'b0;
+			mux_4=1'b0;
+			mux_6=3'b100;//escolhe o r31
+			mux_7=4'b0;// escolhe ALU_OUT
+			mux_8=2'b0;//escolhe PC
+			mux_9=3'b0;
+			mux_10=3'b0;
+			mux_11=1'b0;
+			shift_control=3'b0;
+			ss_control=1'b0;
+			mem_write=1'b0;
+			mult_div=2'b0;
+			ir_write=1'b0;    
+			hi_lo=1'b0;
+			EPC_CONTROL=1'b0;
+			MDR_CONTROL=1'b0;
+			LOAD_SIZE=2'b0;
+			ALU_CONTROL=3'b0;//dÃ¡ load PC
+			ALU_OUT=1'b1;//escreve PC em ALU_OUT
+			REG_A=2'b0;
+			REG_B=1'b0;
+			REG_WRITE=1'b1;//habilita para escrita no prÃ³ximo ciclo
+			XCH_CONTROL = 1'b0;
+			next_state = 8'b10001000;//passa pro segundo passo
+		end
+		8'b10001000: begin //JAL_2
+			pc_write=1'b1;//habilita escrita em pc no prÃ³ximo ciclo 
+			mux_1=2'b0;
+			mux_2=2'b0;
+			mux_3=1'b0;
+			mux_4=1'b0;
+			mux_6=3'b0;
+			mux_7=4'b0;
+			mux_8=2'b0;
+			mux_9=3'b0;
+			mux_10=3'b11;//escolhe pc+offset
+			mux_11=1'b0;
+			shift_control=3'b0;
+			ss_control=1'b0;
+			mem_write=1'b0;
+			mult_div=2'b0;
+			ir_write=1'b0;    
+			hi_lo=1'b0;
+			EPC_CONTROL=1'b0;
+			MDR_CONTROL=1'b0;
+			LOAD_SIZE=2'b0;
+			ALU_CONTROL=3'b0;
+			ALU_OUT=1'b0;
+			REG_A=2'b0;
+			REG_B=1'b0;
+			REG_WRITE=1'b0;
+			XCH_CONTROL = 1'b0;
+			next_state = 8'b11111111;//passa pro final
 		end
 		8'b00010101: begin //J
 			pc_write=1'b1;//habilita escrita em pc no prÃ³ximo ciclo 
@@ -706,7 +793,7 @@ always@(posedge clock) begin
 			mux_9=3'b0;
 			mux_10=3'b0;
 			mux_11=1'b0;
-			shift_control=3'b01;//primeiro dá load no reg
+			shift_control=3'b01;//primeiro dï¿½ load no reg
 			ss_control=1'b0;
 			mem_write=1'b0;
 			mult_div=2'b0;
@@ -735,7 +822,7 @@ always@(posedge clock) begin
 			mux_9=3'b0;
 			mux_10=3'b0;
 			mux_11=1'b0;
-			shift_control=3'b10;//primeiro dá load no reg
+			shift_control=3'b01;//primeiro dï¿½ load no reg
 			ss_control=1'b0;
 			mem_write=1'b0;
 			mult_div=2'b0;
@@ -759,7 +846,7 @@ always@(posedge clock) begin
 			mux_3=1'b0;
 			mux_4=1'b0;
 			mux_6=3'b10;//escolhe rd
-			mux_7=4'b0;// escolhe o que está em ALU_OUT
+			mux_7=4'b0;// escolhe o que estï¿½ em ALU_OUT
 			mux_8=2'b0;
 			mux_9=3'b0;
 			mux_10=3'b0;
@@ -853,7 +940,7 @@ always@(posedge clock) begin
 					mux_9=3'b0;
 					mux_10=3'b0;
 					mux_11=1'b0;
-					shift_control=3'b100;//escolhe shift_right aritmético
+					shift_control=3'b100;//escolhe shift_right aritmï¿½tico
 					ss_control=1'b0;
 					mem_write=1'b0;
 					mult_div=2'b0;
@@ -882,7 +969,7 @@ always@(posedge clock) begin
 					mux_9=3'b0;
 					mux_10=3'b0;
 					mux_11=1'b0;
-					shift_control=3'b100;//escolhe shift_right aritmético
+					shift_control=3'b100;//escolhe shift_right aritmï¿½tico
 					ss_control=1'b0;
 					mem_write=1'b0;
 					mult_div=2'b0;
@@ -911,7 +998,7 @@ always@(posedge clock) begin
 					mux_9=3'b0;
 					mux_10=3'b0;
 					mux_11=1'b0;
-					shift_control=3'b11;//escolhe shift_right lógico
+					shift_control=3'b11;//escolhe shift_right lï¿½gico
 					ss_control=1'b0;
 					mem_write=1'b0;
 					mult_div=2'b0;
@@ -937,7 +1024,7 @@ always@(posedge clock) begin
 			mux_3=1'b0;
 			mux_4=1'b0;
 			mux_6=3'b10;//escolhe rd
-			mux_7=4'b110;//escolhe a saída do shift_reg
+			mux_7=4'b110;//escolhe a saï¿½da do shift_reg
 			mux_8=2'b0;
 			mux_9=3'b0;
 			mux_10=3'b0;
