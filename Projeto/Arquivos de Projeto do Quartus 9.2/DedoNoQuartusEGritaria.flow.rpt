@@ -1,5 +1,5 @@
 Flow report for DedoNoQuartusEGritaria
-Sat Oct 19 08:10:25 2019
+Sat Oct 19 10:07:24 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,17 +38,17 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Flow Summary                                                                 ;
 +-------------------------------+----------------------------------------------+
-; Flow Status                   ; Successful - Sat Oct 19 08:10:20 2019        ;
+; Flow Status                   ; Successful - Sat Oct 19 10:07:19 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; DedoNoQuartusEGritaria                       ;
 ; Top-level Entity Name         ; Processador                                  ;
 ; Family                        ; Stratix III                                  ;
 ; Met timing requirements       ; N/A                                          ;
 ; Logic utilization             ; 12 %                                         ;
-;     Combinational ALUTs       ; 2,907 / 38,000 ( 8 % )                       ;
+;     Combinational ALUTs       ; 2,922 / 38,000 ( 8 % )                       ;
 ;     Memory ALUTs              ; 0 / 19,000 ( 0 % )                           ;
-;     Dedicated logic registers ; 1,851 / 38,000 ( 5 % )                       ;
-; Total registers               ; 1851                                         ;
+;     Dedicated logic registers ; 1,853 / 38,000 ( 5 % )                       ;
+; Total registers               ; 1853                                         ;
 ; Total pins                    ; 453 / 488 ( 93 % )                           ;
 ; Total virtual pins            ; 0                                            ;
 ; Total block memory bits       ; 8,192 / 1,880,064 ( < 1 % )                  ;
@@ -65,7 +65,7 @@ applicable agreement for further details.
 +-------------------+------------------------+
 ; Option            ; Setting                ;
 +-------------------+------------------------+
-; Start date & time ; 10/19/2019 08:08:39    ;
+; Start date & time ; 10/19/2019 10:05:21    ;
 ; Main task         ; Compilation            ;
 ; Revision Name     ; DedoNoQuartusEGritaria ;
 +-------------------+------------------------+
@@ -76,7 +76,7 @@ applicable agreement for further details.
 +------------------------------------+---------------------------------+------------------------------+-------------+----------------+
 ; Assignment Name                    ; Value                           ; Default Value                ; Entity Name ; Section Id     ;
 +------------------------------------+---------------------------------+------------------------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 167300355501163.157148331908148 ; --                           ; --          ; --             ;
+; COMPILER_SIGNATURE_ID              ; 167300355501163.157149032017908 ; --                           ; --          ; --             ;
 ; FITTER_EFFORT                      ; Standard Fit                    ; Auto Fit                     ; --          ; --             ;
 ; INCREMENTAL_COMPILATION            ; Off                             ; FULL_INCREMENTAL_COMPILATION ; --          ; --             ;
 ; PARTITION_COLOR                    ; 16764057                        ; --                           ; Processador ; Top            ;
@@ -91,11 +91,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:22     ; 1.0                     ; 290 MB              ; 00:00:25                           ;
-; Fitter                    ; 00:01:10     ; 1.0                     ; 395 MB              ; 00:01:10                           ;
-; TimeQuest Timing Analyzer ; 00:00:10     ; 1.0                     ; 320 MB              ; 00:00:10                           ;
+; Analysis & Synthesis      ; 00:00:23     ; 1.0                     ; 287 MB              ; 00:00:27                           ;
+; Fitter                    ; 00:01:27     ; 1.0                     ; 397 MB              ; 00:01:28                           ;
+; TimeQuest Timing Analyzer ; 00:00:11     ; 1.0                     ; 321 MB              ; 00:00:11                           ;
 ; Assembler                 ; 00:00:06     ; 1.0                     ; 334 MB              ; 00:00:05                           ;
-; Total                     ; 00:01:42     ; --                      ; --                  ; 00:01:45                           ;
+; Total                     ; 00:02:01     ; --                      ; --                  ; 00:02:06                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

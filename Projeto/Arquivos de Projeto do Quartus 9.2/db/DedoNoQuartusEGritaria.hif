@@ -1753,19 +1753,19 @@ MultDiv:inst24|MultDivMuxBox:inst7
 
 # end
 # entity
-Control_Unit
+Banco_reg
 # storage
-db|DedoNoQuartusEGritaria.(1).cnf
-db|DedoNoQuartusEGritaria.(1).cnf
+db|DedoNoQuartusEGritaria.(17).cnf
+db|DedoNoQuartusEGritaria.(17).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
-# case_sensitive
+# case_insensitive
 # source_file
-control_unit.v
-1c26e034abea7e8fb985b6c2232a32
-8
+banco_reg.vhd
+2cadfcaf44a2386f30e8abc1e4fa4f58
+5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
 OFF
@@ -1775,16 +1775,13 @@ AUTO_RAM_RECOGNITION
 ON
 AUTO_ROM_RECOGNITION
 ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
 }
 # hierarchies {
-Control_Unit:inst2
+Banco_reg:inst14
 }
+# lmf
+|quartus|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
 # macro_sequence
 
 # end
@@ -1883,7 +1880,7 @@ address_a0
 }
 # memory_file {
 instructions.mif
-8c1f6ac5327b83f6fd8e83256d059
+bea357879e29d386ebbe54484efb949d
 }
 # hierarchies {
 Memoria:inst11|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
@@ -1895,19 +1892,19 @@ Memoria:inst11|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyn
 
 # end
 # entity
-Banco_reg
+Control_Unit
 # storage
-db|DedoNoQuartusEGritaria.(17).cnf
-db|DedoNoQuartusEGritaria.(17).cnf
+db|DedoNoQuartusEGritaria.(1).cnf
+db|DedoNoQuartusEGritaria.(1).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
-# case_insensitive
+# case_sensitive
 # source_file
-banco_reg.vhd
-2cadfcaf44a2386f30e8abc1e4fa4f58
-5
+control_unit.v
+e475280ba5b854b28f517e4d9c7639
+8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
 OFF
@@ -1917,13 +1914,16 @@ AUTO_RAM_RECOGNITION
 ON
 AUTO_ROM_RECOGNITION
 ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
 }
 # hierarchies {
-Banco_reg:inst14
+Control_Unit:inst2
 }
-# lmf
-|quartus|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
 # macro_sequence
 
 # end

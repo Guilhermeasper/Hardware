@@ -1001,7 +1001,12 @@ always@(posedge clock) begin
 			mux_2=2'b0;
 			mux_3=1'b0;
 			mux_4=1'b0;
-			mux_6=3'b10;//escolhe rd
+			if(opcode == 6'h0) begin
+				mux_6=3'b10;//escolhe rd
+			end
+			else begin
+				mux_6=3'b0;//escolhe rt
+			end
 			mux_7=4'b0;// escolhe o que est� em ALU_OUT
 			mux_8=2'b0;
 			mux_9=3'b0;
