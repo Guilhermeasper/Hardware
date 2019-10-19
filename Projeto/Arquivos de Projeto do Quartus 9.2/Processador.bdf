@@ -1838,6 +1838,314 @@ applicable agreement for further details.
 	(annotation_block (parameter)(rect -72 720 120 776))
 )
 (symbol
+	(rect 1504 1248 1688 1376)
+	(text "RegDesloc" (rect 5 0 59 12)(font "Arial" ))
+	(text "inst17" (rect 8 112 37 124)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "Clk" (rect 0 0 16 12)(font "Arial" ))
+		(text "Clk" (rect 21 27 37 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "Reset" (rect 0 0 29 12)(font "Arial" ))
+		(text "Reset" (rect 21 43 50 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "Shift[2..0]" (rect 0 0 49 12)(font "Arial" ))
+		(text "Shift[2..0]" (rect 21 59 70 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "N[4..0]" (rect 0 0 34 12)(font "Arial" ))
+		(text "N[4..0]" (rect 21 75 55 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "Entrada[31..0]" (rect 0 0 69 12)(font "Arial" ))
+		(text "Entrada[31..0]" (rect 21 91 90 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 184 32)
+		(output)
+		(text "Saida[31..0]" (rect 0 0 59 12)(font "Arial" ))
+		(text "Saida[31..0]" (rect 104 27 163 39)(font "Arial" ))
+		(line (pt 184 32)(pt 168 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 168 112)(line_width 1))
+	)
+)
+(symbol
+	(rect 744 1064 880 1192)
+	(text "Registrador" (rect 8 0 64 12)(font "Arial" ))
+	(text "HI" (rect 8 112 19 124)(font "Arial" ))
+	(port
+		(pt 96 128)
+		(input)
+		(text "Clk" (rect 0 0 16 12)(font "Arial" ))
+		(text "Clk" (rect 88 88 100 104)(font "Arial" )(vertical))
+		(line (pt 96 128)(pt 96 112)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "Reset" (rect 0 -48 29 -36)(font "Arial" ))
+		(text "Reset" (rect 21 43 50 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "Load" (rect 0 -48 23 -36)(font "Arial" ))
+		(text "Load" (rect 21 59 44 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "Entrada[31..0]" (rect 0 -48 69 -36)(font "Arial" ))
+		(text "Entrada[31..0]" (rect 21 75 90 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 136 32)
+		(output)
+		(text "Saida[31..0]" (rect -48 -48 11 -36)(font "Arial" ))
+		(text "Saida[31..0]" (rect 56 27 115 39)(font "Arial" ))
+		(line (pt 136 32)(pt 120 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 120 112)(line_width 1))
+	)
+)
+(symbol
+	(rect 744 1216 880 1344)
+	(text "Registrador" (rect 8 0 64 12)(font "Arial" ))
+	(text "LO" (rect 8 112 22 124)(font "Arial" ))
+	(port
+		(pt 96 128)
+		(input)
+		(text "Clk" (rect 0 0 16 12)(font "Arial" ))
+		(text "Clk" (rect 88 88 100 104)(font "Arial" )(vertical))
+		(line (pt 96 128)(pt 96 112)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "Reset" (rect 0 -48 29 -36)(font "Arial" ))
+		(text "Reset" (rect 21 43 50 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "Load" (rect 0 -48 23 -36)(font "Arial" ))
+		(text "Load" (rect 21 59 44 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "Entrada[31..0]" (rect 0 -48 69 -36)(font "Arial" ))
+		(text "Entrada[31..0]" (rect 21 75 90 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 136 32)
+		(output)
+		(text "Saida[31..0]" (rect -48 -48 11 -36)(font "Arial" ))
+		(text "Saida[31..0]" (rect 56 27 115 39)(font "Arial" ))
+		(line (pt 136 32)(pt 120 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 120 112)(line_width 1))
+	)
+)
+(symbol
+	(rect 272 1160 552 1288)
+	(text "MultDiv" (rect 5 0 45 14)(font "Arial" (font_size 8)))
+	(text "inst24" (rect 8 112 37 124)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clock" (rect 0 0 29 14)(font "Arial" (font_size 8)))
+		(text "clock" (rect 21 27 50 41)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reset" (rect 0 0 29 14)(font "Arial" (font_size 8)))
+		(text "reset" (rect 21 43 50 57)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "INPUT_A[31..0]" (rect 0 0 84 14)(font "Arial" (font_size 8)))
+		(text "INPUT_A[31..0]" (rect 21 59 105 73)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "INPUT_B[31..0]" (rect 0 0 83 14)(font "Arial" (font_size 8)))
+		(text "INPUT_B[31..0]" (rect 21 75 104 89)(font "Arial" (font_size 8)))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "CONTROL_MULTDIV[1..0]" (rect 0 0 145 14)(font "Arial" (font_size 8)))
+		(text "CONTROL_MULTDIV[1..0]" (rect 21 91 166 105)(font "Arial" (font_size 8)))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 280 32)
+		(output)
+		(text "HI_OUT[31..0]" (rect 0 0 77 14)(font "Arial" (font_size 8)))
+		(text "HI_OUT[31..0]" (rect 182 27 259 41)(font "Arial" (font_size 8)))
+		(line (pt 280 32)(pt 264 32)(line_width 3))
+	)
+	(port
+		(pt 280 48)
+		(output)
+		(text "LO_OUT[31..0]" (rect 0 0 83 14)(font "Arial" (font_size 8)))
+		(text "LO_OUT[31..0]" (rect 176 43 259 57)(font "Arial" (font_size 8)))
+		(line (pt 280 48)(pt 264 48)(line_width 3))
+	)
+	(port
+		(pt 280 64)
+		(output)
+		(text "DIV0_OUT" (rect 0 0 59 14)(font "Arial" (font_size 8)))
+		(text "DIV0_OUT" (rect 200 59 259 73)(font "Arial" (font_size 8)))
+		(line (pt 280 64)(pt 264 64)(line_width 1))
+	)
+	(drawing
+		(rectangle (rect 16 16 264 112)(line_width 1))
+	)
+)
+(symbol
+	(rect 1224 1240 1400 1368)
+	(text "Mux4" (rect 5 0 30 12)(font "Arial" ))
+	(text "inst9" (rect 8 112 31 124)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clock" (rect 0 0 25 12)(font "Arial" ))
+		(text "clock" (rect 21 27 46 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "entrada0[4..0]" (rect 0 0 68 12)(font "Arial" ))
+		(text "entrada0[4..0]" (rect 21 43 89 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "entrada1[4..0]" (rect 0 0 68 12)(font "Arial" ))
+		(text "entrada1[4..0]" (rect 21 59 89 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "controle" (rect 0 0 38 12)(font "Arial" ))
+		(text "controle" (rect 21 75 59 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 176 32)
+		(output)
+		(text "saida[4..0]" (rect 0 0 51 12)(font "Arial" ))
+		(text "saida[4..0]" (rect 104 27 155 39)(font "Arial" ))
+		(line (pt 176 32)(pt 160 32)(line_width 3))
+	)
+	(parameter
+		"selectEntrada0"
+		"0"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"selectEntrada1"
+		"1"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(drawing
+		(rectangle (rect 16 16 160 112)(line_width 1))
+	)
+	(annotation_block (parameter)(rect 1392 1584 1584 1632))
+)
+(symbol
+	(rect 1248 1352 1432 1480)
+	(text "Mux3" (rect 5 0 30 12)(font "Arial" ))
+	(text "inst10" (rect 8 112 37 124)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clock" (rect 0 0 25 12)(font "Arial" ))
+		(text "clock" (rect 21 27 46 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "entrada0[31..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "entrada0[31..0]" (rect 21 43 95 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "entrada1[31..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "entrada1[31..0]" (rect 21 59 95 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "controle" (rect 0 0 38 12)(font "Arial" ))
+		(text "controle" (rect 21 75 59 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 184 32)
+		(output)
+		(text "saida[31..0]" (rect 0 0 57 12)(font "Arial" ))
+		(text "saida[31..0]" (rect 106 27 163 39)(font "Arial" ))
+		(line (pt 184 32)(pt 168 32)(line_width 3))
+	)
+	(parameter
+		"selectEntrada0"
+		"0"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"selectEntrada1"
+		"1"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(drawing
+		(rectangle (rect 16 16 168 112)(line_width 1))
+	)
+	(annotation_block (parameter)(rect 1160 1584 1352 1632))
+)
+(symbol
 	(rect 568 -416 1080 -192)
 	(text "Control_Unit" (rect 500 5 512 66)(font "Arial" )(vertical))
 	(text "inst2" (rect 4 8 16 31)(font "Arial" )(vertical))
@@ -1942,15 +2250,15 @@ applicable agreement for further details.
 	(port
 		(pt 432 224)
 		(output)
-		(text "mux_3" (rect 0 0 33 12)(font "Arial" ))
-		(text "mux_3" (rect 425 170 437 203)(font "Arial" )(vertical))
+		(text "mux_4" (rect 0 0 33 12)(font "Arial" ))
+		(text "mux_4" (rect 425 170 437 203)(font "Arial" )(vertical))
 		(line (pt 432 224)(pt 432 208)(line_width 1))
 	)
 	(port
 		(pt 416 224)
 		(output)
-		(text "mux_4" (rect 0 0 33 12)(font "Arial" ))
-		(text "mux_4" (rect 409 170 421 203)(font "Arial" )(vertical))
+		(text "mux_3" (rect 0 0 33 12)(font "Arial" ))
+		(text "mux_3" (rect 409 170 421 203)(font "Arial" )(vertical))
 		(line (pt 416 224)(pt 416 208)(line_width 1))
 	)
 	(port
@@ -2444,314 +2752,6 @@ applicable agreement for further details.
 	)
 	(rotate270)
 	(annotation_block (parameter)(rect 896 -1440 1120 -544))
-)
-(symbol
-	(rect 1504 1248 1688 1376)
-	(text "RegDesloc" (rect 5 0 59 12)(font "Arial" ))
-	(text "inst17" (rect 8 112 37 124)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "Clk" (rect 0 0 16 12)(font "Arial" ))
-		(text "Clk" (rect 21 27 37 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 1))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "Reset" (rect 0 0 29 12)(font "Arial" ))
-		(text "Reset" (rect 21 43 50 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 1))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "Shift[2..0]" (rect 0 0 49 12)(font "Arial" ))
-		(text "Shift[2..0]" (rect 21 59 70 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "N[4..0]" (rect 0 0 34 12)(font "Arial" ))
-		(text "N[4..0]" (rect 21 75 55 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "Entrada[31..0]" (rect 0 0 69 12)(font "Arial" ))
-		(text "Entrada[31..0]" (rect 21 91 90 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96)(line_width 3))
-	)
-	(port
-		(pt 184 32)
-		(output)
-		(text "Saida[31..0]" (rect 0 0 59 12)(font "Arial" ))
-		(text "Saida[31..0]" (rect 104 27 163 39)(font "Arial" ))
-		(line (pt 184 32)(pt 168 32)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 168 112)(line_width 1))
-	)
-)
-(symbol
-	(rect 744 1064 880 1192)
-	(text "Registrador" (rect 8 0 64 12)(font "Arial" ))
-	(text "HI" (rect 8 112 19 124)(font "Arial" ))
-	(port
-		(pt 96 128)
-		(input)
-		(text "Clk" (rect 0 0 16 12)(font "Arial" ))
-		(text "Clk" (rect 88 88 100 104)(font "Arial" )(vertical))
-		(line (pt 96 128)(pt 96 112)(line_width 1))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "Reset" (rect 0 -48 29 -36)(font "Arial" ))
-		(text "Reset" (rect 21 43 50 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 1))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "Load" (rect 0 -48 23 -36)(font "Arial" ))
-		(text "Load" (rect 21 59 44 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 1))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "Entrada[31..0]" (rect 0 -48 69 -36)(font "Arial" ))
-		(text "Entrada[31..0]" (rect 21 75 90 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
-	)
-	(port
-		(pt 136 32)
-		(output)
-		(text "Saida[31..0]" (rect -48 -48 11 -36)(font "Arial" ))
-		(text "Saida[31..0]" (rect 56 27 115 39)(font "Arial" ))
-		(line (pt 136 32)(pt 120 32)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 120 112)(line_width 1))
-	)
-)
-(symbol
-	(rect 744 1216 880 1344)
-	(text "Registrador" (rect 8 0 64 12)(font "Arial" ))
-	(text "LO" (rect 8 112 22 124)(font "Arial" ))
-	(port
-		(pt 96 128)
-		(input)
-		(text "Clk" (rect 0 0 16 12)(font "Arial" ))
-		(text "Clk" (rect 88 88 100 104)(font "Arial" )(vertical))
-		(line (pt 96 128)(pt 96 112)(line_width 1))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "Reset" (rect 0 -48 29 -36)(font "Arial" ))
-		(text "Reset" (rect 21 43 50 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 1))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "Load" (rect 0 -48 23 -36)(font "Arial" ))
-		(text "Load" (rect 21 59 44 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 1))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "Entrada[31..0]" (rect 0 -48 69 -36)(font "Arial" ))
-		(text "Entrada[31..0]" (rect 21 75 90 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
-	)
-	(port
-		(pt 136 32)
-		(output)
-		(text "Saida[31..0]" (rect -48 -48 11 -36)(font "Arial" ))
-		(text "Saida[31..0]" (rect 56 27 115 39)(font "Arial" ))
-		(line (pt 136 32)(pt 120 32)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 120 112)(line_width 1))
-	)
-)
-(symbol
-	(rect 272 1160 552 1288)
-	(text "MultDiv" (rect 5 0 45 14)(font "Arial" (font_size 8)))
-	(text "inst24" (rect 8 112 37 124)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clock" (rect 0 0 29 14)(font "Arial" (font_size 8)))
-		(text "clock" (rect 21 27 50 41)(font "Arial" (font_size 8)))
-		(line (pt 0 32)(pt 16 32)(line_width 1))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "reset" (rect 0 0 29 14)(font "Arial" (font_size 8)))
-		(text "reset" (rect 21 43 50 57)(font "Arial" (font_size 8)))
-		(line (pt 0 48)(pt 16 48)(line_width 1))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "INPUT_A[31..0]" (rect 0 0 84 14)(font "Arial" (font_size 8)))
-		(text "INPUT_A[31..0]" (rect 21 59 105 73)(font "Arial" (font_size 8)))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "INPUT_B[31..0]" (rect 0 0 83 14)(font "Arial" (font_size 8)))
-		(text "INPUT_B[31..0]" (rect 21 75 104 89)(font "Arial" (font_size 8)))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "CONTROL_MULTDIV[1..0]" (rect 0 0 145 14)(font "Arial" (font_size 8)))
-		(text "CONTROL_MULTDIV[1..0]" (rect 21 91 166 105)(font "Arial" (font_size 8)))
-		(line (pt 0 96)(pt 16 96)(line_width 3))
-	)
-	(port
-		(pt 280 32)
-		(output)
-		(text "HI_OUT[31..0]" (rect 0 0 77 14)(font "Arial" (font_size 8)))
-		(text "HI_OUT[31..0]" (rect 182 27 259 41)(font "Arial" (font_size 8)))
-		(line (pt 280 32)(pt 264 32)(line_width 3))
-	)
-	(port
-		(pt 280 48)
-		(output)
-		(text "LO_OUT[31..0]" (rect 0 0 83 14)(font "Arial" (font_size 8)))
-		(text "LO_OUT[31..0]" (rect 176 43 259 57)(font "Arial" (font_size 8)))
-		(line (pt 280 48)(pt 264 48)(line_width 3))
-	)
-	(port
-		(pt 280 64)
-		(output)
-		(text "DIV0_OUT" (rect 0 0 59 14)(font "Arial" (font_size 8)))
-		(text "DIV0_OUT" (rect 200 59 259 73)(font "Arial" (font_size 8)))
-		(line (pt 280 64)(pt 264 64)(line_width 1))
-	)
-	(drawing
-		(rectangle (rect 16 16 264 112)(line_width 1))
-	)
-)
-(symbol
-	(rect 1224 1240 1400 1368)
-	(text "Mux4" (rect 5 0 30 12)(font "Arial" ))
-	(text "inst9" (rect 8 112 31 124)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clock" (rect 0 0 25 12)(font "Arial" ))
-		(text "clock" (rect 21 27 46 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 1))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "entrada0[4..0]" (rect 0 0 68 12)(font "Arial" ))
-		(text "entrada0[4..0]" (rect 21 43 89 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "entrada1[4..0]" (rect 0 0 68 12)(font "Arial" ))
-		(text "entrada1[4..0]" (rect 21 59 89 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "controle" (rect 0 0 38 12)(font "Arial" ))
-		(text "controle" (rect 21 75 59 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 1))
-	)
-	(port
-		(pt 176 32)
-		(output)
-		(text "saida[4..0]" (rect 0 0 51 12)(font "Arial" ))
-		(text "saida[4..0]" (rect 104 27 155 39)(font "Arial" ))
-		(line (pt 176 32)(pt 160 32)(line_width 3))
-	)
-	(parameter
-		"selectEntrada0"
-		"0"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(parameter
-		"selectEntrada1"
-		"1"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(drawing
-		(rectangle (rect 16 16 160 112)(line_width 1))
-	)
-	(annotation_block (parameter)(rect 1392 1584 1584 1632))
-)
-(symbol
-	(rect 1248 1352 1432 1480)
-	(text "Mux3" (rect 5 0 30 12)(font "Arial" ))
-	(text "inst10" (rect 8 112 37 124)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clock" (rect 0 0 25 12)(font "Arial" ))
-		(text "clock" (rect 21 27 46 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 1))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "entrada0[31..0]" (rect 0 0 74 12)(font "Arial" ))
-		(text "entrada0[31..0]" (rect 21 43 95 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "entrada1[31..0]" (rect 0 0 74 12)(font "Arial" ))
-		(text "entrada1[31..0]" (rect 21 59 95 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "controle" (rect 0 0 38 12)(font "Arial" ))
-		(text "controle" (rect 21 75 59 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 1))
-	)
-	(port
-		(pt 184 32)
-		(output)
-		(text "saida[31..0]" (rect 0 0 57 12)(font "Arial" ))
-		(text "saida[31..0]" (rect 106 27 163 39)(font "Arial" ))
-		(line (pt 184 32)(pt 168 32)(line_width 3))
-	)
-	(parameter
-		"selectEntrada0"
-		"0"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(parameter
-		"selectEntrada1"
-		"1"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(drawing
-		(rectangle (rect 16 16 168 112)(line_width 1))
-	)
-	(annotation_block (parameter)(rect 1160 1584 1352 1632))
 )
 (connector
 	(pt 120 424)

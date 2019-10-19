@@ -124,15 +124,15 @@ applicable agreement for further details.
 	(port
 		(pt 224 80)
 		(output)
-		(text "mux_3" (rect 0 0 33 12)(font "Arial" ))
-		(text "mux_3" (rect 170 75 203 87)(font "Arial" ))
+		(text "mux_4" (rect 0 0 33 12)(font "Arial" ))
+		(text "mux_4" (rect 170 75 203 87)(font "Arial" ))
 		(line (pt 224 80)(pt 208 80)(line_width 1))
 	)
 	(port
 		(pt 224 96)
 		(output)
-		(text "mux_4" (rect 0 0 33 12)(font "Arial" ))
-		(text "mux_4" (rect 170 91 203 103)(font "Arial" ))
+		(text "mux_3" (rect 0 0 33 12)(font "Arial" ))
+		(text "mux_3" (rect 170 91 203 103)(font "Arial" ))
 		(line (pt 224 96)(pt 208 96)(line_width 1))
 	)
 	(port
