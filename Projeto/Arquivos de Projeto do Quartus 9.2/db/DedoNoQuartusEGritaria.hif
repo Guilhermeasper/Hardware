@@ -40,42 +40,6 @@ AUTO
 
 # end
 # entity
-Control_Unit
-# storage
-db|DedoNoQuartusEGritaria.(1).cnf
-db|DedoNoQuartusEGritaria.(1).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-control_unit.v
-d1862b7193e24291387a5e6e724eceec
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-Control_Unit:inst2
-}
-# macro_sequence
-
-# end
-# entity
 Ula32
 # storage
 db|DedoNoQuartusEGritaria.(2).cnf
@@ -1028,112 +992,6 @@ Memoria:inst11|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block
 
 # end
 # entity
-altsyncram_tqg1
-# storage
-db|DedoNoQuartusEGritaria.(13).cnf
-db|DedoNoQuartusEGritaria.(13).cnf
-# case_insensitive
-# source_file
-db|altsyncram_tqg1.tdf
-f4215bede2f4425be1ec45e24a1499
-7
-# used_port {
-wren_a
--1
-3
-q_a7
--1
-3
-q_a6
--1
-3
-q_a5
--1
-3
-q_a4
--1
-3
-q_a3
--1
-3
-q_a2
--1
-3
-q_a1
--1
-3
-q_a0
--1
-3
-data_a7
--1
-3
-data_a6
--1
-3
-data_a5
--1
-3
-data_a4
--1
-3
-data_a3
--1
-3
-data_a2
--1
-3
-data_a1
--1
-3
-data_a0
--1
-3
-clock1
--1
-3
-clock0
--1
-3
-address_a7
--1
-3
-address_a6
--1
-3
-address_a5
--1
-3
-address_a4
--1
-3
-address_a3
--1
-3
-address_a2
--1
-3
-address_a1
--1
-3
-address_a0
--1
-3
-}
-# memory_file {
-instructions.mif
-9c83f546d2e2717e9ceefc2441ace54
-}
-# hierarchies {
-Memoria:inst11|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
-Memoria:inst11|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
-Memoria:inst11|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
-Memoria:inst11|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
-}
-# macro_sequence
-
-# end
-# entity
 Mux2
 # storage
 db|DedoNoQuartusEGritaria.(14).cnf
@@ -1270,39 +1128,6 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 # hierarchies {
 StoreSize:inst4
 }
-# macro_sequence
-
-# end
-# entity
-Banco_reg
-# storage
-db|DedoNoQuartusEGritaria.(17).cnf
-db|DedoNoQuartusEGritaria.(17).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-banco_reg.vhd
-1cb4e5aef41f36ff3211e9946ad341
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-Banco_reg:inst14
-}
-# lmf
-|quartus|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
 # macro_sequence
 
 # end
@@ -1924,6 +1749,181 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 # hierarchies {
 MultDiv:inst24|MultDivMuxBox:inst7
 }
+# macro_sequence
+
+# end
+# entity
+Control_Unit
+# storage
+db|DedoNoQuartusEGritaria.(1).cnf
+db|DedoNoQuartusEGritaria.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+control_unit.v
+1c26e034abea7e8fb985b6c2232a32
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+Control_Unit:inst2
+}
+# macro_sequence
+
+# end
+# entity
+altsyncram_tqg1
+# storage
+db|DedoNoQuartusEGritaria.(13).cnf
+db|DedoNoQuartusEGritaria.(13).cnf
+# case_insensitive
+# source_file
+db|altsyncram_tqg1.tdf
+f4215bede2f4425be1ec45e24a1499
+7
+# used_port {
+wren_a
+-1
+3
+q_a7
+-1
+3
+q_a6
+-1
+3
+q_a5
+-1
+3
+q_a4
+-1
+3
+q_a3
+-1
+3
+q_a2
+-1
+3
+q_a1
+-1
+3
+q_a0
+-1
+3
+data_a7
+-1
+3
+data_a6
+-1
+3
+data_a5
+-1
+3
+data_a4
+-1
+3
+data_a3
+-1
+3
+data_a2
+-1
+3
+data_a1
+-1
+3
+data_a0
+-1
+3
+clock1
+-1
+3
+clock0
+-1
+3
+address_a7
+-1
+3
+address_a6
+-1
+3
+address_a5
+-1
+3
+address_a4
+-1
+3
+address_a3
+-1
+3
+address_a2
+-1
+3
+address_a1
+-1
+3
+address_a0
+-1
+3
+}
+# memory_file {
+instructions.mif
+8c1f6ac5327b83f6fd8e83256d059
+}
+# hierarchies {
+Memoria:inst11|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
+Memoria:inst11|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
+Memoria:inst11|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
+Memoria:inst11|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_tqg1:auto_generated
+}
+# macro_sequence
+
+# end
+# entity
+Banco_reg
+# storage
+db|DedoNoQuartusEGritaria.(17).cnf
+db|DedoNoQuartusEGritaria.(17).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+banco_reg.vhd
+2cadfcaf44a2386f30e8abc1e4fa4f58
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+Banco_reg:inst14
+}
+# lmf
+|quartus|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
 # macro_sequence
 
 # end
