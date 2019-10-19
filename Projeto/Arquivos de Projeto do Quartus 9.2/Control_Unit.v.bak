@@ -1567,7 +1567,6 @@ always@(posedge clock) begin
 			else begin
 				counter = counter + 8'd1;
 				hi_lo=1'b0;
-				next_state = 8'b00011101;
 			end
 		end
 		8'b11111111: begin // FINAL

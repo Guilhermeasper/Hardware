@@ -3,255 +3,39 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'clock'
-Slack : -6.967
-TNS   : -4506.946
-
-Type  : Slow 1100mV 85C Model Setup 'Control_Unit:inst2|mux_7[0]'
-Slack : -4.826
-TNS   : -77.914
-
-Type  : Slow 1100mV 85C Model Setup 'Control_Unit:inst2|mux_8[0]'
-Slack : -1.514
-TNS   : -21.439
-
-Type  : Slow 1100mV 85C Model Setup 'Control_Unit:inst2|mult_div[0]'
-Slack : -1.373
-TNS   : -71.069
-
-Type  : Slow 1100mV 85C Model Setup 'Control_Unit:inst2|ss_control[0]'
-Slack : -1.084
-TNS   : -16.398
-
-Type  : Slow 1100mV 85C Model Setup 'Control_Unit:inst2|mux_6[0]'
-Slack : -1.053
-TNS   : -1.627
-
-Type  : Slow 1100mV 85C Model Setup 'Control_Unit:inst2|mux_9[0]'
-Slack : -0.998
-TNS   : -13.550
-
-Type  : Slow 1100mV 85C Model Hold 'Control_Unit:inst2|mux_6[0]'
-Slack : -1.275
-TNS   : -5.935
+Slack : -1.221
+TNS   : -51.701
 
 Type  : Slow 1100mV 85C Model Hold 'clock'
-Slack : -1.251
-TNS   : -55.353
-
-Type  : Slow 1100mV 85C Model Hold 'Control_Unit:inst2|mux_7[0]'
-Slack : -1.249
-TNS   : -34.952
-
-Type  : Slow 1100mV 85C Model Hold 'Control_Unit:inst2|mult_div[0]'
-Slack : -0.670
-TNS   : -25.125
-
-Type  : Slow 1100mV 85C Model Hold 'Control_Unit:inst2|ss_control[0]'
-Slack : -0.541
-TNS   : -6.913
-
-Type  : Slow 1100mV 85C Model Hold 'Control_Unit:inst2|mux_9[0]'
-Slack : -0.540
-TNS   : -11.489
-
-Type  : Slow 1100mV 85C Model Hold 'Control_Unit:inst2|mux_8[0]'
-Slack : -0.402
-TNS   : -6.775
+Slack : 0.249
+TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clock'
-Slack : -0.769
-TNS   : -1846.920
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Control_Unit:inst2|mult_div[0]'
-Slack : 0.354
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Control_Unit:inst2|mux_6[0]'
-Slack : 0.371
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Control_Unit:inst2|mux_7[0]'
-Slack : 0.388
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Control_Unit:inst2|ss_control[0]'
-Slack : 0.405
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Control_Unit:inst2|mux_9[0]'
-Slack : 0.422
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Control_Unit:inst2|mux_8[0]'
-Slack : 0.433
-TNS   : 0.000
+Slack : -0.370
+TNS   : -50.429
 
 Type  : Slow 1100mV 0C Model Setup 'clock'
-Slack : -6.425
-TNS   : -4047.408
-
-Type  : Slow 1100mV 0C Model Setup 'Control_Unit:inst2|mux_7[0]'
-Slack : -4.310
-TNS   : -71.099
-
-Type  : Slow 1100mV 0C Model Setup 'Control_Unit:inst2|mux_8[0]'
-Slack : -1.428
-TNS   : -19.532
-
-Type  : Slow 1100mV 0C Model Setup 'Control_Unit:inst2|mult_div[0]'
-Slack : -1.302
-TNS   : -67.592
-
-Type  : Slow 1100mV 0C Model Setup 'Control_Unit:inst2|ss_control[0]'
-Slack : -1.023
-TNS   : -15.352
-
-Type  : Slow 1100mV 0C Model Setup 'Control_Unit:inst2|mux_6[0]'
-Slack : -0.949
-TNS   : -1.374
-
-Type  : Slow 1100mV 0C Model Setup 'Control_Unit:inst2|mux_9[0]'
-Slack : -0.929
-TNS   : -13.237
+Slack : -1.057
+TNS   : -43.646
 
 Type  : Slow 1100mV 0C Model Hold 'clock'
-Slack : -1.163
-TNS   : -51.612
-
-Type  : Slow 1100mV 0C Model Hold 'Control_Unit:inst2|mux_6[0]'
-Slack : -1.144
-TNS   : -5.356
-
-Type  : Slow 1100mV 0C Model Hold 'Control_Unit:inst2|mux_7[0]'
-Slack : -1.132
-TNS   : -31.629
-
-Type  : Slow 1100mV 0C Model Hold 'Control_Unit:inst2|mult_div[0]'
-Slack : -0.575
-TNS   : -19.950
-
-Type  : Slow 1100mV 0C Model Hold 'Control_Unit:inst2|ss_control[0]'
-Slack : -0.418
-TNS   : -4.359
-
-Type  : Slow 1100mV 0C Model Hold 'Control_Unit:inst2|mux_9[0]'
-Slack : -0.396
-TNS   : -7.569
-
-Type  : Slow 1100mV 0C Model Hold 'Control_Unit:inst2|mux_8[0]'
-Slack : -0.309
-TNS   : -4.791
+Slack : 0.231
+TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock'
-Slack : -0.769
-TNS   : -1847.569
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Control_Unit:inst2|mult_div[0]'
-Slack : 0.361
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Control_Unit:inst2|ss_control[0]'
-Slack : 0.367
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Control_Unit:inst2|mux_9[0]'
-Slack : 0.371
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Control_Unit:inst2|mux_6[0]'
-Slack : 0.385
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Control_Unit:inst2|mux_7[0]'
-Slack : 0.413
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Control_Unit:inst2|mux_8[0]'
-Slack : 0.417
-TNS   : 0.000
+Slack : -0.376
+TNS   : -50.439
 
 Type  : Fast 1100mV 0C Model Setup 'clock'
-Slack : -5.467
-TNS   : -2676.370
-
-Type  : Fast 1100mV 0C Model Setup 'Control_Unit:inst2|mux_7[0]'
-Slack : -2.757
-TNS   : -44.613
-
-Type  : Fast 1100mV 0C Model Setup 'Control_Unit:inst2|mult_div[0]'
-Slack : -0.819
-TNS   : -40.951
-
-Type  : Fast 1100mV 0C Model Setup 'Control_Unit:inst2|mux_8[0]'
-Slack : -0.713
-TNS   : -4.663
-
-Type  : Fast 1100mV 0C Model Setup 'Control_Unit:inst2|mux_9[0]'
-Slack : -0.524
-TNS   : -0.954
-
-Type  : Fast 1100mV 0C Model Setup 'Control_Unit:inst2|ss_control[0]'
-Slack : -0.512
-TNS   : -4.550
-
-Type  : Fast 1100mV 0C Model Setup 'Control_Unit:inst2|mux_6[0]'
-Slack : -0.451
-TNS   : -0.451
+Slack : -0.459
+TNS   : -16.221
 
 Type  : Fast 1100mV 0C Model Hold 'clock'
-Slack : -0.919
-TNS   : -41.083
-
-Type  : Fast 1100mV 0C Model Hold 'Control_Unit:inst2|mux_7[0]'
-Slack : -0.918
-TNS   : -24.487
-
-Type  : Fast 1100mV 0C Model Hold 'Control_Unit:inst2|mux_6[0]'
-Slack : -0.794
-TNS   : -3.749
-
-Type  : Fast 1100mV 0C Model Hold 'Control_Unit:inst2|mult_div[0]'
-Slack : -0.430
-TNS   : -12.392
-
-Type  : Fast 1100mV 0C Model Hold 'Control_Unit:inst2|mux_9[0]'
-Slack : -0.240
-TNS   : -5.319
-
-Type  : Fast 1100mV 0C Model Hold 'Control_Unit:inst2|mux_8[0]'
-Slack : -0.200
-TNS   : -2.392
-
-Type  : Fast 1100mV 0C Model Hold 'Control_Unit:inst2|ss_control[0]'
-Slack : -0.193
-TNS   : -1.245
+Slack : 0.158
+TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock'
-Slack : -0.346
-TNS   : -1127.087
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Control_Unit:inst2|mult_div[0]'
-Slack : 0.388
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Control_Unit:inst2|mux_9[0]'
-Slack : 0.425
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Control_Unit:inst2|mux_6[0]'
-Slack : 0.426
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Control_Unit:inst2|ss_control[0]'
-Slack : 0.434
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Control_Unit:inst2|mux_7[0]'
-Slack : 0.437
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Control_Unit:inst2|mux_8[0]'
-Slack : 0.459
-TNS   : 0.000
+Slack : -0.316
+TNS   : -31.254
 
 ------------------------------------------------------------

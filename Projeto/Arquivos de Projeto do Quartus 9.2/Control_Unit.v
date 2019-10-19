@@ -1557,16 +1557,14 @@ always@(posedge clock) begin
 			REG_B=1'b0;
 			REG_WRITE=1'b0;
 			XCH_CONTROL = 1'b0;
+			counter = counter + 8'd1;
+			hi_lo=1'b0;
 			next_state = 8'b00011101;
 			if(counter == 8'd33) begin //WAIT
 				hi_lo=1'b1;
 				counter = 8'd0;
 				mem_write=1'b0;
 				next_state = 8'b11111111;
-			end
-			else begin
-				counter = counter + 8'd1;
-				hi_lo=1'b0;
 			end
 		end
 		8'b11111111: begin // FINAL
