@@ -14,8 +14,8 @@ module Control_Unit(
 	output reg pc_write,
 	output reg[1:0] mux_1,       //mux_to_mux_mem
 	output reg[1:0] mux_2,       //mux_mem
-	output reg mux_3,            //shift_source
-	output reg mux_4,            //shamt
+	output reg mux_4,            //shift_source
+	output reg mux_3,            //shamt
 	output reg[2:0] mux_6,       //regDST
 	output reg[3:0] mux_7,       //mem_to_reg
 	output reg[1:0] mux_8,       //ALUSourceA
@@ -460,6 +460,35 @@ always@(posedge clock) begin
 			XCH_CONTROL = 1'b0;
 			next_state = 8'b11111111;//passa pra final
 		end
+		8'b00001111: begin // JR
+			pc_write=1'b1;
+			mux_1=2'b0;
+			mux_2=2'b0;
+			mux_3=1'b0;
+			mux_4=1'b0;
+			mux_6=3'b0;
+			mux_7=4'b0;
+			mux_8=2'b10;
+			mux_9=3'b0;
+			mux_10=3'b0;
+			mux_11=1'b0;
+			shift_control=1'b0;
+			ss_control=1'b0;
+			mem_write=1'b0;
+			mult_div=2'b0;
+			ir_write=1'b0;
+			hi_lo=1'b0;
+			EPC_CONTROL=1'b0;
+			MDR_CONTROL=1'b0;
+			LOAD_SIZE=2'b0;
+			ALU_CONTROL=3'b0;//LOAD
+			ALU_OUT=1'b0;
+			REG_A=2'b0;
+			REG_B=1'b0;
+			REG_WRITE=1'b0;
+			XCH_CONTROL = 1'b0;
+			next_state = 8'b11111111;
+		end
 		8'b00010100: begin //XCH_1/2
 			pc_write=1'b0;
 			mux_1=2'b0;
@@ -530,7 +559,7 @@ always@(posedge clock) begin
 			mux_9=3'b0;
 			mux_10=3'b0;
 			mux_11=1'b0;
-			shift_control=3'b0;//primeiro dá load no reg
+			shift_control=3'b01;//primeiro dá load no reg
 			ss_control=1'b0;
 			mem_write=1'b0;
 			mult_div=2'b0;
