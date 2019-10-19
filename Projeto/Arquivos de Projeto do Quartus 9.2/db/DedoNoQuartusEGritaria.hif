@@ -20,26 +20,6 @@ VHSM_ON
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
 # entity
-Processador
-# storage
-db|DedoNoQuartusEGritaria.(0).cnf
-db|DedoNoQuartusEGritaria.(0).cnf
-# case_insensitive
-# source_file
-processador.bdf
-28216828c48868372eefcb5528441ed
-26
-# internal_option {
-BLOCK_DESIGN_NAMING
-AUTO
-}
-# hierarchies {
-|
-}
-# macro_sequence
-
-# end
-# entity
 Ula32
 # storage
 db|DedoNoQuartusEGritaria.(2).cnf
@@ -1894,8 +1874,8 @@ Memoria:inst11|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyn
 # entity
 Control_Unit
 # storage
-db|DedoNoQuartusEGritaria.(1).cnf
-db|DedoNoQuartusEGritaria.(1).cnf
+db|DedoNoQuartusEGritaria.(0).cnf
+db|DedoNoQuartusEGritaria.(0).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -1903,7 +1883,7 @@ ON
 # case_sensitive
 # source_file
 control_unit.v
-b895cf215f21d924a9c920ceeacf98f3
+2966c2628f104d8e1ee4ad78a0a919
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1923,6 +1903,26 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # hierarchies {
 Control_Unit:inst2
+}
+# macro_sequence
+
+# end
+# entity
+Processador
+# storage
+db|DedoNoQuartusEGritaria.(1).cnf
+db|DedoNoQuartusEGritaria.(1).cnf
+# case_insensitive
+# source_file
+processador.bdf
+3ecd903eed51398ddaaefc7d0d0fa9d
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
 }
 # macro_sequence
 

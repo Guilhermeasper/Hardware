@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DedoNoQuartusEGritaria
-Sat Oct 19 10:17:11 2019
+Sat Oct 19 11:14:06 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -62,17 +62,17 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Sat Oct 19 10:17:11 2019        ;
+; Analysis & Synthesis Status   ; Successful - Sat Oct 19 11:14:06 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; DedoNoQuartusEGritaria                       ;
 ; Top-level Entity Name         ; Processador                                  ;
 ; Family                        ; Stratix III                                  ;
 ; Logic utilization             ; N/A                                          ;
-;     Combinational ALUTs       ; 2,913                                        ;
+;     Combinational ALUTs       ; 2,952                                        ;
 ;     Memory ALUTs              ; 0                                            ;
 ;     Dedicated logic registers ; 1,846                                        ;
 ; Total registers               ; 1846                                         ;
-; Total pins                    ; 453                                          ;
+; Total pins                    ; 455                                          ;
 ; Total virtual pins            ; 0                                            ;
 ; Total block memory bits       ; 8,192                                        ;
 ; DSP block 18-bit elements     ; 0                                            ;
@@ -220,45 +220,45 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------+-------------+
 ; Resource                                      ; Usage       ;
 +-----------------------------------------------+-------------+
-; Estimated ALUTs Used                          ; 2913        ;
-;     -- Combinational ALUTs                    ; 2913        ;
+; Estimated ALUTs Used                          ; 2952        ;
+;     -- Combinational ALUTs                    ; 2952        ;
 ;     -- Memory ALUTs                           ; 0           ;
 ;     -- LUT_REGs                               ; 0           ;
 ; Dedicated logic registers                     ; 1846        ;
 ;                                               ;             ;
-; Estimated ALUTs Unavailable                   ; 306         ;
-;     -- Due to unpartnered combinational logic ; 306         ;
+; Estimated ALUTs Unavailable                   ; 303         ;
+;     -- Due to unpartnered combinational logic ; 303         ;
 ;     -- Due to Memory ALUTs                    ; 0           ;
 ;                                               ;             ;
-; Total combinational functions                 ; 2913        ;
+; Total combinational functions                 ; 2952        ;
 ; Combinational ALUT usage by number of inputs  ;             ;
-;     -- 7 input functions                      ; 14          ;
-;     -- 6 input functions                      ; 1050        ;
-;     -- 5 input functions                      ; 661         ;
-;     -- 4 input functions                      ; 454         ;
+;     -- 7 input functions                      ; 15          ;
+;     -- 6 input functions                      ; 1046        ;
+;     -- 5 input functions                      ; 687         ;
+;     -- 4 input functions                      ; 470         ;
 ;     -- <=3 input functions                    ; 734         ;
 ;                                               ;             ;
 ; Combinational ALUTs by mode                   ;             ;
-;     -- normal mode                            ; 2480        ;
-;     -- extended LUT mode                      ; 14          ;
+;     -- normal mode                            ; 2518        ;
+;     -- extended LUT mode                      ; 15          ;
 ;     -- arithmetic mode                        ; 419         ;
 ;     -- shared arithmetic mode                 ; 0           ;
 ;                                               ;             ;
-; Estimated ALUT/register pairs used            ; 4105        ;
+; Estimated ALUT/register pairs used            ; 4141        ;
 ;                                               ;             ;
 ; Total registers                               ; 1846        ;
 ;     -- Dedicated logic registers              ; 1846        ;
 ;     -- I/O registers                          ; 0           ;
 ;     -- LUT_REGs                               ; 0           ;
 ;                                               ;             ;
-; Estimated ALMs:  partially or completely used ; 2,053       ;
+; Estimated ALMs:  partially or completely used ; 2,071       ;
 ;                                               ;             ;
-; I/O pins                                      ; 453         ;
+; I/O pins                                      ; 455         ;
 ; Total MLAB memory bits                        ; 0           ;
 ; Total block memory bits                       ; 8192        ;
 ; Maximum fan-out node                          ; clock~input ;
 ; Maximum fan-out                               ; 1878        ;
-; Total fan-out                                 ; 22355       ;
+; Total fan-out                                 ; 22482       ;
 ; Average fan-out                               ; 3.92        ;
 +-----------------------------------------------+-------------+
 
@@ -268,9 +268,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 12x12 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                   ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+--------------+
-; |Processador                                    ; 2913 (1)          ; 1846 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0         ; 453  ; 0            ; |Processador                                                                                                          ; work         ;
+; |Processador                                    ; 2952 (1)          ; 1846 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0         ; 455  ; 0            ; |Processador                                                                                                          ; work         ;
 ;    |Banco_reg:inst14|                           ; 736 (736)         ; 1024 (1024)  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Banco_reg:inst14                                                                                         ; work         ;
-;    |Control_Unit:inst2|                         ; 235 (235)         ; 52 (52)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Control_Unit:inst2                                                                                       ; work         ;
+;    |Control_Unit:inst2|                         ; 293 (293)         ; 52 (52)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Control_Unit:inst2                                                                                       ; work         ;
 ;    |Instr_Reg:inst12|                           ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Instr_Reg:inst12                                                                                         ; work         ;
 ;    |LoadSize:inst6|                             ; 16 (16)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|LoadSize:inst6                                                                                           ; work         ;
 ;    |Memoria:inst11|                             ; 23 (23)           ; 0 (0)        ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Memoria:inst11                                                                                           ; work         ;
@@ -293,15 +293,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |MultDiv:inst24|                             ; 944 (0)           ; 450 (0)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|MultDiv:inst24                                                                                           ; work         ;
 ;       |DivBox:inst11|                           ; 449 (449)         ; 257 (257)    ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|MultDiv:inst24|DivBox:inst11                                                                             ; work         ;
 ;       |MultBox:inst6|                           ; 362 (362)         ; 193 (193)    ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|MultDiv:inst24|MultBox:inst6                                                                             ; work         ;
-;       |MultDivMuxBox:inst7|                     ; 133 (133)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|MultDiv:inst24|MultDivMuxBox:inst7                                                                       ; work         ;
+;       |MultDivControlBox:inst|                  ; 1 (1)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|MultDiv:inst24|MultDivControlBox:inst                                                                    ; work         ;
+;       |MultDivMuxBox:inst7|                     ; 132 (132)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|MultDiv:inst24|MultDivMuxBox:inst7                                                                       ; work         ;
 ;    |Mux2:inst|                                  ; 8 (8)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Mux2:inst                                                                                                ; work         ;
 ;    |Mux3:inst10|                                ; 5 (5)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Mux3:inst10                                                                                              ; work         ;
 ;    |Mux4:inst9|                                 ; 5 (5)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Mux4:inst9                                                                                               ; work         ;
 ;    |Mux6:inst16|                                ; 11 (11)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Mux6:inst16                                                                                              ; work         ;
-;    |Mux7:inst19|                                ; 142 (142)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Mux7:inst19                                                                                              ; work         ;
+;    |Mux7:inst19|                                ; 143 (143)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Mux7:inst19                                                                                              ; work         ;
 ;    |Mux8:inst28|                                ; 65 (65)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Mux8:inst28                                                                                              ; work         ;
 ;    |Mux9:inst27|                                ; 65 (65)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Mux9:inst27                                                                                              ; work         ;
-;    |RegDesloc:inst17|                           ; 361 (361)         ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|RegDesloc:inst17                                                                                         ; work         ;
+;    |RegDesloc:inst17|                           ; 357 (357)         ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|RegDesloc:inst17                                                                                         ; work         ;
 ;    |Registrador:A|                              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Registrador:A                                                                                            ; work         ;
 ;    |Registrador:B|                              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Registrador:B                                                                                            ; work         ;
 ;    |Registrador:HI|                             ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Registrador:HI                                                                                           ; work         ;
@@ -311,7 +312,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |Registrador:ULA_OUT|                        ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Registrador:ULA_OUT                                                                                      ; work         ;
 ;    |Registrador:XCH|                            ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Registrador:XCH                                                                                          ; work         ;
 ;    |StoreSize:inst4|                            ; 57 (57)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|StoreSize:inst4                                                                                          ; work         ;
-;    |Ula32:inst26|                               ; 195 (195)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Ula32:inst26                                                                                             ; work         ;
+;    |Ula32:inst26|                               ; 179 (179)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|Ula32:inst26                                                                                             ; work         ;
 ;    |mux10:inst18|                               ; 44 (44)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Processador|mux10:inst18                                                                                             ; work         ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -334,6 +335,70 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------+--------------------------------------------------+------------------------+
 ; Latch Name                                           ; Latch Enable Signal                              ; Free of Timing Hazards ;
 +------------------------------------------------------+--------------------------------------------------+------------------------+
+; Mux9:inst27|saida[0]                                 ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[0]                                 ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[1]                                 ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[1]                                 ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[2]                                 ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[2]                                 ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[3]                                 ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[3]                                 ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[4]                                 ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[4]                                 ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[5]                                 ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[5]                                 ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[6]                                 ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[6]                                 ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[7]                                 ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[7]                                 ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[8]                                 ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[8]                                 ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[9]                                 ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[9]                                 ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[10]                                ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[10]                                ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[11]                                ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[11]                                ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[12]                                ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[12]                                ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[13]                                ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[13]                                ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[14]                                ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[14]                                ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[15]                                ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[15]                                ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[16]                                ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[16]                                ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[17]                                ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[17]                                ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[18]                                ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[18]                                ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[19]                                ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[19]                                ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[20]                                ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[20]                                ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[21]                                ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[21]                                ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[22]                                ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[22]                                ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[23]                                ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[23]                                ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[24]                                ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[24]                                ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[25]                                ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[25]                                ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[26]                                ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[26]                                ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[27]                                ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[27]                                ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[28]                                ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[28]                                ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[29]                                ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[29]                                ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[30]                                ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[30]                                ; Mux8:inst28|Mux32                                ; yes                    ;
+; Mux9:inst27|saida[31]                                ; Mux9:inst27|Mux32                                ; yes                    ;
+; Mux8:inst28|saida[31]                                ; Mux8:inst28|Mux32                                ; yes                    ;
 ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
 ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[30]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
 ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[29]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
@@ -370,70 +435,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[30]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
 ; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[29]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
 ; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[28]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[27]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[26]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[25]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[24]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[23]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[22]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[21]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[20]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[19]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[18]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[17]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[16]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[15]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[14]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[13]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[12]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[11]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[10]     ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[9]      ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[8]      ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[7]      ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[6]      ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[5]      ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[4]      ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[3]      ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[2]      ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[1]      ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[0]      ; MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] ; yes                    ;
-; Mux8:inst28|saida[31]                                ; Mux8:inst28|Mux32                                ; yes                    ;
-; Mux9:inst27|saida[31]                                ; Mux9:inst27|Mux32                                ; yes                    ;
-; Mux8:inst28|saida[30]                                ; Mux8:inst28|Mux32                                ; yes                    ;
-; Mux9:inst27|saida[0]                                 ; Mux9:inst27|Mux32                                ; yes                    ;
-; Mux8:inst28|saida[0]                                 ; Mux8:inst28|Mux32                                ; yes                    ;
-; Mux9:inst27|saida[1]                                 ; Mux9:inst27|Mux32                                ; yes                    ;
-; Mux8:inst28|saida[1]                                 ; Mux8:inst28|Mux32                                ; yes                    ;
-; Mux9:inst27|saida[2]                                 ; Mux9:inst27|Mux32                                ; yes                    ;
-; Mux8:inst28|saida[2]                                 ; Mux8:inst28|Mux32                                ; yes                    ;
-; Mux9:inst27|saida[3]                                 ; Mux9:inst27|Mux32                                ; yes                    ;
-; Mux8:inst28|saida[3]                                 ; Mux8:inst28|Mux32                                ; yes                    ;
-; Mux9:inst27|saida[4]                                 ; Mux9:inst27|Mux32                                ; yes                    ;
-; Mux8:inst28|saida[4]                                 ; Mux8:inst28|Mux32                                ; yes                    ;
-; Mux9:inst27|saida[5]                                 ; Mux9:inst27|Mux32                                ; yes                    ;
-; Mux8:inst28|saida[5]                                 ; Mux8:inst28|Mux32                                ; yes                    ;
-; Mux9:inst27|saida[6]                                 ; Mux9:inst27|Mux32                                ; yes                    ;
-; Mux8:inst28|saida[6]                                 ; Mux8:inst28|Mux32                                ; yes                    ;
-; Mux9:inst27|saida[7]                                 ; Mux9:inst27|Mux32                                ; yes                    ;
-; Mux8:inst28|saida[7]                                 ; Mux8:inst28|Mux32                                ; yes                    ;
-; Mux9:inst27|saida[8]                                 ; Mux9:inst27|Mux32                                ; yes                    ;
-; Mux8:inst28|saida[8]                                 ; Mux8:inst28|Mux32                                ; yes                    ;
-; Mux9:inst27|saida[9]                                 ; Mux9:inst27|Mux32                                ; yes                    ;
-; Mux8:inst28|saida[9]                                 ; Mux8:inst28|Mux32                                ; yes                    ;
-; Mux9:inst27|saida[10]                                ; Mux9:inst27|Mux32                                ; yes                    ;
-; Mux8:inst28|saida[10]                                ; Mux8:inst28|Mux32                                ; yes                    ;
-; Mux9:inst27|saida[11]                                ; Mux9:inst27|Mux32                                ; yes                    ;
-; Mux8:inst28|saida[11]                                ; Mux8:inst28|Mux32                                ; yes                    ;
-; Mux9:inst27|saida[12]                                ; Mux9:inst27|Mux32                                ; yes                    ;
-; Mux8:inst28|saida[12]                                ; Mux8:inst28|Mux32                                ; yes                    ;
-; Mux9:inst27|saida[13]                                ; Mux9:inst27|Mux32                                ; yes                    ;
-; Mux8:inst28|saida[13]                                ; Mux8:inst28|Mux32                                ; yes                    ;
-; Mux9:inst27|saida[14]                                ; Mux9:inst27|Mux32                                ; yes                    ;
-; Mux8:inst28|saida[14]                                ; Mux8:inst28|Mux32                                ; yes                    ;
-; Mux9:inst27|saida[15]                                ; Mux9:inst27|Mux32                                ; yes                    ;
-; Mux8:inst28|saida[15]                                ; Mux8:inst28|Mux32                                ; yes                    ;
-; Mux9:inst27|saida[16]                                ; Mux9:inst27|Mux32                                ; yes                    ;
 ; Number of user-specified and inferred latches = 231  ;                                                  ;                        ;
 +------------------------------------------------------+--------------------------------------------------+------------------------+
 Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -467,17 +468,17 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +--------------------------------+---------------------------+----------------------------------------------------------------------------------+
 ; Register name                  ; Reason for Removal        ; Registers Removed due to This Register                                           ;
 +--------------------------------+---------------------------+----------------------------------------------------------------------------------+
-; Control_Unit:inst2|EPC_CONTROL ; Stuck at GND              ; Registrador:EPC|Saida[31], Registrador:EPC|Saida[30], Registrador:EPC|Saida[29], ;
-;                                ; due to stuck port data_in ; Registrador:EPC|Saida[28], Registrador:EPC|Saida[27], Registrador:EPC|Saida[26], ;
-;                                ;                           ; Registrador:EPC|Saida[25], Registrador:EPC|Saida[24], Registrador:EPC|Saida[23], ;
-;                                ;                           ; Registrador:EPC|Saida[22], Registrador:EPC|Saida[21], Registrador:EPC|Saida[20], ;
-;                                ;                           ; Registrador:EPC|Saida[19], Registrador:EPC|Saida[18], Registrador:EPC|Saida[17], ;
-;                                ;                           ; Registrador:EPC|Saida[16], Registrador:EPC|Saida[15], Registrador:EPC|Saida[14], ;
-;                                ;                           ; Registrador:EPC|Saida[13], Registrador:EPC|Saida[12], Registrador:EPC|Saida[11], ;
-;                                ;                           ; Registrador:EPC|Saida[10], Registrador:EPC|Saida[9], Registrador:EPC|Saida[8],   ;
-;                                ;                           ; Registrador:EPC|Saida[7], Registrador:EPC|Saida[6], Registrador:EPC|Saida[5],    ;
-;                                ;                           ; Registrador:EPC|Saida[4], Registrador:EPC|Saida[3], Registrador:EPC|Saida[2],    ;
-;                                ;                           ; Registrador:EPC|Saida[1], Registrador:EPC|Saida[0]                               ;
+; Control_Unit:inst2|EPC_CONTROL ; Stuck at GND              ; Registrador:EPC|Saida[30], Registrador:EPC|Saida[29], Registrador:EPC|Saida[28], ;
+;                                ; due to stuck port data_in ; Registrador:EPC|Saida[27], Registrador:EPC|Saida[26], Registrador:EPC|Saida[25], ;
+;                                ;                           ; Registrador:EPC|Saida[24], Registrador:EPC|Saida[23], Registrador:EPC|Saida[22], ;
+;                                ;                           ; Registrador:EPC|Saida[21], Registrador:EPC|Saida[20], Registrador:EPC|Saida[19], ;
+;                                ;                           ; Registrador:EPC|Saida[18], Registrador:EPC|Saida[17], Registrador:EPC|Saida[16], ;
+;                                ;                           ; Registrador:EPC|Saida[15], Registrador:EPC|Saida[14], Registrador:EPC|Saida[13], ;
+;                                ;                           ; Registrador:EPC|Saida[12], Registrador:EPC|Saida[11], Registrador:EPC|Saida[10], ;
+;                                ;                           ; Registrador:EPC|Saida[9], Registrador:EPC|Saida[8], Registrador:EPC|Saida[7],    ;
+;                                ;                           ; Registrador:EPC|Saida[6], Registrador:EPC|Saida[5], Registrador:EPC|Saida[4],    ;
+;                                ;                           ; Registrador:EPC|Saida[3], Registrador:EPC|Saida[2], Registrador:EPC|Saida[1],    ;
+;                                ;                           ; Registrador:EPC|Saida[0], Registrador:EPC|Saida[31]                              ;
 +--------------------------------+---------------------------+----------------------------------------------------------------------------------+
 
 
@@ -487,59 +488,58 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 1846  ;
-; Number of registers using Synchronous Clear  ; 242   ;
-; Number of registers using Synchronous Load   ; 267   ;
+; Number of registers using Synchronous Clear  ; 214   ;
+; Number of registers using Synchronous Load   ; 260   ;
 ; Number of registers using Asynchronous Clear ; 1344  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1508  ;
+; Number of registers using Clock Enable       ; 1506  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
-; 3:1                ; 95 bits   ; 190 ALUTs     ; 0 ALUTs              ; 190 ALUTs              ; Yes        ; |Processador|MultDiv:inst24|DivBox:inst11|QUOTIENT[20]       ;
-; 4:1                ; 64 bits   ; 128 ALUTs     ; 0 ALUTs              ; 128 ALUTs              ; Yes        ; |Processador|MultDiv:inst24|MultBox:inst6|HI[20]             ;
-; 4:1                ; 63 bits   ; 126 ALUTs     ; 63 ALUTs             ; 63 ALUTs               ; Yes        ; |Processador|MultDiv:inst24|DivBox:inst11|REMAINING[0]       ;
-; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |Processador|Registrador:B|Saida[16]                         ;
-; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |Processador|Registrador:A|Saida[30]                         ;
-; 7:1                ; 32 bits   ; 128 ALUTs     ; 0 ALUTs              ; 128 ALUTs              ; Yes        ; |Processador|MultDiv:inst24|DivBox:inst11|HI[3]              ;
-; 7:1                ; 32 bits   ; 128 ALUTs     ; 0 ALUTs              ; 128 ALUTs              ; Yes        ; |Processador|MultDiv:inst24|DivBox:inst11|LO[26]             ;
-; 257:1              ; 8 bits    ; 1368 ALUTs    ; 0 ALUTs              ; 1368 ALUTs             ; Yes        ; |Processador|Control_Unit:inst2|counter[1]                   ;
-; 14:1               ; 13 bits   ; 117 ALUTs     ; 78 ALUTs             ; 39 ALUTs               ; Yes        ; |Processador|RegDesloc:inst17|temp[7]                        ;
-; 14:1               ; 13 bits   ; 117 ALUTs     ; 78 ALUTs             ; 39 ALUTs               ; Yes        ; |Processador|RegDesloc:inst17|temp[18]                       ;
-; 257:1              ; 19 bits   ; 3249 ALUTs    ; 418 ALUTs            ; 2831 ALUTs             ; Yes        ; |Processador|Control_Unit:inst2|mult_div[0]                  ;
-; 258:1              ; 4 bits    ; 688 ALUTs     ; 68 ALUTs             ; 620 ALUTs              ; Yes        ; |Processador|Control_Unit:inst2|mux_9[1]                     ;
-; 261:1              ; 2 bits    ; 348 ALUTs     ; 68 ALUTs             ; 280 ALUTs              ; Yes        ; |Processador|Control_Unit:inst2|next_state[6]                ;
-; 319:1              ; 4 bits    ; 848 ALUTs     ; 72 ALUTs             ; 776 ALUTs              ; Yes        ; |Processador|Control_Unit:inst2|shift_control[0]             ;
-; 320:1              ; 6 bits    ; 1278 ALUTs    ; 120 ALUTs            ; 1158 ALUTs             ; Yes        ; |Processador|Control_Unit:inst2|mux_8[0]                     ;
-; 320:1              ; 2 bits    ; 426 ALUTs     ; 32 ALUTs             ; 394 ALUTs              ; Yes        ; |Processador|Control_Unit:inst2|ss_control[0]                ;
-; 385:1              ; 4 bits    ; 1024 ALUTs    ; 328 ALUTs            ; 696 ALUTs              ; Yes        ; |Processador|Control_Unit:inst2|next_state[4]                ;
-; 3:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux8:inst28|Mux20                               ;
-; 3:1                ; 65 bits   ; 130 ALUTs     ; 130 ALUTs            ; 0 ALUTs                ; No         ; |Processador|MultDiv:inst24|MultBox:inst6|S                  ;
-; 3:1                ; 64 bits   ; 128 ALUTs     ; 128 ALUTs            ; 0 ALUTs                ; No         ; |Processador|MultDiv:inst24|MultBox:inst6|P                  ;
-; 3:1                ; 65 bits   ; 130 ALUTs     ; 130 ALUTs            ; 0 ALUTs                ; No         ; |Processador|MultDiv:inst24|DivBox:inst11|REMAINING          ;
-; 3:1                ; 8 bits    ; 16 ALUTs      ; 8 ALUTs              ; 8 ALUTs                ; No         ; |Processador|StoreSize:inst4|WRITE_DATA[14]                  ;
-; 3:1                ; 8 bits    ; 16 ALUTs      ; 8 ALUTs              ; 8 ALUTs                ; No         ; |Processador|LoadSize:inst6|OUTPUT[9]                        ;
-; 8:1                ; 32 bits   ; 160 ALUTs     ; 64 ALUTs             ; 96 ALUTs               ; No         ; |Processador|Ula32:inst26|Mux60                              ;
-; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |Processador|Ula32:inst26|Mux22                              ;
-; 4:1                ; 31 bits   ; 62 ALUTs      ; 62 ALUTs             ; 0 ALUTs                ; No         ; |Processador|MultDiv:inst24|DivBox:inst11|REMAINING          ;
-; 4:1                ; 31 bits   ; 62 ALUTs      ; 62 ALUTs             ; 0 ALUTs                ; No         ; |Processador|MultDiv:inst24|DivBox:inst11|DIVISOR            ;
-; 4:1                ; 64 bits   ; 128 ALUTs     ; 64 ALUTs             ; 64 ALUTs               ; No         ; |Processador|MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[9] ;
-; 5:1                ; 2 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; No         ; |Processador|mux10:inst18|Mux1                               ;
-; 5:1                ; 30 bits   ; 90 ALUTs      ; 90 ALUTs             ; 0 ALUTs                ; No         ; |Processador|mux10:inst18|Mux26                              ;
-; 5:1                ; 5 bits    ; 15 ALUTs      ; 15 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux6:inst16|Mux0                                ;
-; 4:1                ; 17 bits   ; 34 ALUTs      ; 34 ALUTs             ; 0 ALUTs                ; No         ; |Processador|MultDiv:inst24|MultBox:inst6|Mux34              ;
-; 4:1                ; 17 bits   ; 34 ALUTs      ; 34 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux9:inst27|Mux28                               ;
-; 6:1                ; 32 bits   ; 128 ALUTs     ; 64 ALUTs             ; 64 ALUTs               ; No         ; |Processador|MultDiv:inst24|MultBox:inst6|Mux20              ;
-; 5:1                ; 2 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; No         ; |Processador|Mux9:inst27|Mux0                                ;
-; 5:1                ; 13 bits   ; 39 ALUTs      ; 39 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux9:inst27|Mux12                               ;
-; 10:1               ; 16 bits   ; 96 ALUTs      ; 96 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux7:inst19|Mux31                               ;
-; 11:1               ; 14 bits   ; 98 ALUTs      ; 98 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux7:inst19|Mux14                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; 3:1                ; 95 bits   ; 190 ALUTs     ; 0 ALUTs              ; 190 ALUTs              ; Yes        ; |Processador|MultDiv:inst24|DivBox:inst11|QUOTIENT[23]        ;
+; 4:1                ; 64 bits   ; 128 ALUTs     ; 0 ALUTs              ; 128 ALUTs              ; Yes        ; |Processador|MultDiv:inst24|MultBox:inst6|HI[1]               ;
+; 4:1                ; 63 bits   ; 126 ALUTs     ; 63 ALUTs             ; 63 ALUTs               ; Yes        ; |Processador|MultDiv:inst24|DivBox:inst11|REMAINING[53]       ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |Processador|Registrador:B|Saida[15]                          ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |Processador|Registrador:A|Saida[1]                           ;
+; 7:1                ; 32 bits   ; 128 ALUTs     ; 0 ALUTs              ; 128 ALUTs              ; Yes        ; |Processador|MultDiv:inst24|DivBox:inst11|HI[17]              ;
+; 7:1                ; 32 bits   ; 128 ALUTs     ; 0 ALUTs              ; 128 ALUTs              ; Yes        ; |Processador|MultDiv:inst24|DivBox:inst11|LO[26]              ;
+; 14:1               ; 13 bits   ; 117 ALUTs     ; 78 ALUTs             ; 39 ALUTs               ; Yes        ; |Processador|RegDesloc:inst17|temp[2]                         ;
+; 14:1               ; 13 bits   ; 117 ALUTs     ; 78 ALUTs             ; 39 ALUTs               ; Yes        ; |Processador|RegDesloc:inst17|temp[17]                        ;
+; 257:1              ; 17 bits   ; 2907 ALUTs    ; 391 ALUTs            ; 2516 ALUTs             ; Yes        ; |Processador|Control_Unit:inst2|mult_div[0]                   ;
+; 258:1              ; 8 bits    ; 1376 ALUTs    ; 0 ALUTs              ; 1376 ALUTs             ; Yes        ; |Processador|Control_Unit:inst2|counter[5]                    ;
+; 258:1              ; 4 bits    ; 688 ALUTs     ; 80 ALUTs             ; 608 ALUTs              ; Yes        ; |Processador|Control_Unit:inst2|mux_8[1]                      ;
+; 319:1              ; 4 bits    ; 848 ALUTs     ; 76 ALUTs             ; 772 ALUTs              ; Yes        ; |Processador|Control_Unit:inst2|shift_control[0]              ;
+; 320:1              ; 6 bits    ; 1278 ALUTs    ; 132 ALUTs            ; 1146 ALUTs             ; Yes        ; |Processador|Control_Unit:inst2|mux_8[0]                      ;
+; 320:1              ; 2 bits    ; 426 ALUTs     ; 32 ALUTs             ; 394 ALUTs              ; Yes        ; |Processador|Control_Unit:inst2|ss_control[1]                 ;
+; 385:1              ; 3 bits    ; 768 ALUTs     ; 198 ALUTs            ; 570 ALUTs              ; Yes        ; |Processador|Control_Unit:inst2|next_state[4]                 ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux8:inst28|Mux19                                ;
+; 3:1                ; 65 bits   ; 130 ALUTs     ; 130 ALUTs            ; 0 ALUTs                ; No         ; |Processador|MultDiv:inst24|MultBox:inst6|S                   ;
+; 3:1                ; 64 bits   ; 128 ALUTs     ; 128 ALUTs            ; 0 ALUTs                ; No         ; |Processador|MultDiv:inst24|MultBox:inst6|P                   ;
+; 3:1                ; 65 bits   ; 130 ALUTs     ; 130 ALUTs            ; 0 ALUTs                ; No         ; |Processador|MultDiv:inst24|DivBox:inst11|DIVISOR             ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 8 ALUTs              ; 8 ALUTs                ; No         ; |Processador|StoreSize:inst4|WRITE_DATA[15]                   ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 8 ALUTs              ; 8 ALUTs                ; No         ; |Processador|LoadSize:inst6|OUTPUT[9]                         ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 64 ALUTs             ; 96 ALUTs               ; No         ; |Processador|Ula32:inst26|Mux61                               ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |Processador|Ula32:inst26|Mux14                               ;
+; 4:1                ; 31 bits   ; 62 ALUTs      ; 62 ALUTs             ; 0 ALUTs                ; No         ; |Processador|MultDiv:inst24|DivBox:inst11|REMAINING           ;
+; 4:1                ; 31 bits   ; 62 ALUTs      ; 62 ALUTs             ; 0 ALUTs                ; No         ; |Processador|MultDiv:inst24|DivBox:inst11|DIVISOR             ;
+; 4:1                ; 64 bits   ; 128 ALUTs     ; 64 ALUTs             ; 64 ALUTs               ; No         ; |Processador|MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[18] ;
+; 5:1                ; 2 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; No         ; |Processador|mux10:inst18|Mux0                                ;
+; 5:1                ; 30 bits   ; 90 ALUTs      ; 90 ALUTs             ; 0 ALUTs                ; No         ; |Processador|mux10:inst18|Mux31                               ;
+; 5:1                ; 5 bits    ; 15 ALUTs      ; 15 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux6:inst16|Mux0                                 ;
+; 4:1                ; 17 bits   ; 34 ALUTs      ; 34 ALUTs             ; 0 ALUTs                ; No         ; |Processador|MultDiv:inst24|MultBox:inst6|Mux45               ;
+; 4:1                ; 17 bits   ; 34 ALUTs      ; 34 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux9:inst27|Mux21                                ;
+; 6:1                ; 32 bits   ; 128 ALUTs     ; 64 ALUTs             ; 64 ALUTs               ; No         ; |Processador|MultDiv:inst24|MultBox:inst6|Mux31               ;
+; 5:1                ; 2 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; No         ; |Processador|Mux9:inst27|Mux0                                 ;
+; 5:1                ; 13 bits   ; 39 ALUTs      ; 39 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux9:inst27|Mux2                                 ;
+; 10:1               ; 16 bits   ; 96 ALUTs      ; 96 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux7:inst19|Mux29                                ;
+; 11:1               ; 14 bits   ; 98 ALUTs      ; 98 ALUTs             ; 0 ALUTs                ; No         ; |Processador|Mux7:inst19|Mux14                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -777,7 +777,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sat Oct 19 10:16:39 2019
+    Info: Processing started: Sat Oct 19 11:13:41 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DedoNoQuartusEGritaria -c DedoNoQuartusEGritaria
 Info: Found 1 design units, including 1 entities, in source file mux3.v
     Info: Found entity 1: Mux3
@@ -851,6 +851,7 @@ Info: Found 1 design units, including 1 entities, in source file divbox.v
 Info: Found 1 design units, including 1 entities, in source file multdiv.bdf
     Info: Found entity 1: MultDiv
 Info: Elaborating entity "Processador" for the top level hierarchy
+Warning: Pin "HI_OUT[31..0]" overlaps another pin, block, or symbol
 Warning: Block or symbol "Banco_reg" of instance "inst14" overlaps another block or symbol
 Warning: Block or symbol "mux6" of instance "inst16" overlaps another block or symbol
 Warning: Block or symbol "Mux4" of instance "inst9" overlaps another block or symbol
@@ -907,13 +908,11 @@ Warning (10230): Verilog HDL assignment warning at Control_Unit.v(1461): truncat
 Warning (10230): Verilog HDL assignment warning at Control_Unit.v(1490): truncated value with size 2 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at Control_Unit.v(1518): truncated value with size 2 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at Control_Unit.v(1556): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at Control_Unit.v(1593): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Control_Unit.v(1595): truncated value with size 2 to match size of target (1)
 Warning (10272): Verilog HDL Case Statement warning at Control_Unit.v(766): case item expression covers a value already covered by a previous case item
 Warning (10272): Verilog HDL Case Statement warning at Control_Unit.v(795): case item expression covers a value already covered by a previous case item
 Warning (10272): Verilog HDL Case Statement warning at Control_Unit.v(824): case item expression covers a value already covered by a previous case item
 Warning (10272): Verilog HDL Case Statement warning at Control_Unit.v(853): case item expression covers a value already covered by a previous case item
-Warning (10272): Verilog HDL Case Statement warning at Control_Unit.v(911): case item expression covers a value already covered by a previous case item
-Warning (10272): Verilog HDL Case Statement warning at Control_Unit.v(1535): case item expression covers a value already covered by a previous case item
 Info: Elaborating entity "Ula32" for hierarchy "Ula32:inst26"
 Info: Elaborating entity "Mux8" for hierarchy "Mux8:inst28"
 Warning (10270): Verilog HDL Case Statement warning at Mux8.v(21): incomplete case statement has no default case item
@@ -1311,6 +1310,134 @@ Warning: LATCH primitive "mux10:inst18|saida[3]" is permanently enabled
 Warning: LATCH primitive "mux10:inst18|saida[2]" is permanently enabled
 Warning: LATCH primitive "mux10:inst18|saida[1]" is permanently enabled
 Warning: LATCH primitive "mux10:inst18|saida[0]" is permanently enabled
+Warning: Latch Mux9:inst27|saida[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[1]
+Warning: Latch Mux8:inst28|saida[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[8] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[8] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[9] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[9] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[10] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[10] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[11] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[11] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[12] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[12] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[13] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[13] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[14] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[14] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[15] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[15] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[16] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[16] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[17] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[17] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[18] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[18] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[19] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[19] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[20] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[20] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[21] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[21] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[22] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[22] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[23] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[23] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[24] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[24] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[25] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[25] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[26] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[26] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[27] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[27] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[28] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[28] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[29] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[29] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[30] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[30] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
+Warning: Latch Mux9:inst27|saida[31] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
+Warning: Latch Mux8:inst28|saida[31] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
 Warning: Latch MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[31] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mult_div[0]
 Warning: Latch MultDiv:inst24|MultDivMuxBox:inst7|HI_OUTPUT[30] has unsafe behavior
@@ -1439,134 +1566,6 @@ Warning: Latch MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[1] has unsafe behavi
     Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mult_div[0]
 Warning: Latch MultDiv:inst24|MultDivMuxBox:inst7|LO_OUTPUT[0] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mult_div[0]
-Warning: Latch Mux8:inst28|saida[31] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[31] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[30] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[0] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[1]
-Warning: Latch Mux8:inst28|saida[0] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[1] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[1]
-Warning: Latch Mux8:inst28|saida[1] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[2] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[2] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[3] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[3] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[4] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[4] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[5] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[5] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[6] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[6] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[7] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[7] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[8] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[8] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[9] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[9] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[10] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[10] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[11] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[11] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[12] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[12] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[13] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[13] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[14] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[14] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[15] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[15] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[16] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[16] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[17] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[17] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[18] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[18] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[19] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[19] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[20] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[20] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[21] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[21] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[22] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[22] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[23] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[23] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[24] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[24] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[25] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[25] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[26] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[26] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[27] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[27] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[28] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[28] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[29] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
-Warning: Latch Mux8:inst28|saida[29] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_8[0]
-Warning: Latch Mux9:inst27|saida[30] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_9[0]
 Warning: Latch Mux7:inst19|saida[31] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Control_Unit:inst2|mux_7[3]
 Warning: Latch Mux7:inst19|saida[30] has unsafe behavior
@@ -1699,17 +1698,17 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "state[1]" is stuck at GND
     Warning (13410): Pin "state[0]" is stuck at GND
 Info: Timing-Driven Synthesis is running
-Info: Implemented 4920 device resources after synthesis - the final resource count might be different
+Info: Implemented 4961 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
-    Info: Implemented 451 output pins
-    Info: Implemented 4435 logic cells
+    Info: Implemented 453 output pins
+    Info: Implemented 4474 logic cells
     Info: Implemented 32 RAM segments
 Info: Generated suppressed messages file C:/Users/guilh/Desktop/Hardware 2/Hardware/Projeto/Arquivos de Projeto do Quartus 9.2/DedoNoQuartusEGritaria.map.smsg
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 501 warnings
-    Info: Peak virtual memory: 287 megabytes
-    Info: Processing ended: Sat Oct 19 10:17:11 2019
-    Info: Elapsed time: 00:00:32
-    Info: Total CPU time (on all processors): 00:00:36
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 500 warnings
+    Info: Peak virtual memory: 289 megabytes
+    Info: Processing ended: Sat Oct 19 11:14:06 2019
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:30
 
 
 +------------------------------------------+

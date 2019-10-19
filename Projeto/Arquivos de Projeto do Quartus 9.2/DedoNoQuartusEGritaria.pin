@@ -31,14 +31,18 @@
  --					Bank 1C:		2.5V
  --					Bank 2C:		2.5V
  --					Bank 2A:		2.5V
+ --					Bank 3A:		2.5V
  --					Bank 3C:		2.5V
  --					Bank 4C:		2.5V
+ --					Bank 4A:		2.5V
  --					Bank 5A:		2.5V
  --					Bank 5C:	2.5V
  --					Bank 6C:	2.5V
  --					Bank 6A:	2.5V
+ --					Bank 7A:	2.5V
  --					Bank 7C:	2.5V
  --					Bank 8C:	2.5V
+ --					Bank 8A:	2.5V
  -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
  --					It can also be used to report unused dedicated pins. The connection
  --					on the board for unused dedicated pins depends on whether this will
@@ -72,491 +76,787 @@
  ---------------------------------------------------------------------------------
 
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-CHIP  "DedoNoQuartusEGritaria"  ASSIGNED TO AN: EP3SL50F484C2
+CHIP  "DedoNoQuartusEGritaria"  ASSIGNED TO AN: EP3SL50F780C2
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
-GND                          : A1        : gnd    :                   :         :           :                
-zero                         : A2        : input  : 2.5 V             :         : 6A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : A3        :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A4        :        :                   :         : 6A        :                
-TEMPDIODEp                   : A5        :        :                   :         :           :                
-TEMPDIODEn                   : A6        :        :                   :         :           :                
-shift_control[0]             : A7        : output : 2.5 V             :         : 7C        : N              
-less                         : A8        : input  : 2.5 V             :         : 7C        : N              
-funct[0]                     : A9        : input  : 2.5 V             :         : 7C        : N              
-ir_write                     : A10       : output : 2.5 V             :         : 7C        : N              
-MDR_CONTROL                  : A11       : output : 2.5 V             :         : 7C        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : A12       :        :                   :         : 8C        :                
-mux_4                        : A13       : output : 2.5 V             :         : 8C        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : A14       :        :                   :         : 8C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A15       :        :                   :         : 8C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A16       :        :                   :         : 8C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A17       :        :                   :         : 8C        :                
-TDO                          : A18       : output :                   :         : 1A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A19       :        :                   :         : 1A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A20       :        :                   :         : 1A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A21       :        :                   :         : 1A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A22       :        :                   :         : 1A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA1       :        :                   :         : 5A        :                
+state[2]                     : A2        : output : 2.5 V             :         : 7A        : N              
+LO_OUT[6]                    : A3        : output : 2.5 V             :         : 7A        : N              
+HI_OUT[7]                    : A4        : output : 2.5 V             :         : 7A        : N              
+MUX_ULA_B[9]                 : A5        : output : 2.5 V             :         : 7A        : N              
+MEM_OUT[13]                  : A6        : output : 2.5 V             :         : 7A        : N              
+ULA_OUT_REG[16]              : A7        : output : 2.5 V             :         : 7A        : N              
+PC_OUT[23]                   : A8        : output : 2.5 V             :         : 7A        : N              
+LO_OUT[24]                   : A9        : output : 2.5 V             :         : 7A        : N              
+IR15_0[10]                   : A10       : output : 2.5 V             :         : 7C        : N              
+MULT_DIV_CTRL[1]             : A11       : output : 2.5 V             :         : 7C        : N              
+REG_B[1]                     : A12       : output : 2.5 V             :         : 7C        : N              
+MUX_WRITE_DATA[8]            : A13       : output : 2.5 V             :         : 7C        : N              
+MUX_WRITE_DATA[17]           : A14       : output : 2.5 V             :         : 7C        : N              
+MUX_WRITE_DATA[13]           : A15       : output : 2.5 V             :         : 8C        : N              
+MUX_WRITE_DATA[20]           : A16       : output : 2.5 V             :         : 8C        : N              
+MEM_OUT[7]                   : A17       : output : 2.5 V             :         : 8C        : N              
+PC_OUT[28]                   : A18       : output : 2.5 V             :         : 8C        : N              
+MEM_OUT[4]                   : A19       : output : 2.5 V             :         : 8C        : N              
+ULA_OUT_REG[30]              : A20       : output : 2.5 V             :         : 8A        : N              
+IR15_0[12]                   : A21       : output : 2.5 V             :         : 8A        : N              
+next_state[0]                : A22       : output : 2.5 V             :         : 8A        : N              
+ULA[15]                      : A23       : output : 2.5 V             :         : 8A        : N              
+IR15_0[5]                    : A24       : output : 2.5 V             :         : 8A        : N              
+LOAD_IR                      : A25       : output : 2.5 V             :         : 8A        : N              
+MUX_PC[28]                   : A26       : output : 2.5 V             :         : 8A        : N              
+PC_OUT[25]                   : A27       : output : 2.5 V             :         : 8A        : N              
+HI_OUT[19]                   : AA1       : output : 2.5 V             :         : 5A        : N              
 GND                          : AA2       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA3       :        :                   :         : 5A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA4       :        :                   :         : 5A        :                
+VCCIO5A                      : AA3       : power  :                   : 2.5V    : 5A        :                
+MUX_ULA_A[0]                 : AA4       : output : 2.5 V             :         : 5A        : N              
 GND                          : AA5       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA6       :        :                   :         : 4C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA7       :        :                   :         : 4C        :                
+ASDO                         : AA6       :        :                   :         : 1A        :                
+VCCIO5A                      : AA7       : power  :                   : 2.5V    : 5A        :                
 GND                          : AA8       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA9       :        :                   :         : 4C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA10      :        :                   :         : 4C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA9       :        :                   :         : 4A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA10      :        :                   :         : 4A        :                
 GND                          : AA11      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA12      :        :                   :         : 3C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA13      :        :                   :         : 3C        :                
+VREFB4CN0                    : AA12      : power  :                   :         : 4C        :                
+ULA_OUT_REG[23]              : AA13      : output : 2.5 V             :         : 4C        : N              
 GND                          : AA14      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA15      :        :                   :         : 3C        :                
-state[5]                     : AA16      : output : 2.5 V             :         : 3C        : N              
+PC_OUT[4]                    : AA15      : output : 2.5 V             :         : 3C        : N              
+VREFB3CN0                    : AA16      : power  :                   :         : 3C        :                
 GND                          : AA17      : gnd    :                   :         :           :                
-NC                           : AA18      :        :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA19      :        :                   :         : 2A        :                
+MUX_ULA_B[20]                : AA18      : output : 2.5 V             :         : 3A        : N              
+MUX_ULA_A[19]                : AA19      : output : 2.5 V             :         : 3A        : N              
 GND                          : AA20      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA21      :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA22      :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB1       :        :                   :         : 5A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB2       :        :                   :         : 5A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB3       :        :                   :         : 5A        :                
-nIO_PULLUP                   : AB4       :        :                   :         : 1A        :                
-GND                          : AB5       : gnd    :                   :         :           :                
-div0                         : AB6       : input  : 2.5 V             :         : 4C        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB7       :        :                   :         : 4C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB8       :        :                   :         : 4C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB9       :        :                   :         : 4C        :                
-negative                     : AB10      : input  : 2.5 V             :         : 4C        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB11      :        :                   :         : 4C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB12      :        :                   :         : 3C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB13      :        :                   :         : 3C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB14      :        :                   :         : 3C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB15      :        :                   :         : 3C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB16      :        :                   :         : 3C        :                
-nCONFIG                      : AB17      :        :                   :         : 1A        :                
-state[4]                     : AB18      : output : 2.5 V             :         : 2A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB19      :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB20      :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB21      :        :                   :         : 2A        :                
-GND                          : AB22      : gnd    :                   :         :           :                
-ALU_CONTROL[1]               : B1        : output : 2.5 V             :         : 6A        : N              
-mux_9[2]                     : B2        : output : 2.5 V             :         : 6A        : N              
+VCCPGM                       : AA21      : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
+VCCIO2A                      : AA22      : power  :                   : 2.5V    : 2A        :                
+PC_OUT[31]                   : AA23      : output : 2.5 V             :         : 2A        : N              
+ULA[20]                      : AA24      : output : 2.5 V             :         : 2A        : N              
+ULA[27]                      : AA25      : output : 2.5 V             :         : 2A        : N              
+ULA_OUT_REG[0]               : AA26      : output : 2.5 V             :         : 2A        : N              
+MEM_OUT[17]                  : AA27      : output : 2.5 V             :         : 2A        : N              
+PC_OUT[22]                   : AA28      : output : 2.5 V             :         : 2A        : N              
+LO_OUT[29]                   : AB1       : output : 2.5 V             :         : 5A        : N              
+HI_OUT[26]                   : AB2       : output : 2.5 V             :         : 5A        : N              
+state[1]                     : AB3       : output : 2.5 V             :         : 5A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB4       :        :                   :         : 5A        :                
+nCEO                         : AB5       :        :                   :         : 1A        :                
+VCCPT                        : AB6       : power  :                   : 2.5V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB7       :        :                   :         : 4A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB8       :        :                   :         : 4A        :                
+state[5]                     : AB9       : output : 2.5 V             :         : 4A        : N              
+VREFB4AN0                    : AB10      : power  :                   :         : 4A        :                
+MEM_OUT[3]                   : AB11      : output : 2.5 V             :         : 4A        : N              
+VCCIO4C                      : AB12      : power  :                   : 2.5V    : 4C        :                
+ULA[8]                       : AB13      : output : 2.5 V             :         : 4C        : N              
+VCC_CLKIN3C                  : AB14      : power  :                   : 2.5V    :           :                
+VCCD_PLL_B1                  : AB15      : power  :                   : 1.1V    :           :                
+MUX_ULA_B[6]                 : AB16      : output : 2.5 V             :         : 3C        : N              
+MEM_OUT[14]                  : AB17      : output : 2.5 V             :         : 3C        : N              
+VREFB3AN0                    : AB18      : power  :                   :         : 3A        :                
+ULA_OUT_REG[22]              : AB19      : output : 2.5 V             :         : 3A        : N              
+ULA[11]                      : AB20      : output : 2.5 V             :         : 3A        : N              
+MUX_PC[6]                    : AB21      : output : 2.5 V             :         : 3A        : N              
+NC                           : AB22      :        :                   :         :           :                
+PORSEL                       : AB23      :        :                   :         : 1A        :                
+OverFlow_OUT                 : AB24      : output : 2.5 V             :         : 2A        : N              
+MUX_ULA_A[21]                : AB25      : output : 2.5 V             :         : 2A        : N              
+PC_OUT[27]                   : AB26      : output : 2.5 V             :         : 2A        : N              
+MUX_PC[0]                    : AB27      : output : 2.5 V             :         : 2A        : N              
+ULA[17]                      : AB28      : output : 2.5 V             :         : 2A        : N              
+LO_OUT[27]                   : AC1       : output : 2.5 V             :         : 5A        : N              
+LO_OUT[28]                   : AC2       : output : 2.5 V             :         : 5A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC3       :        :                   :         : 5A        :                
+state[6]                     : AC4       : output : 2.5 V             :         : 5A        : N              
+DCLK                         : AC5       :        :                   :         : 1A        :                
+VCCIO4A                      : AC6       : power  :                   : 2.5V    : 4A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC7       :        :                   :         : 4A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC8       :        :                   :         : 4A        :                
+PC_OUT[19]                   : AC9       : output : 2.5 V             :         : 4A        : N              
+HI_OUT[5]                    : AC10      : output : 2.5 V             :         : 4A        : N              
+HI_OUT[20]                   : AC11      : output : 2.5 V             :         : 4C        : N              
+MEM_OUT[23]                  : AC12      : output : 2.5 V             :         : 4C        : N              
+VCC_CLKIN4C                  : AC13      : power  :                   : 2.5V    :           :                
+VCCA_PLL_B1                  : AC14      : power  :                   : 2.5V    :           :                
+VCCIO3C                      : AC15      : power  :                   : 2.5V    : 3C        :                
+MUX_PC[8]                    : AC16      : output : 2.5 V             :         : 3C        : N              
+ULA_OUT_REG[6]               : AC17      : output : 2.5 V             :         : 3C        : N              
+VCCIO3A                      : AC18      : power  :                   : 2.5V    : 3A        :                
+MUX_ULA_B[19]                : AC19      : output : 2.5 V             :         : 3A        : N              
+MUX_ULA_B[0]                 : AC20      : output : 2.5 V             :         : 3A        : N              
+MUX_PC[21]                   : AC21      : output : 2.5 V             :         : 3A        : N              
+VCCIO3A                      : AC22      : power  :                   : 2.5V    : 3A        :                
+VCCPT                        : AC23      : power  :                   : 2.5V    :           :                
+GND                          : AC24      : gnd    :                   :         :           :                
+PC_OUT[24]                   : AC25      : output : 2.5 V             :         : 2A        : N              
+MUX_ULA_B[7]                 : AC26      : output : 2.5 V             :         : 2A        : N              
+GND                          : AC27      : gnd    :                   :         :           :                
+MUX_ULA_A[14]                : AC28      : output : 2.5 V             :         : 2A        : N              
+HI_OUT[16]                   : AD1       : output : 2.5 V             :         : 5A        : N              
+GND                          : AD2       : gnd    :                   :         :           :                
+VCCIO5A                      : AD3       : power  :                   : 2.5V    : 5A        :                
+nCSO                         : AD4       :        :                   :         : 1A        :                
+GND                          : AD5       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD6       :        :                   :         : 4A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD7       :        :                   :         : 4A        :                
+GND                          : AD8       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD9       :        :                   :         : 4A        :                
+VCCIO4A                      : AD10      : power  :                   : 2.5V    : 4A        :                
+GND                          : AD11      : gnd    :                   :         :           :                
+HI_OUT[12]                   : AD12      : output : 2.5 V             :         : 4C        : N              
+PC_OUT[17]                   : AD13      : output : 2.5 V             :         : 4C        : N              
+GND                          : AD14      : gnd    :                   :         :           :                
+VCCPT                        : AD15      : power  :                   : 2.5V    :           :                
+MEM_OUT[2]                   : AD16      : output : 2.5 V             :         : 3C        : N              
+GND                          : AD17      : gnd    :                   :         :           :                
+MUX_ULA_A[8]                 : AD18      : output : 2.5 V             :         : 3A        : N              
+MUX_PC[3]                    : AD19      : output : 2.5 V             :         : 3A        : N              
+GND                          : AD20      : gnd    :                   :         :           :                
+PC_OUT[26]                   : AD21      : output : 2.5 V             :         : 3A        : N              
+MUX_PC[13]                   : AD22      : output : 2.5 V             :         : 3A        : N              
+GND                          : AD23      : gnd    :                   :         :           :                
+ULA[18]                      : AD24      : output : 2.5 V             :         : 3A        : N              
+nSTATUS                      : AD25      :        :                   :         : 1A        :                
+VCCIO2A                      : AD26      : power  :                   : 2.5V    : 2A        :                
+ULA[16]                      : AD27      : output : 2.5 V             :         : 2A        : N              
+MUX_ULA_B[21]                : AD28      : output : 2.5 V             :         : 2A        : N              
+HI_OUT[25]                   : AE1       : output : 2.5 V             :         : 5A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE2       :        :                   :         : 5A        :                
+nIO_PULLUP                   : AE3       :        :                   :         : 1A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE4       :        :                   :         : 4A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE5       :        :                   :         : 4A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE6       :        :                   :         : 4A        :                
+state[7]                     : AE7       : output : 2.5 V             :         : 4A        : N              
+HI_OUT[27]                   : AE8       : output : 2.5 V             :         : 4A        : N              
+MUX_PC[9]                    : AE9       : output : 2.5 V             :         : 4A        : N              
+LO_OUT[22]                   : AE10      : output : 2.5 V             :         : 4A        : N              
+REG_A[26]                    : AE11      : output : 2.5 V             :         : 4C        : N              
+HI_OUT[8]                    : AE12      : output : 2.5 V             :         : 4C        : N              
+REG_A[23]                    : AE13      : output : 2.5 V             :         : 4C        : N              
+MUX_ULA_B[24]                : AE14      : output : 2.5 V             :         : 4C        : N              
+PC_OUT[1]                    : AE15      : output : 2.5 V             :         : 3C        : N              
+MUX_ULA_A[6]                 : AE16      : output : 2.5 V             :         : 3C        : N              
+PC_OUT[0]                    : AE17      : output : 2.5 V             :         : 3C        : N              
+ULA_OUT_REG[7]               : AE18      : output : 2.5 V             :         : 3C        : N              
+MUX_ULA_A[16]                : AE19      : output : 2.5 V             :         : 3A        : N              
+ULA_OUT_REG[25]              : AE20      : output : 2.5 V             :         : 3A        : N              
+MUX_PC[2]                    : AE21      : output : 2.5 V             :         : 3A        : N              
+ULA[12]                      : AE22      : output : 2.5 V             :         : 3A        : N              
+ULA_OUT_REG[13]              : AE23      : output : 2.5 V             :         : 3A        : N              
+PC_OUT[18]                   : AE24      : output : 2.5 V             :         : 3A        : N              
+NC                           : AE25      :        :                   :         :           :                
+CONF_DONE                    : AE26      :        :                   :         : 1A        :                
+ULA[14]                      : AE27      : output : 2.5 V             :         : 2A        : N              
+PC_OUT[16]                   : AE28      : output : 2.5 V             :         : 2A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF1       :        :                   :         : 5A        :                
+LO_OUT[31]                   : AF2       : output : 2.5 V             :         : 5A        : N              
+GND                          : AF3       : gnd    :                   :         :           :                
+VCCIO4A                      : AF4       : power  :                   : 2.5V    : 4A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF5       :        :                   :         : 4A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF6       :        :                   :         : 4A        :                
+VCCIO4A                      : AF7       : power  :                   : 2.5V    : 4A        :                
+MUX_PC[5]                    : AF8       : output : 2.5 V             :         : 4A        : N              
+MUX_ULA_B[4]                 : AF9       : output : 2.5 V             :         : 4A        : N              
+LO_OUT[3]                    : AF10      : output : 2.5 V             :         : 4C        : N              
+LO_OUT[21]                   : AF11      : output : 2.5 V             :         : 4C        : N              
+MUX_ULA_A[2]                 : AF12      : output : 2.5 V             :         : 4C        : N              
+VCCIO4C                      : AF13      : power  :                   : 2.5V    : 4C        :                
+ULA_OUT_REG[2]               : AF14      : output : 2.5 V             :         : 4C        : N              
+MEM_OUT[21]                  : AF15      : output : 2.5 V             :         : 3C        : N              
+MEM_OUT[6]                   : AF16      : output : 2.5 V             :         : 3C        : N              
+ULA[2]                       : AF17      : output : 2.5 V             :         : 3C        : N              
+VCCIO3C                      : AF18      : power  :                   : 2.5V    : 3C        :                
+ULA_OUT_REG[21]              : AF19      : output : 2.5 V             :         : 3C        : N              
+MUX_ULA_B[18]                : AF20      : output : 2.5 V             :         : 3A        : N              
+MUX_PC[11]                   : AF21      : output : 2.5 V             :         : 3A        : N              
+VCCIO3A                      : AF22      : power  :                   : 2.5V    : 3A        :                
+MUX_ULA_A[13]                : AF23      : output : 2.5 V             :         : 3A        : N              
+MUX_ULA_A[17]                : AF24      : output : 2.5 V             :         : 3A        : N              
+VCCIO3A                      : AF25      : power  :                   : 2.5V    : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF26      :        :                   :         : 3A        :                
+GND                          : AF27      : gnd    :                   :         :           :                
+ULA[10]                      : AF28      : output : 2.5 V             :         : 2A        : N              
+state[3]                     : AG1       : output : 2.5 V             :         : 5A        : N              
+GND                          : AG2       : gnd    :                   :         :           :                
+MUX_ULA_B[31]                : AG3       : output : 2.5 V             :         : 4A        : N              
+MUX_PC[20]                   : AG4       : output : 2.5 V             :         : 4A        : N              
+GND                          : AG5       : gnd    :                   :         :           :                
+HI_OUT[1]                    : AG6       : output : 2.5 V             :         : 4A        : N              
+HI_OUT[13]                   : AG7       : output : 2.5 V             :         : 4A        : N              
+GND                          : AG8       : gnd    :                   :         :           :                
+HI_OUT[24]                   : AG9       : output : 2.5 V             :         : 4A        : N              
+REG_B[19]                    : AG10      : output : 2.5 V             :         : 4C        : N              
+GND                          : AG11      : gnd    :                   :         :           :                
+REG_A[17]                    : AG12      : output : 2.5 V             :         : 4C        : N              
+ULA_OUT_REG[5]               : AG13      : output : 2.5 V             :         : 4C        : N              
+GND                          : AG14      : gnd    :                   :         :           :                
+MEM_OUT[16]                  : AG15      : output : 2.5 V             :         : 3C        : N              
+ULA[7]                       : AG16      : output : 2.5 V             :         : 3C        : N              
+GND                          : AG17      : gnd    :                   :         :           :                
+MUX_ULA_A[10]                : AG18      : output : 2.5 V             :         : 3C        : N              
+ULA[3]                       : AG19      : output : 2.5 V             :         : 3C        : N              
+GND                          : AG20      : gnd    :                   :         :           :                
+MUX_ULA_A[22]                : AG21      : output : 2.5 V             :         : 3A        : N              
+MUX_PC[7]                    : AG22      : output : 2.5 V             :         : 3A        : N              
+GND                          : AG23      : gnd    :                   :         :           :                
+MUX_PC[18]                   : AG24      : output : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG25      :        :                   :         : 3A        :                
+GND                          : AG26      : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG27      :        :                   :         : 3A        :                
+MUX_ULA_B[8]                 : AG28      : output : 2.5 V             :         : 2A        : N              
+MUX_PC[4]                    : AH2       : output : 2.5 V             :         : 4A        : N              
+ULA_OUT_REG[20]              : AH3       : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH4       :        :                   :         : 4A        :                
+MUX_PC[15]                   : AH5       : output : 2.5 V             :         : 4A        : N              
+MUX_ULA_A[5]                 : AH6       : output : 2.5 V             :         : 4A        : N              
+PC_OUT[20]                   : AH7       : output : 2.5 V             :         : 4A        : N              
+HI_OUT[14]                   : AH8       : output : 2.5 V             :         : 4A        : N              
+HI_OUT[23]                   : AH9       : output : 2.5 V             :         : 4A        : N              
+REG_B[22]                    : AH10      : output : 2.5 V             :         : 4C        : N              
+LO_OUT[0]                    : AH11      : output : 2.5 V             :         : 4C        : N              
+HI_OUT[28]                   : AH12      : output : 2.5 V             :         : 4C        : N              
+ULA_OUT_REG[8]               : AH13      : output : 2.5 V             :         : 4C        : N              
+PC_OUT[9]                    : AH14      : output : 2.5 V             :         : 4C        : N              
+PC_OUT[5]                    : AH15      : output : 2.5 V             :         : 3C        : N              
+IR15_0[9]                    : AH16      : output : 2.5 V             :         : 3C        : N              
+PC_OUT[29]                   : AH17      : output : 2.5 V             :         : 3C        : N              
+PC_OUT[6]                    : AH18      : output : 2.5 V             :         : 3C        : N              
+MUX_ULA_A[27]                : AH19      : output : 2.5 V             :         : 3C        : N              
+ULA[0]                       : AH20      : output : 2.5 V             :         : 3A        : N              
+ULA_OUT_REG[18]              : AH21      : output : 2.5 V             :         : 3A        : N              
+MUX_PC[23]                   : AH22      : output : 2.5 V             :         : 3A        : N              
+MUX_ULA_B[11]                : AH23      : output : 2.5 V             :         : 3A        : N              
+ULA_OUT_REG[10]              : AH24      : output : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH25      :        :                   :         : 3A        :                
+PC_OUT[13]                   : AH26      : output : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH27      :        :                   :         : 3A        :                
+LO_OUT[10]                   : B1        : output : 2.5 V             :         : 6A        : N              
+PC_OUT[21]                   : B2        : output : 2.5 V             :         : 7A        : N              
 GND                          : B3        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B4        :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B5        :        :                   :         : 6A        :                
+state[0]                     : B4        : output : 2.5 V             :         : 7A        : N              
+MEM_OUT[11]                  : B5        : output : 2.5 V             :         : 7A        : N              
 GND                          : B6        : gnd    :                   :         :           :                
-funct[5]                     : B7        : input  : 2.5 V             :         : 7C        : N              
-pc_write                     : B8        : output : 2.5 V             :         : 7C        : N              
+MUX_ULA_B[29]                : B7        : output : 2.5 V             :         : 7A        : N              
+MUX_PC[31]                   : B8        : output : 2.5 V             :         : 7A        : N              
 GND                          : B9        : gnd    :                   :         :           :                
-mux_6[0]                     : B10       : output : 2.5 V             :         : 7C        : N              
-mux_7[2]                     : B11       : output : 2.5 V             :         : 7C        : N              
+REG_B[25]                    : B10       : output : 2.5 V             :         : 7C        : N              
+REG_A[30]                    : B11       : output : 2.5 V             :         : 7C        : N              
 GND                          : B12       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B13       :        :                   :         : 8C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B14       :        :                   :         : 8C        :                
+MUX_WRITE_DATA[4]            : B13       : output : 2.5 V             :         : 7C        : N              
+MUX_WRITE_DATA[11]           : B14       : output : 2.5 V             :         : 7C        : N              
 GND                          : B15       : gnd    :                   :         :           :                
-VCCIO8C                      : B16       : power  :                   : 2.5V    : 8C        :                
-mux_1[1]                     : B17       : output : 2.5 V             :         : 8C        : N              
+MUX_WRITE_DATA[14]           : B16       : output : 2.5 V             :         : 8C        : N              
+MUX_WRITE_REG[3]             : B17       : output : 2.5 V             :         : 8C        : N              
 GND                          : B18       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B19       :        :                   :         : 1A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B20       :        :                   :         : 1A        :                
+MUX_ULA_A[28]                : B19       : output : 2.5 V             :         : 8C        : N              
+ULA_OUT_REG[15]              : B20       : output : 2.5 V             :         : 8A        : N              
 GND                          : B21       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B22       :        :                   :         : 1A        :                
-mux_7[3]                     : C1        : output : 2.5 V             :         : 6A        : N              
+IR15_0[11]                   : B22       : output : 2.5 V             :         : 8A        : N              
+MUX_ULA_B[2]                 : B23       : output : 2.5 V             :         : 8A        : N              
+GND                          : B24       : gnd    :                   :         :           :                
+IR31_26[4]                   : B25       : output : 2.5 V             :         : 8A        : N              
+ULA[22]                      : B26       : output : 2.5 V             :         : 8A        : N              
+GND                          : B27       : gnd    :                   :         :           :                
+ULA_OUT_REG[31]              : B28       : output : 2.5 V             :         : 1A        : N              
+state[4]                     : C1        : output : 2.5 V             :         : 6A        : N              
 GND                          : C2        : gnd    :                   :         :           :                
-VCCIO6A                      : C3        : power  :                   : 2.5V    : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C4        :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C5        :        :                   :         : 6A        :                
-MSEL1                        : C6        :        :                   :         : 1A        :                
-mux_6[1]                     : C7        : output : 2.5 V             :         : 7C        : N              
-VCCIO7C                      : C8        : power  :                   : 2.5V    : 7C        :                
-LOAD_SIZE[0]                 : C9        : output : 2.5 V             :         : 7C        : N              
-mem_write                    : C10       : output : 2.5 V             :         : 7C        : N              
-mux_9[1]                     : C11       : output : 2.5 V             :         : 7C        : N              
-mux_3                        : C12       : output : 2.5 V             :         : 8C        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : C13       :        :                   :         : 8C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C14       :        :                   :         : 8C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C15       :        :                   :         : 8C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C16       :        :                   :         : 8C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C17       :        :                   :         : 8C        :                
-VCCIO1A                      : C18       : power  :                   : 2.5V    : 1A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C19       :        :                   :         : 1A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C20       :        :                   :         : 1A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C21       :        :                   :         : 1A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C22       :        :                   :         : 1A        :                
-ALU_CONTROL[0]               : D1        : output : 2.5 V             :         : 6A        : N              
-mux_8[0]                     : D2        : output : 2.5 V             :         : 6A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D3        :        :                   :         : 6A        :                
-VCCBAT                       : D4        : power  :                   : 2.5V    :           :                
-VCCIO6A                      : D5        : power  :                   : 2.5V    : 6A        :                
-NC                           : D6        :        :                   :         :           :                
-ALU_CONTROL[2]               : D7        : output : 2.5 V             :         : 7C        : N              
-mux_10[0]                    : D8        : output : 2.5 V             :         : 7C        : N              
-mux_10[1]                    : D9        : output : 2.5 V             :         : 7C        : N              
-mux_7[1]                     : D10       : output : 2.5 V             :         : 7C        : N              
-ss_control[1]                : D11       : output : 2.5 V             :         : 7C        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D12       :        :                   :         : 8C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D13       :        :                   :         : 8C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D14       :        :                   :         : 8C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D15       :        :                   :         : 8C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D16       :        :                   :         : 8C        :                
-TMS                          : D17       : input  :                   :         : 1A        :                
-TCK                          : D18       : input  :                   :         : 1A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D19       :        :                   :         : 1A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D20       :        :                   :         : 1A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D21       :        :                   :         : 1A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D22       :        :                   :         : 1A        :                
-next_state[5]                : E1        : output : 2.5 V             :         : 6A        : N              
-reset                        : E2        : input  : 2.5 V             :         : 6A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : E3        :        :                   :         : 6A        :                
-greater                      : E4        : input  : 2.5 V             :         : 6A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : E5        :        :                   :         : 6A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : C3        :        :                   :         : 7A        :                
+VCCIO7A                      : C4        : power  :                   : 2.5V    : 7A        :                
+LO_OUT[16]                   : C5        : output : 2.5 V             :         : 7A        : N              
+ULA[5]                       : C6        : output : 2.5 V             :         : 7A        : N              
+VCCIO7A                      : C7        : power  :                   : 2.5V    : 7A        :                
+MEM_OUT[25]                  : C8        : output : 2.5 V             :         : 7A        : N              
+MUX_ULA_B[3]                 : C9        : output : 2.5 V             :         : 7A        : N              
+REG_A[18]                    : C10       : output : 2.5 V             :         : 7C        : N              
+VCCIO7C                      : C11       : power  :                   : 2.5V    : 7C        :                
+REG_B[10]                    : C12       : output : 2.5 V             :         : 7C        : N              
+REG_A[31]                    : C13       : output : 2.5 V             :         : 7C        : N              
+MUX_WRITE_DATA[3]            : C14       : output : 2.5 V             :         : 7C        : N              
+MUX_WRITE_DATA[16]           : C15       : output : 2.5 V             :         : 8C        : N              
+VCCIO8C                      : C16       : power  :                   : 2.5V    : 8C        :                
+MEM_OUT[12]                  : C17       : output : 2.5 V             :         : 8C        : N              
+ULA[29]                      : C18       : output : 2.5 V             :         : 8C        : N              
+ULA[23]                      : C19       : output : 2.5 V             :         : 8C        : N              
+IR15_0[14]                   : C20       : output : 2.5 V             :         : 8A        : N              
+MUX_ULA_B[14]                : C21       : output : 2.5 V             :         : 8A        : N              
+VCCIO8A                      : C22       : power  :                   : 2.5V    : 8A        :                
+ULA_OUT_REG[29]              : C23       : output : 2.5 V             :         : 8A        : N              
+ULA_OUT_REG[11]              : C24       : output : 2.5 V             :         : 8A        : N              
+VCCIO8A                      : C25       : power  :                   : 2.5V    : 8A        :                
+TCK                          : C26       : input  :                   :         : 1A        :                
+MEM_WRITE                    : C27       : output : 2.5 V             :         : 1A        : N              
+MEM_OUT[30]                  : C28       : output : 2.5 V             :         : 1A        : N              
+LO_OUT[30]                   : D1        : output : 2.5 V             :         : 6A        : N              
+HI_OUT[2]                    : D2        : output : 2.5 V             :         : 6A        : N              
+TEMPDIODEp                   : D3        :        :                   :         :           :                
+TEMPDIODEn                   : D4        :        :                   :         :           :                
+DIV0_OUT                     : D5        : output : 2.5 V             :         : 7A        : N              
+HI_OUT[31]                   : D6        : output : 2.5 V             :         : 7A        : N              
+LO_OUT[15]                   : D7        : output : 2.5 V             :         : 7A        : N              
+MUX_ULA_B[5]                 : D8        : output : 2.5 V             :         : 7A        : N              
+MEM_OUT[24]                  : D9        : output : 2.5 V             :         : 7A        : N              
+LO_OUT[20]                   : D10       : output : 2.5 V             :         : 7A        : N              
+REG_B[18]                    : D11       : output : 2.5 V             :         : 7C        : N              
+REG_A[20]                    : D12       : output : 2.5 V             :         : 7C        : N              
+REG_B[3]                     : D13       : output : 2.5 V             :         : 7C        : N              
+MUX_WRITE_DATA[12]           : D14       : output : 2.5 V             :         : 7C        : N              
+MUX_WRITE_DATA[28]           : D15       : output : 2.5 V             :         : 8C        : N              
+MUX_WRITE_DATA[7]            : D16       : output : 2.5 V             :         : 8C        : N              
+IR20_16[3]                   : D17       : output : 2.5 V             :         : 8C        : N              
+MUX_ULA_A[26]                : D18       : output : 2.5 V             :         : 8C        : N              
+MUX_ULA_A[12]                : D19       : output : 2.5 V             :         : 8A        : N              
+ULA[19]                      : D20       : output : 2.5 V             :         : 8A        : N              
+MUX_ULA_B[22]                : D21       : output : 2.5 V             :         : 8A        : N              
+MUX_PC[27]                   : D22       : output : 2.5 V             :         : 8A        : N              
+HI_OUT[18]                   : D23       : output : 2.5 V             :         : 8A        : N              
+MEM_OUT[26]                  : D24       : output : 2.5 V             :         : 8A        : N              
+ULA[6]                       : D25       : output : 2.5 V             :         : 8A        : N              
+TRST                         : D26       : input  :                   :         : 1A        :                
+MEM_OUT[29]                  : D27       : output : 2.5 V             :         : 1A        : N              
+MEM_OUT[15]                  : D28       : output : 2.5 V             :         : 1A        : N              
+LO_OUT[9]                    : E1        : output : 2.5 V             :         : 6A        : N              
+MEM_OUT[8]                   : E2        : output : 2.5 V             :         : 6A        : N              
+VCCIO6A                      : E3        : power  :                   : 2.5V    : 6A        :                
+NC                           : E4        :        :                   :         :           :                
+ULA[4]                       : E5        : output : 2.5 V             :         : 7A        : N              
 GND                          : E6        : gnd    :                   :         :           :                
-MSEL0                        : E7        :        :                   :         : 1A        :                
-VCCIO7C                      : E8        : power  :                   : 2.5V    : 7C        :                
+LO_OUT[18]                   : E7        : output : 2.5 V             :         : 7A        : N              
+HI_OUT[11]                   : E8        : output : 2.5 V             :         : 7A        : N              
 GND                          : E9        : gnd    :                   :         :           :                
-VREFB7CN0                    : E10       : power  :                   :         : 7C        :                
-VCC_CLKIN7C                  : E11       : power  :                   : 2.5V    :           :                
+MUX_ULA_B[13]                : E10       : output : 2.5 V             :         : 7A        : N              
+ULA_OUT_REG[26]              : E11       : output : 2.5 V             :         : 7A        : N              
 GND                          : E12       : gnd    :                   :         :           :                
-VREFB8CN0                    : E13       : power  :                   :         : 8C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E14       :        :                   :         : 8C        :                
+REG_B[5]                     : E13       : output : 2.5 V             :         : 7C        : N              
+VCCPT                        : E14       : power  :                   : 2.5V    :           :                
 GND                          : E15       : gnd    :                   :         :           :                
-NC                           : E16       :        :                   :         :           :                
-TDI                          : E17       : input  :                   :         : 1A        :                
+MUX_WRITE_DATA[19]           : E16       : output : 2.5 V             :         : 8C        : N              
+MUX_ULA_B[30]                : E17       : output : 2.5 V             :         : 8C        : N              
 GND                          : E18       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E19       :        :                   :         : 1A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E20       :        :                   :         : 1A        :                
+VCCIO8A                      : E19       : power  :                   : 2.5V    : 8A        :                
+MUX_PC[25]                   : E20       : output : 2.5 V             :         : 8A        : N              
 GND                          : E21       : gnd    :                   :         :           :                
-state[6]                     : E22       : output : 2.5 V             :         : 1A        : N              
-LOAD_SIZE[1]                 : F1        : output : 2.5 V             :         : 6C        : N              
+ULA[26]                      : E22       : output : 2.5 V             :         : 8A        : N              
+PC_OUT[14]                   : E23       : output : 2.5 V             :         : 8A        : N              
+GND                          : E24       : gnd    :                   :         :           :                
+NC                           : E25       :        :                   :         :           :                
+VCCIO1A                      : E26       : power  :                   : 2.5V    : 1A        :                
+GND                          : E27       : gnd    :                   :         :           :                
+MEM_OUT[27]                  : E28       : output : 2.5 V             :         : 1A        : N              
+HI_OUT[10]                   : F1        : output : 2.5 V             :         : 6A        : N              
 GND                          : F2        : gnd    :                   :         :           :                
-funct[3]                     : F3        : input  : 2.5 V             :         : 6A        : N              
-ALU_OUT                      : F4        : output : 2.5 V             :         : 6A        : N              
+MUX_ULA_A[7]                 : F3        : output : 2.5 V             :         : 6A        : N              
+ULA_OUT_REG[24]              : F4        : output : 2.5 V             :         : 6A        : N              
 GND                          : F5        : gnd    :                   :         :           :                
-VCCPT                        : F6        : power  :                   : 2.5V    :           :                
-hi_lo                        : F7        : output : 2.5 V             :         : 6A        : N              
-next_state[0]                : F8        : output : 2.5 V             :         : 6A        : N              
-next_state[4]                : F9        : output : 2.5 V             :         : 7C        : N              
-next_state[7]                : F10       : output : 2.5 V             :         : 7C        : N              
-VCCPT                        : F11       : power  :                   : 2.5V    :           :                
-VCCA_PLL_T1                  : F12       : power  :                   : 2.5V    :           :                
-VCC_CLKIN8C                  : F13       : power  :                   : 2.5V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F14       :        :                   :         : 8C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F15       :        :                   :         : 1A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F16       :        :                   :         : 1A        :                
-VCCPT                        : F17       : power  :                   : 2.5V    :           :                
-TRST                         : F18       : input  :                   :         : 1A        :                
-VCCIO1A                      : F19       : power  :                   : 2.5V    : 1A        :                
-equal                        : F20       : input  : 2.5 V             :         : 1C        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : F21       :        :                   :         : 1C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F22       :        :                   :         : 1C        :                
-funct[1]                     : G1        : input  : 2.5 V             :         : 6C        : N              
-VCCIO6C                      : G2        : power  :                   : 2.5V    : 6C        :                
-next_state[2]                : G3        : output : 2.5 V             :         : 6C        : N              
-opcode[1]                    : G4        : input  : 2.5 V             :         : 6C        : N              
-VREFB6AN0                    : G5        : power  :                   :         : 6A        :                
-mult_div[0]                  : G6        : output : 2.5 V             :         : 6A        : N              
+VCCBAT                       : F6        : power  :                   : 2.5V    :           :                
+VCCIO7A                      : F7        : power  :                   : 2.5V    : 7A        :                
+LO_OUT[12]                   : F8        : output : 2.5 V             :         : 7A        : N              
+ULA[31]                      : F9        : output : 2.5 V             :         : 7A        : N              
+HI_OUT[3]                    : F10       : output : 2.5 V             :         : 7A        : N              
+VCCIO7A                      : F11       : power  :                   : 2.5V    : 7A        :                
+REG_A[0]                     : F12       : output : 2.5 V             :         : 7C        : N              
+MUX_WRITE_DATA[30]           : F13       : output : 2.5 V             :         : 7C        : N              
+VCC_CLKIN7C                  : F14       : power  :                   : 2.5V    :           :                
+VCCA_PLL_T1                  : F15       : power  :                   : 2.5V    :           :                
+VCC_CLKIN8C                  : F16       : power  :                   : 2.5V    :           :                
+ULA_OUT_REG[28]              : F17       : output : 2.5 V             :         : 8C        : N              
+MUX_ULA_B[27]                : F18       : output : 2.5 V             :         : 8C        : N              
+PC_OUT[30]                   : F19       : output : 2.5 V             :         : 8A        : N              
+MUX_ULA_B[10]                : F20       : output : 2.5 V             :         : 8A        : N              
+MUX_PC[22]                   : F21       : output : 2.5 V             :         : 8A        : N              
+MEM_OUT[31]                  : F22       : output : 2.5 V             :         : 8A        : N              
+VCCIO8A                      : F23       : power  :                   : 2.5V    : 8A        :                
+TDI                          : F24       : input  :                   :         : 1A        :                
+MUX_PC[19]                   : F25       : output : 2.5 V             :         : 1A        : N              
+MUX_PC[26]                   : F26       : output : 2.5 V             :         : 1A        : N              
+MUX_ULA_A[18]                : F27       : output : 2.5 V             :         : 1A        : N              
+PC_OUT[8]                    : F28       : output : 2.5 V             :         : 1A        : N              
+LO_OUT[11]                   : G1        : output : 2.5 V             :         : 6A        : N              
+MEM_OUT[5]                   : G2        : output : 2.5 V             :         : 6A        : N              
+HI_OUT[0]                    : G3        : output : 2.5 V             :         : 6A        : N              
+ULA[30]                      : G4        : output : 2.5 V             :         : 6A        : N              
+LO_OUT[19]                   : G5        : output : 2.5 V             :         : 6A        : N              
+VCCPT                        : G6        : power  :                   : 2.5V    :           :                
 MSEL2                        : G7        :        :                   :         : 1A        :                
-next_state[6]                : G8        : output : 2.5 V             :         : 6A        : N              
-next_state[3]                : G9        : output : 2.5 V             :         : 7C        : N              
-opcode[4]                    : G10       : input  : 2.5 V             :         : 7C        : N              
-shift_control[2]             : G11       : output : 2.5 V             :         : 7C        : N              
-VCCD_PLL_T1                  : G12       : power  :                   : 1.1V    :           :                
-VCCIO8C                      : G13       : power  :                   : 2.5V    : 8C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G14       :        :                   :         : 8C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G15       :        :                   :         : 1A        :                
-state[2]                     : G16       : output : 2.5 V             :         : 1A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : G17       :        :                   :         : 1A        :                
-VREFB1AN0                    : G18       : power  :                   :         : 1A        :                
-mux_8[1]                     : G19       : output : 2.5 V             :         : 1C        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : G20       :        :                   :         : 1C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G21       :        :                   :         : 1C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G22       :        :                   :         : 1C        :                
-mux_7[0]                     : H1        : output : 2.5 V             :         : 6C        : N              
-ss_control[0]                : H2        : output : 2.5 V             :         : 6C        : N              
-opcode[5]                    : H3        : input  : 2.5 V             :         : 6C        : N              
-opcode[3]                    : H4        : input  : 2.5 V             :         : 6C        : N              
-shift_control[1]             : H5        : output : 2.5 V             :         : 6C        : N              
-opcode[2]                    : H6        : input  : 2.5 V             :         : 6C        : N              
-XCH_CONTROL                  : H7        : output : 2.5 V             :         : 6C        : N              
-VCCPD6A                      : H8        : power  :                   : 2.5V    : 6A        :                
+LO_OUT[14]                   : G8        : output : 2.5 V             :         : 7A        : N              
+MUX_ULA_A[9]                 : G9        : output : 2.5 V             :         : 7A        : N              
+REG_A[10]                    : G10       : output : 2.5 V             :         : 7A        : N              
+VREFB7AN0                    : G11       : power  :                   :         : 7A        :                
+REG_A[3]                     : G12       : output : 2.5 V             :         : 7C        : N              
+REG_B[0]                     : G13       : output : 2.5 V             :         : 7C        : N              
+VCCIO7C                      : G14       : power  :                   : 2.5V    : 7C        :                
+VCCD_PLL_T1                  : G15       : power  :                   : 1.1V    :           :                
+MUX_ULA_A[4]                 : G16       : output : 2.5 V             :         : 8C        : N              
+VCCIO8C                      : G17       : power  :                   : 2.5V    : 8C        :                
+ULA[25]                      : G18       : output : 2.5 V             :         : 8A        : N              
+VREFB8AN0                    : G19       : power  :                   :         : 8A        :                
+MUX_ULA_B[12]                : G20       : output : 2.5 V             :         : 8A        : N              
+ULA_OUT_REG[19]              : G21       : output : 2.5 V             :         : 8A        : N              
+MUX_PC[14]                   : G22       : output : 2.5 V             :         : 8A        : N              
+VCCPT                        : G23       : power  :                   : 2.5V    :           :                
+TDO                          : G24       : output :                   :         : 1A        :                
+MUX_ULA_B[25]                : G25       : output : 2.5 V             :         : 1A        : N              
+MUX_ULA_A[3]                 : G26       : output : 2.5 V             :         : 1A        : N              
+IR15_0[2]                    : G27       : output : 2.5 V             :         : 1A        : N              
+IR15_0[0]                    : G28       : output : 2.5 V             :         : 1A        : N              
+IR15_0[8]                    : H1        : output : 2.5 V             :         : 6A        : N              
+REG_B[4]                     : H2        : output : 2.5 V             :         : 6A        : N              
+ULA_OUT_REG[9]               : H3        : output : 2.5 V             :         : 6A        : N              
+PC_OUT[10]                   : H4        : output : 2.5 V             :         : 6A        : N              
+HI_OUT[4]                    : H5        : output : 2.5 V             :         : 6A        : N              
+MUX_ULA_B[26]                : H6        : output : 2.5 V             :         : 6A        : N              
+VCCIO6A                      : H7        : power  :                   : 2.5V    : 6A        :                
+MSEL0                        : H8        :        :                   :         : 1A        :                
 GND                          : H9        : gnd    :                   :         :           :                
-mux_9[0]                     : H10       : output : 2.5 V             :         : 7C        : N              
-VCCPD7C                      : H11       : power  :                   : 2.5V    : 7C        :                
+REG_A[24]                    : H10       : output : 2.5 V             :         : 7A        : N              
+REG_A[28]                    : H11       : output : 2.5 V             :         : 7A        : N              
 GND                          : H12       : gnd    :                   :         :           :                
-VCCPD8C                      : H13       : power  :                   : 2.5V    : 8C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : H14       :        :                   :         : 8C        :                
+VREFB7CN0                    : H13       : power  :                   :         : 7C        :                
+MUX_WRITE_DATA[2]            : H14       : output : 2.5 V             :         : 7C        : N              
 GND                          : H15       : gnd    :                   :         :           :                
-REG_WRITE                    : H16       : output : 2.5 V             :         : 1A        : N              
-state[1]                     : H17       : output : 2.5 V             :         : 1C        : N              
+MUX_WRITE_DATA[15]           : H16       : output : 2.5 V             :         : 8C        : N              
+VREFB8CN0                    : H17       : power  :                   :         : 8C        :                
 GND                          : H18       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : H19       :        :                   :         : 1C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : H20       :        :                   :         : 1C        :                
+MUX_PC[30]                   : H19       : output : 2.5 V             :         : 8A        : N              
+ULA[24]                      : H20       : output : 2.5 V             :         : 8A        : N              
 GND                          : H21       : gnd    :                   :         :           :                
-VCCIO1C                      : H22       : power  :                   : 2.5V    : 1C        :                
-mux_6[2]                     : J1        : output : 2.5 V             :         : 6C        : N              
+TMS                          : H22       : input  :                   :         : 1A        :                
+VCCIO1A                      : H23       : power  :                   : 2.5V    : 1A        :                
+GND                          : H24       : gnd    :                   :         :           :                
+ULA_OUT_REG[27]              : H25       : output : 2.5 V             :         : 1A        : N              
+VCCIO1A                      : H26       : power  :                   : 2.5V    : 1A        :                
+GND                          : H27       : gnd    :                   :         :           :                
+IR15_0[15]                   : H28       : output : 2.5 V             :         : 1A        : N              
+REG_A[4]                     : J1        : output : 2.5 V             :         : 6A        : N              
 GND                          : J2        : gnd    :                   :         :           :                
-funct[4]                     : J3        : input  : 2.5 V             :         : 6C        : N              
-opcode[0]                    : J4        : input  : 2.5 V             :         : 6C        : N              
+REG_A[15]                    : J3        : output : 2.5 V             :         : 6A        : N              
+REG_A[12]                    : J4        : output : 2.5 V             :         : 6A        : N              
 GND                          : J5        : gnd    :                   :         :           :                
-next_state[1]                : J6        : output : 2.5 V             :         : 6C        : N              
-funct[2]                     : J7        : input  : 2.5 V             :         : 6C        : N              
+MEM_OUT[1]                   : J6        : output : 2.5 V             :         : 6A        : N              
+VREFB6AN0                    : J7        : power  :                   :         : 6A        :                
 GND                          : J8        : gnd    :                   :         :           :                
-VCC                          : J9        : power  :                   : 1.1V    :           :                
-GND                          : J10       : gnd    :                   :         :           :                
-VCCL                         : J11       : power  :                   : 1.1V    :           :                
-GND                          : J12       : gnd    :                   :         :           :                
-VCCL                         : J13       : power  :                   : 1.1V    :           :                
-GND                          : J14       : gnd    :                   :         :           :                
-VCCPD1A                      : J15       : power  :                   : 2.5V    : 1A        :                
-mux_10[2]                    : J16       : output : 2.5 V             :         : 1C        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : J17       :        :                   :         : 1C        :                
-~ALTERA_DATA0~ / RESERVED_INPUT : J18       : input  : 1.8 V             :         : 1C        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : J19       :        :                   :         : 1C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J20       :        :                   :         : 1C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J21       :        :                   :         : 1C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J22       :        :                   :         : 1C        :                
-mult_div[1]                  : K1        : output : 2.5 V             :         : 6C        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : K2        :        :                   :         : 6C        :                
-REG_A                        : K3        : output : 2.5 V             :         : 6C        : N              
-REG_B                        : K4        : output : 2.5 V             :         : 6C        : N              
-VREFB6CN0                    : K5        : power  :                   :         : 6C        :                
-VCCIO6C                      : K6        : power  :                   : 2.5V    : 6C        :                
-mux_2[1]                     : K7        : output : 2.5 V             :         : 6C        : N              
-mux_2[0]                     : K8        : output : 2.5 V             :         : 6C        : N              
-GND                          : K9        : gnd    :                   :         :           :                
-VCCL                         : K10       : power  :                   : 1.1V    :           :                
+MSEL1                        : J9        :        :                   :         : 1A        :                
+REG_B[28]                    : J10       : output : 2.5 V             :         : 7A        : N              
+REG_A[21]                    : J11       : output : 2.5 V             :         : 7A        : N              
+REG_A[6]                     : J12       : output : 2.5 V             :         : 7A        : N              
+GND                          : J13       : gnd    :                   :         :           :                
+REG_B[31]                    : J14       : output : 2.5 V             :         : 7C        : N              
+MUX_WRITE_REG[1]             : J15       : output : 2.5 V             :         : 8C        : N              
+MUX_WRITE_REG[4]             : J16       : output : 2.5 V             :         : 8C        : N              
+GND                          : J17       : gnd    :                   :         :           :                
+MUX_ULA_A[30]                : J18       : output : 2.5 V             :         : 8A        : N              
+REG_A[13]                    : J19       : output : 2.5 V             :         : 8A        : N              
+ULA_OUT_REG[12]              : J20       : output : 2.5 V             :         : 8A        : N              
+NC                           : J21       :        :                   :         :           :                
+MUX_ULA_A[29]                : J22       : output : 2.5 V             :         : 1A        : N              
+MUX_PC[10]                   : J23       : output : 2.5 V             :         : 1A        : N              
+MEM_OUT[19]                  : J24       : output : 2.5 V             :         : 1A        : N              
+MUX_WRITE_DATA[18]           : J25       : output : 2.5 V             :         : 1A        : N              
+MUX_WRITE_DATA[31]           : J26       : output : 2.5 V             :         : 1A        : N              
+MUX_WRITE_DATA[1]            : J27       : output : 2.5 V             :         : 1A        : N              
+IR25_21[1]                   : J28       : output : 2.5 V             :         : 1A        : N              
+MUX_WRITE_DATA[29]           : K1        : output : 2.5 V             :         : 6C        : N              
+REG_A[1]                     : K2        : output : 2.5 V             :         : 6C        : N              
+VCCIO6A                      : K3        : power  :                   : 2.5V    : 6A        :                
+IR15_0[6]                    : K4        : output : 2.5 V             :         : 6A        : N              
+IR15_0[7]                    : K5        : output : 2.5 V             :         : 6A        : N              
+REG_A[14]                    : K6        : output : 2.5 V             :         : 6A        : N              
+REG_A[5]                     : K7        : output : 2.5 V             :         : 6A        : N              
+LO_OUT[8]                    : K8        : output : 2.5 V             :         : 6A        : N              
+IR15_0[13]                   : K9        : output : 2.5 V             :         : 6A        : N              
+NC                           : K10       :        :                   :         :           :                
 GND                          : K11       : gnd    :                   :         :           :                
-VCCL                         : K12       : power  :                   : 1.1V    :           :                
+VCCPD7A                      : K12       : power  :                   : 2.5V    : 7A        :                
 GND                          : K13       : gnd    :                   :         :           :                
-VCCL                         : K14       : power  :                   : 1.1V    :           :                
-VCCPD1C                      : K15       : power  :                   : 2.5V    : 1C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K16       :        :                   :         : 1C        :                
-VCCIO1C                      : K17       : power  :                   : 2.5V    : 1C        :                
-VREFB1CN0                    : K18       : power  :                   :         : 1C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K19       :        :                   :         : 1C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K20       :        :                   :         : 1C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K21       :        :                   :         : 1C        :                
-GND+                         : K22       :        :                   :         : 1C        :                
-GND+                         : L1        :        :                   :         : 6C        :                
-GND+                         : L2        :        :                   :         : 6C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L3        :        :                   :         : 6C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L4        :        :                   :         : 6C        :                
-VCCA_PLL_R2                  : L5        : power  :                   : 2.5V    :           :                
-VCCD_PLL_R2                  : L6        : power  :                   : 1.1V    :           :                
-VCCPT                        : L7        : power  :                   : 2.5V    :           :                
-VCCPD6C                      : L8        : power  :                   : 2.5V    : 6C        :                
-VCC                          : L9        : power  :                   : 1.1V    :           :                
+VCCPD7C                      : K14       : power  :                   : 2.5V    : 7C        :                
+GND                          : K15       : gnd    :                   :         :           :                
+VCCPD8C                      : K16       : power  :                   : 2.5V    : 8C        :                
+GND                          : K17       : gnd    :                   :         :           :                
+VCCPD8A                      : K18       : power  :                   : 2.5V    : 8A        :                
+GND                          : K19       : gnd    :                   :         :           :                
+MUX_ULA_B[28]                : K20       : output : 2.5 V             :         : 1A        : N              
+IR31_26[0]                   : K21       : output : 2.5 V             :         : 1A        : N              
+VREFB1AN0                    : K22       : power  :                   :         : 1A        :                
+MUX_WRITE_DATA[23]           : K23       : output : 2.5 V             :         : 1A        : N              
+IR20_16[1]                   : K24       : output : 2.5 V             :         : 1A        : N              
+MUX_WRITE_DATA[21]           : K25       : output : 2.5 V             :         : 1A        : N              
+REG_WRITE_CONTROL            : K26       : output : 2.5 V             :         : 1A        : N              
+IR25_21[2]                   : K27       : output : 2.5 V             :         : 1A        : N              
+MUX_WRITE_DATA[26]           : K28       : output : 2.5 V             :         : 1C        : N              
+MUX_ULA_B_CONTROL[0]         : L1        : output : 2.5 V             :         : 6C        : N              
+REG_B[6]                     : L2        : output : 2.5 V             :         : 6C        : N              
+REG_A[29]                    : L3        : output : 2.5 V             :         : 6C        : N              
+MUX_WRITE_DATA[9]            : L4        : output : 2.5 V             :         : 6C        : N              
+REG_B[14]                    : L5        : output : 2.5 V             :         : 6C        : N              
+MUX_WRITE_DATA[6]            : L6        : output : 2.5 V             :         : 6C        : N              
+VCCIO6C                      : L7        : power  :                   : 2.5V    : 6C        :                
+ULA[28]                      : L8        : output : 2.5 V             :         : 6A        : N              
+MUX_ULA_A[25]                : L9        : output : 2.5 V             :         : 6A        : N              
 GND                          : L10       : gnd    :                   :         :           :                
 VCCL                         : L11       : power  :                   : 1.1V    :           :                
-DNU                          : L12       :        :                   :         :           :                
-VCCL                         : L13       : power  :                   : 1.1V    :           :                
+GND                          : L12       : gnd    :                   :         :           :                
+VCC                          : L13       : power  :                   : 1.1V    :           :                
 GND                          : L14       : gnd    :                   :         :           :                
-GND                          : L15       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L16       :        :                   :         : 1C        :                
-VCCPT                        : L17       : power  :                   : 2.5V    :           :                
+VCC                          : L15       : power  :                   : 1.1V    :           :                
+GND                          : L16       : gnd    :                   :         :           :                
+VCCL                         : L17       : power  :                   : 1.1V    :           :                
 GND                          : L18       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L19       :        :                   :         : 1C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L20       :        :                   :         : 1C        :                
+VCCPD1A                      : L19       : power  :                   : 2.5V    : 1A        :                
+NC                           : L20       :        :                   :         :           :                
 GND                          : L21       : gnd    :                   :         :           :                
-clock                        : L22       : input  : 2.5 V             :         : 1C        : N              
-GND+                         : M1        :        :                   :         : 5C        :                
+MUX_WRITE_DATA[24]           : L22       : output : 2.5 V             :         : 1A        : N              
+IR20_16[2]                   : L23       : output : 2.5 V             :         : 1A        : N              
+GND                          : L24       : gnd    :                   :         :           :                
+IR20_16[4]                   : L25       : output : 2.5 V             :         : 1C        : N              
+MUX_WRITE_DATA[27]           : L26       : output : 2.5 V             :         : 1C        : N              
+GND                          : L27       : gnd    :                   :         :           :                
+MUX_WRITE_DATA[25]           : L28       : output : 2.5 V             :         : 1C        : N              
+REG_A[16]                    : M1        : output : 2.5 V             :         : 6C        : N              
 GND                          : M2        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M3        :        :                   :         : 5C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M4        :        :                   :         : 5C        :                
+REG_B[15]                    : M3        : output : 2.5 V             :         : 6C        : N              
+REG_A[2]                     : M4        : output : 2.5 V             :         : 6C        : N              
 GND                          : M5        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M6        :        :                   :         : 5C        :                
-mux_11[0]                    : M7        : output : 2.5 V             :         : 5C        : N              
+REG_B[8]                     : M6        : output : 2.5 V             :         : 6C        : N              
+VREFB6CN0                    : M7        : power  :                   :         : 6C        :                
 GND                          : M8        : gnd    :                   :         :           :                
-GND                          : M9        : gnd    :                   :         :           :                
-VCCL                         : M10       : power  :                   : 1.1V    :           :                
+NC                           : M9        :        :                   :         :           :                
+VCCPD6A                      : M10       : power  :                   : 2.5V    : 6A        :                
 GND                          : M11       : gnd    :                   :         :           :                
 VCCL                         : M12       : power  :                   : 1.1V    :           :                
 GND                          : M13       : gnd    :                   :         :           :                
-VCC                          : M14       : power  :                   : 1.1V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M15       :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M16       :        :                   :         : 2C        :                
-VCCD_PLL_L2                  : M17       : power  :                   : 1.1V    :           :                
-VCCA_PLL_L2                  : M18       : power  :                   : 2.5V    :           :                
-GND+                         : M19       :        :                   :         : 2C        :                
-GND+                         : M20       :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M21       :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M22       :        :                   :         : 2C        :                
-GND+                         : N1        :        :                   :         : 5C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N2        :        :                   :         : 5C        :                
-state[7]                     : N3        : output : 2.5 V             :         : 5C        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : N4        :        :                   :         : 5C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N5        :        :                   :         : 5C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N6        :        :                   :         : 5C        :                
-VCCIO5C                      : N7        : power  :                   : 2.5V    : 5C        :                
-VCCPD5C                      : N8        : power  :                   : 2.5V    : 5C        :                
-VCCL                         : N9        : power  :                   : 1.1V    :           :                
+VCCL                         : M14       : power  :                   : 1.1V    :           :                
+GND                          : M15       : gnd    :                   :         :           :                
+VCCL                         : M16       : power  :                   : 1.1V    :           :                
+GND                          : M17       : gnd    :                   :         :           :                
+VCC                          : M18       : power  :                   : 1.1V    :           :                
+GND                          : M19       : gnd    :                   :         :           :                
+IR25_21[3]                   : M20       : output : 2.5 V             :         : 1C        : N              
+MUX_WRITE_DATA[5]            : M21       : output : 2.5 V             :         : 1C        : N              
+IR25_21[4]                   : M22       : output : 2.5 V             :         : 1C        : N              
+MUX_WRITE_DATA[22]           : M23       : output : 2.5 V             :         : 1C        : N              
+MUX_ULA_B_CONTROL[2]         : M24       : output : 2.5 V             :         : 1C        : N              
+MUX_ULA_A_CONTROL[0]         : M25       : output : 2.5 V             :         : 1C        : N              
+IR20_16[0]                   : M26       : output : 2.5 V             :         : 1C        : N              
+MUX_WRITE_DATA[10]           : M27       : output : 2.5 V             :         : 1C        : N              
+next_state[2]                : M28       : output : 2.5 V             :         : 1C        : N              
+REG_A[7]                     : N1        : output : 2.5 V             :         : 6C        : N              
+MUX_WRITE_REG[2]             : N2        : output : 2.5 V             :         : 6C        : N              
+VCCIO6C                      : N3        : power  :                   : 2.5V    : 6C        :                
+MULT_DIV_CTRL[0]             : N4        : output : 2.5 V             :         : 6C        : N              
+REG_A[11]                    : N5        : output : 2.5 V             :         : 6C        : N              
+REG_B[12]                    : N6        : output : 2.5 V             :         : 6C        : N              
+IR15_0[1]                    : N7        : output : 2.5 V             :         : 6C        : N              
+IR25_21[0]                   : N8        : output : 2.5 V             :         : 6C        : N              
+REG_B[13]                    : N9        : output : 2.5 V             :         : 6C        : N              
 GND                          : N10       : gnd    :                   :         :           :                
-VCCL                         : N11       : power  :                   : 1.1V    :           :                
+VCC                          : N11       : power  :                   : 1.1V    :           :                
 GND                          : N12       : gnd    :                   :         :           :                
 VCCL                         : N13       : power  :                   : 1.1V    :           :                
 GND                          : N14       : gnd    :                   :         :           :                
-VCCPD2C                      : N15       : power  :                   : 2.5V    : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N16       :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N17       :        :                   :         : 2C        :                
-VREFB2CN0                    : N18       : power  :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N19       :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N20       :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N21       :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N22       :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P1        :        :                   :         : 5C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P2        :        :                   :         : 5C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P3        :        :                   :         : 5C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P4        :        :                   :         : 5C        :                
-VREFB5CN0                    : P5        : power  :                   :         : 5C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P6        :        :                   :         : 5C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P7        :        :                   :         : 5C        :                
-VCCPD5A                      : P8        : power  :                   : 2.5V    : 5A        :                
-GND                          : P9        : gnd    :                   :         :           :                
-VCCPD4C                      : P10       : power  :                   : 2.5V    : 4C        :                
+VCCL                         : N15       : power  :                   : 1.1V    :           :                
+GND                          : N16       : gnd    :                   :         :           :                
+VCCL                         : N17       : power  :                   : 1.1V    :           :                
+GND                          : N18       : gnd    :                   :         :           :                
+VCCPD1C                      : N19       : power  :                   : 2.5V    : 1C        :                
+next_state[3]                : N20       : output : 2.5 V             :         : 1C        : N              
+~ALTERA_DATA0~ / RESERVED_INPUT : N21       : input  : 1.8 V             :         : 1C        : N              
+VREFB1CN0                    : N22       : power  :                   :         : 1C        :                
+MUX_ULA_A_CONTROL[1]         : N23       : output : 2.5 V             :         : 1C        : N              
+PC_WRITE                     : N24       : output : 2.5 V             :         : 1C        : N              
+next_state[6]                : N25       : output : 2.5 V             :         : 1C        : N              
+ULA_OP[0]                    : N26       : output : 2.5 V             :         : 1C        : N              
+MUX_WRITE_DATA[0]            : N27       : output : 2.5 V             :         : 1C        : N              
+reset                        : N28       : input  : 2.5 V             :         : 1C        : N              
+GND+                         : P1        :        :                   :         : 6C        :                
+GND+                         : P2        :        :                   :         : 6C        :                
+REG_A[8]                     : P3        : output : 2.5 V             :         : 6C        : N              
+REG_A[9]                     : P4        : output : 2.5 V             :         : 6C        : N              
+VCCPT                        : P5        : power  :                   : 2.5V    :           :                
+VCCIO5C                      : P6        : power  :                   : 2.5V    : 5C        :                
+VCCD_PLL_R2                  : P7        : power  :                   : 1.1V    :           :                
+REG_B[2]                     : P8        : output : 2.5 V             :         : 6C        : N              
+REG_B[9]                     : P9        : output : 2.5 V             :         : 6C        : N              
+VCCPD6C                      : P10       : power  :                   : 2.5V    : 6C        :                
 GND                          : P11       : gnd    :                   :         :           :                
 VCCL                         : P12       : power  :                   : 1.1V    :           :                
 GND                          : P13       : gnd    :                   :         :           :                
-VCC                          : P14       : power  :                   : 1.1V    :           :                
-GND                          : P15       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P16       :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P17       :        :                   :         : 2C        :                
-GND                          : P18       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P19       :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P20       :        :                   :         : 2C        :                
+VCCL                         : P14       : power  :                   : 1.1V    :           :                
+DNU                          : P15       :        :                   :         :           :                
+VCCL                         : P16       : power  :                   : 1.1V    :           :                
+GND                          : P17       : gnd    :                   :         :           :                
+VCCL                         : P18       : power  :                   : 1.1V    :           :                
+next_state[5]                : P19       : output : 2.5 V             :         : 1C        : N              
+ULA_OP[2]                    : P20       : output : 2.5 V             :         : 1C        : N              
 GND                          : P21       : gnd    :                   :         :           :                
-VCCIO2C                      : P22       : power  :                   : 2.5V    : 2C        :                
-VCCIO5C                      : R1        : power  :                   : 2.5V    : 5C        :                
+VCCD_PLL_L2                  : P22       : power  :                   : 1.1V    :           :                
+next_state[1]                : P23       : output : 2.5 V             :         : 1C        : N              
+GND                          : P24       : gnd    :                   :         :           :                
+next_state[4]                : P25       : output : 2.5 V             :         : 1C        : N              
+VCCIO1C                      : P26       : power  :                   : 2.5V    : 1C        :                
+GND                          : P27       : gnd    :                   :         :           :                
+clock                        : P28       : input  : 2.5 V             :         : 1C        : N              
+GND+                         : R1        :        :                   :         : 5C        :                
 GND                          : R2        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R3        :        :                   :         : 5C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R4        :        :                   :         : 5C        :                
+VCCIO5C                      : R3        : power  :                   : 2.5V    : 5C        :                
+REG_B[30]                    : R4        : output : 2.5 V             :         : 5C        : N              
 GND                          : R5        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R6        :        :                   :         : 5C        :                
-VCCIO5A                      : R7        : power  :                   : 2.5V    : 5A        :                
+REG_B[20]                    : R6        : output : 2.5 V             :         : 5C        : N              
+VCCA_PLL_R2                  : R7        : power  :                   : 2.5V    :           :                
 GND                          : R8        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R9        :        :                   :         : 4C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R10       :        :                   :         : 4C        :                
-GND                          : R11       : gnd    :                   :         :           :                
-VCCPD3C                      : R12       : power  :                   : 2.5V    : 3C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R13       :        :                   :         : 3C        :                
+REG_B[7]                     : R9        : output : 2.5 V             :         : 5C        : N              
+REG_B[23]                    : R10       : output : 2.5 V             :         : 5C        : N              
+VCC                          : R11       : power  :                   : 1.1V    :           :                
+GND                          : R12       : gnd    :                   :         :           :                
+VCCL                         : R13       : power  :                   : 1.1V    :           :                
 GND                          : R14       : gnd    :                   :         :           :                
-VCCPD2A                      : R15       : power  :                   : 2.5V    : 2A        :                
-VCCIO2A                      : R16       : power  :                   : 2.5V    : 2A        :                
-VCCIO2C                      : R17       : power  :                   : 2.5V    : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R18       :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R19       :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R20       :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R21       :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R22       :        :                   :         : 2C        :                
-state[3]                     : T1        : output : 2.5 V             :         : 5C        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : T2        :        :                   :         : 5C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T3        :        :                   :         : 5C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T4        :        :                   :         : 5A        :                
-VREFB5AN0                    : T5        : power  :                   :         : 5A        :                
-VCCPGM                       : T6        : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T7        :        :                   :         : 5A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T8        :        :                   :         : 5A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T9        :        :                   :         : 4C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T10       :        :                   :         : 4C        :                
-VCCPT                        : T11       : power  :                   : 2.5V    :           :                
-VCC_CLKIN3C                  : T12       : power  :                   : 2.5V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T13       :        :                   :         : 3C        :                
-VCCIO3C                      : T14       : power  :                   : 2.5V    : 3C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T15       :        :                   :         : 2A        :                
-VCCPGM                       : T16       : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T17       :        :                   :         : 2A        :                
-VREFB2AN0                    : T18       : power  :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T19       :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T20       :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T21       :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T22       :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : U1        :        :                   :         : 5C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : U2        :        :                   :         : 5C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : U3        :        :                   :         : 5C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : U4        :        :                   :         : 5A        :                
-nCEO                         : U5        :        :                   :         : 1A        :                
-VCCPT                        : U6        : power  :                   : 2.5V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : U7        :        :                   :         : 5A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : U8        :        :                   :         : 5A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : U9        :        :                   :         : 4C        :                
-VCC_CLKIN4C                  : U10       : power  :                   : 2.5V    :           :                
-VCCA_PLL_B1                  : U11       : power  :                   : 2.5V    :           :                
-VCCD_PLL_B1                  : U12       : power  :                   : 1.1V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : U13       :        :                   :         : 3C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : U14       :        :                   :         : 3C        :                
-mux_11[1]                    : U15       : output : 2.5 V             :         : 2A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : U16       :        :                   :         : 2A        :                
-VCCPT                        : U17       : power  :                   : 2.5V    :           :                
+VCCL                         : R15       : power  :                   : 1.1V    :           :                
+GND                          : R16       : gnd    :                   :         :           :                
+VCCL                         : R17       : power  :                   : 1.1V    :           :                
+GND                          : R18       : gnd    :                   :         :           :                
+VCCPD2C                      : R19       : power  :                   : 2.5V    : 2C        :                
+REG_B[26]                    : R20       : output : 2.5 V             :         : 2C        : N              
+MUX_WRITE_REG[0]             : R21       : output : 2.5 V             :         : 2C        : N              
+VCCA_PLL_L2                  : R22       : power  :                   : 2.5V    :           :                
+VCCIO1C                      : R23       : power  :                   : 2.5V    : 1C        :                
+VCCPT                        : R24       : power  :                   : 2.5V    :           :                
+ULA_OP[1]                    : R25       : output : 2.5 V             :         : 2C        : N              
+IR31_26[1]                   : R26       : output : 2.5 V             :         : 2C        : N              
+GND+                         : R27       :        :                   :         : 2C        :                
+GND+                         : R28       :        :                   :         : 2C        :                
+GND+                         : T1        :        :                   :         : 5C        :                
+REG_B[11]                    : T2        : output : 2.5 V             :         : 5C        : N              
+ULA_OUT_REG[3]               : T3        : output : 2.5 V             :         : 5C        : N              
+LO_OUT[23]                   : T4        : output : 2.5 V             :         : 5C        : N              
+REG_B[21]                    : T5        : output : 2.5 V             :         : 5C        : N              
+REG_B[17]                    : T6        : output : 2.5 V             :         : 5C        : N              
+VREFB5CN0                    : T7        : power  :                   :         : 5C        :                
+REG_A[27]                    : T8        : output : 2.5 V             :         : 5C        : N              
+REG_A[19]                    : T9        : output : 2.5 V             :         : 5C        : N              
+VCCPD5C                      : T10       : power  :                   : 2.5V    : 5C        :                
+GND                          : T11       : gnd    :                   :         :           :                
+VCCL                         : T12       : power  :                   : 1.1V    :           :                
+GND                          : T13       : gnd    :                   :         :           :                
+VCCL                         : T14       : power  :                   : 1.1V    :           :                
+GND                          : T15       : gnd    :                   :         :           :                
+VCCL                         : T16       : power  :                   : 1.1V    :           :                
+GND                          : T17       : gnd    :                   :         :           :                
+VCC                          : T18       : power  :                   : 1.1V    :           :                
+GND                          : T19       : gnd    :                   :         :           :                
+next_state[7]                : T20       : output : 2.5 V             :         : 2C        : N              
+PC_OUT[7]                    : T21       : output : 2.5 V             :         : 2C        : N              
+MUX_ULA_B[15]                : T22       : output : 2.5 V             :         : 2C        : N              
+MEM_OUT[0]                   : T23       : output : 2.5 V             :         : 2C        : N              
+REG_A[22]                    : T24       : output : 2.5 V             :         : 2C        : N              
+IR31_26[2]                   : T25       : output : 2.5 V             :         : 2C        : N              
+VCCIO2C                      : T26       : power  :                   : 2.5V    : 2C        :                
+IR31_26[5]                   : T27       : output : 2.5 V             :         : 2C        : N              
+MUX_ULA_B_CONTROL[1]         : T28       : output : 2.5 V             :         : 2C        : N              
+REG_B[24]                    : U1        : output : 2.5 V             :         : 5C        : N              
+REG_B[27]                    : U2        : output : 2.5 V             :         : 5C        : N              
+HI_OUT[6]                    : U3        : output : 2.5 V             :         : 5C        : N              
+REG_B[29]                    : U4        : output : 2.5 V             :         : 5C        : N              
+REG_A[25]                    : U5        : output : 2.5 V             :         : 5C        : N              
+MEM_OUT[22]                  : U6        : output : 2.5 V             :         : 5C        : N              
+MEM_OUT[20]                  : U7        : output : 2.5 V             :         : 5C        : N              
+MUX_PC[1]                    : U8        : output : 2.5 V             :         : 5C        : N              
+LO_OUT[17]                   : U9        : output : 2.5 V             :         : 5C        : N              
+GND                          : U10       : gnd    :                   :         :           :                
+VCCL                         : U11       : power  :                   : 1.1V    :           :                
+GND                          : U12       : gnd    :                   :         :           :                
+VCCL                         : U13       : power  :                   : 1.1V    :           :                
+GND                          : U14       : gnd    :                   :         :           :                
+VCCL                         : U15       : power  :                   : 1.1V    :           :                
+GND                          : U16       : gnd    :                   :         :           :                
+VCCL                         : U17       : power  :                   : 1.1V    :           :                
 GND                          : U18       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : U19       :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : U20       :        :                   :         : 2A        :                
+VCCPD2A                      : U19       : power  :                   : 2.5V    : 2A        :                
+NC                           : U20       :        :                   :         :           :                
 GND                          : U21       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : U22       :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : V1        :        :                   :         : 5A        :                
+VREFB2CN0                    : U22       : power  :                   :         : 2C        :                
+PC_OUT[3]                    : U23       : output : 2.5 V             :         : 2C        : N              
+GND                          : U24       : gnd    :                   :         :           :                
+MUX_ULA_A[1]                 : U25       : output : 2.5 V             :         : 2C        : N              
+MUX_ULA_A[15]                : U26       : output : 2.5 V             :         : 2C        : N              
+GND                          : U27       : gnd    :                   :         :           :                
+REG_B[16]                    : U28       : output : 2.5 V             :         : 2C        : N              
+MUX_PC[17]                   : V1        : output : 2.5 V             :         : 5C        : N              
 GND                          : V2        : gnd    :                   :         :           :                
-overflow                     : V3        : input  : 2.5 V             :         : 5A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : V4        :        :                   :         : 5A        :                
+MUX_PC[12]                   : V3        : output : 2.5 V             :         : 5C        : N              
+LO_OUT[5]                    : V4        : output : 2.5 V             :         : 5C        : N              
 GND                          : V5        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : V6        :        :                   :         : 5A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : V7        :        :                   :         : 5A        :                
+MEM_OUT[9]                   : V6        : output : 2.5 V             :         : 5A        : N              
+HI_OUT[30]                   : V7        : output : 2.5 V             :         : 5A        : N              
 GND                          : V8        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : V9        :        :                   :         : 4C        :                
-VREFB4CN0                    : V10       : power  :                   :         : 4C        :                
+NC                           : V9        :        :                   :         :           :                
+VCCPD5A                      : V10       : power  :                   : 2.5V    : 5A        :                
 GND                          : V11       : gnd    :                   :         :           :                
-VREFB3CN0                    : V12       : power  :                   :         : 3C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : V13       :        :                   :         : 3C        :                
-GND                          : V14       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : V15       :        :                   :         : 3C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : V16       :        :                   :         : 2A        :                
+VCC                          : V12       : power  :                   : 1.1V    :           :                
+GND                          : V13       : gnd    :                   :         :           :                
+VCCL                         : V14       : power  :                   : 1.1V    :           :                
+GND                          : V15       : gnd    :                   :         :           :                
+VCC                          : V16       : power  :                   : 1.1V    :           :                
 GND                          : V17       : gnd    :                   :         :           :                
-CONF_DONE                    : V18       :        :                   :         : 1A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : V19       :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : V20       :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : V21       :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : V22       :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W1        :        :                   :         : 5A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W2        :        :                   :         : 5A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W3        :        :                   :         : 5A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W4        :        :                   :         : 5A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W5        :        :                   :         : 5A        :                
-NC                           : W6        :        :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W7        :        :                   :         : 4C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W8        :        :                   :         : 4C        :                
-EPC_CONTROL                  : W9        : output : 2.5 V             :         : 4C        : N              
-VCCIO4C                      : W10       : power  :                   : 2.5V    : 4C        :                
-state[0]                     : W11       : output : 2.5 V             :         : 4C        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : W12       :        :                   :         : 3C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W13       :        :                   :         : 3C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W14       :        :                   :         : 3C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W15       :        :                   :         : 3C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W16       :        :                   :         : 3C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W17       :        :                   :         : 2A        :                
-nSTATUS                      : W18       :        :                   :         : 1A        :                
-NC                           : W19       :        :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W20       :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W21       :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W22       :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y1        :        :                   :         : 5A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y2        :        :                   :         : 5A        :                
-ASDO                         : Y3        :        :                   :         : 1A        :                
-DCLK                         : Y4        :        :                   :         : 1A        :                
-VCCIO5A                      : Y5        : power  :                   : 2.5V    : 5A        :                
-nCSO                         : Y6        :        :                   :         : 1A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y7        :        :                   :         : 4C        :                
-VCCIO4C                      : Y8        : power  :                   : 2.5V    : 4C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y9        :        :                   :         : 4C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y10       :        :                   :         : 4C        :                
-mux_1[0]                     : Y11       : output : 2.5 V             :         : 4C        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y12       :        :                   :         : 3C        :                
-VCCIO3C                      : Y13       : power  :                   : 2.5V    : 3C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y14       :        :                   :         : 3C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y15       :        :                   :         : 3C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y16       :        :                   :         : 3C        :                
-nCE                          : Y17       :        :                   :         : 1A        :                
-PORSEL                       : Y18       :        :                   :         : 1A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y19       :        :                   :         : 2A        :                
-VCCIO2A                      : Y20       : power  :                   : 2.5V    : 2A        :                
+VCCL                         : V18       : power  :                   : 1.1V    :           :                
+GND                          : V19       : gnd    :                   :         :           :                
+ULA_OUT_REG[17]              : V20       : output : 2.5 V             :         : 2A        : N              
+PC_OUT[12]                   : V21       : output : 2.5 V             :         : 2A        : N              
+VCCIO2C                      : V22       : power  :                   : 2.5V    : 2C        :                
+MUX_ULA_A[20]                : V23       : output : 2.5 V             :         : 2C        : N              
+MEM_OUT[28]                  : V24       : output : 2.5 V             :         : 2C        : N              
+PC_OUT[2]                    : V25       : output : 2.5 V             :         : 2C        : N              
+ULA_OUT_REG[1]               : V26       : output : 2.5 V             :         : 2C        : N              
+IR15_0[4]                    : V27       : output : 2.5 V             :         : 2C        : N              
+IR15_0[3]                    : V28       : output : 2.5 V             :         : 2C        : N              
+LO_OUT[2]                    : W1        : output : 2.5 V             :         : 5C        : N              
+LO_OUT[25]                   : W2        : output : 2.5 V             :         : 5A        : N              
+HI_OUT[21]                   : W3        : output : 2.5 V             :         : 5A        : N              
+MUX_PC[16]                   : W4        : output : 2.5 V             :         : 5A        : N              
+LO_OUT[13]                   : W5        : output : 2.5 V             :         : 5A        : N              
+LO_OUT[26]                   : W6        : output : 2.5 V             :         : 5A        : N              
+VREFB5AN0                    : W7        : power  :                   :         : 5A        :                
+ULA_OUT_REG[14]              : W8        : output : 2.5 V             :         : 5A        : N              
+HI_OUT[22]                   : W9        : output : 2.5 V             :         : 5A        : N              
+NC                           : W10       :        :                   :         :           :                
+VCCPD4A                      : W11       : power  :                   : 2.5V    : 4A        :                
+GND                          : W12       : gnd    :                   :         :           :                
+VCCPD4C                      : W13       : power  :                   : 2.5V    : 4C        :                
+GND                          : W14       : gnd    :                   :         :           :                
+VCCPD3C                      : W15       : power  :                   : 2.5V    : 3C        :                
+GND                          : W16       : gnd    :                   :         :           :                
+VCCPD3A                      : W17       : power  :                   : 2.5V    : 3A        :                
+GND                          : W18       : gnd    :                   :         :           :                
+nCONFIG                      : W19       :        :                   :         : 1A        :                
+ULA[13]                      : W20       : output : 2.5 V             :         : 2A        : N              
+MUX_PC[24]                   : W21       : output : 2.5 V             :         : 2A        : N              
+MUX_ULA_B[16]                : W22       : output : 2.5 V             :         : 2A        : N              
+MEM_OUT[18]                  : W23       : output : 2.5 V             :         : 2A        : N              
+MUX_ULA_B[23]                : W24       : output : 2.5 V             :         : 2A        : N              
+ULA[21]                      : W25       : output : 2.5 V             :         : 2A        : N              
+VCCIO2A                      : W26       : power  :                   : 2.5V    : 2A        :                
+MEM_OUT[10]                  : W27       : output : 2.5 V             :         : 2C        : N              
+MUX_ULA_A[24]                : W28       : output : 2.5 V             :         : 2C        : N              
+PC_OUT[15]                   : Y1        : output : 2.5 V             :         : 5A        : N              
+HI_OUT[17]                   : Y2        : output : 2.5 V             :         : 5A        : N              
+MUX_PC[29]                   : Y3        : output : 2.5 V             :         : 5A        : N              
+HI_OUT[9]                    : Y4        : output : 2.5 V             :         : 5A        : N              
+PC_OUT[11]                   : Y5        : output : 2.5 V             :         : 5A        : N              
+HI_OUT[29]                   : Y6        : output : 2.5 V             :         : 5A        : N              
+HI_OUT[15]                   : Y7        : output : 2.5 V             :         : 5A        : N              
+VCCPGM                       : Y8        : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y9        :        :                   :         : 4A        :                
+LO_OUT[4]                    : Y10       : output : 2.5 V             :         : 4A        : N              
+LO_OUT[1]                    : Y11       : output : 2.5 V             :         : 4A        : N              
+GND                          : Y12       : gnd    :                   :         :           :                
+ULA_OUT_REG[4]               : Y13       : output : 2.5 V             :         : 4C        : N              
+LO_OUT[7]                    : Y14       : output : 2.5 V             :         : 4C        : N              
+MUX_ULA_A[31]                : Y15       : output : 2.5 V             :         : 3C        : N              
+GND                          : Y16       : gnd    :                   :         :           :                
+MUX_ULA_A[23]                : Y17       : output : 2.5 V             :         : 3A        : N              
+ULA[9]                       : Y18       : output : 2.5 V             :         : 3A        : N              
+MUX_ULA_A[11]                : Y19       : output : 2.5 V             :         : 3A        : N              
+nCE                          : Y20       :        :                   :         : 1A        :                
 GND                          : Y21       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y22       :        :                   :         : 2A        :                
+VREFB2AN0                    : Y22       : power  :                   :         : 2A        :                
+ULA[1]                       : Y23       : output : 2.5 V             :         : 2A        : N              
+GND                          : Y24       : gnd    :                   :         :           :                
+MUX_ULA_B[17]                : Y25       : output : 2.5 V             :         : 2A        : N              
+MUX_ULA_B[1]                 : Y26       : output : 2.5 V             :         : 2A        : N              
+GND                          : Y27       : gnd    :                   :         :           :                
+IR31_26[3]                   : Y28       : output : 2.5 V             :         : 2A        : N              

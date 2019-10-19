@@ -222,7 +222,7 @@ always@(posedge clock) begin
                 6'h28: next_state= 8'b00011100;//SB
                 6'h29: next_state= 8'b00011100;//SH
                 6'h2b: next_state= 8'b00011100;//SW
-                6'ha: next_state = 8'b00011101;//SLTI
+                6'ha: next_state = 8'b00111101;//SLTI
                 default: next_state = 8'b00000101;
             endcase
 		end
@@ -370,7 +370,7 @@ always@(posedge clock) begin
 			REG_B=1'b0;
 			REG_WRITE=1'b0;
 			XCH_CONTROL = 1'b0;
-			counter = 8'b0;
+			counter = 8'd0;
 			next_state = 8'b00011101; // next_state = DIV/MULT WAIT;
 			end
 		8'b00010010: begin //MULT
@@ -400,7 +400,7 @@ always@(posedge clock) begin
 			REG_B=1'b0;
 			REG_WRITE=1'b0;
 			XCH_CONTROL = 1'b0;
-			counter = 8'b0;
+			counter = 8'd0;
 			next_state = 8'b00011101; // next_state = DIV/MULT WAIT;
 			end
 		8'b00001100: begin // MFHI
@@ -548,7 +548,7 @@ always@(posedge clock) begin
 			XCH_CONTROL = 1'b0;
 			next_state = 8'b11111111;//passa pra final
 		end
-		8'b00011101: begin //SLTI
+		8'b00111101: begin //SLTI
 			pc_write=1'b0;
 			mux_1=2'b0;
 			mux_2=2'b0;
@@ -906,9 +906,9 @@ always@(posedge clock) begin
 			REG_B=1'b0;
 			REG_WRITE=1'b1;// habilita escrita no banco de regs
 			XCH_CONTROL = 1'b0;
-			next_state = 8'b00010101;//passa pro segundo passo
+			next_state = 8'b01010101;//passa pro segundo passo
 		end
-		8'b00010101: begin //XCH_2
+		8'b01010101: begin //XCH_2
 			pc_write=1'b0;
 			mux_1=2'b0;
 			mux_2=2'b0;
@@ -1557,14 +1557,16 @@ always@(posedge clock) begin
 			REG_B=1'b0;
 			REG_WRITE=1'b0;
 			XCH_CONTROL = 1'b0;
-			counter = counter + 8'd1;
-			hi_lo=1'b0;
 			next_state = 8'b00011101;
 			if(counter == 8'd33) begin //WAIT
 				hi_lo=1'b1;
 				counter = 8'd0;
 				mem_write=1'b0;
 				next_state = 8'b11111111;
+			end
+			else begin
+				counter = counter + 8'd1;
+				hi_lo=1'b0;
 			end
 		end
 		8'b11111111: begin // FINAL
