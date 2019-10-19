@@ -13,16 +13,16 @@ initial PREVIOUS_CONTROL <= 2'b0;
 
 always @(*) begin
 
-	PREVIOUS_CONTROL <= CONTROL_MULTDIV;
-
 	if (CONTROL_MULTDIV == 2'b01) begin
 		HI_OUTPUT <= HI_MULT;
 		LO_OUTPUT <= LO_MULT;
+		PREVIOUS_CONTROL = 2'b01;
 	end
 	
 	else if (CONTROL_MULTDIV == 2'b10) begin 
 		HI_OUTPUT <= HI_DIV;
 		LO_OUTPUT <= LO_DIV;
+		PREVIOUS_CONTROL = 2'b10;
 	end
 	
 	else begin

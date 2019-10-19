@@ -1,1 +1,1 @@
-Info (10281): Verilog HDL Declaration information at Control_Unit.v(11): object "reset" differs only in case from object "RESET" in the same scope
+Warning (10268): Verilog HDL information at MultDivMuxBox.v(16): always construct contains both blocking and non-blocking assignments

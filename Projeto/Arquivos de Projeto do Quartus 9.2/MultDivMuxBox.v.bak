@@ -5,7 +5,7 @@ module MultDivMuxBox (
 	input wire[31:0] HI_DIV,
 	input wire[31:0] LO_DIV,
 	output reg[31:0] HI_OUTPUT,
-	output reg[31:0] LO_OUTPUT, 
+	output reg[31:0] LO_OUTPUT
 );
 
 reg[1:0] PREVIOUS_CONTROL;

@@ -206,8 +206,8 @@ always@(posedge clock) begin
                     endcase
                 end
  
-                6'h3: next_state = 8'b00000100;
-                6'h2: next_state =8'b00000100;
+                6'h2: next_state = 8'b00010101;//J
+                6'h3: next_state = 8'b00010110;//JAL
                 6'h10: next_state = 8'b00000100;
                 6'h11: next_state = 8'b00000100;
                 6'h8: next_state = 8'b00000100;
@@ -315,6 +315,66 @@ always@(posedge clock) begin
 			XCH_CONTROL = 1'b0;
 			next_state = 8'b10000101; // next_state = ADD/AND/SUB_2;
 		end
+		8'b00010011: begin //DIV
+			pc_write=1'b0;
+			mux_1=2'b0;
+			mux_2=2'b0;
+			mux_3=1'b0;
+			mux_4=1'b0;
+			mux_6=3'b0;
+			mux_7=4'b0;
+			mux_8=2'b0;//escolhe A
+			mux_9=3'b0;//escolhe B
+			mux_10=3'b0;
+			mux_11=1'b0;
+			shift_control=3'b0;
+			ss_control=1'b0;
+			mem_write=1'b0;
+			mult_div=2'b10;
+			ir_write=1'b0;    
+			hi_lo=1'b0;
+			EPC_CONTROL=1'b0;
+			MDR_CONTROL=1'b0;
+			LOAD_SIZE=2'b0;
+			ALU_CONTROL=3'b0;//subtrai A - B
+			ALU_OUT=1'b0;//salva A+B em ALU_OUT
+			REG_A=2'b0;
+			REG_B=1'b0;
+			REG_WRITE=1'b0;
+			XCH_CONTROL = 1'b0;
+			counter = 8'b0;
+			next_state = 8'b00011101; // next_state = DIV/MULT WAIT;
+			end
+		8'b00010010: begin //MULT
+			pc_write=1'b0;
+			mux_1=2'b0;
+			mux_2=2'b0;
+			mux_3=1'b0;
+			mux_4=1'b0;
+			mux_6=3'b0;
+			mux_7=4'b0;
+			mux_8=2'b0;//escolhe A
+			mux_9=3'b0;//escolhe B
+			mux_10=3'b0;
+			mux_11=1'b0;
+			shift_control=3'b0;
+			ss_control=1'b0;
+			mem_write=1'b0;
+			mult_div=2'b1;
+			ir_write=1'b0;
+			hi_lo=1'b0;
+			EPC_CONTROL=1'b0;
+			MDR_CONTROL=1'b0;
+			LOAD_SIZE=2'b0;
+			ALU_CONTROL=3'b0;//subtrai A - B
+			ALU_OUT=1'b0;//salva A+B em ALU_OUT
+			REG_A=2'b0;
+			REG_B=1'b0;
+			REG_WRITE=1'b0;
+			XCH_CONTROL = 1'b0;
+			counter = 8'b0;
+			next_state = 8'b00011101; // next_state = DIV/MULT WAIT;
+			end
 		8'b00001100: begin // MFHI
 			pc_write=1'b0;
 			mux_1=2'b0;
@@ -332,7 +392,7 @@ always@(posedge clock) begin
 			mem_write=1'b0;
 			mult_div=2'b0;
 			ir_write=1'b0;    
-			hi_lo=1'b0;
+			hi_lo=1'b1;
 			EPC_CONTROL=1'b0;
 			MDR_CONTROL=1'b0;
 			LOAD_SIZE=2'b0;
@@ -361,7 +421,7 @@ always@(posedge clock) begin
 			mem_write=1'b0;
 			mult_div=2'b0;
 			ir_write=1'b0;    
-			hi_lo=1'b0;
+			hi_lo=1'b1;
 			EPC_CONTROL=1'b0;
 			MDR_CONTROL=1'b0;
 			LOAD_SIZE=2'b0;
@@ -489,6 +549,93 @@ always@(posedge clock) begin
 			XCH_CONTROL = 1'b0;
 			next_state = 8'b11111111;
 		end
+		8'b00010101: begin //J
+			pc_write=1'b1;//habilita escrita em pc no próximo ciclo 
+			mux_1=2'b0;
+			mux_2=2'b0;
+			mux_3=1'b0;
+			mux_4=1'b0;
+			mux_6=3'b0;
+			mux_7=4'b0;
+			mux_8=2'b0;
+			mux_9=3'b0;
+			mux_10=3'b11;//escolhe pc+offset
+			mux_11=1'b0;
+			shift_control=3'b0;
+			ss_control=1'b0;
+			mem_write=1'b0;
+			mult_div=2'b0;
+			ir_write=1'b0;    
+			hi_lo=1'b0;
+			EPC_CONTROL=1'b0;
+			MDR_CONTROL=1'b0;
+			LOAD_SIZE=2'b0;
+			ALU_CONTROL=3'b0;
+			ALU_OUT=1'b0;
+			REG_A=2'b0;
+			REG_B=1'b0;
+			REG_WRITE=1'b0;
+			XCH_CONTROL = 1'b0;
+			next_state = 8'b11111111;//passa pro final
+		end
+		8'b00010110: begin//JAL_1/2
+			pc_write=1'b0; 
+			mux_1=2'b0;
+			mux_2=2'b0;
+			mux_3=1'b0;
+			mux_4=1'b0;
+			mux_6=3'b100;//escolhe o r31
+			mux_7=4'b0;// escolhe ALU_OUT
+			mux_8=2'b0;//escolhe PC
+			mux_9=3'b0;
+			mux_10=3'b0;
+			mux_11=1'b0;
+			shift_control=3'b0;
+			ss_control=1'b0;
+			mem_write=1'b0;
+			mult_div=2'b0;
+			ir_write=1'b0;    
+			hi_lo=1'b0;
+			EPC_CONTROL=1'b0;
+			MDR_CONTROL=1'b0;
+			LOAD_SIZE=2'b0;
+			ALU_CONTROL=3'b0;//dá load PC
+			ALU_OUT=1'b1;//escreve PC em ALU_OUT
+			REG_A=2'b0;
+			REG_B=1'b0;
+			REG_WRITE=1'b1;//habilita para escrita no próximo ciclo
+			XCH_CONTROL = 1'b0;
+			next_state = 8'b10001000;//passa pro segundo passo
+		end
+		8'b10001000: begin //JAL_2
+			pc_write=1'b1;//habilita escrita em pc no próximo ciclo 
+			mux_1=2'b0;
+			mux_2=2'b0;
+			mux_3=1'b0;
+			mux_4=1'b0;
+			mux_6=3'b0;
+			mux_7=4'b0;
+			mux_8=2'b0;
+			mux_9=3'b0;
+			mux_10=3'b11;//escolhe pc+offset
+			mux_11=1'b0;
+			shift_control=3'b0;
+			ss_control=1'b0;
+			mem_write=1'b0;
+			mult_div=2'b0;
+			ir_write=1'b0;    
+			hi_lo=1'b0;
+			EPC_CONTROL=1'b0;
+			MDR_CONTROL=1'b0;
+			LOAD_SIZE=2'b0;
+			ALU_CONTROL=3'b0;
+			ALU_OUT=1'b0;
+			REG_A=2'b0;
+			REG_B=1'b0;
+			REG_WRITE=1'b0;
+			XCH_CONTROL = 1'b0;
+			next_state = 8'b11111111;//passa pro final
+		end
 		8'b00010100: begin //XCH_1/2
 			pc_write=1'b0;
 			mux_1=2'b0;
@@ -588,7 +735,7 @@ always@(posedge clock) begin
 			mux_9=3'b0;
 			mux_10=3'b0;
 			mux_11=1'b0;
-			shift_control=3'b0;//primeiro d� load no reg
+			shift_control=3'b10;//primeiro d� load no reg
 			ss_control=1'b0;
 			mem_write=1'b0;
 			mult_div=2'b0;
@@ -811,6 +958,43 @@ always@(posedge clock) begin
 			REG_WRITE=1'b1;//habilita a escrita no banco de regs
 			XCH_CONTROL = 1'b0;
 			next_state = 8'b11111111;//passa pro final
+		end
+		8'b00011101: begin //DIV/MULT WAIT
+			pc_write=1'b0;
+			mux_1=2'b0;
+			mux_2=2'b0;
+			mux_3=1'b0;
+			mux_4=1'b0;
+			mux_6=3'b0;
+			mux_7=4'b0;
+			mux_8=2'b0;
+			mux_9=3'b0;
+			mux_10=3'b0;
+			mux_11=1'b0;
+			shift_control=3'b0;
+			ss_control=1'b0;
+			mult_div=2'b0;
+			ir_write=1'b0;    
+			EPC_CONTROL=1'b0;
+			MDR_CONTROL=1'b0;
+			LOAD_SIZE=2'b0;
+			ALU_CONTROL=3'b0;
+			ALU_OUT=1'b0;
+			REG_A=2'b0;
+			REG_B=1'b0;
+			REG_WRITE=1'b0;
+			XCH_CONTROL = 1'b0;
+			next_state = 8'b00011101;
+			if(counter == 8'd33) begin //WAIT
+				hi_lo=1'b1;
+				counter = 8'd0;
+				mem_write=1'b0;
+				next_state = 8'b11111111;
+			end
+			else begin
+				counter = counter + 8'd1;
+				hi_lo=1'b0;
+			end
 		end
 		8'b11111111: begin // FINAL
 			pc_write=1'b0;
