@@ -8,3 +8,7 @@
 - [x] [Questão 6](https://github.com/Guilhermeasper/Hardware/blob/master/Listas/Lista%201/q6.asm)
 - [x] [Questão 7](https://github.com/Guilhermeasper/Hardware/blob/master/Listas/Lista%201/q7.asm)
 - [x] [Questão 8](https://github.com/Guilhermeasper/Hardware/blob/master/Listas/Lista%201/q8.asm)
+
+## Lista 2
+
+[Atividade](https://gist.github.com/Erick2280/3d97bc75b3ee7bc2d213ca1b4374d8d2)
